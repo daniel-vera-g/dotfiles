@@ -1,0 +1,65 @@
+# ZSHRC File for MACOSX
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/danielvg/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+
+ ZSH_THEME="robbyrussell"
+
+# TEST
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Custom Plugins to load
+plugins=(git node npm brew osx );
+
+# User configuration
+
+source $ZSH/oh-my-zsh.sh
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+
+#change directory shortcuts 
+alias dropbox='cd ~/Dropbox'
+alias downloads='cd ~/Downloads'
+
+# -------------------------------------------------------------------
+# Git
+# -------------------------------------------------------------------
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias gf='git reflog'
+alias gmer='git merge'
+alias gfr='git fetch -p && git rebase'
+
+#commands
+alias ls='ls -a'
+alias copy='pwd|pbcopy'
+# alias refresh='. ~/.bash_profile'
+# alias refresh='. ~/.zshrc'
+alias refresh="source ~/.zshrc"
+alias code='open -a /Applications/Visual\ Studio\ Code.app'
+alias zshrc='code ~/.zshrc'
+alias rm="rm -rf"
+
+export PATH="/usr/local/bin:$PATH"
+export CLICOLOR=1
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
+. `brew --prefix`/etc/profile.d/z.sh

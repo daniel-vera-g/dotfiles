@@ -1,0 +1,50 @@
+# Shortcuts
+
+alias reload="source ~/.zshrc"
+alias _="sudo"
+alias g="git"
+alias rr="rm -rf"
+
+# Default options
+
+alias rsync="rsync -vh"
+alias json="json -c"
+alias psgrep="psgrep -i"
+alias x+="chmod +x"
+
+is-executable hub && eval "$(hub alias -s)" # alias git=hub
+
+# Global aliases
+
+if $(is-supported "alias -g"); then
+  alias -g G="| grep -i"
+  alias -g H="| head"
+  alias -g T="| tail"
+  alias -g L="| less"
+fi
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias -- -="cd -"                  # Go to previous dir with -
+
+alias tree="tree -A"
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+# npm
+
+alias ni="npm install"
+alias nu="npm uninstall"
+alias nup="npm update"
+alias nri="rm -r node_modules && npm install"
+alias ncd="npm-check -su"
+
+# Vagrant
+alias v="vagrant global-status"
+alias vup="vagrant up"
+alias vhalt="vagrant halt"
+alias vssh="vagrant ssh"
+alias vreload="vagrant reload"
+alias vrebuild="vagrant destroy --force && vagrant up"

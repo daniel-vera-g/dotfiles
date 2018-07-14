@@ -1,0 +1,40 @@
+{
+	"extends": "airbnb-base",
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"mocha": true,
+		"jquery": true
+	},
+	"rules": {
+		"quotes": [
+			2,
+			"double",
+			"avoid-escape"
+		],
+		"no-unused-vars": [
+			1,
+			{
+				"vars": "local",
+				"args": "none"
+			}
+		],
+		"semi": [
+			2,
+			"always"
+		],
+		"linebreak-style": 0,
+		"indent": [
+			"error",
+			"tab"
+		],
+		"no-tabs": 0,
+		"prefer-const": 1,
+		"complexity": [
+			1,
+			5
+		],
+		"one-var": "warn"
+	}
+}
