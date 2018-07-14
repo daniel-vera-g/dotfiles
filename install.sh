@@ -46,10 +46,22 @@ done
 
 # Bunch of symlinks
 
-echo "Creating symlinks"
-ln -sfv "./shellSettings/.bashrc" ~
-ln -sfv "./shellSettings/.hyper" ~
-ln -sfv "./shellSettings/.zshrc" ~
+echo "Creating simlinks for git"
+ln -sfv "$dir/git/.gitconfig" ~
+ln -sfv "$dir/git/.gitignore_global" ~
+
+
+echo "Creating symlinks for Shell configuration"
+ln -sfv "$dir/shellSettings/.bashrc" ~
+ln -sfv "$dir/shellSettings/.hyper" ~
+ln -sfv "$dir/shellSettings/.zshrc" ~
+
+echo "Creating simlinks for the linters"
+ln -sfv "$dir/linter/.eslintrc" ~
+ln -sfv "$dir/linter/.markdownlintrc" ~
+ln -sfv "$dir/linter/.prettierrc" ~
+ln -sfv "$dir/linter/.textlintrc" ~
+
 
 # System stuff
 
@@ -65,12 +77,18 @@ zsh
 oh-my-zsh
 syntax highlighing
 
-# Package managers & packages
+# Package managers
 
 echo "Starting to install package managers"
 
 npm
 node
+
+## Packages
+
+echo "Starting to install packages"
+
+eslint
 
 # End
 
