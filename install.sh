@@ -11,13 +11,13 @@ echo "Loading variables"
 # Variables
 
 dir=~/dotfiles                    # dotfiles directory
-echo "The new dotfiles repository is: " + dir
+echo "The new dotfiles repository is: $dir"
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
-echo "The backup directory is: " + olddir
+echo "The backup directory is: $olddir"
 
 files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-echo "The files and folders that are going to be backed up are: " + files
+echo "The files and folders that are going to be backed up are: $files"
 
 # Update dotfiles itself first
 
