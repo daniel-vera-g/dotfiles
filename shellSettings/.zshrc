@@ -2,13 +2,6 @@
 export DOTFILES=$HOME/.dotfiles
 
 ZSH_DISABLE_COMPFIX=true
-# CONFIG FOR Hyper
-
-# IF BABUN use THIS
-# export HOME="/cygdrive/c/Users/danielVg/"
-
-# CONFIG FOR UBUNTU SUBSYSTEM
-export HOME="/mnt/c/Users/danielVg"
 
 # Path to your oh-my-zsh installation.
 # export ZSH=$HOME/.oh-my-zsh
