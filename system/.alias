@@ -1,3 +1,46 @@
+# Custom
+
+#change directory shortcuts 
+alias dropbox='cd ~/Dropbox'
+alias downloads='cd ~/Downloads'
+
+# -------------------------------------------------------------------
+# Git
+# -------------------------------------------------------------------
+alias ga='git add'
+alias gaa='git add .'
+alias gap='git add -p'
+alias gp='git push'
+alias gl='git log'
+alias wow='git log --all --graph --decorate --oneline --simplify-by-decoration'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gmamend='git commit --amend'
+alias gb='git branch'
+alias gc='git checkout'
+alias gcl='git checkout -'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias gf='git reflog'
+alias gmer='git merge'
+alias gfr='git fetch -p && git rebase'
+alias gcontr='git shortlog -sn'
+alias gl='git diff --shortstat "@{0 day ago}'
+alias prune='git remote update --prune'
+#commands
+alias ls='ls -a'
+alias copy='pwd|pbcopy'
+alias rm="rm -rf"
+alias zshrc='vim ~/.zshrc'
+alias hyper="vim ~/.hyper.js"
+alias refresh="source ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+
 # Shortcuts
 
 alias reload="source ~/.zshrc"
