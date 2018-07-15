@@ -62,10 +62,8 @@ chmod +x $dir/apps/zsh.sh && $dir/apps/zsh.sh
 
 # Package managers
 
-# TODO echo "Starting to install package managers"
-
-# TODO npm
-# TODO node
+echo "Starting to install package managers"
+chmod +x $dir/apps/node.sh && $dir/apps/node.sh
 
 ## Packages
 
