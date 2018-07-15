@@ -70,6 +70,7 @@ chmod +x $dir/apps/node.sh && $dir/apps/node.sh
 echo "Starting to install packages"
 
 # eslint
+
 chmod +x $dir/apps/packages.sh && $dir/apps/packages.sh
 
 # Bunch of symlinks
