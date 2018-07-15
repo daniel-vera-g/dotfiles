@@ -3,5 +3,5 @@
 # Eslint 
 
 echo "installing eslint"
-npm install -g eslint
+sudo npm install -g eslint
 
