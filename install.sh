@@ -72,11 +72,15 @@ ln -sfv "$dir/linter/.textlintrc" ~
 
 # Apps
 
-# TODO echo "Starting to installing the applications"
+echo "Starting to installing the applications"
 
-# TODO zsh
-# TODO oh-my-zsh
-# TODO syntax highlighing
+# zsh
+echo "Executing file to install ZSH"
+chmod +x $dir/apps/zsh.sh && $dir/apps/zsh.sh
+
+# oh-my-zsh
+echo "Executing file to install Oh-My-Zsh"
+chmod +x $dir/apps/ohMyzsh.sh && $dir/apps/ohMyzsh.sh
 
 # Package managers
 
