@@ -12,16 +12,7 @@ alias json="json -c"
 alias psgrep="psgrep -i"
 alias x+="chmod +x"
 
-is-executable hub && eval "$(hub alias -s)" # alias git=hub
-
 # Global aliases
-
-if $(is-supported "alias -g"); then
-  alias -g G="| grep -i"
-  alias -g H="| head"
-  alias -g T="| tail"
-  alias -g L="| less"
-fi
 
 alias ..="cd .."
 alias ...="cd ../.."
