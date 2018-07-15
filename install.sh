@@ -45,24 +45,6 @@ for file in $files; do
     # ln -s $dir/$file ~/.$file
 done
 
-# Bunch of symlinks
-
-echo "Creating simlinks for git"
-ln -sfv "$dir/git/.gitconfig" ~
-ln -sfv "$dir/git/.gitignore_global" ~
-
-
-echo "Creating symlinks for Shell configuration"
-ln -sfv "$dir/shellSettings/.bashrc" ~
-ln -sfv "$dir/shellSettings/.hyper" ~
-ln -sfv "$dir/shellSettings/.zshrc" ~
-
-echo "Creating simlinks for the linters"
-ln -sfv "$dir/linter/.eslintrc" ~
-ln -sfv "$dir/linter/.markdownlintrc" ~
-ln -sfv "$dir/linter/.prettierrc" ~
-ln -sfv "$dir/linter/.textlintrc" ~
-
 
 # System stuff
 
@@ -95,7 +77,23 @@ chmod +x $dir/apps/ohMyzsh.sh && $dir/apps/ohMyzsh.sh
 
 # TODO eslint
 
-# End
+# Bunch of symlinks
+
+echo "Creating simlinks for git"
+ln -sfv "$dir/git/.gitconfig" ~
+ln -sfv "$dir/git/.gitignore_global" ~
+
+
+echo "Creating symlinks for Shell configuration"
+ln -sfv "$dir/shellSettings/.bashrc" ~
+ln -sfv "$dir/shellSettings/.hyper" ~
+ln -sfv "$dir/shellSettings/.zshrc" ~
+
+echo "Creating simlinks for the linters"
+ln -sfv "$dir/linter/.eslintrc" ~
+ln -sfv "$dir/linter/.markdownlintrc" ~
+ln -sfv "$dir/linter/.prettierrc" ~
+ln -sfv "$dir/linter/.textlintrc" ~
 
 echo "******************** Done ********************"
 echo "Don't forget to configure SSH properly with key and config"
