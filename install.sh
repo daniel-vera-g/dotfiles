@@ -65,33 +65,34 @@ ln -sfv "$dir/linter/.textlintrc" ~
 
 # System stuff
 
-echo "Setting different environement variables and settings"
+# echo "Setting different environement variables and settings"
 
 # TODO
 
 # Apps
 
-echo "Starting to installing the applications"
+# echo "Starting to installing the applications"
 
-zsh
-oh-my-zsh
-syntax highlighing
+# zsh
+# oh-my-zsh
+# syntax highlighing
 
 # Package managers
 
-echo "Starting to install package managers"
+# echo "Starting to install package managers"
 
-npm
-node
+# npm
+# node
 
 ## Packages
 
-echo "Starting to install packages"
+# echo "Starting to install packages"
 
 eslint
 
 # End
 
-echo "******************** Done ********************"
-echo "Don't forget to configure SSH properly with key and config"
+# echo "******************** Done ********************"
+# echo "Don't forget to configure SSH properly with key and config"
 
+<
