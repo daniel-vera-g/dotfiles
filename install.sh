@@ -11,18 +11,19 @@ echo "Loading variables"
 # Variables
 
 dir=~/dotfiles                    # dotfiles directory
-echo "The new dotfiles repository is: " + dir
+echo "The new dotfiles repository is: $dir"
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
-echo "The backup directory is: " + olddir
+echo "The backup directory is: $olddir"
 
 files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
-echo "The files and folders that are going to be backed up are: " + files
+echo "The files and folders that are going to be backed up are: $files"
 
 # Update dotfiles itself first
 
 echo "Updating repository"
-if is-executable git -a -d "~/dotfiles/.git"; then git --work-tree="~/dotfiles" --git-dir="~/dotfiles/.git" pull origin master; fi
+# if is-executable git -a -d "~/dotfiles/.git"; then git --work-tree="~/dotfiles" --git-dir="~/dotfiles/.git" pull origin master; fi
+git fetch -p && git rebase
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -65,33 +66,32 @@ ln -sfv "$dir/linter/.textlintrc" ~
 
 # System stuff
 
-echo "Setting different environement variables and settings"
+# TODO echo "Setting different environement variables and settings"
 
 # TODO
 
 # Apps
 
-echo "Starting to installing the applications"
+# TODO echo "Starting to installing the applications"
 
-zsh
-oh-my-zsh
-syntax highlighing
+# TODO zsh
+# TODO oh-my-zsh
+# TODO syntax highlighing
 
 # Package managers
 
-echo "Starting to install package managers"
+# TODO echo "Starting to install package managers"
 
-npm
-node
+# TODO npm
+# TODO node
 
 ## Packages
 
-echo "Starting to install packages"
+# TODO  echo "Starting to install packages"
 
-eslint
+# TODO eslint
 
 # End
 
 echo "******************** Done ********************"
 echo "Don't forget to configure SSH properly with key and config"
-
