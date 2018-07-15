@@ -45,13 +45,6 @@ for file in $files; do
     # ln -s $dir/$file ~/.$file
 done
 
-
-# System stuff
-
-# TODO echo "Setting different environement variables and settings"
-
-# TODO
-
 # Apps
 
 echo "Starting to installing the applications"
