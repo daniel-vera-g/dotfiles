@@ -10,5 +10,5 @@ echo "Setting zsh to default shell"
 # chsh -s $(which zsh)
 chsh -s `which zsh`
 
-echo "The new Shell is: "
-echo $SHELL
+# echo "The new Shell is: "
+# echo $SHELL
