@@ -1,5 +1,4 @@
-# Path to your dotfiles installation.
-export DOTFILES=$HOME/.dotfiles
+source $HOME/.exports
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -23,19 +22,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run 'alias'.
-
 # Source stuff from external files
 source $HOME/.alias
-source $HOME/.exports
 source $HOME/.function
 source $HOME/.path
-
-
 
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
