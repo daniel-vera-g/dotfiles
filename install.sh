@@ -91,5 +91,8 @@ ln -sfv "$dir/linter/.markdownlintrc" ~
 ln -sfv "$dir/linter/.prettierrc" ~
 ln -sfv "$dir/linter/.textlintrc" ~
 
+echo "Creating system simlinks"
+ln -sfv "$dir/system/.alias" ~
+
 echo "******************** Done ********************"
 echo "Don't forget to configure SSH properly with key and config"

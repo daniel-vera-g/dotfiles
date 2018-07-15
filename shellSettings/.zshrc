@@ -29,6 +29,13 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run 'alias'.
 
+# Source stuff from external files
+source $HOME/.alias
+source $HOME/.exports
+source $HOME/.function
+source $HOME/.path
+
+
 #change directory shortcuts 
 alias dropbox='cd ~/Dropbox'
 alias downloads='cd ~/Downloads'
