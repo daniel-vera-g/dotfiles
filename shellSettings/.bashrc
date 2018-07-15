@@ -1,2 +1,2 @@
-export HOME="/mnt/c/Users/danielVg"
+# export HOME="/mnt/c/Users/danielVg"
 bash -c zsh

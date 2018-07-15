@@ -62,7 +62,7 @@ chmod +x $dir/apps/zsh.sh && $dir/apps/zsh.sh
 
 # oh-my-zsh
 echo "Executing file to install Oh-My-Zsh"
-chmod +x $dir/apps/ohMyzsh.sh && $dir/apps/ohMyzsh.sh
+chmod +x $dir/apps/ohMyzsh.sh && $dir/apps/ohMyZsh.sh
 
 # Package managers
 
