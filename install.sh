@@ -79,6 +79,8 @@ echo "Creating simlinks for git"
 ln -sfv "$dir/git/.gitconfig" ~
 ln -sfv "$dir/git/.gitignore_global" ~
 
+echo "Creating simlinks for vim"
+ln -sfv "$dir/vim/.vimrc" ~
 
 echo "Creating symlinks for Shell configuration"
 ln -sfv "$dir/shellSettings/.bashrc" ~
@@ -93,6 +95,9 @@ ln -sfv "$dir/linter/.textlintrc" ~
 
 echo "Creating system simlinks"
 ln -sfv "$dir/system/.alias" ~
+ln -sfv "$dir/system/.exports" ~
+ln -sfv "$dir/system/.function" ~
+ln -sfv "$dir/system/.path" ~
 
 echo "******************** Done ********************"
 echo "Don't forget to configure SSH properly with key and config"
