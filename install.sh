@@ -22,7 +22,8 @@ echo "The files and folders that are going to be backed up are: $files"
 # Update dotfiles itself first
 
 echo "Updating repository"
-if is-executable git -a -d "~/dotfiles/.git"; then git --work-tree="~/dotfiles" --git-dir="~/dotfiles/.git" pull origin master; fi
+# if is-executable git -a -d "~/dotfiles/.git"; then git --work-tree="~/dotfiles" --git-dir="~/dotfiles/.git" pull origin master; fi
+git fetch -p && git rebase
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -88,11 +89,9 @@ ln -sfv "$dir/linter/.textlintrc" ~
 
 # echo "Starting to install packages"
 
-eslint
+#eslint
 
 # End
 
 # echo "******************** Done ********************"
 # echo "Don't forget to configure SSH properly with key and config"
-
-<
