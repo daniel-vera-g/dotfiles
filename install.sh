@@ -126,4 +126,4 @@ ln -sfv "$dir/system/.path" ~
 
 echo "******************** Done ********************"
 echo "Don't forget to configure SSH properly with key and config"
-echo "TODO install toptracker, libre office, evernote and dropbox"
+echo "TODO install toptracker, libre office, whatever(evernote) and dropbox"

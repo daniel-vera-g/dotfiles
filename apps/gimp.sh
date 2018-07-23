@@ -1,3 +1,5 @@
+echo "************************ Installing  gimp ************************"
+
 sudo apt-get autoremove gimp gimp-plugin-registry
 
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp

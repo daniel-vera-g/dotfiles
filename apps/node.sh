@@ -1,6 +1,6 @@
 # Install nodejs & npm 
 
-echo "Installing nodejs & npm"
+echo "************************ Installing nodejs & npm ************************"
 
 echo "First make sure we have curl installe"
 sudo apt-get install curl

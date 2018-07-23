@@ -1,3 +1,5 @@
+echo "************************ Installing vbbox ************************"
+
 sudo apt-get update
 sudo apt-get upgrade
 

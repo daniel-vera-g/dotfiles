@@ -1,5 +1,7 @@
 # Installing ZSH
 
+echo "************************ Installing zsh ************************"
+
 # Install through the package manager
 echo "Installing zsh"
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
