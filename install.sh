@@ -103,7 +103,8 @@ ln -sfv "$dir/system/.alias" ~
 ln -sfv "$dir/system/.exports" ~
 ln -sfv "$dir/system/.function" ~
 ln -sfv "$dir/system/.path" ~
-ln -sfv "sdir/system/.tmux.conf"~
+ln -sfv "$dir/system/.tmux.conf" ~
+ln -sfv "$dir/system/.redshfit.conf" ~
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
