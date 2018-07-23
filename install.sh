@@ -68,7 +68,7 @@ echo "Starting to installing the applications"
 for f in $dir/apps/*.sh
 do
   echo "Processing $f file..."
-  chmod +x f && f
+  chmod +x $f && $f
 done
 
 
