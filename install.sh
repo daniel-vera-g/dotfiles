@@ -61,7 +61,6 @@ echo "###################################### STARTING WITH ALL THE INSTALLEMENTS
 
 ######################################
 
-# Apps
 
 echo "Starting to installing the applications"
 
@@ -70,25 +69,6 @@ do
   echo "Processing $f file..."
   chmod +x $f && $f
 done
-
-
-# # zsh
-# echo "Executing file to install ZSH"
-
-# chmod +x $dir/apps/zsh.sh && $dir/apps/zsh.sh
-
-# # Package managers
-
-# echo "Starting to install package managers"
-
-# chmod +x $dir/apps/node.sh && $dir/apps/node.sh
-
-# ## Packages
-
-# echo "Starting to install packages"
-
-# chmod +x $dir/apps/packages.sh && $dir/apps/packages.sh
-
 
 ######################################
 
@@ -124,6 +104,6 @@ ln -sfv "$dir/system/.exports" ~
 ln -sfv "$dir/system/.function" ~
 ln -sfv "$dir/system/.path" ~
 
-echo "******************** Done ********************"
+echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
 echo "TODO install toptracker, libre office, whatever(evernote) and dropbox"
