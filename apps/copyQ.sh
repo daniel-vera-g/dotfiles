@@ -1,6 +1,6 @@
 echo "************************ Installing  copyQ ************************"
 
-udo add-apt-repository ppa:noobslab/indicators
+sudo add-apt-repository ppa:noobslab/indicators
 
 sudo apt update
 
