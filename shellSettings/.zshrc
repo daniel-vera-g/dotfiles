@@ -27,6 +27,9 @@ source $HOME/.alias
 source $HOME/.function
 source $HOME/.path
 
+# z
+. ~/z.sh
+
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
