@@ -1,47 +1,38 @@
 [global_config]
-title_receive_bg_color = "#ff0000"
-enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-title_transmit_bg_color = "#339966"
-suppress_multiple_term_dialog = True
-inactive_color_offset = 0.64
-
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 0.64
+  suppress_multiple_term_dialog = True
+  title_receive_bg_color = "#ff0000"
+  title_transmit_bg_color = "#339966"
+  window_state = maximise
 [keybindings]
-search = <Ctrl>F
-close_window = <Ctrl><Shift>W
-next_tab = <Ctrl><Tab>
-split_horiz = <Primary>d
-close_term = <Ctrl>s
-cycle_next = <Ctrl>Tab
-split_vert = <Primary>t
-new_tab = <Primary><Shift>t
-
-[profiles]
-
-[[default]]
-use_system_font = False
-font = Monospace 9
-visible_bell = True
-background_darkness = 0.74
-background_type = transparent
-background_image = None
-cursor_color = "#eb1414"
-foreground_color = "#00cc00"
-autoclean_groups = False
-cursor_shape = underline
-copy_on_selection = True
-
+  close_term = <Ctrl>s
+  close_window = <Ctrl><Shift>W
+  search = <Ctrl>F
 [layouts]
-
-[[default]]
-
-[[[child1]]]
-type = Terminal
-parent = window0
-profile = default
-
-[[[window0]]]
-type = Window
-parent = ""
-size = 800, 500
+  [[default]]
+    
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    
+    [[[window0]]]
+      parent = ""
+      size = 800, 500
+      type = Window
 [plugins]
-enable_real_transparency = True
+  enable_real_transparency = True
+[profiles]
+  [[default]]
+    autoclean_groups = False
+    background_darkness = 0.74
+    background_image = None
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#eb1414"
+    cursor_shape = underline
+    font = Fira Code Light 9
+    foreground_color = "#00cc00"
+    use_system_font = False
+    visible_bell = True
