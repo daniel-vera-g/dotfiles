@@ -91,6 +91,7 @@ echo "Creating symlinks for Shell configuration"
 ln -sfv "$dir/shellSettings/.bashrc" ~
 ln -sfv "$dir/shellSettings/.hyper" ~
 ln -sfv "$dir/shellSettings/.zshrc" ~
+ln -sfv "$dir/shellSettings/z.sh" ~
 
 echo "Creating simlinks for the linters"
 ln -sfv "$dir/linter/.eslintrc" ~
@@ -107,7 +108,6 @@ ln -sfv "$dir/system/.tmux.conf" ~
 ln -sfv "$dir/system/.redshfit.conf" ~/.config
 ln -sfv "$dir/system/terminator/config" ~/.config/
 ln -sfv "$dir/system/download_and_install.sh" ~
-ln -sfv "$dir/system/z.sh" ~
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
