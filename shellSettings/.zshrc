@@ -41,3 +41,5 @@ LS_COLORS=$LS_COLORS:'ow=37;42:'
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 # compinit
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
