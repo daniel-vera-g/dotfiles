@@ -75,6 +75,7 @@ alias nu="npm uninstall"
 alias nup="npm update"
 alias nri="rm -r node_modules && npm install"
 alias ncd="npm-check -su"
+alias npmListG='npm list -g --depth=0'
 
 # Vagrant
 alias v="vagrant global-status"
