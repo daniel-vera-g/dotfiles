@@ -41,6 +41,7 @@ alias zshrc='vim ~/.zshrc'
 alias hyper="vim ~/.hyper.js"
 alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
+alias open="xdg-open"
 
 # Shortcuts
 
