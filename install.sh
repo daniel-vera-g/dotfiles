@@ -91,6 +91,11 @@ ln -sfv "$dir/shell/.bashrc" ~
 ln -sfv "$dir/shell/.hyper" ~
 ln -sfv "$dir/shell/.zshrc" ~
 ln -sfv "$dir/shell/z.sh" ~
+ln -sfv "$dir/shell/.alias" ~
+ln -sfv "$dir/shell/.exports" ~
+ln -sfv "$dir/shell/.function" ~
+ln -sfv "$dir/shell/.path" ~
+ln -sfv "$dir/shell/.tmux.conf" ~
 
 echo "Creating simlinks for git"
 ln -sfv "$dir/shell/git/.gitconfig" ~
@@ -99,14 +104,7 @@ ln -sfv "$dir/shell/git/.gitignore_global" ~
 echo "Creating simlinks for vim"
 ln -sfv "$dir/shell/vim/.vimrc" ~
 
-
-
 echo "Creating system simlinks"
-ln -sfv "$dir/system/.alias" ~
-ln -sfv "$dir/system/.exports" ~
-ln -sfv "$dir/system/.function" ~
-ln -sfv "$dir/system/.path" ~
-ln -sfv "$dir/system/.tmux.conf" ~
 ln -sfv "$dir/system/.redshfit.conf" ~/.config
 ln -sfv "$dir/system/terminator/config" ~/.config/
 ln -sfv "$dir/system/download_and_install.sh" ~
