@@ -111,7 +111,7 @@ alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
 alias tmuxSessNew="tmux new-session -s"
 
-alias tmux="tmux attach"
+alias tmuxAtt="tmux attach"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
