@@ -80,12 +80,11 @@ echo "###################################### DOTFILES ##########################
 
 # Bunch of symlinks
 
-echo "Creating simlinks for git"
-ln -sfv "$dir/shell/git/.gitconfig" ~
-ln -sfv "$dir/shell/git/.gitignore_global" ~
-
-echo "Creating simlinks for vim"
-ln -sfv "$dir/vim/.vimrc" ~
+echo "Creating simlinks for the linters"
+ln -sfv "$dir/linter/.eslintrc" ~
+ln -sfv "$dir/linter/.markdownlintrc" ~
+ln -sfv "$dir/linter/.prettierrc" ~
+ln -sfv "$dir/linter/.textlintrc" ~
 
 echo "Creating symlinks for Shell configuration"
 ln -sfv "$dir/shell/.bashrc" ~
@@ -93,11 +92,14 @@ ln -sfv "$dir/shell/.hyper" ~
 ln -sfv "$dir/shell/.zshrc" ~
 ln -sfv "$dir/shell/z.sh" ~
 
-echo "Creating simlinks for the linters"
-ln -sfv "$dir/linter/.eslintrc" ~
-ln -sfv "$dir/linter/.markdownlintrc" ~
-ln -sfv "$dir/linter/.prettierrc" ~
-ln -sfv "$dir/linter/.textlintrc" ~
+echo "Creating simlinks for git"
+ln -sfv "$dir/shell/git/.gitconfig" ~
+ln -sfv "$dir/shell/git/.gitignore_global" ~
+
+echo "Creating simlinks for vim"
+ln -sfv "$dir/shell/vim/.vimrc" ~
+
+
 
 echo "Creating system simlinks"
 ln -sfv "$dir/system/.alias" ~
