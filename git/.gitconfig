@@ -29,3 +29,6 @@
 [user]
 	email = danielveragi@gmail.com
 	name = danielVg
+	username = daniel-vera-g
+[oh-my-zsh]
+	hide-status = 1
