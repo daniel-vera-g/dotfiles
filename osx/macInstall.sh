@@ -83,32 +83,32 @@ echo "###################################### DOTFILES ##########################
 # Bunch of symlinks
 
 echo "Creating simlinks for the linters"
-ln -sfv "$dir/linter/.eslintrc" ~
-ln -sfv "$dir/linter/.markdownlintrc" ~
-ln -sfv "$dir/linter/.prettierrc" ~
-ln -sfv "$dir/linter/.textlintrc" ~
+ln -s "$dir/linter/.eslintrc" ~
+ln -s "$dir/linter/.markdownlintrc" ~
+ln -s "$dir/linter/.prettierrc" ~
+ln -s "$dir/linter/.textlintrc" ~
 
 echo "Creating simlinks for git"
-ln -sfv "$dir/shell/git/.gitconfig" ~
-ln -sfv "$dir/shell/git/.gitignore_global" ~
+ln -s "$dir/shell/git/.gitconfig" ~
+ln -s "$dir/shell/git/.gitignore_global" ~
 
 echo "Creating simlinks for vim"
-ln -sfv "$dir/shell/vim/.vimrc" ~
+ln -s "$dir/shell/vim/.vimrc" ~
 
 echo "Creating symlinks for Shell configuration"
-ln -sfv "$dir/shell/.alias" ~
-ln -sfv "$dir/shell/.exports" ~
-ln -sfv "$dir/shell/.function" ~
-ln -sfv "$dir/shell/.path" ~
-ln -sfv "$dir/shell/.tmux.conf" ~
-ln -sfv "$dir/shell/.bashrc" ~
-ln -sfv "$dir/shell/.hyper" ~
-ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/z.sh" ~
+ln -s "$dir/shell/.alias" ~
+ln -s "$dir/shell/.exports" ~
+ln -s "$dir/shell/.function" ~
+ln -s "$dir/shell/.path" ~
+ln -s "$dir/shell/.tmux.conf" ~
+ln -s "$dir/shell/.bashrc" ~
+ln -s "$dir/shell/.hyper" ~
+ln -s "$dir/shell/.zshrc" ~
+ln -s "$dir/shell/z.sh" ~
 
 echo "Creating system simlinks"
-ln -sfv "$dir/system/.redshfit.conf" ~/.config
-ln -sfv "$dir/system/terminator/config" ~/.config/
+ln -s "$dir/system/.redshfit.conf" ~/.config
+ln -s "$dir/system/terminator/config" ~/.config/
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
