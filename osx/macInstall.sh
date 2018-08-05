@@ -106,10 +106,6 @@ ln -s "$dir/shell/.hyper" ~
 ln -s "$dir/shell/.zshrc" ~
 ln -s "$dir/shell/z.sh" ~
 
-echo "Creating system simlinks"
-ln -s "$dir/system/.redshfit.conf" ~/.config
-ln -s "$dir/system/terminator/config" ~/.config/
-
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
 echo "TODO install toptracker, libre office, whatever(evernote) and dropbox"

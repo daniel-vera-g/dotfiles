@@ -16,10 +16,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # ENABLE_CORRECTION="true"
 
 # Custom Plugins to load
- plugins=(git node npm);
+ plugins=(git node npm, brew osx);
 
 # User configuration
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # Source stuff from external files
@@ -33,13 +33,8 @@ source $HOME/.path
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Cutomizing of the Colors for LS & autocomplete
-alias ls="ls --color=auto"
-# General color settings
-LS_COLORS=$LS_COLORS:'ow=37;42:'
-# Set colors of autocomplete as the same as ls
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-# compinit
+export CLICOLOR=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. `brew --prefix`/etc/profile.d/z.sh
