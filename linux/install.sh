@@ -88,10 +88,10 @@ echo "Creating simlinks for vim"
 ln -sfv "$dir/vim/.vimrc" ~
 
 echo "Creating symlinks for Shell configuration"
-ln -sfv "$dir/shell/.bashrc" ~
-ln -sfv "$dir/shell/.hyper" ~
-ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/z.sh" ~
+ln -sfv "$dir/shellSettings/.bashrc" ~
+ln -sfv "$dir/shellSettings/.hyper" ~
+ln -sfv "$dir/shellSettings/.zshrc" ~
+ln -sfv "$dir/shellSettings/z.sh" ~
 
 echo "Creating simlinks for the linters"
 ln -sfv "$dir/linter/.eslintrc" ~
