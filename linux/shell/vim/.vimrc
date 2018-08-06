@@ -42,5 +42,16 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
+" markdown
+" https://www.swamphogg.com/2015/vim-setup/
+" https://news.ycombinator.com/item?id=10271028
+
+
+" https://github.com/gabrielelana/vim-markdown
+Plug 'gabrielelana/vim-markdown'
+
+"https://github.com/junegunn/goyo.vim
+Plug 'junegunn/goyo.vim'
+
 " Initialize plugin system
 call plug#end()
