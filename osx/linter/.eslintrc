@@ -1,40 +1,40 @@
 {
-	"extends": "airbnb-base",
-	"env": {
-		"browser": true,
-		"es6": true,
-		"node": true,
-		"mocha": true,
-		"jquery": true
-	},
-	"rules": {
-		"quotes": [
-			2,
-			"double",
-			"avoid-escape"
-		],
-		"no-unused-vars": [
-			1,
-			{
-				"vars": "local",
-				"args": "none"
-			}
-		],
-		"semi": [
-			2,
-			"always"
-		],
-		"linebreak-style": 0,
-		"indent": [
-			"error",
-			"tab"
-		],
-		"no-tabs": 0,
-		"prefer-const": 1,
-		"complexity": [
-			1,
-			5
-		],
-		"one-var": "warn"
-	}
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true,
+    "jquery": true
+  },
+  "rules": {
+    "quotes": [2, "single", "avoid-escape"],
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "local",
+        "args": "none"
+      }
+    ],
+    "semi": [2, "always"],
+    "linebreak-style": 0,
+    "indent": ["error", "tab"],
+    "no-tabs": 0,
+    "complexity": [2, 6],
+    "max-statements-per-line": [
+      2,
+      {
+        "max": 1
+      }
+    ],
+    "max-nested-callbacks": [2, 2],
+    "eqeqeq": 2,
+    "no-var": 2,
+    "prefer-const": 2,
+    "max-lines": [2, 90],
+    "no-return-assign": 2,
+    "no-param-reassign": 2,
+    "array-callback-return": 2,
+    "one-var": ["error", "never"]
+  }
 }
