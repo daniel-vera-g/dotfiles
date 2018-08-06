@@ -38,3 +38,5 @@ export CLICOLOR=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . `brew --prefix`/etc/profile.d/z.sh
+export NVM_DIR="/Users/danielvg/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
