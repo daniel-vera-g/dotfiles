@@ -18,7 +18,7 @@ echo "Loading variables"
 
 # Variables
 
-dir=~/dotfiles                    # dotfiles directory
+dir=~/dotfiles/linux                    # dotfiles directory
 echo "The new dotfiles repository is: $dir"
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
@@ -57,20 +57,18 @@ done
 
 # Installing Applications
 
-# TODO
-
 echo "###################################### STARTING WITH ALL THE INSTALLING ###################################### "
 
 ######################################
 
 
-# echo "Starting to installing the applications"
+echo "Starting to installing the applications"
 
-# for f in $dir/apps/*.sh
-# do
-#   echo "Processing $f file..."
-#   chmod +x $f && $f
-# done
+for f in $dir/apps/*.sh
+do
+  echo "Processing $f file..."
+  chmod +x $f && $f
+done
 
 ######################################
 
@@ -82,34 +80,33 @@ echo "###################################### DOTFILES ##########################
 
 # Bunch of symlinks
 
-echo "Creating simlinks for git"
-ln -sfv "$dir/shell/git/.gitconfig" ~
-ln -sfv "$dir/shell/git/.gitignore_global" ~
-
-echo "Creating simlinks for vim"
-ln -sfv "$dir/vim/.vimrc" ~
-
-echo "Creating symlinks for Shell configuration"
-ln -sfv "$dir/shell/.bashrc" ~
-ln -sfv "$dir/shell/.hyper" ~
-ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/z.sh" ~
-
 echo "Creating simlinks for the linters"
 ln -sfv "$dir/linter/.eslintrc" ~
 ln -sfv "$dir/linter/.markdownlintrc" ~
 ln -sfv "$dir/linter/.prettierrc" ~
 ln -sfv "$dir/linter/.textlintrc" ~
 
+echo "Creating simlinks for git"
+ln -sfv "$dir/shell/git/.gitconfig" ~
+ln -sfv "$dir/shell/git/.gitignore_global" ~
+
+echo "Creating simlinks for vim"
+ln -sfv "$dir/shell/vim/.vimrc" ~
+
+echo "Creating symlinks for Shell configuration"
+ln -sfv "$dir/shell/.alias" ~
+ln -sfv "$dir/shell/.exports" ~
+ln -sfv "$dir/shell/.function" ~
+ln -sfv "$dir/shell/.path" ~
+ln -sfv "$dir/shell/.tmux.conf" ~
+ln -sfv "$dir/shell/.bashrc" ~
+ln -sfv "$dir/shell/.hyper" ~
+ln -sfv "$dir/shell/.zshrc" ~
+ln -sfv "$dir/shell/z.sh" ~
+
 echo "Creating system simlinks"
-ln -sfv "$dir/system/.alias" ~
-ln -sfv "$dir/system/.exports" ~
-ln -sfv "$dir/system/.function" ~
-ln -sfv "$dir/system/.path" ~
-ln -sfv "$dir/system/.tmux.conf" ~
 ln -sfv "$dir/system/.redshfit.conf" ~/.config
 ln -sfv "$dir/system/terminator/config" ~/.config/
-ln -sfv "$dir/system/download_and_install.sh" ~
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"

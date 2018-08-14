@@ -18,13 +18,13 @@ echo "Loading variables"
 
 # Variables
 
-dir=~/dotfiles                    # dotfiles directory
+dir=~/dotfiles/osx                    # dotfiles directory
 echo "The new dotfiles repository is: $dir"
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
 echo "The backup directory is: $olddir"
 
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc vimrc vim zshrc hyper tmux.conf path function exports alias gitignore_global gitconfig textlintrc prettierrc markdownlintrc eslintrc"    # list of files/folders to symlink in homedir
 echo "The files and folders that are going to be backed up are: $files"
 
 # Update dotfiles itself first
@@ -57,18 +57,20 @@ done
 
 # Installing Applications
 
+# TODO
+
 echo "###################################### STARTING WITH ALL THE INSTALLING ###################################### "
 
 ######################################
 
 
-echo "Starting to installing the applications"
+# echo "Starting to installing the applications"
 
-for f in $dir/apps/*.sh
-do
-  echo "Processing $f file..."
-  chmod +x $f && $f
-done
+# for f in $dir/apps/*.sh
+# do
+#   echo "Processing $f file..."
+#   chmod +x $f && $f
+# done
 
 ######################################
 
@@ -80,34 +82,29 @@ echo "###################################### DOTFILES ##########################
 
 # Bunch of symlinks
 
+echo "Creating simlinks for the linters"
+ln -s "$dir/linter/.eslintrc" ~/.eslintrc
+ln -s "$dir/linter/.markdownlintrc" ~/.markdownlintrc
+ln -s "$dir/linter/.prettierrc" ~/.prettierrc
+ln -s "$dir/linter/.textlintrc" ~/.textlintrc
+
 echo "Creating simlinks for git"
-ln -sfv "$dir/shell/git/.gitconfig" ~
-ln -sfv "$dir/shell/git/.gitignore_global" ~
+ln -s "$dir/shell/git/.gitconfig" ~/.gitconfig
+ln -s "$dir/shell/git/.gitignore_global" ~/.gitignore_global
 
 echo "Creating simlinks for vim"
-ln -sfv "$dir/vim/.vimrc" ~
+ln -s "$dir/shell/vim/.vimrc" ~/.vimrc
 
 echo "Creating symlinks for Shell configuration"
-ln -sfv "$dir/shell/.bashrc" ~
-ln -sfv "$dir/shell/.hyper" ~
-ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/z.sh" ~
-
-echo "Creating simlinks for the linters"
-ln -sfv "$dir/linter/.eslintrc" ~
-ln -sfv "$dir/linter/.markdownlintrc" ~
-ln -sfv "$dir/linter/.prettierrc" ~
-ln -sfv "$dir/linter/.textlintrc" ~
-
-echo "Creating system simlinks"
-ln -sfv "$dir/system/.alias" ~
-ln -sfv "$dir/system/.exports" ~
-ln -sfv "$dir/system/.function" ~
-ln -sfv "$dir/system/.path" ~
-ln -sfv "$dir/system/.tmux.conf" ~
-ln -sfv "$dir/system/.redshfit.conf" ~/.config
-ln -sfv "$dir/system/terminator/config" ~/.config/
-ln -sfv "$dir/system/download_and_install.sh" ~
+ln -s "$dir/shell/.alias" ~/.alias
+ln -s "$dir/shell/.exports" ~/.exports
+ln -s "$dir/shell/.function" ~/.function
+ln -s "$dir/shell/.path" ~/.path
+ln -s "$dir/shell/.tmux.conf" ~/.tmux.conf
+ln -s "$dir/shell/.bashrc" ~/.bashrc
+ln -s "$dir/shell/.hyper" ~/.hyper
+ln -s "$dir/shell/.zshrc" ~/.zshrc
+ln -s "$dir/shell/z.sh" ~/z.sh
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
