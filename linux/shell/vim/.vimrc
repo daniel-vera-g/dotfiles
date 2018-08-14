@@ -1,6 +1,10 @@
+" Editor custom settings
+
 set number
 set paste
- 
+
+" --- Vim plug --- " 
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -42,13 +46,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-" markdown
+" --- markdown --- "
+
 " https://www.swamphogg.com/2015/vim-setup/
 " https://news.ycombinator.com/item?id=10271028
 
 
 " https://github.com/gabrielelana/vim-markdown
-Plug 'gabrielelana/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
 
 "https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
