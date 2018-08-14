@@ -5,6 +5,11 @@ alias dropbox='cd ~/Dropbox'
 alias downloads='cd ~/Downloads'
 
 # -------------------------------------------------------------------
+# Notebook & Journaling
+# -------------------------------------------------------------------
+alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
+
+# -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
 alias g="git"
@@ -109,9 +114,9 @@ alias vrebuild="vagrant destroy --force && vagrant up"
 
 alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
-alias tmuxSessNew="tmux new-session -s"
+alias tmuxNewSess="tmux new-session -s"
 
-alias tmuxAtt="tmux attach"
+alias tmuxAtt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
