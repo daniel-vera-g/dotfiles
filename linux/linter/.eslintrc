@@ -34,6 +34,10 @@
 			2,
 			6
 		],
+		"max-length": [
+			2,
+			150
+		],
 		"max-statements-per-line": [
 			2,
 			{
@@ -49,7 +53,7 @@
 		"prefer-const": 2,
 		"max-lines": [
 			2,
-			90
+			300
 		],
 		"no-return-assign": 2,
 		"no-param-reassign": 2,
