@@ -10,7 +10,7 @@
 	"rules": {
 		"quotes": [
 			2,
-			"single",
+			"double",
 			"avoid-escape"
 		],
 		"no-unused-vars": [
@@ -30,6 +30,9 @@
 			"tab"
 		],
 		"no-tabs": 0,
+		"arrow-body-style": [
+			"error", "always"
+		],
 		"complexity": [
 			2,
 			6
