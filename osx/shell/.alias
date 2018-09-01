@@ -47,7 +47,6 @@ alias prune='git remote update --prune'
 alias ls='ls -a'
 alias copy='pwd|pbcopy'
 alias rr="rm -rf"
-alias open="xdg-open"
 
 # -------------------------------------------------------------------
 # Shortcuts
