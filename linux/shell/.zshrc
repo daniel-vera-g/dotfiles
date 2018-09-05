@@ -7,7 +7,8 @@ ZSH_DISABLE_COMPFIX=true
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="amuse"
+# ZSH_THEME="amuse"
+ZSH_THEME="spaceship"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # ZSH_THEME="robbyrussell"
 
