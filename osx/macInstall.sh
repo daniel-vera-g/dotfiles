@@ -59,6 +59,25 @@ done
 
 # TODO
 
+# Install spaship theme
+
+# POWERLINE
+
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+
+npm install -g spaceship-prompt
+
+git cloneclone https://github.com/denysdovhan/spaceship-prompt.git  https://github. "$ZSH_CUSTOM/themes/spaceship-prompt"
+
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 echo "###################################### STARTING WITH ALL THE INSTALLING ###################################### "
 
 ######################################
