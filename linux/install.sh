@@ -2,7 +2,7 @@
 ############################
 
 # .install.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script installs all the applications and creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
 ############################
 
@@ -77,6 +77,10 @@ done
 echo "###################################### DOTFILES ######################################"
 
 ######################################
+
+# Remove .zshrc from application installation
+echo "Removing .zshrc from application installation"
+rm ~/.zshrc
 
 # Bunch of symlinks
 
