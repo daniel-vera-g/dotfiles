@@ -2,7 +2,7 @@
 ############################
 
 # .install.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script installs all the applications and creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 
 ############################
 
@@ -78,6 +78,10 @@ echo "###################################### DOTFILES ##########################
 
 ######################################
 
+# Remove .zshrc from application installation
+echo "Removing .zshrc from application installation"
+rm ~/.zshrc
+
 # Bunch of symlinks
 
 echo "Creating simlinks for the linters"
@@ -103,6 +107,7 @@ ln -sfv "$dir/shell/.bashrc" ~
 ln -sfv "$dir/shell/.hyper" ~
 ln -sfv "$dir/shell/.zshrc" ~
 ln -sfv "$dir/shell/z.sh" ~
+ln -sfv "$dir/shell/.taskbook.json" ~
 
 echo "Creating system simlinks"
 ln -sfv "$dir/system/.redshfit.conf" ~/.config
