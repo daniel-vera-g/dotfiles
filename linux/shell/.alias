@@ -8,9 +8,6 @@ alias downloads='cd ~/Downloads'
 # Notebook & Journaling
 # -------------------------------------------------------------------
 alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
-alias journal="cd ~/Dropbox/documents/journal"
-alias notebook="cd ~/Dropbox/documents/notebook"
-
 
 # -------------------------------------------------------------------
 # Git
@@ -51,10 +48,6 @@ alias ls='ls -a'
 alias copy='pwd|pbcopy'
 alias rr="rm -rf"
 alias open="xdg-open"
-
-# Bluetooth
-alias sBlue="~/Desktop/automate/bluetooth/Sblue.sh"
-alias killB="~/Desktop/automate/bluetooth/Kblue.sh"
 
 # -------------------------------------------------------------------
 # Shortcuts

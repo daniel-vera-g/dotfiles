@@ -4,8 +4,8 @@ echo "************************ Installing zsh ************************"
 
 # Install through the package manager
 echo "Installing zsh"
-sudo apt-get install zsh
-sudo apt-get install git-core
+apt-get install zsh
+apt-get install git-core
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 # Set Syntax highlighting
