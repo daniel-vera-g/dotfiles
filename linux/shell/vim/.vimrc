@@ -69,4 +69,4 @@ call plug#end()
 
 "Color Theme
 colorscheme gruvbox
-set background=light    " Setting dark mode
+set background=dark " Setting dark mode

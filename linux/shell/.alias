@@ -120,3 +120,12 @@ alias tmuxAtt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
+
+# -------------------------------------------------------------------
+# Docker
+# -------------------------------------------------------------------
+
+alias dkps="sudo docker ps"
+alias dkst="sudo docker stats"
+alias dkpsa="sudo docker ps -a"
+alias dkimgs="sudo docker images"
