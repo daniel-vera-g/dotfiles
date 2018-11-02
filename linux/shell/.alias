@@ -125,7 +125,7 @@ alias tmuxL="tmux ls"
 # Docker
 # -------------------------------------------------------------------
 
-alias dkps="docker ps"
-alias dkst="docker stats"
-alias dkpsa="docker ps -a"
-alias dkimgs="docker images"
+alias dkps="sudo docker ps"
+alias dkst="sudo docker stats"
+alias dkpsa="sudo docker ps -a"
+alias dkimgs="sudo docker images"
