@@ -44,3 +44,5 @@ autoload -Uz compinit
 # compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
