@@ -70,3 +70,10 @@ call plug#end()
 "Color Theme
 colorscheme gruvbox
 set background=dark " Setting dark mode
+" Cursorline
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#303000 ctermbg=234
+
