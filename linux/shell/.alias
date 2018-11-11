@@ -3,7 +3,8 @@
 # -------------------------------------------------------------------
 alias dropbox='cd ~/Dropbox'
 alias downloads='cd ~/Downloads'
-
+alias journal='cd ~/Dropbox/documents/journal/'
+alias notebook='cd ~/Dropbox/documents/notebook/'
 # -------------------------------------------------------------------
 # Notebook & Journaling
 # -------------------------------------------------------------------
@@ -12,90 +13,90 @@ alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
 # -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
+
 alias g="git"
+
+#---
+# add
+#---
+
 alias gam='git add  . && git commit -m'
 alias ga='git add'
 alias gaa='git add .'
 alias gap='git add -p'
-alias gp='git push'
-alias gl='git log'
-alias wow='git log --all --graph --decorate --oneline --simplify-by-decoration'
-alias gs='git status'
-alias gd='git diff'
+alias gra='git remote add'
+
+
+#---
+# commit
+#---
+
+alias gc='g commit'
+alias gca='gc -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
 alias gmamend='git commit --amend'
-alias gb='git branch'
-alias gc='git checkout'
-alias gcl='git checkout -'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-alias gmer='git merge'
-alias gfr='git fetch -p && git rebase'
-alias gcontr='git shortlog -sn'
-alias gl='git diff --shortstat "@{0 day ago}'
-alias prune='git remote update --prune'
+alias gc!='gc --amend'
+alias gca!='gca --amend'
 
-# Git aliases adapted from https://github.com/mjkonarski/oh-my-git-aliases
-alias g='git'
+#---
+# push, pull, rebase, fetch
+#---
 
-alias gst='g status'
-
-alias gfe='g fetch'
-
-alias gco='g checkout'
-alias gcd='gco develop'
-alias gcm='gco master'
-
+alias gp='git push'
 alias ggpush='g push origin $(current_branch)'
 alias ggpushf='ggpush --force-with-lease'
 alias ggpusht='g push origin --tags'
 
-alias gc='g commit'
-alias gc!='gc --amend'
-alias gca='gc -a'
-alias gca!='gca --amend'
-
-alias gl='g pull'
-alias glr='gl --rebase'
-alias glff='gl --ff-only'
-
-alias gm='g merge'
-alias gmff='gm --ff-only'
-alias gmnff='gm --no-ff'
-
-alias ga='g add'
-alias gap='ga --patch'
-alias gai='ga -i'
-
-alias gb='g branch'
-alias gba='g branch -a'
-
-alias ggr='git grep'
+alias gpu='git pull'
 
 alias grb='g rebase'
 alias grbi='grb --interactive'
-alias grbiod='grbi origin/develop'
-alias grbiom='grbi origin/master'
 alias grbc='grb --continue'
 alias grba='grb --abort'
 
-alias gt='g tag'
+
+alias gfr='git fetch -p && git rebase'
+alias gfe='g fetch'
+
+#---
+# log, status, diff, tag, clean & reset
+#---
+
+
+alias gl='git log'
+alias gf='git reflog'
+alias wow='git log --all --graph --decorate --oneline --simplify-by-decoration'
+alias gcontr='git shortlog -sn'
+
+alias gd='g diff'
+alias gl='git diff --shortstat "@{0 day ago}'
+
+alias gs='git status'
+alias gd='git diff'
+
+alias gta='git tag -a -m'
+alias grr='git remote rm'
+alias prune='git remote update --prune'
 
 alias gre='g reset'
 alias greh='gre --hard'
 alias ggrh='greh origin/$(current_branch)'
 
-grf() {
-        gre @~ "$@" && gc! --no-edit
-}
+#---
+# branch 
+#---
 
-alias gd='g diff'
-alias gdo='gd origin/$(current_branch) $(current_branch)'
+alias gb='git branch'
+alias gba='g branch -a'
+
+
+alias gc='git checkout'
+alias gcl='git checkout -'
+alias gcm='gc master'
+
+alias gcl='git clone'
+alias gmer='git merge'
 
 alias gcp='g cherry-pick'
 alias gcpa='gcp --abort'
@@ -105,10 +106,6 @@ alias gsts='git stash show --text'
 alias gsta='g stash'
 alias gstp='gsta pop'
 alias gstd='gsta drop'
-
-alias gcl='g clone'
-
-alias gr='g remote'
 
 # https://github.com/robbyrussell/oh-my-zsh
 function current_branch() {
