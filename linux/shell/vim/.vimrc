@@ -2,6 +2,10 @@
 set number
 set paste
 
+"Autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 "-------------Vim plug -------------
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -21,7 +25,7 @@ call plug#begin('~/.vim/plugged')
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-"Plugin outside ~/.vim/plugged with post-update hook
+"Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 "----- markdown ----
@@ -36,11 +40,29 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
 
+"https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
+"https://github.com/vim-syntastic/syntastic
+Plug 'vim-syntastic/syntastic'
+
+"Autocomplete
+"https://github.com/ajh17/VimCompletesMe
+Plug 'ajh17/VimCompletesMe'
+
+
 "----- Color Themes ----
 
 "Color Theme 1 
 "https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 Plug 'morhetz/gruvbox'
+
+"Color Theme 2
+Plug 'altercation/vim-colors-solarized'
+
+"Color Theme 3
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 "Initialize plugin system
 call plug#end()
@@ -48,7 +70,8 @@ call plug#end()
 "-------------Color Theme customization-------------
 
 " Colorsheme
-colorscheme gruvbox
+syntax enable
+colorscheme solarized
 "Setting dark mode
 set background=dark 
 
@@ -58,3 +81,15 @@ hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
+
+"----- syntastic config --
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
