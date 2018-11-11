@@ -31,7 +31,7 @@ alias gra='git remote add'
 # commit
 #---
 
-alias gc='g commit'
+alias gco='g commit'
 alias gca='gc -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
@@ -203,3 +203,9 @@ alias dkps="sudo docker ps"
 alias dkst="sudo docker stats"
 alias dkpsa="sudo docker ps -a"
 alias dkimgs="sudo docker images"
+
+# -------------------------------------------------------------------
+# xclip
+# ------------------------------------------------------------------
+
+alias clip=" xclip -selection clipboard"
