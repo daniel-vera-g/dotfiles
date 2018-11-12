@@ -4,6 +4,8 @@
 
 * Feel free to fork and contribute.
 
+NOTE: The OSX dotfiles are not up to date. In doubt please use the linux ones.
+
 ## How to use it
 
 1. Clone the repository
