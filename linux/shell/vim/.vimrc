@@ -72,10 +72,12 @@ call plug#end()
 " Colorsheme
 syntax enable
 colorscheme solarized
+
 "Setting dark mode
 set background=dark 
 
 "------------- Cursorline -------------
+
 set cursorline
 hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
