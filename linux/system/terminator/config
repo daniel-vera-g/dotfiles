@@ -25,6 +25,7 @@
   enable_real_transparency = True
 [profiles]
   [[default]]
+    use_theme_colors = True
     autoclean_groups = False
     background_darkness = 0.74
     background_image = None
