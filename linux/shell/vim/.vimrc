@@ -39,9 +39,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "https://www.swamphogg.com/2015/vim-setup/
 "https://news.ycombinator.com/item?id=10271028
 
+"https://github.com/plasticboy/vim-markdown
+Plug 'plasticboy/vim-markdown'
 
-"https://github.com/gabrielelana/vim-markdown
-"Plug 'gabrielelana/vim-markdown'
+"https://github.com/dkarter/bullets.vim
+Plug 'dkarter/bullets.vim'
 
 "https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
@@ -56,6 +58,10 @@ Plug 'vim-syntastic/syntastic'
 "https://github.com/ajh17/VimCompletesMe
 Plug 'ajh17/VimCompletesMe'
 
+"markdown config
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 1
+let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit']
 
 "----- Color Themes ----
 
