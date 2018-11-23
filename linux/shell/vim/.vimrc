@@ -12,7 +12,8 @@ if exists('$TMUX')
 endif
 
 "Vim Cursor shape in TMUX
-if exists('$TMUX') 
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX') 
     let &t_SI = "\<Esc>[3 q"
     let &t_EI = "\<Esc>[0 q"
   else
