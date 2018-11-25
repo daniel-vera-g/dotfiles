@@ -6,10 +6,10 @@ set paste
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
     
-" "For TMUX color display
-" if exists('$TMUX')
-"   set term=screen-256color
-" endif
+ "For TMUX color display
+ if exists('$TMUX')
+   set term=screen-256color
+ endif
 
 "Cursor
 let &t_SI = "\e[6 q"
