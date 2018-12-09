@@ -121,7 +121,6 @@ function current_branch() {
 # -------------------------------------------------------------------
 
 alias ls='ls -a'
-alias copy='pwd|pbcopy'
 alias rr="rm -rf"
 alias open="xdg-open"
 
@@ -210,4 +209,4 @@ alias dkimgs="sudo docker images"
 # xclip
 # ------------------------------------------------------------------
 
-alias clip=" xclip -selection clipboard"
+alias copy=" xclip -selection clipboard"
