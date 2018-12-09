@@ -6,6 +6,7 @@ alias downloads='cd ~/Downloads'
 alias journal='cd ~/Dropbox/documents/journal/'
 alias notebook='cd ~/Dropbox/documents/notebook/'
 alias education='cd /home/dvg/Dropbox/documents/notebook/projects/education'
+alias dot='cd /home/dvg/dotfiles'
 
 # -------------------------------------------------------------------
 # Notebook & Journaling
