@@ -68,3 +68,8 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# queries the cht.sh cheatsheet of various Unix commands
+function cheat() {
+      curl cht.sh/$1
+  }

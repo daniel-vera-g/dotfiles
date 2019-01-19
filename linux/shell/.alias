@@ -3,6 +3,11 @@
 # -------------------------------------------------------------------
 alias ls="exa"
 alias l="exa -a"
+alias ll="exa -lh"
+alias la="exa -lah"
+alias lt="exa -Talh --git"
+alias lg="exa -lah --git"
+
 
 # -------------------------------------------------------------------
 # Directory
@@ -127,7 +132,7 @@ function current_branch() {
 # Commands
 # -------------------------------------------------------------------
 
-# alias ls='ls -a'
+# alias ls='ls -a' -> uncommented for exa
 alias rr="rm -rf"
 alias open="xdg-open"
 
