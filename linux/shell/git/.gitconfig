@@ -30,5 +30,12 @@
 	email = danielveragi@gmail.com
 	name = danielVg
 	username = daniel-vera-g
+	signingkey = CEBBD7D13F1E01E3
 [oh-my-zsh]
 	hide-status = 1
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[gpg]
+	program = gpg
