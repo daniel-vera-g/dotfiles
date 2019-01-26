@@ -22,6 +22,9 @@ plugins=(git node npm docker docker-compose);
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
+# Needed to get git signing commits working
+# Source: https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
+export GPG_TTY=$(tty)
 
 # Source stuff from external files
 source $HOME/.alias
