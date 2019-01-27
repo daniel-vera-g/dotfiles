@@ -161,11 +161,10 @@ alias x+="chmod +x"
 # -------------------------------------------------------------------
 # Global aliases
 # -------------------------------------------------------------------
-
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
 alias tree="tree -A"
@@ -189,12 +188,20 @@ alias npmListG='npm list -g --depth=0'
 # -------------------------------------------------------------------
 
 alias v="vagrant global-status"
+alias vhl='vagrant hosts list'
+alias vst="vagrant status"
 alias vup="vagrant up"
-alias vhalt="vagrant halt"
 alias vssh="vagrant ssh"
+alias vhalt="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
 alias vreload="vagrant reload"
 alias vdestr="vagrant destroy"
 alias vrebuild="vagrant destroy --force && vagrant up"
+# requires vagrant-list plugin
+alias vl="vagrant list"
+# requires vagrant-hostmanager plugin
+alias vhst="vagrant hostmanager"
 
 # -------------------------------------------------------------------
 # tmux
