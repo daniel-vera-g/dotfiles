@@ -212,13 +212,8 @@ alias tmuxDet="tmux detach"
 alias tmuxL="tmux ls"
 
 # -------------------------------------------------------------------
-# Docker
+# Docker -> MIGRATED TO EXTERNAL FILE
 # -------------------------------------------------------------------
-
-alias dkps="sudo docker ps"
-alias dkst="sudo docker stats"
-alias dkpsa="sudo docker ps -a"
-alias dkimgs="sudo docker images"
 
 # -------------------------------------------------------------------
 # xclip
