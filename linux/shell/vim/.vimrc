@@ -1,4 +1,4 @@
-"-------------Editor custom settings-------------
+" ---------------------Editor custom Settings---------------------
 set number
 set paste
 
@@ -6,7 +6,7 @@ set paste
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
     
- "For TMUX color display
+"For TMUX color display
  if exists('$TMUX')
    set term=screen-256color
  endif
