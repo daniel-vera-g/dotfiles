@@ -31,6 +31,25 @@ source $HOME/.alias
 source $HOME/.function
 source $HOME/.path
 
+# nnn file manager
+# TODO add big nnn function to external file and source it from here
+# source $HOME/quitcd.zsh
+export NNN_TMPFILE="/tmp/nnn"
+
+# TODO Add this to function file & just source it from here
+n()
+{
+        nnn "$@"
+
+        if [ -f $NNN_TMPFILE ]; then
+                . $NNN_TMPFILE
+                rm $NNN_TMPFILE
+        fi
+}
+
+export NNN_CONTEXT_COLORS='1234'
+export NNN_USE_EDITOR=1
+
 # z
 . ~/z.sh
 
