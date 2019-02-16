@@ -1,4 +1,21 @@
 " ---------------------Editor custom Settings---------------------
+
+" ---
+" More natural vim spliting
+
+" Map naviagtion to Ctrl + j/k/l/h
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Position of the split panes
+set splitbelow
+set splitright
+
+" Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
+" ---
+
 "Own customisations
 set number
 set paste
