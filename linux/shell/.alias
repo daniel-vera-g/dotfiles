@@ -151,6 +151,7 @@ alias gch="google-chrome"
 
 alias _="sudo"
 alias zshrc='vim ~/.zshrc'
+alias v='vim'
 alias hyper="vim ~/.hyper.js"
 alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
@@ -194,7 +195,7 @@ alias npmListG='npm list -g --depth=0'
 # Vagrant
 # -------------------------------------------------------------------
 
-alias v="vagrant global-status"
+alias vgs="vagrant global-status"
 alias vhl='vagrant hosts list'
 alias vst="vagrant status"
 alias vup="vagrant up"
