@@ -17,7 +17,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # ENABLE_CORRECTION="true"
 
 # Custom Plugins to load
-plugins=(git node npm docker docker-compose);
+plugins=(git node npm vi-mode);
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
