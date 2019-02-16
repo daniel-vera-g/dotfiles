@@ -77,7 +77,7 @@ Plug 'airblade/vim-gitgutter'
 " Vim wrapper
 " https://github.com/tpope/vim-fugitive
 " http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
-" https://blog.kitware.com/fugitive-a-git-plugin-for-vim/
+" https://blog.kitware.com/fugitive-a-git-plugin-for-vim/Additional 
 Plug 'tpope/vim-fugitive'
 
 "----- markdown ----
