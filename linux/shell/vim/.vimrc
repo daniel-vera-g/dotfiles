@@ -51,6 +51,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+"----- General plugins ----
+
+" Nerdtree TODO
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Schortcut for NERDTree toggle
@@ -65,6 +68,17 @@ Plug 'benmills/vimux'
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
+
+"----- git ----
+
+" Show changes in vim gutter(https://github.com/airblade/vim-gitgutter)
+Plug 'airblade/vim-gitgutter'
+
+" Vim wrapper
+" https://github.com/tpope/vim-fugitive
+" http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
+" https://blog.kitware.com/fugitive-a-git-plugin-for-vim/
+Plug 'tpope/vim-fugitive'
 
 "----- markdown ----
 
