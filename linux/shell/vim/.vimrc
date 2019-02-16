@@ -1,4 +1,5 @@
 " ---------------------Editor custom Settings---------------------
+"Own customisations
 set number
 set paste
 
@@ -41,10 +42,10 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-"Make sure you use single quotes
-
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Schortcut for NERDTree toggle
+map <C-n> :NERDTreeToggle<CR>
 
 "Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
