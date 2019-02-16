@@ -13,8 +13,7 @@ set splitright
 
 " Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
 " ---
-
-"Own customisations
+""Own customisations
 set number
 set paste
 
@@ -58,6 +57,14 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Execute tmux commands in vim
+Plug 'benmills/vimux'
+" Prompt for a command to run
+let mapleader = ","
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
 
 "----- markdown ----
 
