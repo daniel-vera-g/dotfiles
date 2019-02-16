@@ -1,4 +1,5 @@
 " ---------------------Editor custom Settings---------------------
+
 " ---
 " More natural vim spliting
 " Use ctrl-[hjkl] to select the active split!
