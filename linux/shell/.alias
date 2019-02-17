@@ -30,7 +30,7 @@ alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
 # School
 # -------------------------------------------------------------------
 
-alias schoolUsb="/media/dvg/62B6-0615/"
+alias usb="/media/dvg/62B6-0615/"
 
 # -------------------------------------------------------------------
 # Git
