@@ -56,14 +56,21 @@ call plug#begin('~/.vim/plugged')
 " Nerdtree TODO
 "On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Nerdtree git plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Schortcut for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
+" Open nerd tree when opening folder
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 "Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Execute tmux commands in vim
 Plug 'benmills/vimux'
+"Set better leader
+let mapleader = ","
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
