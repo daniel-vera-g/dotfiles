@@ -16,7 +16,7 @@ alias lg="exa -lah --git"
 # -------------------------------------------------------------------
 alias dropbox='cd ~/Dropbox'
 alias downloads='cd ~/Downloads'
-alias linuxOrg='cd /home/dvg/Dropbox/notebook/linux-management' 
+alias lxorg='cd /home/dvg/Dropbox/notebook/linux-management' 
 alias notebook='cd ~/Dropbox/notebook/'
 alias education='cd /home/dvg/Dropbox/notebook/projects/education'
 alias dot='cd /home/dvg/dotfiles'
