@@ -240,6 +240,7 @@ alias dkimgs="sudo docker images"
 # ------------------------------------------------------------------
 
 alias copy="xclip -selection clipboard"
+alias cppt="pwd | copy"
 
 # -------------------------------------------------------------------
 # pandoc
