@@ -65,6 +65,11 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 # compinit
 
+# Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Command palette bookmarker
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
 
 eval $(thefuck --alias)
