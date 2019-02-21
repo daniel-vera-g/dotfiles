@@ -87,16 +87,25 @@ Plug 'airblade/vim-gitgutter'
 " https://blog.kitware.com/fugitive-a-git-plugin-for-vim/Additional 
 Plug 'tpope/vim-fugitive'
 
-"----- markdown ----
+"----- markdown & latex----
 
 "https://www.swamphogg.com/2015/vim-setup/
 "https://news.ycombinator.com/item?id=10271028
 
+"https://github.com/vim-pandoc/vim-pandoc
+Plug 'vim-pandoc/vim-pandoc'
+
+"https://github.com/vim-pandoc/vim-pandoc-syntax
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+"Remove automatic folding
+let g:vim_markdown_folding_disabled = 1
+
 " https://github.com/gabrielelana/vim-markdown
-Plug 'gabrielelana/vim-markdown'
+"Plug 'gabrielelana/vim-markdown'
 
 "https://github.com/plasticboy/vim-markdown
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 
 "https://github.com/dkarter/bullets.vim
 Plug 'dkarter/bullets.vim'
