@@ -67,6 +67,12 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+"https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
+"https://github.com/vim-syntastic/syntastic
+Plug 'vim-syntastic/syntastic'
+
 " Execute tmux commands in vim
 Plug 'benmills/vimux'
 "Set better leader
@@ -97,9 +103,7 @@ Plug 'vim-pandoc/vim-pandoc'
 
 "https://github.com/vim-pandoc/vim-pandoc-syntax
 Plug 'vim-pandoc/vim-pandoc-syntax'
-
-"Remove automatic folding
-let g:vim_markdown_folding_disabled = 1
+set nofoldenable    " disable folding
 
 " https://github.com/gabrielelana/vim-markdown
 "Plug 'gabrielelana/vim-markdown'
@@ -113,20 +117,20 @@ Plug 'dkarter/bullets.vim'
 "https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
 
-"https://github.com/tpope/vim-surround
-Plug 'tpope/vim-surround'
-
-"https://github.com/vim-syntastic/syntastic
-Plug 'vim-syntastic/syntastic'
-
 "Autocomplete
 "https://github.com/ajh17/VimCompletesMe
-Plug 'ajh17/VimCompletesMe'
+"Plug 'ajh17/VimCompletesMe'
+Plug 'Valloric/YouCompleteMe'
 
 "markdown config
-let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 1
-let g:bullets_enabled_file_types = ['markdown', 'text', 'gitcommit', 'md']
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'md'
+    \]
 
 "----- Color Themes ----
 
