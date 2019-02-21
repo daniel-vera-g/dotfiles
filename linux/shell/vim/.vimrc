@@ -73,6 +73,11 @@ Plug 'tpope/vim-surround'
 "https://github.com/vim-syntastic/syntastic
 Plug 'vim-syntastic/syntastic'
 
+"Autocomplete
+"https://github.com/ajh17/VimCompletesMe
+"Plug 'ajh17/VimCompletesMe'
+Plug 'Valloric/YouCompleteMe'
+
 " Execute tmux commands in vim
 Plug 'benmills/vimux'
 "Set better leader
@@ -117,13 +122,7 @@ Plug 'dkarter/bullets.vim'
 "https://github.com/junegunn/goyo.vim
 Plug 'junegunn/goyo.vim'
 
-"Autocomplete
-"https://github.com/ajh17/VimCompletesMe
-"Plug 'ajh17/VimCompletesMe'
-Plug 'Valloric/YouCompleteMe'
-
 "markdown config
-let g:vim_markdown_auto_insert_bullets = 1
 " Bullets.vim
 let g:bullets_enabled_file_types = [
     \ 'markdown',
