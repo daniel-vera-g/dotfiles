@@ -14,7 +14,7 @@ set splitright
 
 "Own customisations
 set number
-set paste
+"set paste
 
 "Autocomplete
 filetype plugin on
