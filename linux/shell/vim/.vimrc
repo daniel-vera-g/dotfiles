@@ -1,20 +1,18 @@
 " ---------------------Editor custom Settings---------------------
 
-" ---
-" More natural vim spliting
-" Use ctrl-[hjkl] to select the active split!
+"More natural vim spliting
+"Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
-" Position of the split panes
+
+"Position of the split panes
 set splitbelow
 set splitright
+"Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
 
-" Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
-" ---
-
-""Own customisations
+"Own customisations
 set number
 set paste
 
@@ -58,9 +56,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Nerdtree git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Schortcut for NERDTree toggle
+"Schortcut for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
-" Open nerd tree when opening folder
+"Open nerd tree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
@@ -74,7 +72,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 
 "Autocomplete
-"https://github.com/ajh17/VimCompletesMe
 "Plug 'ajh17/VimCompletesMe'
 Plug 'Valloric/YouCompleteMe'
 
@@ -110,7 +107,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 set nofoldenable    " disable folding
 
-" https://github.com/gabrielelana/vim-markdown
+"https://github.com/gabrielelana/vim-markdown
 "Plug 'gabrielelana/vim-markdown'
 
 "https://github.com/plasticboy/vim-markdown
@@ -119,10 +116,6 @@ set nofoldenable    " disable folding
 "https://github.com/dkarter/bullets.vim
 Plug 'dkarter/bullets.vim'
 
-"https://github.com/junegunn/goyo.vim
-Plug 'junegunn/goyo.vim'
-
-"markdown config
 " Bullets.vim
 let g:bullets_enabled_file_types = [
     \ 'markdown',
@@ -157,7 +150,6 @@ colorscheme gruvbox
 set background=dark 
 
 "----- syntastic config --
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -166,4 +158,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
