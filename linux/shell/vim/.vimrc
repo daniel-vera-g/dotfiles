@@ -72,8 +72,22 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 
 "Autocomplete
-"Plug 'ajh17/VimCompletesMe'
+"Plug 'ajh17/VimCompletesMe' or muo-completesme
 Plug 'Valloric/YouCompleteMe'
+
+"Autocomplte on tab
+"https://news.ycombinator.com/item?id=13960147
+"https://medium.com/@sszreter/vim-tab-autocomplete-in-insert-mode-and-fuzzy-search-for-opening-files-484260f52618
+"https://vim.fandom.com/wiki/Autocomplete_with_TAB_when_typing_words
+ function! InsertTabWrapper()
+      let col = col('.') - 1
+      if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+      else
+        return "\<c-p>"
+      endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Execute tmux commands in vim
 Plug 'benmills/vimux'
