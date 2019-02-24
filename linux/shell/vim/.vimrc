@@ -16,6 +16,13 @@ set splitright
 set number
 set pastetoggle=<F2>
 
+"Searching settings
+set incsearch
+set hlsearch
+
+"Indentation
+set cindent
+
 "Autocomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
