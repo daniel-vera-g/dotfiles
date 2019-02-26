@@ -14,7 +14,7 @@ alias lg="exa -lah --git"
 # -------------------------------------------------------------------
 # Directory
 # -------------------------------------------------------------------
-alias dropbx='cd ~/Dropbox'
+alias dropx='cd ~/Dropbox'
 alias dwnlds='cd ~/Downloads'
 alias lxorg='cd /home/dvg/Dropbox/notebook/linux-management' 
 alias ntb='cd ~/Dropbox/notebook/'
