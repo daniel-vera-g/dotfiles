@@ -28,8 +28,7 @@ alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
 
 # -------------------------------------------------------------------
 # School
-# -------------------------------------------------------------------
-
+# ------------------------------------------------------------------- 
 alias usb="/media/dvg/62B6-0615/"
 
 # -------------------------------------------------------------------
@@ -241,4 +240,16 @@ alias cppt="pwd | copy"
 # pandoc
 # ------------------------------------------------------------------
 
-alias pandocp="pandoc -V geometry:margin=1in"
+alias pandocEc="pandoc --template eisvogel -N --toc"
+alias pandocEc="pandoc --template eisvogel -N --toc"
+
+# -------------------------------------------------------------------
+# Virtualbox
+# ------------------------------------------------------------------
+
+alias vbox="vboxmanage"
+alias vboxLa="vboxmanage  list vms"
+alias vboxLr="vboxmanaege list  runningvms"
+alias vboxGetRunId="vboxmanage list runningvms | sed -n -e '$!N' -e 's/\n//g' -e 's/.*{\([^{][^{]*\)}.*/\1/gp'"
+alias vboxO="vboxmanage startvm --type separate"
+alias vboxS="vboxmanage startvm  --type  headless"

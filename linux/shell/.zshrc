@@ -17,11 +17,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # ENABLE_CORRECTION="true"
 
 # Custom Plugins to load
-plugins=(git node npm vi-mode safe-paste);
+# plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
+plugins=(git node npm safe-paste);
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
-bindkey '^[[A' up-line-or-search                                                
-bindkey '^[[B' down-line-or-search
+# bindkey '^[[A' up-line-or-search                                                
+# bindkey '^[[B' down-line-or-search
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
