@@ -18,7 +18,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git node npm safe-paste);
+plugins=(git node npm safe-paste fasd);
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
 bindkey '^[[A' up-line-or-search                                                
@@ -56,9 +56,6 @@ n()
 
 export NNN_CONTEXT_COLORS='1234'
 export NNN_USE_EDITOR=1
-
-# z
-. ~/z.sh
 
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
