@@ -219,6 +219,7 @@ alias vhst="vagrant hostmanager"
 alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
 alias tmuxNewSess="tmux new-session -s"
+alias tmuxNewSessN="tmux new-session -t"
 
 alias tmuxAtt="tmux attach -t"
 alias tmuxDet="tmux detach"
