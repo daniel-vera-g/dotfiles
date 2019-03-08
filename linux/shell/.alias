@@ -245,7 +245,7 @@ alias cppt="pwd | copy"
 # pandoc
 # ------------------------------------------------------------------
 
-alias pandocEc="pandoc --template eisvogel -N --toc"
+alias pandocE="pandoc --template eisvogel -N"
 alias pandocEc="pandoc --template eisvogel -N --toc"
 
 # -------------------------------------------------------------------
