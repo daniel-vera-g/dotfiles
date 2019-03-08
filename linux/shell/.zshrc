@@ -56,6 +56,7 @@ n()
 
 export NNN_CONTEXT_COLORS='1234'
 export NNN_USE_EDITOR=1
+TERM=xterm-256color
 
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
