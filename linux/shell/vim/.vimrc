@@ -13,8 +13,12 @@ set splitright
 "Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
 
 "Own customisations
+"Set line number
 set number
+" Paste with F2
 set pastetoggle=<F2>
+"<Leader> + s to save
+noremap <Leader>s :update<CR>
 
 "Searching settings
 set incsearch
@@ -82,7 +86,7 @@ Plug 'vim-syntastic/syntastic'
 "Plug 'ajh17/VimCompletesMe' or muo-completesme
 Plug 'Valloric/YouCompleteMe'
 
-"Autocomplte on tab
+"Autocomplete on tab
 "https://news.ycombinator.com/item?id=13960147
 "https://medium.com/@sszreter/vim-tab-autocomplete-in-insert-mode-and-fuzzy-search-for-opening-files-484260f52618
 "https://vim.fandom.com/wiki/Autocomplete_with_TAB_when_typing_words
