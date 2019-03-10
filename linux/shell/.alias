@@ -142,7 +142,7 @@ function current_branch() {
 # alias ls='ls -a' -> uncommented for exa
 alias rr="rm -rf"
 alias open="xdg-open"
-alias gch="google-chrome"
+alias gln="gnome-terminal -x glances -2"
 
 # -------------------------------------------------------------------
 # Shortcuts
