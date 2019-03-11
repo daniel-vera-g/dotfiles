@@ -162,17 +162,20 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+"Color Theme 3
+Plug 'liuchengxu/space-vim-theme'
+
 "Initialize plugin system
 call plug#end()
 
 "-------------Color Theme customization-------------
 
-" Colorsheme
-syntax enable
-colorscheme gruvbox
-
 "Setting dark mode
 set background=dark 
+
+" Colorsheme
+syntax enable
+colorscheme space_vim_theme
 
 "----- syntastic config --
 set statusline+=%#warningmsg#
