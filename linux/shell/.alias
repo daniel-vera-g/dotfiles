@@ -38,6 +38,19 @@ alias usb="/media/dvg/62B6-0615/"
 alias g="git"
 
 #---
+# Git hacks
+#---
+
+# Reset file
+alias gre='git reset'
+# Change to point in the past
+alias gref='git reflog'
+# Change to last state
+alias greSt='git reset HEAD@'
+# Get Info about remote origin
+alias grem='git remote -v'
+
+#---
 # add
 #---
 
@@ -56,6 +69,7 @@ alias gco='g commit'
 alias gca='gc -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
+# Fix last commit Msg
 alias gmamend='git commit --amend'
 alias gc!='gc --amend'
 alias gca!='gca --amend'
@@ -110,6 +124,10 @@ alias ggrh='greh origin/$(current_branch)'
 
 alias gb='git branch'
 alias gba='g branch -a'
+# Change the branch name
+alias gbmv='git  branch -m'
+# Get info current branch
+alias gbinfo='git branch -vv'
 
 
 alias gc='git checkout'
