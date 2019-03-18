@@ -42,6 +42,7 @@ source $HOME/.path
 # TODO add big nnn function to external file and source it from here
 # source $HOME/quitcd.zsh
 export NNN_TMPFILE="/tmp/nnn"
+export NNN_NOTE='/home/dvg/Desktop/running-list.txt'
 
 # TODO Add this to function file & just source it from here
 n()
