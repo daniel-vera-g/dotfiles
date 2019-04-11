@@ -102,7 +102,7 @@ ln -sfv "$dir/shell/.tmux.conf" ~
 ln -sfv "$dir/shell/.bashrc" ~
 ln -sfv "$dir/shell/.hyper" ~
 ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/z.sh" ~
+ln -sfv "$dir/shell/glances/glances.conf" ~/.config/
 
 echo "Creating system simlinks"
 ln -sfv "$dir/system/.redshfit.conf" ~/.config

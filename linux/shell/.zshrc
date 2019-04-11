@@ -17,19 +17,47 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # ENABLE_CORRECTION="true"
 
 # Custom Plugins to load
-plugins=(git node npm docker docker-compose);
+# plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
+plugins=(git node npm safe-paste fasd);
+
+# make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
+bindkey '^[[A' up-line-or-search                                                
+bindkey '^[[B' down-line-or-search
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
+
+# GPG Agent
+# Needed to get git signing commits working
+# Source: https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
+export GPG_TTY=$(tty)
 
 # Source stuff from external files
 source $HOME/.alias
 source $HOME/.function
 source $HOME/.path
 
-# z
-. ~/z.sh
+# nnn file manager
+# TODO add big nnn function to external file and source it from here
+# source $HOME/quitcd.zsh
+export NNN_TMPFILE="/tmp/nnn"
+export NNN_NOTE='/home/dvg/Desktop/running-list.txt'
+
+# TODO Add this to function file & just source it from here
+n()
+{
+        nnn "$@"
+
+        if [ -f $NNN_TMPFILE ]; then
+                . $NNN_TMPFILE
+                rm $NNN_TMPFILE
+        fi
+}
+
+export NNN_CONTEXT_COLORS='1234'
+export NNN_USE_EDITOR=1
+TERM=xterm-256color
 
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -43,6 +71,14 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 # compinit
 
+# Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
+
+# Command palette bookmarker
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
 
 eval $(thefuck --alias)
