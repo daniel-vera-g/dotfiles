@@ -24,6 +24,7 @@ set splitright
 "Own customisations
 "Set line number
 set number
+highlight LineNr ctermfg=grey
 " Paste with F2
 set pastetoggle=<F2>
 "<Leader> + s to save
