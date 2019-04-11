@@ -23,8 +23,9 @@ set splitright
 
 "Own customisations
 "Set line number
-set number
-highlight LineNr ctermfg=grey
+" set number
+"highlight LineNr ctermfg=grey
+
 " Paste with F2
 set pastetoggle=<F2>
 "<Leader> + s to save
@@ -36,6 +37,9 @@ set hlsearch
 
 "Indentation
 set cindent
+
+"TODO remove this after good spell check
+set nospell
 
 "Autocomplete
 filetype plugin on
@@ -185,7 +189,7 @@ set background=dark
 
 " Colorsheme
 syntax enable
-colorscheme space_vim_theme
+colorscheme gruvbox
 
 "----- syntastic config --
 set statusline+=%#warningmsg#
@@ -196,3 +200,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+set number
+highlight LineNr ctermfg=red

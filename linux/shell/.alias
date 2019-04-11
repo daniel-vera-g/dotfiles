@@ -173,6 +173,7 @@ alias hyper="vim ~/.hyper.js"
 alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias reload="source ~/.zshrc"
+alias na="nautilus"
 
 # -------------------------------------------------------------------
 # Default options
