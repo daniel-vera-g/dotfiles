@@ -6,6 +6,11 @@ echo "##########################################################################
 
 
 dir=~/dotfiles/linux                    # dotfiles directory
+apps=()
 
 # Loop through applications and check if installed somwhere in the system
-for f in $(find $dir/apps/ -name '*.sh''); do rm dpkg -l | grep -E '^ii' | grep $f; done
+find $dir/apps/ -iname "*.sh" -type f -exec sh -c 'apps=("${apps[@]}" "${0}")' {} \;
+
+for i in "${apps[@]}"; do
+	echo $1
+done
