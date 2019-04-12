@@ -1,15 +1,15 @@
-# Installing ZSH
-
+echo "####################################################################################"
 echo "************************ Installing zsh ************************"
+echo "####################################################################################"
 
 # Install through the package manager
 echo "Installing zsh"
-apt-get install zsh
-apt-get install git-core
+sudo apt-get install zsh
+sudo apt-get install git-core
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 # Set Syntax highlighting
-echo "Installing Sytanx highlighting"
+echo "Installing syntax highlighting"
 cd ~ && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git  
 
 # Set default shell

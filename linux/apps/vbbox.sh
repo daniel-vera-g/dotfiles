@@ -1,7 +1,6 @@
-echo "************************ Installing vbbox ************************"
-
-sudo apt-get update
-sudo apt-get upgrade
+echo "####################################################################################"
+echo "************************ Installing Virtual box ************************"
+echo "####################################################################################"
 
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian `lsb_release -cs` contrib"
 
