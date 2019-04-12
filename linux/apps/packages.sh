@@ -1,9 +1,10 @@
-# Install different node packages
+echo "####################################################################################"
+echo "************************ Installing different node packages ************************"
+echo "####################################################################################"
 
-echo "************************ Installing packages ************************"
+# Install different node packages
 
 # Eslint 
 
 echo "installing eslint"
 sudo npm install -g eslint
-
