@@ -21,7 +21,14 @@ echo "...done"
 # First some cleanup
 chmod +x $dir/apps/cleanup/cleanup.sh && $dir/apps/cleanup/cleanup.sh
 
-# Loop & install
+# Install priority applications
+for e in $dir/apps/essentials/*.sh
+do
+  echo "Installing essential app $e"
+  chmod +x $e && $e
+done 
+
+# Loop & install other apps
 for f in $dir/apps/*.sh
 do
   echo "Processing $f file..."
