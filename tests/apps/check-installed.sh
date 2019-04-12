@@ -8,9 +8,16 @@ echo "##########################################################################
 dir=~/dotfiles/linux                    # dotfiles directory
 apps=()
 
-# Loop through applications and check if installed somwhere in the system
-find $dir/apps/ -iname "*.sh" -type f -exec sh -c 'apps=("${apps[@]}" "${0}")' {} \;
-
-for i in "${apps[@]}"; do
-	echo $1
+# Get all applications and save in array
+for i in $(find $dir/apps/ -iname "*.sh" -type f); do
+        echo $i
+		apps+=($i)
 done
+
+echo "-----------------------------------"
+printf '%s\n' "${apps[@]}"
+
+# Extrect name from path
+regex='.*?(?:[a-z][a-z]+).*?(?:[a-z][a-z]+).*?(?:[a-z][a-z]+).*?(?:[a-z][a-z]+).*?(?:[a-z][a-z]+).*?((?:[a-z][a-z]+))'
+
+	
