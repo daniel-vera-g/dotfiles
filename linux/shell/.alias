@@ -211,4 +211,10 @@ alias dkimgs="sudo docker images"
 # xclip
 # ------------------------------------------------------------------
 
-alias copy=" xclip -selection clipboard"
+alias copy="xclip -selection clipboard"
+
+# -------------------------------------------------------------------
+# pandoc
+# ------------------------------------------------------------------
+
+alias pandocp="pandoc -V geometry:margin=1in"
