@@ -1,4 +1,10 @@
 # -------------------------------------------------------------------
+# nvim
+# -------------------------------------------------------------------
+alias vim='nvim'
+alias v='nvim'
+
+# -------------------------------------------------------------------
 # exa
 # -------------------------------------------------------------------
 alias ls="exa"
@@ -168,7 +174,6 @@ alias gln="gnome-terminal -x glances -2"
 
 alias _="sudo"
 alias zshrc='vim ~/.zshrc'
-alias v='vim'
 alias hyper="vim ~/.hyper.js"
 alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
