@@ -160,15 +160,6 @@ function current_branch() {
 }
 
 # -------------------------------------------------------------------
-# Commands
-# -------------------------------------------------------------------
-
-# alias ls='ls -a' -> uncommented for exa
-alias rr="rm -rf"
-alias open="xdg-open"
-alias gln="gnome-terminal -x glances -2"
-
-# -------------------------------------------------------------------
 # Shortcuts
 # -------------------------------------------------------------------
 
@@ -179,6 +170,10 @@ alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias reload="source ~/.zshrc"
 alias na="nautilus"
+alias rr="rm -rf"
+alias open="xdg-open"
+alias gln="gnome-terminal -x glances -2"
+alias cat="bat"
 
 # -------------------------------------------------------------------
 # Default options
