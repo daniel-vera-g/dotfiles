@@ -9,7 +9,6 @@ echo "##########################################################################
 echo "###################################### STARTING WITH ALL THE INSTALLING ###################################### "
 
 ######################################
-
 dir=~/dotfiles/linux                    # dotfiles directory
 echo "The new dotfiles repository is: $dir"
 
@@ -19,9 +18,13 @@ cd $dir
 echo "...done"
 
 # First some cleanup
+
+echo "###################################### DOING SOME CLEANUP FIRST ###################################### "
 chmod +x $dir/apps/cleanup/cleanup.sh && $dir/apps/cleanup/cleanup.sh
 
 # Install priority applications
+
+echo "###################################### INSTALLING ESSENTIAL APPLICATIONS ###################################### "
 for e in $dir/apps/essentials/*.sh
 do
   echo "Installing essential app $e"
@@ -29,6 +32,8 @@ do
 done 
 
 # Loop & install other apps
+
+echo "###################################### INSTALLING GENRAL APPLICATIONS ###################################### "
 for f in $dir/apps/*.sh
 do
   echo "Processing $f file..."
