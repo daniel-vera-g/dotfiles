@@ -2,5 +2,5 @@ echo "##########################################################################
 echo "************************ Installing spotify ************************"
 echo "####################################################################################"
 
-sudo apt install snapd
-sudo snap install spotify
+sudo apt install -y snapd
+sudo snap install -y spotify
