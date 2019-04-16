@@ -8,11 +8,11 @@ sudo apt-get install -y software-properties-common && sudo add-apt-repository pp
 
 sudo apt-get install -y python-dev python-pip python3-dev python3-pip
 
-# Remove alternatives
+# Install python packages for python Plugins like YCM
 
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-sudo update-alternatives --config editor
+sudo pip2 install --upgrade pynvim &&  sudo pip3 install --upgrade pynvim
+
+# Install PLug
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

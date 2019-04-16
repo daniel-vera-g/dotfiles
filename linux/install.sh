@@ -92,6 +92,7 @@ ln -sfv "$dir/shell/git/.gitignore_global" ~
 
 echo "Creating simlinks for vim"
 ln -sfv "$dir/shell/vim/.vimrc" ~
+ln -sfv	"$dir/shell/nvim/init.vim" "~/.config/nvim/"
 
 echo "Creating symlinks for Shell configuration"
 ln -sfv "$dir/shell/.alias" ~

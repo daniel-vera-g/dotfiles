@@ -15,3 +15,9 @@
 > Look at Github issues
 
 * OSX dotfiles
+
+## Additional applications
+
+A list of further applications to install manually:
+
+* [Toptracker for time management and work tracking](https://www.toptal.com/tracker)
