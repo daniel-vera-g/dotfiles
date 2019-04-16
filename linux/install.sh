@@ -108,6 +108,8 @@ ln -sfv "$dir/shell/glances/glances.conf" ~/.config/
 echo "Creating system simlinks"
 ln -sfv "$dir/system/.redshfit.conf" ~/.config
 ln -sfv "$dir/system/terminator/config" ~/.config/
+ln -sfv "$dir/system/ordering-override.keyfile" ~/.local/share/indicators/application/ordering-override.keyfile
+ln -sfv "$dir/system/gpg.conf" ~/.gpg/
 
 echo "+++++++++++++++++++++++++++++ Done +++++++++++++++++++++++++++++"
 echo "Don't forget to configure SSH properly with key and config"
