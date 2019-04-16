@@ -1,7 +1,9 @@
 '''
     For the given path, get the List of all files in the directory tree
 '''
-import os, re, subprocess
+import os
+import re
+import subprocess
 
 
 def getListOfFiles(dirName):
@@ -22,29 +24,42 @@ def getListOfFiles(dirName):
     return allFiles
 
 
-def extractFileNames(pathOfFiles):
-    # Use RegEx to get only the file name
+def extractFileNamesFromPath(pathOfFiles):
     # List of file names
     fileNames = list()
 
-    # RegEx to match file name from path
-    re1 = '.*?'  # Non-greedy match on filler
-    re2 = '(?:[a-z][a-z]+)'  # Uninteresting: word
-    re3 = '.*?'  # Non-greedy match on filler
-    re4 = '(?:[a-z][a-z]+)'  # Uninteresting: word
-    re5 = '.*?'  # Non-greedy match on filler
-    re6 = '((?:[a-z][a-z]+))'  # Word 1
-    rg = re.compile(re1+re2+re3+re4+re5+re6, re.IGNORECASE | re.DOTALL)
+    # Match app name
+    re1 = "[ \w-]+\."
+    rg1 = re.compile(re1, re.IGNORECASE | re.DOTALL)
 
-    # Iterate over all paths & apply RegEx
+    # Iterate through paths and extract app name
     for path in pathOfFiles:
-        m = rg.search(path)
-        if m:
-            word = m.group(1)
-            fileNames.append(word)
+        regExResult = rg1.findall(path)
+        appName = regExResult[0].replace(".", "")
+        fileNames.append(appName)
+        # print(appName)
 
     return fileNames
 
+
+def checkInstalled(listApps):
+
+    # Iterate through apps in list and check if installed
+    for app in listApps:
+        # print("++++++++++++++++++ CHECKING FOR: " + app + "++++++++++++++++++")
+
+        # Get into right format(String)
+        app = str(app)
+
+        # TODO Remove bash script and make it here
+        # Call bash script, to check install status
+        try:
+            res = subprocess.check_output(["./check-installed.sh", app])
+            # print(res.splitlines()[0])
+        except subprocess.CalledProcessError as e:
+            print("++++++++++++++++++ ERROR AT: " + app + "++++++++++++++++++")
+            print("App could not be found, error:")
+            print(e)
 
 def main():
 
@@ -53,20 +68,11 @@ def main():
     # Get the list of all files in directory tree at given path
     listOfFiles = getListOfFiles(dirName)
 
-    # Print the files(DEBUG)
-    # for elem in listOfFiles:
-    #     print(elem)
-    
     # Remove file path & get only the file names
-    fileNames = extractFileNames(listOfFiles)
+    fileNames = extractFileNamesFromPath(listOfFiles)
 
-    print("++++++++++++++++++++++++++")
-
-    # Print name of files(DEBUG)
-    for file in fileNames:
-        print(file)
-
-
+    # Check apps for install status
+    checkInstalled(fileNames)
 
 if __name__ == '__main__':
     main()
