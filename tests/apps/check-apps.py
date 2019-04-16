@@ -1,7 +1,8 @@
 '''
-    For the given path, get the List of all files in the directory tree 
+    For the given path, get the List of all files in the directory tree
 '''
-import os
+import os, re, subprocess
+
 
 def getListOfFiles(dirName):
     # create a list of file and sub directories
@@ -20,6 +21,31 @@ def getListOfFiles(dirName):
 
     return allFiles
 
+
+def extractFileNames(pathOfFiles):
+    # Use RegEx to get only the file name
+    # List of file names
+    fileNames = list()
+
+    # RegEx to match file name from path
+    re1 = '.*?'  # Non-greedy match on filler
+    re2 = '(?:[a-z][a-z]+)'  # Uninteresting: word
+    re3 = '.*?'  # Non-greedy match on filler
+    re4 = '(?:[a-z][a-z]+)'  # Uninteresting: word
+    re5 = '.*?'  # Non-greedy match on filler
+    re6 = '((?:[a-z][a-z]+))'  # Word 1
+    rg = re.compile(re1+re2+re3+re4+re5+re6, re.IGNORECASE | re.DOTALL)
+
+    # Iterate over all paths & apply RegEx
+    for path in pathOfFiles:
+        m = rg.search(path)
+        if m:
+            word = m.group(1)
+            fileNames.append(word)
+
+    return fileNames
+
+
 def main():
 
     dirName = '../../linux/apps/'
@@ -27,9 +53,20 @@ def main():
     # Get the list of all files in directory tree at given path
     listOfFiles = getListOfFiles(dirName)
 
-    # Print the files
-    for elem in listOfFiles:
-        print(elem)
+    # Print the files(DEBUG)
+    # for elem in listOfFiles:
+    #     print(elem)
+    
+    # Remove file path & get only the file names
+    fileNames = extractFileNames(listOfFiles)
+
+    print("++++++++++++++++++++++++++")
+
+    # Print name of files(DEBUG)
+    for file in fileNames:
+        print(file)
+
+
 
 if __name__ == '__main__':
     main()
