@@ -42,7 +42,7 @@ alias usb="/media/dvg/62B6-0615/"
 # -------------------------------------------------------------------
 
 alias g="git"
-
+alias grso="git remote show origin"
 #---
 # Git hacks
 #---
