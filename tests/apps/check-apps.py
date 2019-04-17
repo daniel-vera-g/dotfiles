@@ -1,9 +1,21 @@
+#!/usr/bin/python
 '''
     For the given path, get the List of all files in the directory tree
 '''
 import os
 import re
 import subprocess
+
+# List of applications that have to be tested manually
+blacklist = ["exfat", "cleanup"]
+
+# TODO check npm apps with npm
+# TODO check simlink pandoc esivogel
+# TODO Test tweak tool for each OS
+# TODO add all failed applications to list, check better and show afterwards
+# TODO Check for fonts(powerline & firacode)
+# TODO Check marker from home directory
+# TODO httpie, git-flow, system-load-indicator, solar, miktex, safe-eyes & spaceship-theme -> Check other installment folders
 
 
 def getListOfFiles(dirName):
