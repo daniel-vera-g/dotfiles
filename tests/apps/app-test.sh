@@ -29,18 +29,12 @@ do
   chmod +x $e && $e
 done 
 
-# Loop & install other apps
-for f in $dir/apps/*/*;
+# First install basic apps
+for f in $dir/apps/* $dir/apps/npm-packages/*;
 do
-  echo "Installing app $f"
+  echo "Processing $f file..."
   chmod +x $f && $f
 done
-
-# for f in $dir/apps/*.sh
-# do
-#   echo "Processing $f file..."
-#   chmod +x $f && $f
-# done
 
 # Do some Testing
 echo "Now doing some testing:"
