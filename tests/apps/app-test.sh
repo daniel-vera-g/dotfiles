@@ -9,6 +9,10 @@ echo "##########################################################################
 echo "###################################### STARTING WITH ALL THE INSTALLING ###################################### "
 
 ######################################
+
+# Create download folder
+mkdir ~/Downloads/
+
 dir=~/dotfiles/linux                    # dotfiles directory
 echo "The new dotfiles repository is: $dir"
 
@@ -38,7 +42,7 @@ done
 
 # Do some Testing
 echo "Now doing some testing:"
-chmod +x ./check-apps.py && ./check-apps.py
+chmod +x ./check-apps.py && python ./check-apps.py
 
 echo "####################################################################################"
 echo "************************ Installing apps ready ************************"
