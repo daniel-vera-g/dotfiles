@@ -25,16 +25,15 @@ chmod +x $dir/apps/cleanup/cleanup.sh && $dir/apps/cleanup/cleanup.sh
 echo "###################################### INSTALLING ESSENTIAL APPLICATIONS ###################################### "
 for e in $dir/apps/essentials/*.sh
 do
-  echo "Installing essential apps $e"
+  echo "Installing essential app $e"
   chmod +x $e && $e
 done 
 
 # Loop & install other apps
-echo "###################################### INSTALLING GENRAL APPLICATIONS ###################################### "
-for f in $dir/apps/*; do
-  if [ -d "$d" ]; then         # or:  if test -d "$d"; then
-    ( cd "$d" && chmod +x $f && $f )
-  fi
+for f in $dir/apps/*/*;
+do
+  echo "Installing app $f"
+  chmod +x $f && $f
 done
 
 # for f in $dir/apps/*.sh
