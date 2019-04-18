@@ -43,6 +43,7 @@ done
 # done
 
 # Do some Testing
+echo "Now doing some testing:"
 chmod +x ./check-apps.py && ./check-apps.py
 
 echo "####################################################################################"
