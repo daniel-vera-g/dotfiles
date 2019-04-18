@@ -4,4 +4,4 @@ echo "##########################################################################
 
 sudo add-apt-repository ppa:slgobinath/safeeyes
 sudo apt update
-sudo apt install safeeyes
+sudo apt install -y safeeyes
