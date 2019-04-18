@@ -2,17 +2,16 @@
 '''
     For the given path, get the List of all files in the directory tree
 '''
-import os
-import re
-import subprocess
+import os, re, subprocess
 
-'''Return a list of file with path '''
+# List of not found applications
+notFoundApps = []
+
+'''Return a list of files with path '''
 def getListOfFiles(dirName):
-    # create a list of file and sub directories
-    # names in the given directory
     listOfFile = os.listdir(dirName)
     allFiles = list()
-    # Iterate over all the entries
+    
     for entry in listOfFile:
         # Create full path
         fullPath = os.path.join(dirName, entry)
@@ -22,7 +21,6 @@ def getListOfFiles(dirName):
         else:
             allFiles.append(fullPath)
 
-    # Return all files as path
     return allFiles
 
 ''' Return the filenames from the file path '''
@@ -33,7 +31,6 @@ def extractFileNamesFromPath(pathOfFiles):
     re1 = "[ \w-]+\."
     rg1 = re.compile(re1, re.IGNORECASE | re.DOTALL)
 
-    # Iterate through paths and extract app name
     for path in pathOfFiles:
         # Apply RegEx
         regExResult = rg1.findall(path)
@@ -41,16 +38,13 @@ def extractFileNamesFromPath(pathOfFiles):
         appName = regExResult[0].replace(".", "")
         fileNames.append(appName)
 
-    # Return list of filename
     return fileNames
 
 ''' Check different install methods for each app '''
 def checkInstalled(listApps):
-    # Iterate through apps in list and check if installed
     for app in listApps:
-        # Get into right format(String)
         app = str(app)
-        # Check for different methods
+
         if not listApps[app]:
             appStatus = checkBinaries(app)
             listApps = setStatusProgramm(listApps, app, appStatus)
@@ -58,63 +52,34 @@ def checkInstalled(listApps):
             appStatus = checkNpm(app)
             listApps = setStatusProgramm(listApps, app, appStatus)
         if not listApps[app]:
-	
-            # TODO Check for fonts(powerline & firacode)?
-            # TODO Check marker from home directory
-            # TODO httpie, git-flow, system-load-indicator, solar, miktex, safe-eyes & spaceship-theme -> Check other installment folders"
+            addNotFoundApps(app)
 
-            appStatus = checkAll(app)
-            listApps = setStatusProgramm(listApps, app, appStatus)
-
-        if not listApps[app]:
-           print(app + "could not be found and is probably not installed.\n")
-           print("Please check manually ") 
-
-            # TODO show error log from install
-            # Show specific part -> search with grep 
-            # TODO add all failed applications to list, check better and show afterwards
+''' Add apps to list, that could not be found '''
+def addNotFoundApps(app):
+    notFoundApps.append(app)
 
 ''' Check binaries and returns new Status '''
 def checkBinaries(app):
     try:
-        res = subprocess.call(["which", app])
+        res = subprocess.call(["which", app],  stdout=subprocess.PIPE)
         if res == 0:
             return True
         else:
-            print(
-            app + " could not be found as installed with the binary search")
-            print("Proceding with other methods...")
-            return False
+            return False 
     except subprocess.CalledProcessError as e:
-        print("There was an error searching for the binaries of :" + app)
+        # print("Error checking " + app + " for binaries.")
         print(e)
 
 ''' Checking for global npm package installations and returns new Status '''               
 def checkNpm(app):
     try:
-        # TODO remove shell=True for security reasons
-        res = subprocess.call(["npm", "list", "-g", app, "|", "grep", app], shell=True)
+        res = subprocess.call(["npm", "list", "-g", app, "|", "grep", app], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         if res == 0:
             return True
         else:
-            print(
-            app + " could not be found as installed in the local npm directory.")
-            print("Proceding with other methods...")
             return False
     except subprocess.CalledProcessError as e:
         print("Error checking existence of npm package: " + app)
-        print(e)
-
-''' Checking system wide(worst case) and returns new Status '''
-def checkAll(app):
-    try:
-        res = subprocess.call(["sudo", "find", "/", "-name", "'*"+app+"'", "|", "grep", app])
-        if res == 0:
-            return True
-        else:
-            return False
-    except subprocess.CalledProcessError as e:
-        print("Error at the system wide search after: " + app)
         print(e)
 
 ''' Return Dictionary with programms to check '''
@@ -147,6 +112,18 @@ def main():
     # Check apps for install status
     checkInstalled(programms)
 
+    #Show not installed apps
+    print("""
+    The following list of apps could not be found or had errors installing.\n
+    Please check the logs for errors(search for specific application with: cat LOG | grep APPNAME)
+    or search system wide: sudo find / -name APPNAME | grep APPNAME.\n
+    Check manually with the whereis command below:
+    """)
+    for app in notFoundApps:
+        try:
+            subprocess.call(["whereis", app])
+        except subprocess.CalledProcessError as e:
+            print(e)
 
 if __name__ == '__main__':
     main()
