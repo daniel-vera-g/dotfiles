@@ -1,48 +1,50 @@
+# Source exports first to get other stuff working
 source $HOME/.exports
 
 ZSH_DISABLE_COMPFIX=true
 
-# Path to your oh-my-zsh installation.
-# export ZSH=$HOME/.oh-my-zsh
-export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load.
-# ZSH_THEME="amuse"
 ZSH_THEME="spaceship"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
-# ZSH_THEME="robbyrussell"
-
-# TEST
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
 
 # Custom Plugins to load
-plugins=(git node npm docker docker-compose);
+# plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
+plugins=(git git-open node npm safe-paste fasd);
 
-# User configuration
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
+bindkey '^[[A' up-line-or-search                                                
+bindkey '^[[B' down-line-or-search
+
+# User config
 source $ZSH/oh-my-zsh.sh
 
 # Source stuff from external files
 source $HOME/.alias
 source $HOME/.function
+source $HOME/.docker_aliases
 source $HOME/.path
 
-# z
-. ~/z.sh
+# Colors in terminal
+TERM=xterm-256color
 
 # Syntax Highlighting
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Cutomizing of the Colors for LS & autocomplete
-alias ls="ls --color=auto"
 # General color settings
 LS_COLORS=$LS_COLORS:'ow=37;42:'
+
 # Set colors of autocomplete as the same as ls
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
 # compinit
+autoload -Uz compinit
 
+# Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+stty -ixon
+
+# Command palette bookmarker
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 eval $(thefuck --alias)

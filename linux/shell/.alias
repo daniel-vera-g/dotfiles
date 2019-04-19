@@ -1,11 +1,32 @@
 # -------------------------------------------------------------------
+# nvim
+# -------------------------------------------------------------------
+alias vim='nvim'
+alias v='nvim'
+
+# -------------------------------------------------------------------
+# exa
+# -------------------------------------------------------------------
+# Cutomizing of the Colors for LS & autocomplete
+# alias ls="ls --color=auto"
+alias ls="exa"
+# l as la because more readable
+# alias l="exa -a"
+alias ll="exa -lh"
+alias l="exa -lah"
+#alias la="exa -lah"
+alias lt="exa -Talh --git"
+alias lg="exa -lah --git"
+
+
+# -------------------------------------------------------------------
 # Directory
 # -------------------------------------------------------------------
-alias dropbox='cd ~/Dropbox'
-alias downloads='cd ~/Downloads'
-alias journal='cd ~/Dropbox/documents/journal/'
-alias notebook='cd ~/Dropbox/documents/notebook/'
-alias education='cd /home/dvg/Dropbox/documents/notebook/projects/education'
+alias dropx='cd ~/Dropbox'
+alias dwnlds='cd ~/Downloads'
+alias lxorg='cd /home/dvg/Dropbox/notebook/linux-management' 
+alias ntb='cd ~/Dropbox/notebook/'
+alias edu='cd /home/dvg/Dropbox/notebook/projects/education'
 alias dot='cd /home/dvg/dotfiles'
 
 # -------------------------------------------------------------------
@@ -14,10 +35,28 @@ alias dot='cd /home/dvg/dotfiles'
 alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
 
 # -------------------------------------------------------------------
+# School
+# ------------------------------------------------------------------- 
+alias usb="/media/dvg/62B6-0615/"
+
+# -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
 
 alias g="git"
+alias grso="git remote show origin"
+#---
+# Git hacks
+#---
+
+# Reset file
+alias gre='git reset'
+# Change to point in the past
+alias gref='git reflog'
+# Change to last state
+alias greSt='git reset HEAD@'
+# Get Info about remote origin
+alias grem='git remote -v'
 
 #---
 # add
@@ -38,6 +77,7 @@ alias gco='g commit'
 alias gca='gc -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
+# Fix last commit Msg
 alias gmamend='git commit --amend'
 alias gc!='gc --amend'
 alias gca!='gca --amend'
@@ -92,6 +132,10 @@ alias ggrh='greh origin/$(current_branch)'
 
 alias gb='git branch'
 alias gba='g branch -a'
+# Change the branch name
+alias gbmv='git  branch -m'
+# Get info current branch
+alias gbinfo='git branch -vv'
 
 
 alias gc='git checkout'
@@ -118,23 +162,21 @@ function current_branch() {
 }
 
 # -------------------------------------------------------------------
-# Commands
-# -------------------------------------------------------------------
-
-alias ls='ls -a'
-alias rr="rm -rf"
-alias open="xdg-open"
-
-# -------------------------------------------------------------------
 # Shortcuts
 # -------------------------------------------------------------------
 
 alias _="sudo"
 alias zshrc='vim ~/.zshrc'
+alias v='vim'
 alias hyper="vim ~/.hyper.js"
 alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias reload="source ~/.zshrc"
+alias na="nautilus"
+alias rr="rm -rf"
+alias open="xdg-open"
+alias gln="gnome-terminal -x glances -2"
+alias cat="bat"
 
 # -------------------------------------------------------------------
 # Default options
@@ -148,11 +190,10 @@ alias x+="chmod +x"
 # -------------------------------------------------------------------
 # Global aliases
 # -------------------------------------------------------------------
-
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
 alias tree="tree -A"
@@ -175,13 +216,25 @@ alias npmListG='npm list -g --depth=0'
 # Vagrant
 # -------------------------------------------------------------------
 
-alias v="vagrant global-status"
+alias vg="vagrant"
+alias vgsl="vagrant snapshot list"
+alias vgss="vagrant snapshot save"
+alias vgsr=vagrant snapshot restore"
+alias vgs="vagrant global-status"
+alias vhl='vagrant hosts list'
+alias vst="vagrant status"
 alias vup="vagrant up"
-alias vhalt="vagrant halt"
 alias vssh="vagrant ssh"
+alias vhalt="vagrant halt"
+alias vs="vagrant suspend"
+alias vr="vagrant resume"
 alias vreload="vagrant reload"
 alias vdestr="vagrant destroy"
 alias vrebuild="vagrant destroy --force && vagrant up"
+# requires vagrant-list plugin
+alias vl="vagrant list"
+# requires vagrant-hostmanager plugin
+alias vhst="vagrant hostmanager"
 
 # -------------------------------------------------------------------
 # tmux
@@ -192,6 +245,7 @@ alias vrebuild="vagrant destroy --force && vagrant up"
 alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
 alias tmuxNewSess="tmux new-session -s"
+alias tmuxNewSessN="tmux new-session -t"
 
 alias tmuxAtt="tmux attach -t"
 alias tmuxDet="tmux detach"
@@ -199,16 +253,30 @@ alias tmuxDet="tmux detach"
 alias tmuxL="tmux ls"
 
 # -------------------------------------------------------------------
-# Docker
+# Docker -> MIGRATED TO EXTERNAL FILE
 # -------------------------------------------------------------------
-
-alias dkps="sudo docker ps"
-alias dkst="sudo docker stats"
-alias dkpsa="sudo docker ps -a"
-alias dkimgs="sudo docker images"
 
 # -------------------------------------------------------------------
 # xclip
 # ------------------------------------------------------------------
 
-alias copy=" xclip -selection clipboard"
+alias copy="xclip -selection clipboard"
+alias cppt="pwd | copy"
+
+# -------------------------------------------------------------------
+# pandoc
+# ------------------------------------------------------------------
+
+alias pandocE="pandoc --template eisvogel -N"
+alias pandocEc="pandoc --template eisvogel -N --toc"
+
+# -------------------------------------------------------------------
+# Virtualbox
+# ------------------------------------------------------------------
+
+alias vbox="vboxmanage"
+alias vboxLa="vboxmanage  list vms"
+alias vboxLr="vboxmanaege list  runningvms"
+alias vboxGetRunId="vboxmanage list runningvms | sed -n -e '$!N' -e 's/\n//g' -e 's/.*{\([^{][^{]*\)}.*/\1/gp'"
+alias vboxO="vboxmanage startvm --type separate"
+alias vboxS="vboxmanage startvm  --type  headless"

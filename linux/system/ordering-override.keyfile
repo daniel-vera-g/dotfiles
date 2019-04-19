@@ -1,0 +1,17 @@
+[Ordering Index Overrides]
+nm-applet=1
+gnome-power-manager=2
+ibus=3
+gst-keyboard-xkb=4
+gsd-keyboard-xkb=5
+indicator-solaar=6
+Shutter=7
+AutoKey=8
+copyq=9
+caffeine-cup-empty=10
+redshift=11
+safeeyes=12
+dropbox-client-2872=13
+indicator-diskman=14
+multiload=15
+netspeed=16
