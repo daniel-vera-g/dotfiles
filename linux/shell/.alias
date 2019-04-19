@@ -7,6 +7,8 @@ alias v='nvim'
 # -------------------------------------------------------------------
 # exa
 # -------------------------------------------------------------------
+# Cutomizing of the Colors for LS & autocomplete
+# alias ls="ls --color=auto"
 alias ls="exa"
 # l as la because more readable
 # alias l="exa -a"

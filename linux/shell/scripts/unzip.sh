@@ -1,5 +1,5 @@
 #!/bin/bash
-#Unzip all downloaded files
+# Unzip all downloaded files
 
 for f in ./* ; do
     echo "$f"
