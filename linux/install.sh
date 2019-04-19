@@ -80,7 +80,7 @@ done
 
 echo "###################################### FINALLY DOING SOME INSTALLATION TESTS ######################################"
 cd ~/dotfiles/tests/apps/helper/
-chmod +x ./check-apps.py && python ./check-app-status.py
+chmod +x ./check-app-status.py && python ./check-app-status.py
 
 echo "####################################################################################"
 echo "************************ INSTALLATION APPS DONE ************************"
