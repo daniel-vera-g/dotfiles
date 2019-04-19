@@ -1,7 +1,8 @@
 #!/usr/bin/python
 '''
-    For the given path, get the List of all files in the directory tree
+    Check the installation status of every application in the linux/apps/ directory
 '''
+
 import os, re, subprocess
 
 # List of not found applications
