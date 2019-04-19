@@ -39,7 +39,7 @@ The scripts on this repository has been tested on `Ubuntu 18.04` and partially o
 
 ## Getting Started and installing
 
-1. Clone the repository
+1. Clone the repository or get the latest [stable release](https://github.com/daniel-vera-g/dotfiles/releases) and unpack it in your home directory.
 2. Execute the install script: `./INSTALL.sh`
 
 This will install all the applications listed under the `linux/apps/` directory, run some tests on this applications after installing(Tests located in `/tests/apps/`) and simlink all the configuration files located in `/linux/shell/`.
