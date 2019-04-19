@@ -70,7 +70,7 @@ alias dkst="sudo docker start"
 # Get Images
 alias dki="sudo docker images"
 
-############################### Clean up ############################### -> TODO: EXPORT TO CLEAN UP SCRIPT
+############################### Clean up ############################### -> TODO: EXPORT TO CLEAN UP SCRIPT(Issue: #151)
 # List all exited containers
 alias dkle="docker ps -aq -f status=exited"
 
