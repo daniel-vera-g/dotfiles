@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 # Source stuff from external files
 source $HOME/.alias
 source $HOME/.function
+source $HOME/.docker_aliases
 source $HOME/.path
 
 # Colors in terminal
