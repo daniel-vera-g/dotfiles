@@ -2,7 +2,7 @@ echo "##########################################################################
 echo "************************ Installing nvim ************************"
 echo "####################################################################################"
 
-sudo apt-get install -y software-properties-common && sudo add-apt-repository ppa:neovim-ppa/stable && sudo apt-get update & sudo apt-get install -y neovim
+sudo apt-get install -y software-properties-common && sudo add-apt-repository ppa:neovim-ppa/stable && sudo apt-get update && sudo apt-get install -y neovim
 
 # Python requirements
 
