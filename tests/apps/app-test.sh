@@ -42,6 +42,7 @@ done
 
 # Do some Testing
 echo "Now doing some testing:"
+cd ~/dotfiles/tests/apps/
 chmod +x ./check-apps.py && python ./check-apps.py
 
 echo "####################################################################################"
