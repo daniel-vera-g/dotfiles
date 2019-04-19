@@ -21,34 +21,19 @@ set splitbelow
 set splitright
 "Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
 
-"Own customisations
-"Set line number
-" set number
-"highlight LineNr ctermfg=grey
+"Set better leader
+let mapleader = ","
 
-" Paste with F2
-set pastetoggle=<F2>
-"<Leader> + s to save
-noremap <Leader>s :update<CR>
+" + s to save
+noremap s :update
 
 "Searching settings
 set incsearch
 set hlsearch
 
-"Indentation
-set cindent
-
-"TODO remove this after good spell check
-set nospell
-
 "Autocomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-    
-"For TMUX color display
- if exists('$TMUX')
-   set term=screen-256color
- endif
 
 "Cursor
 let &t_SI = "\e[6 q"
@@ -62,12 +47,6 @@ augroup END
 
 "-------------Vim plug -------------
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
 "- Avoid using standard Vim directory names like 'plugin'
@@ -75,17 +54,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 "----- General plugins ----
-
-" Nerdtree TODO
-"On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-"Nerdtree git plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
-"Schortcut for NERDTree toggle
-map <C-n> :NERDTreeToggle<CR>
-"Open nerd tree when opening folder
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 "Plug outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -97,7 +65,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 
 "Autocomplete
-"Plug 'ajh17/VimCompletesMe' or muo-completesme
 Plug 'Valloric/YouCompleteMe'
 
 "Autocomplete on tab
@@ -116,8 +83,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Execute tmux commands in vim
 Plug 'benmills/vimux'
-"Set better leader
-let mapleader = ","
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
@@ -190,16 +155,6 @@ set background=dark
 " Colorsheme
 syntax enable
 colorscheme gruvbox
-
-"----- syntastic config --
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 set number
 highlight LineNr ctermfg=red

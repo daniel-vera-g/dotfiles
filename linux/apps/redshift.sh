@@ -2,4 +2,4 @@ echo "##########################################################################
 echo "************************ Installing redshift ************************"
 echo "####################################################################################"
 
-sudo apt-get install redshift redshift-gtk
+sudo apt-get install -y redshift redshift-gtk

@@ -1,5 +1,18 @@
+#!/usr/bin/env bash
+
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
+
+# Use nnn file manager with only the n key
+n()
+{
+        nnn "$@"
+
+        if [ -f $NNN_TMPFILE ]; then
+                . $NNN_TMPFILE
+                rm $NNN_TMPFILE
+        fi
+}
 
 # Create a new directory and enter it
 function mk() {
@@ -9,9 +22,6 @@ function mk() {
 # function manpdf() {
 #  man -t "${1}" | open -f -a /Applications/Preview.app/
 # }
-
-
-#!/usr/bin/env bash
 
 # Create a new directory and enter it
 function mkd() {

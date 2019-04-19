@@ -3,4 +3,4 @@ echo "************************ Installing pandoc ************************"
 echo "####################################################################################"
 
 
-sudo apt-get install pandoc
+sudo apt-get install -y pandoc

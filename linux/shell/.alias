@@ -1,6 +1,14 @@
 # -------------------------------------------------------------------
+# nvim
+# -------------------------------------------------------------------
+alias vim='nvim'
+alias v='nvim'
+
+# -------------------------------------------------------------------
 # exa
 # -------------------------------------------------------------------
+# Cutomizing of the Colors for LS & autocomplete
+# alias ls="ls --color=auto"
 alias ls="exa"
 # l as la because more readable
 # alias l="exa -a"
@@ -36,7 +44,7 @@ alias usb="/media/dvg/62B6-0615/"
 # -------------------------------------------------------------------
 
 alias g="git"
-
+alias grso="git remote show origin"
 #---
 # Git hacks
 #---
@@ -154,15 +162,6 @@ function current_branch() {
 }
 
 # -------------------------------------------------------------------
-# Commands
-# -------------------------------------------------------------------
-
-# alias ls='ls -a' -> uncommented for exa
-alias rr="rm -rf"
-alias open="xdg-open"
-alias gln="gnome-terminal -x glances -2"
-
-# -------------------------------------------------------------------
 # Shortcuts
 # -------------------------------------------------------------------
 
@@ -174,6 +173,10 @@ alias refresh="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias reload="source ~/.zshrc"
 alias na="nautilus"
+alias rr="rm -rf"
+alias open="xdg-open"
+alias gln="gnome-terminal -x glances -2"
+alias cat="bat"
 
 # -------------------------------------------------------------------
 # Default options
@@ -213,6 +216,10 @@ alias npmListG='npm list -g --depth=0'
 # Vagrant
 # -------------------------------------------------------------------
 
+alias vg="vagrant"
+alias vgsl="vagrant snapshot list"
+alias vgss="vagrant snapshot save"
+alias vgsr=vagrant snapshot restore"
 alias vgs="vagrant global-status"
 alias vhl='vagrant hosts list'
 alias vst="vagrant status"

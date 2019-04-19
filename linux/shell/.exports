@@ -1,6 +1,24 @@
-# Path to your dotfiles installation.
-export DOTFILES=$HOME/.dotfiles
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
+# User configuration
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# GPG Agent
+# Needed to get git signing commits working
+# Source: https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
+export GPG_TTY=$(tty)
+
+# nnn file manager
+# source $HOME/quitcd.zsh
+export NNN_TMPFILE="/tmp/nnn"
+export NNN_NOTE='/home/dvg/Desktop/running-list.txt'
+
+export NNN_CONTEXT_COLORS='1234'
+export NNN_USE_EDITOR=1
+
+# Path to your dotfiles installation.
+export DOTFILES=$HOME/dotfiles
 
 # Make vim the default editor.
 export EDITOR='vim';
