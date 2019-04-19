@@ -144,7 +144,7 @@ ln -sfv "$dir/system/gpg.conf" ~/.gpg/
 ln -sfv "$dir/system/.redshift.conf" ~/.config/
 
 # Create directory if not existent
-mkdir ~/.local/share/indicators/application/
+mkdir -p ~/.local/share/indicators/application/
 ln -sfv "$dir/system/ordering-override.keyfile" ~/.local/share/indicators/application/ordering-override.keyfile
 
 echo "####################################################################################"
