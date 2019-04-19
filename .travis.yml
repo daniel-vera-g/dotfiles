@@ -1,4 +1,7 @@
 language: bash
 
+before_script:
+    - git clone https://github.com/daniel-vera-g/dotfiles.git && cd dotfiles
+
 script:
-    - bash INSTALL.sh
+    - bash ./INSTALL.sh
