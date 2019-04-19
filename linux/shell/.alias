@@ -216,6 +216,10 @@ alias npmListG='npm list -g --depth=0'
 # Vagrant
 # -------------------------------------------------------------------
 
+alias vg="vagrant"
+alias vgsl="vagrant snapshot list"
+alias vgss="vagrant snapshot save"
+alias vgsr=vagrant snapshot restore"
 alias vgs="vagrant global-status"
 alias vhl='vagrant hosts list'
 alias vst="vagrant status"
