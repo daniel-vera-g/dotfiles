@@ -219,7 +219,7 @@ alias npmListG='npm list -g --depth=0'
 alias vg="vagrant"
 alias vgsl="vagrant snapshot list"
 alias vgss="vagrant snapshot save"
-alias vgsr=vagrant snapshot restore"
+alias vgsr="vagrant snapshot restore"
 alias vgs="vagrant global-status"
 alias vhl='vagrant hosts list'
 alias vst="vagrant status"
@@ -275,8 +275,8 @@ alias pandocEc="pandoc --template eisvogel -N --toc"
 # ------------------------------------------------------------------
 
 alias vbox="vboxmanage"
-alias vboxLa="vboxmanage  list vms"
-alias vboxLr="vboxmanaege list  runningvms"
+alias vboxLa="vboxmanage list vms"
+alias vboxLr="vboxmanaege list runningvms"
 alias vboxGetRunId="vboxmanage list runningvms | sed -n -e '$!N' -e 's/\n//g' -e 's/.*{\([^{][^{]*\)}.*/\1/gp'"
 alias vboxO="vboxmanage startvm --type separate"
-alias vboxS="vboxmanage startvm  --type  headless"
+alias vboxS="vboxmanage startvm  --type headless"
