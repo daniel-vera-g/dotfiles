@@ -44,13 +44,8 @@ augroup myCmds
 	autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
-" Spelling
-setlocal spell
-set spelllang=de,en_gb
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
 " ----------------------------------------------------------
-" --------------------- Custom Settings---------------------
+" --------------------- Plug ---------------------
 " ----------------------------------------------------------
 
 "Specify a directory for plugins
@@ -248,3 +243,9 @@ call plug#end()
 " Colorsheme(At the end because not loaded)
 colorscheme gruvbox
 set background=dark
+
+" Spelling
+setlocal spell
+set spelllang=de,en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+highlight SpellBad guifg=#ff0000
