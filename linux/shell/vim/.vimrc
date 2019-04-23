@@ -10,8 +10,7 @@ let mapleader = ","
 "More natural vim spliting
 "Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-j> :wincmd j<CR> nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " CTRL-Tab is next tab
@@ -127,18 +126,8 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 Plug 'https://github.com/pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
 
-" +++++++++++++++++++++ Python(TODO -> from website) +++++++++++++++++++++
-
-" Better Visual Guide
-Plug 'Yggdroot/indentLine'
 " syntax check
 Plug 'w0rp/ale'
-
-" Formater
-Plug 'Chiel92/vim-autoformat'
-" vim-autoformat
-noremap <F4> :Autoformat<CR>
-
 " Ale
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -146,6 +135,11 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {'python': ['flake8']}
+
+" Formater
+Plug 'Chiel92/vim-autoformat'
+" vim-autoformat
+noremap <F4> :Autoformat<CR>
 
 " +++++++++++++++++++++ Git +++++++++++++++++++++
 
