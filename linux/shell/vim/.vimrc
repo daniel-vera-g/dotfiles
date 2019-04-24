@@ -77,6 +77,19 @@ set omnifunc=syntaxcomplete#Complete
 " Show buffer
 Plug 'https://github.com/junegunn/vim-peekaboo'
 
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Nerdtree git plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Schortcut for NERDTree toggle
+map <C-n> :NERDTreeToggle<CR>
+" Open nerd tree when opening folder
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+"Terminal
+Plug 'vimlab/split-term.vim'
+
 " +++++++++++++++++++++ Search +++++++++++++++++++++
 
 Plug 'haya14busa/incsearch.vim'
