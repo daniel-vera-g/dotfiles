@@ -58,6 +58,7 @@ call plug#begin('~/.vim/plugged')
 " +++++++++++++++++++++ General Plugins +++++++++++++++++++++
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Close brackets
 Plug 'tpope/vim-surround'
