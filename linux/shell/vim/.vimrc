@@ -76,7 +76,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 " Show buffer
-Plug 'https://github.com/junegunn/vim-peekaboo'
+"Plug 'https://github.com/junegunn/vim-peekaboo'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -90,6 +90,14 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 "Terminal
 Plug 'vimlab/split-term.vim'
+
+"Better commenting
+Plug 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
 
 " +++++++++++++++++++++ Search +++++++++++++++++++++
 
@@ -120,9 +128,7 @@ function! InsertTabWrapper()
 	else
 		return "\<c-p>"
 	endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-
+endfunction inoremap <tab> <c-r>=InsertTabWrapper()<cr> 
 " +++++++++++++++++++++ TMUX commands in vim +++++++++++++++++++++
 
 Plug 'benmills/vimux'
