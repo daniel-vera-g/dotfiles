@@ -245,6 +245,8 @@ Plug 'junegunn/limelight.vim'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" Source: https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/
+
 " +++++++++++++++++++++ Bullets +++++++++++++++++++++
 Plug 'dkarter/bullets.vim'
 
