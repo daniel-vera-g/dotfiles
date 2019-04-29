@@ -72,9 +72,9 @@ Plug 'wellle/targets.vim'
 " Change position of words
 Plug 'AndrewRadev/sideways.vim'
 
-" sideways                        
-nnoremap <a-h> :SidewaysLeft<cr>  
-nnoremap <a-l> :SidewaysRight<cr> 
+" sideways
+nnoremap <a-h> :SidewaysLeft<cr>
+nnoremap <a-l> :SidewaysRight<cr>
 
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -146,7 +146,7 @@ map g/ <Plug>(incsearch-stay)
 " Search configuration
 set ignorecase                    " ignore case when searching
 set smartcase                     " turn on smartcase"
-set incsearch	
+set incsearch
 set hlsearch
 
 " Clear search highlight
@@ -260,7 +260,7 @@ let g:bullets_enabled_file_types = [
 " +++++++++++++++++++++ Vimtext setup +++++++++++++++++++++
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
-let g:vimtex_view_method='okular'
+" let g:vimtex_view_method='okular'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
