@@ -60,6 +60,9 @@ call plug#begin('~/.vim/plugged')
 "Fancy starter page
 Plug 'mhinz/vim-startify'
 
+" Better navigation through project
+Plug 'kien/ctrlp.vim'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 noremap <Leader>fz :FZF<CR>
