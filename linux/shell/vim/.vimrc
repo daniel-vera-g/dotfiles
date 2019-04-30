@@ -61,7 +61,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 
 " Better navigation through project
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
