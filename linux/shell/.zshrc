@@ -38,9 +38,6 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 # compinit
 autoload -Uz compinit
 
-# Fuzzy file finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 #so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
