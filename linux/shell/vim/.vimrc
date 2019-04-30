@@ -209,6 +209,10 @@ Plug 'airblade/vim-gitgutter'
 " http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
 " https://blog.kitware.com/fugitive-a-git-plugin-for-vim/Additional
 Plug 'tpope/vim-fugitive'
+" To open files in gitlab
+Plug 'shumphrey/fugitive-gitlab.vim'
+" To open files in github
+Plug 'tpope/vim-rhubarb'
 
 " +++++++++++++++++++++ Markdown +++++++++++++++++++++
 
