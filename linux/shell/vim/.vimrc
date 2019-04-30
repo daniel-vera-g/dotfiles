@@ -87,6 +87,9 @@ Plug 'justinmk/vim-sneak'
 
 " Enhance buffer experience
 Plug 'junegunn/vim-slash'
+noremap <Leader>bn :bNext<CR>
+noremap <Leader>bp :bprevious<CR>
+
 
 " Auto pair braces
 Plug 'jiangmiao/auto-pairs'
@@ -309,6 +312,9 @@ let airline#extensions#ale#warning_symbol = 'W:'
 
 "Color Theme 3
 Plug 'liuchengxu/space-vim-theme'
+
+" Nice icons
+Plug 'ryanoasis/vim-devicons'
 
 " +++++++++++++++++++++ UI config +++++++++++++++++++++
 
