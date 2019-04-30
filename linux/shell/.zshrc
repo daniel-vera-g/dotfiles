@@ -12,7 +12,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 plugins=(git git-open node npm safe-paste fasd);
 
 # Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
-bindkey '^[[A' up-line-or-search                                                
+bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
 # User config

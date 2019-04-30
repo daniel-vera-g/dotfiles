@@ -131,7 +131,6 @@ ln -sfv "$dir/shell/.bashrc" ~
 ln -sfv "$dir/shell/.tmux.conf" ~
 ln -sfv "$dir/shell/.exports" ~
 ln -sfv "$dir/shell/.path" ~
-ln -sfv "$dir/shell/.z.sh" ~
 ln -sfv "$dir/shell/.zshrc" ~
 
 echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
