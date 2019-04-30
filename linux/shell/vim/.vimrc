@@ -60,8 +60,9 @@ call plug#begin('~/.vim/plugged')
 "Fancy starter page
 Plug 'mhinz/vim-startify'
 
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+noremap <Leader>fz :FZF<CR>
 
 " Close brackets
 Plug 'tpope/vim-surround'
