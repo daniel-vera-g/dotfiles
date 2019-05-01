@@ -44,4 +44,6 @@ stty -ixon
 # Command palette bookmarker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
+# Hub alias for git
+eval "$(hub alias -s)"
 eval $(thefuck --alias)
