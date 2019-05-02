@@ -1,0 +1,75 @@
+snippet mt "YAML header metadata"
+---
+title: $1
+authors: Daniel Vera Gilliard
+left-header: $2
+right-header: \today
+lang: $3
+---
+endsnippet
+
+snippet fh "First header" b
+#
+endsnippet
+
+snippet sh "First header" b
+##
+endsnippet
+
+snippet th "First header" b
+###
+endsnippet
+
+snippet fh "First header" b
+####
+endsnippet
+
+snippet bl "Bold text"
+**$1**
+endsnippet
+
+snippet it "Italic text"
+__1__
+endsnippet
+
+snippet bi "Bolt and italic text"
+**__$1__**
+endsnippet
+
+snippet st "Strikethrough text"
+~~1~~
+endsnippet
+
+snippet lns "Simple link"
+<$1>
+endsnippet
+
+snippet ln "Link"
+[$1]($2)
+endsnippet
+
+snippet im "Image"
+![$1]($2)
+endsnippet
+
+snippet cd "Inline code"
+"`$1`"
+endsnippet
+
+snippet fd "Fenced code"
+```
+$1
+```
+endsnippet
+
+snippet tb2 "Table"
+| $1        | $2           |
+| ------------- |:-------------:|
+| $4      | $5 |
+endsnippet
+
+snippet tb3 "Table"
+| $1        | $2           | $3  |
+| ------------- |:-------------:| -----:|
+| $4      | $5 | $6 |
+endsnippet

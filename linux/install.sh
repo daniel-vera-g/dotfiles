@@ -136,6 +136,15 @@ ln -sfv "$dir/shell/.zshrc" ~
 echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
 ln -sfv "$dir/system/terminator/config" ~/.config/
 
+echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
+# Make directory vim snippets
+mkdir ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/c.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/pandoc.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/plaintex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/tex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/ch.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+
 # Make directory for gpg config if not existent
 mkdir ~/.gpg/
 ln -sfv "$dir/system/gpg.conf" ~/.gpg/
