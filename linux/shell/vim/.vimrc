@@ -62,10 +62,12 @@ Plug 'mhinz/vim-startify'
 
 " Better navigation through project
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_show_hidden = 1
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 noremap <Leader>fz :FZF<CR>
+noremap <leader>bf :Buffers<CR>
 
 " Close brackets
 Plug 'tpope/vim-surround'
@@ -127,8 +129,10 @@ map <C-n> :NERDTreeToggle<CR>
 " Open nerd tree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" Show hidden files
+let NERDTreeShowHidden=1
 
-"Terminal
+" Terminal
 Plug 'vimlab/split-term.vim'
 
 " Alternative terminal
