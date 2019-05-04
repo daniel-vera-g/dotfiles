@@ -10,7 +10,8 @@ let mapleader = ","
 "More natural vim spliting
 "Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR> nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " CTRL-Tab is next tab
@@ -58,6 +59,9 @@ call plug#begin('~/.vim/plugged')
 
 "Fancy starter page
 Plug 'mhinz/vim-startify'
+
+" Autosave toggle with :AutoSaveToggle
+Plug 'vim-scripts/vim-auto-save'
 
 " Better navigation through project
 Plug 'ctrlpvim/ctrlp.vim'
@@ -117,7 +121,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 " Show buffer
-"Plug 'https://github.com/junegunn/vim-peekaboo'
+Plug 'https://github.com/junegunn/vim-peekaboo'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -131,13 +135,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" Terminal
+" Terminal TODO
 Plug 'vimlab/split-term.vim'
 
 " Alternative terminal
 Plug 'kassio/neoterm'
 
-"Better commenting
+"Better commenting(Alternative: https://github.com/tpope/vim-commentary)
 Plug 'scrooloose/nerdcommenter'
 
 " Add spaces after comment delimiters by default
@@ -219,6 +223,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 " To open files in github
 Plug 'tpope/vim-rhubarb'
+" Git commit browser
+Plug 'junegunn/gv.vim'
+" Git workflow tool
+Plug 'jreybert/vimagit'
+" Git branching
+Plug 'sodapopcan/vim-twiggy'
 
 " +++++++++++++++++++++ Markdown +++++++++++++++++++++
 
