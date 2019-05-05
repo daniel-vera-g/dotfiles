@@ -14,6 +14,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
 plugins=(git git-open node npm safe-paste fasd fzf);
 
+# Fix to use `alias hub=git`
+fpath=(~/.zsh/completions $fpath) 
+autoload -U compinit && compinit
+
 # Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
