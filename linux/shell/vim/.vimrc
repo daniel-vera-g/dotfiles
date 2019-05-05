@@ -32,7 +32,14 @@ set splitright
 " leader + s to save
 noremap <Leader>s :update<CR>
 
+" Indenting
 filetype plugin indent on
+set tabstop=8     " tabs are at proper location
+set expandtab     " don't use actual tab character (ctrl-v)
+set shiftwidth=4  " indenting is 4 spaces
+set autoindent    " turns it on
+set smartindent   " does the right thing (mostly) in programs
+set cindent       " stricter rules for C programs
 
 " Cursor
 let &t_SI = "\e[6 q"
@@ -120,8 +127,11 @@ Plug 'Valloric/YouCompleteMe'
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
-" Show buffer
-Plug 'https://github.com/junegunn/vim-peekaboo'
+" Show registers TODO fix error with YCM
+" Plug 'https://github.com/junegunn/vim-peekaboo'
+
+" Show buffers on the top
+Plug 'bagrat/vim-buffet'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -135,7 +145,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" Terminal TODO
+" Terminal
 Plug 'vimlab/split-term.vim'
 
 " Alternative terminal
