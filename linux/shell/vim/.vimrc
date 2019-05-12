@@ -34,12 +34,9 @@ noremap <Leader>s :update<CR>
 
 " Indenting
 filetype plugin indent on
-set tabstop=8     " tabs are at proper location
-set expandtab     " don't use actual tab character (ctrl-v)
-set shiftwidth=2  " indenting is 4 spaces
-set autoindent    " turns it on
-set smartindent   " does the right thing (mostly) in programs
-set cindent       " stricter rules for C programs
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab autoindent
+" https://vi.stackexchange.com/questions/5818/what-is-the-difference-between-autoindent-and-smartindent-in-vimrc
+" & https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 
 " Cursor
 let &t_SI = "\e[6 q"
@@ -105,7 +102,6 @@ Plug 'junegunn/vim-slash'
 noremap <Leader>bn :bNext<CR>
 noremap <Leader>bp :bprevious<CR>
 
-
 " Auto pair braces
 Plug 'jiangmiao/auto-pairs'
 
@@ -121,14 +117,22 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Autocomplete
-Plug 'Valloric/YouCompleteMe'
+" Autocomplete TODO
+" Plug 'Valloric/YouCompleteMe'
 "Autocomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
-" Show registers TODO fix error with YCM
-" Plug 'https://github.com/junegunn/vim-peekaboo'
+" Show registers TODO fix error with YCM??
+Plug 'https://github.com/junegunn/vim-peekaboo'
 
 " Show buffers on the top
 Plug 'bagrat/vim-buffet'
@@ -145,12 +149,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Show hidden files
 let NERDTreeShowHidden=1
 
-" Terminal
-Plug 'vimlab/split-term.vim'
-
-" Alternative terminal
-Plug 'kassio/neoterm'
-
 "Better commenting(Alternative: https://github.com/tpope/vim-commentary)
 Plug 'scrooloose/nerdcommenter'
 
@@ -159,6 +157,12 @@ let g:NERDSpaceDelims = 1
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
+
+" Terminal
+Plug 'vimlab/split-term.vim'
+
+" Alternative terminal
+Plug 'kassio/neoterm'
 
 " +++++++++++++++++++++ Search +++++++++++++++++++++
 
@@ -177,7 +181,7 @@ set hlsearch
 set hlsearch!
 nnoremap <F3> :set hlsearch!<CR>
 
-" +++++++++++++++++++++ Autocomplete on tab +++++++++++++++++++++
+" +++++++++++++++++++++ Autocomplete on tab TODO +++++++++++++++++++++
 
 "https://news.ycombinator.com/item?id=13960147
 "https://medium.com/@sszreter/vim-tab-autocomplete-in-insert-mode-and-fuzzy-search-for-opening-files-484260f52618
@@ -190,6 +194,7 @@ function! InsertTabWrapper()
 		return "\<c-p>"
 	endif
 endfunction inoremap <tab> <c-r>=InsertTabWrapper()<cr> 
+
 " +++++++++++++++++++++ TMUX commands in vim +++++++++++++++++++++
 
 Plug 'benmills/vimux'
@@ -197,23 +202,6 @@ Plug 'benmills/vimux'
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
-
-" +++++++++++++++++++++ Javascript +++++++++++++++++++++
-
-Plug 'https://github.com/pangloss/vim-javascript'
-let g:javascript_plugin_jsdoc = 1
-
-Plug 'ternjs/tern_for_vim'              " JavaScript auto-completer
-
-" syntax check
-Plug 'w0rp/ale'
-" Ale
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {'python': ['flake8']}
 
 " Formater
 Plug 'Chiel92/vim-autoformat'
@@ -242,44 +230,35 @@ Plug 'sodapopcan/vim-twiggy'
 
 " +++++++++++++++++++++ Markdown +++++++++++++++++++++
 
-"https://www.swamphogg.com/2015/vim-setup/
-"https://news.ycombinator.com/item?id=10271028
-
-" tabular plugin is used to format tables
 Plug 'godlygeek/tabular'
-" JSON front matter highlight plugin
-Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" --- Markdown config ---
 
 " disable header folding
 let g:vim_markdown_folding_disabled = 1
-
 " do not use conceal feature, the implementation is not so good
 let g:vim_markdown_conceal = 0
-
 " disable math tex conceal feature
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
-
 " support front matter of various format
 let g:vim_markdown_frontmatter = 1  " for YAML format
 let g:vim_markdown_toml_frontmatter = 1  " for TOML format
 let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
-"https://github.com/vim-pandoc/vim-pandoc
-Plug 'vim-pandoc/vim-pandoc'
-
-"https://github.com/vim-pandoc/vim-pandoc-syntax
-Plug 'vim-pandoc/vim-pandoc-syntax'
 set nofoldenable    " disable folding
 
-"More focused working
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-" Source: https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/
+" Sources:
+" https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/
+" https://www.swamphogg.com/2015/vim-setup/
+" https://news.ycombinator.com/item?id=10271028
 
 " +++++++++++++++++++++ Bullets +++++++++++++++++++++
 Plug 'dkarter/bullets.vim'
@@ -349,8 +328,10 @@ Plug 'ryanoasis/vim-devicons'
 " +++++++++++++++++++++ UI config +++++++++++++++++++++
 
 " UI configuration
-syntax enable
+set nocompatible
 syntax on
+syntax enable
+set nowrap
 
 " True Color Support if it's avalaible in terminal
 if has("termguicolors")
