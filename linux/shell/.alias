@@ -4,6 +4,14 @@
 alias v='f -e vim' # quick opening files with vim
 
 # -------------------------------------------------------------------
+# Productivity
+# -------------------------------------------------------------------
+
+alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
+alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
+alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
+
+# -------------------------------------------------------------------
 # nvim
 # -------------------------------------------------------------------
 alias vim='nvim'
@@ -182,6 +190,7 @@ alias rr="rm -rf"
 alias open="xdg-open"
 alias gln="gnome-terminal -x glances -2"
 alias cat="bat"
+alias focusmsc='mpsyt playurl "https://www.youtube.com/watch?v=a4fv-BtzNmY&t"'
 
 # -------------------------------------------------------------------
 # Default options
