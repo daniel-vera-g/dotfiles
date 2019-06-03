@@ -11,6 +11,7 @@ alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session
 alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
 alias focusmsc='mpsyt play focus'
+alias technomsc='mpsyt play techno'
 alias runningList='/home/dvg/Dropbox/Apps/automate/schortcuts/gvim-running-list.sh'
 alias backupShutdown='/home/dvg/Dropbox/Apps/automate/backup/system/backup-schutdown.sh'
 
