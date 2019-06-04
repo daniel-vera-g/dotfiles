@@ -1,8 +1,7 @@
 # -------------------------------------------------------------------
 # fasd
 # -------------------------------------------------------------------
-alias v='f -e vim' # quick opening files with vim
-
+alias v='f -e vim' # quick opening files with vim 
 # -------------------------------------------------------------------
 # Productivity
 # -------------------------------------------------------------------
@@ -144,7 +143,7 @@ alias greh='gre --hard'
 alias ggrh='greh origin/$(current_branch)'
 
 #---
-# branch 
+# branch
 #---
 
 alias gb='git branch'
@@ -194,6 +193,7 @@ alias rr="rm -rf"
 alias open="xdg-open"
 alias gln="gnome-terminal -x glances -2"
 alias cat="bat"
+alias tmx0="~/Dropbox/Apps/automate/schortcuts/tmux/tmux.sh"
 
 # -------------------------------------------------------------------
 # Default options
