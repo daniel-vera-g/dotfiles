@@ -57,3 +57,5 @@ stty -ixon
 # Hub alias for git
 eval "$(hub alias -s)"
 eval $(thefuck --alias)
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
