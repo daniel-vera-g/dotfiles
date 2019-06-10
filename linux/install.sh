@@ -123,6 +123,10 @@ ln -sfv "$dir/shell/scripts/.function" ~
 ln -sfv "$dir/shell/scripts/.docker_aliases" ~
 
 echo "###################################### SIMLINKS FOR VIM ######################################"
+mkdir -p ~/.vim/
+ln -sfv "$dir/shell/vim/general.vimrc" ~/.vim/
+ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
+ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
 ln -sfv "$dir/shell/vim/.vimrc" ~
 
 echo "###################################### SIMLINKS FOR SHELL FUNCTIONS ######################################"
@@ -148,7 +152,6 @@ cp "$dir/shell/vim/UltiSnips/ch.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
 # Make directory for gpg config if not existent
 mkdir ~/.gpg/
 ln -sfv "$dir/system/gpg.conf" ~/.gpg/
-
 ln -sfv "$dir/system/.redshift.conf" ~/.config/
 
 # Create directory if not existent
