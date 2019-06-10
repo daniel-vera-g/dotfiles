@@ -14,10 +14,17 @@ n()
         fi
 }
 
+# Open a new Terminator window + tmux session
+# Close the Window when tmux gets detached
+termI() {
+    terminator -e "tmux attach -t $@" &
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
 }
+
 # Open man page as PDF -> TODO
 # function manpdf() {
 #  man -t "${1}" | open -f -a /Applications/Preview.app/
