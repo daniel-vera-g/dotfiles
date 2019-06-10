@@ -30,7 +30,6 @@ set ignorecase
 set smartcase
 " Clear search highlight
 set hlsearch!
-nnoremap <F3> :set hlsearch!<CR>
 
 if exists('$SHELL')
     set shell =$SHELL
@@ -79,7 +78,8 @@ set mousemodel=popup
 set gcr=a:blinkon0
 set scrolloff=3
 
-"" Status bar
+"" Status line
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 "" Use modeline overrides
 set modeline
@@ -88,8 +88,6 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
-
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -175,11 +173,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ctrlp_show_hidden = 1
 
 " ---------------------------
-" Goyo markdown
-" ---------------------------
-autocmd! User GoyoLeave Limelight!
-
-" ---------------------------
 " Bullets
 " ---------------------------
 let g:bullets_enabled_file_types = [
@@ -240,6 +233,5 @@ let g:airline_skip_empty_sections = 1
 " Airline
 let g:airline_left_sep  = ''
 let g:airline_right_sep = ''
-let g:airline#extensions#ale#enabled = 1
 let airline#extensions#ale#error_symbol = 'E:'
 let airline#extensions#ale#warning_symbol = 'W:'
