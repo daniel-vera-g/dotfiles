@@ -6,34 +6,30 @@
   title_transmit_bg_color = "#339966"
   window_state = maximise
 [keybindings]
-  close_term = <Ctrl>s
   close_window = <Ctrl><Shift>W
-  search = <Ctrl>F
+  search = None
+  go_up = <Shift>Up
 [layouts]
   [[default]]
-    
     [[[child1]]]
       parent = window0
       profile = default
       type = Terminal
-    
     [[[window0]]]
       parent = ""
       size = 800, 500
       type = Window
 [plugins]
-  enable_real_transparency = True
 [profiles]
   [[default]]
-    use_theme_colors = True
     autoclean_groups = False
+    background_color = "#282828"
     background_darkness = 0.74
-    background_image = None
-    background_type = transparent
     copy_on_selection = True
     cursor_color = "#eb1414"
     cursor_shape = underline
-    font = Fira Code Light 9
-    foreground_color = "#00cc00"
+    font = FuraCode Nerd Font Medium 11
+    foreground_color = "#ebdbb2"
+    scrollback_infinite = True
+    show_titlebar = False
     use_system_font = False
-    visible_bell = True

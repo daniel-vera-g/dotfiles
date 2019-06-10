@@ -138,7 +138,8 @@ ln -sfv "$dir/shell/.path" ~
 ln -sfv "$dir/shell/.zshrc" ~
 
 echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
-ln -sfv "$dir/system/terminator/config" ~/.config/
+mkdir -p ~/.config/terminator
+ln -sfv "$dir/system/terminator/config" ~/.config/terminator/
 
 echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
 # Make directory vim snippets
