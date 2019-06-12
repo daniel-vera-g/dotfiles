@@ -20,6 +20,11 @@ termI() {
     terminator -e "tmux attach -t $@" &
 }
 
+# Open an Application as job & not block cmdline
+termO() {
+   "$@" &
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
