@@ -1,4 +1,24 @@
 # -------------------------------------------------------------------
+# Shortcuts
+# -------------------------------------------------------------------
+
+alias _="sudo"
+alias zshrc='vim ~/.zshrc'
+alias v='vim'
+alias hyper="vim ~/.hyper.js"
+alias refresh="source ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias reload="source ~/.zshrc"
+alias na="nautilus"
+alias rr="rm -rf"
+alias open="xdg-open"
+alias gln="gnome-terminal -x glances -2"
+alias cat="bat"
+alias tmx0="~/sync/Apps/automate/schortcuts/tmux/tmux.sh"
+alias eals="v ~/dotfiles/linux/shell/.alias"
+alias gTasks="google-chrome calendar.google.com &"
+
+# -------------------------------------------------------------------
 # fasd
 # -------------------------------------------------------------------
 alias v='f -e vim' # quick opening files with vim
@@ -11,7 +31,6 @@ alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
 alias focusmsc='mpsyt play focus'
 alias technomsc='mpsyt play techno'
-alias runningList='/home/dvg/sync/Apps/automate/schortcuts/gvim-running-list.sh'
 alias backupShutdown='/home/dvg/sync/Apps/automate/backup/system/backup-schutdown.sh'
 alias backupEx='deja-dup --backup && exit'
 
@@ -41,7 +60,7 @@ alias lg="exa -lah --git"
 # -------------------------------------------------------------------
 alias dropx='cd ~/sync'
 alias dwnlds='cd ~/Downloads'
-alias lxorg='cd /home/dvg/sync/notebook/system-management' 
+alias lxorg='cd /home/dvg/sync/notebook/system-management'
 alias ntb='cd ~/sync/notebook/'
 alias edu='cd /home/dvg/sync/notebook/projects/education'
 alias dot='cd /home/dvg/dotfiles'
@@ -56,10 +75,11 @@ alias tarxz='tar -cJvf'
 # Notebook & Journaling
 # -------------------------------------------------------------------
 alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
+alias runningList='/home/dvg/sync/Apps/automate/schortcuts/gvim-running-list.sh'
 
 # -------------------------------------------------------------------
 # School
-# ------------------------------------------------------------------- 
+# -------------------------------------------------------------------
 alias usb="/media/dvg/62B6-0615/"
 
 # -------------------------------------------------------------------
@@ -68,6 +88,7 @@ alias usb="/media/dvg/62B6-0615/"
 
 alias g="git"
 alias grso="git remote show origin"
+
 #---
 # Git hacks
 #---
@@ -90,7 +111,6 @@ alias ga='git add'
 alias gaa='git add .'
 alias gap='git add -p'
 alias gra='git remote add'
-
 
 #---
 # commit
@@ -121,14 +141,12 @@ alias grbi='grb --interactive'
 alias grbc='grb --continue'
 alias grba='grb --abort'
 
-
 alias gfr='git fetch -p && git rebase'
 alias gfe='g fetch'
 
 #---
 # log, status, diff, tag, clean & reset
 #---
-
 
 alias gl='git log'
 alias gf='git reflog'
@@ -160,7 +178,6 @@ alias gbmv='git  branch -m'
 # Get info current branch
 alias gbinfo='git branch -vv'
 
-
 alias gc='git checkout'
 alias gcl='git checkout -'
 alias gcm='gc master'
@@ -183,25 +200,6 @@ function current_branch() {
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
-
-# -------------------------------------------------------------------
-# Shortcuts
-# -------------------------------------------------------------------
-
-alias _="sudo"
-alias zshrc='vim ~/.zshrc'
-alias v='vim'
-alias hyper="vim ~/.hyper.js"
-alias refresh="source ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias reload="source ~/.zshrc"
-alias na="nautilus"
-alias rr="rm -rf"
-alias open="xdg-open"
-alias gln="gnome-terminal -x glances -2"
-alias cat="bat"
-alias tmx0="~/sync/Apps/automate/schortcuts/tmux/tmux.sh"
-alias eals="v ~/dotfiles/linux/shell/.alias"
 
 # -------------------------------------------------------------------
 # Default options
