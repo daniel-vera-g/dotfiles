@@ -118,7 +118,7 @@ Plug 'benmills/vimux'
 Plug 'Chiel92/vim-autoformat'
 " Markdown
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'junegunn/limelight.vim'
@@ -132,12 +132,15 @@ Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 " Colour Themes
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-theme'
+Plug 'drewtempelmeyer/palenight.vim'
 " Nice icons
 Plug 'ryanoasis/vim-devicons'
 
 " Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	" Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
 else
  Plug 'Shougo/deoplete.nvim'
  Plug 'roxma/nvim-yarp'
