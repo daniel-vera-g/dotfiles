@@ -95,7 +95,7 @@ noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
+" noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
 " session management
@@ -183,6 +183,8 @@ noremap <leader>bf :Buffers<CR>
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Schortcut for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
+" Fix Inconsistent buffer width when deleting a buffer
+nnoremap <leader>q :bp<cr>:bd #<cr>
 
 " Sideways
 nnoremap <a-h> :SidewaysLeft<cr>
@@ -197,6 +199,23 @@ nmap <leader>ue :UltiSnipsEdit<cr>
 
 " ale
 let g:ale_linters = {}
+
+" Go
+" Use ctrlP to fuzzy search declaration dir with ,gt
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+
+" Easier testing workflow with:  ,ga to switch to the test (, is my leader key) or
+" ,gav / ,gah to open in a vertical / horizontal split.<Paste>
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
+au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
+au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
+" Run tests with F10
+au FileType go nmap <F10> :GoTest -short<cr>
+" F9 for code coverage
+au FileType go nmap <F9> :GoCoverageToggle -short<cr>
+
+" Go to definition with F12
+" au FileType go nmap <F12> <Plug>(go-def)
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>

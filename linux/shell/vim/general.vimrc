@@ -67,7 +67,21 @@ set relativenumber
 highlight LineNr ctermfg=red
 
 let no_buffers_menu=1
-silent! colorscheme gruvbox
+silent! colorscheme palenight
+
+"True colors
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 set background=dark
 
 set laststatus=2
@@ -102,6 +116,42 @@ nnoremap N Nzzzv
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+
+" Go specific tabs
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+" Colors
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+
+" Highlight same variables
+" let g:go_auto_sameids = 1
+
+" Auto import dependencies
+let g:go_fmt_command = "goimports"
+
+" Error and warning signs.
+let g:ale_sign_error = '⤫'
+let g:ale_sign_warning = '⚠'
+
+" Show types
+let g:go_auto_type_info = 1
+
+" Better json handline
+let g:go_addtags_transform = "snakecase"
+
+"Snippets engine
+let g:go_snippet_engine = "ultisnips"
+
 
 " html
 " for html files, 2 spaces
@@ -157,6 +207,9 @@ let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
 set nofoldenable    " disable folding
 
+" Remove conceal feature for pandoc markdown
+let g:pandoc#syntax#conceal#use = 0
+
 " ---------------------------
 " Ultisnips
 " ---------------------------
@@ -165,7 +218,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
 
 " ---------------------------
 " CtrlP
@@ -201,10 +254,12 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
  " Open nerd tree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
- " Show hidden files
+
+" Show hidden files
 let NERDTreeShowHidden=1
 
 " ---------------------------
