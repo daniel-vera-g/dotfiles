@@ -7,8 +7,8 @@
   window_state = maximise
 [keybindings]
   close_window = <Ctrl><Shift>W
-  search = None
   go_up = <Shift>Up
+  search = None
 [layouts]
   [[default]]
     [[[child1]]]
