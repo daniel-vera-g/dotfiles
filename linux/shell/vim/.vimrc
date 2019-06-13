@@ -1,6 +1,6 @@
-" ----------------------------------------------------------
-" --------------------- Plug ---------------------
-" ----------------------------------------------------------
+"" Plugins & loading of custom configuration
+" TODO ctags in general tags
+" Plug 'majutsushi/tagbar'
 
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
@@ -8,22 +8,16 @@
 
 call plug#begin('~/.vim/plugged')
 
-"++++++++++
-" Nerdtree
-"++++++++++
+"" Nerdtree
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Nerdtree git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-"++++++++++
-" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
-"++++++++++
+"" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
 Plug 'scrooloose/nerdcommenter'
 
-"++++++++++
-" Git
-"++++++++++
+"" Git
 " Show changes in vim gutter
 Plug 'airblade/vim-gitgutter'
 " Vim wrapper
@@ -39,36 +33,21 @@ Plug 'jreybert/vimagit'
 " Git branching
 Plug 'sodapopcan/vim-twiggy'
 
-"++++++++++
-" Airline Theme
-"++++++++++
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-"++++++++++
-" Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
-"++++++++++
-Plug 'jremmen/vim-ripgrep'
-
-"++++++++++
-" Other
-"++++++++++
-" Colorscheme
-Plug 'vim-scripts/CSApprox'
-" Closing quotes
-Plug 'Raimondi/delimitMate'
-
-" TODO
-" Plug 'majutsushi/tagbar'
-
+"" Essential programming(Syntax check, Language server & Autocompletion)
 " Ale for syntastic(Syntax checking through LSP)
 Plug 'w0rp/ale'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/indentLine'
-" Language packs
-Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
+" Async completion
+if has('nvim')
+ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	" Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
+else
+ Plug 'Shougo/deoplete.nvim'
+ Plug 'roxma/nvim-yarp'
+ Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " Async tasks in vim
 let g:make = 'gmake'
@@ -76,7 +55,23 @@ if exists('make')
         let g:make = 'make'
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
+" Run asynchronous shell commands
+Plug 'skywind3000/asyncrun.vim'
 
+"" Other
+" Closing quotes
+Plug 'Raimondi/delimitMate'
+" Fuzzy search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Better navigation through project
+" Only use FZF
+" Plug 'ctrlpvim/ctrlp.vim'
+" Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
+Plug 'jremmen/vim-ripgrep'
+Plug 'Yggdroot/indentLine'
+" Language packs
+Plug 'sheerun/vim-polyglot'
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -87,8 +82,6 @@ Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-startify'
 " Autosave toggle with :AutoSaveToggle
 Plug 'vim-scripts/vim-auto-save'
-" Better navigation through project
-Plug 'ctrlpvim/ctrlp.vim'
 " Close brackets
 Plug 'tpope/vim-surround'
 " Extend text object
@@ -103,6 +96,7 @@ Plug 'takac/vim-commandcaps'
 Plug 'justinmk/vim-sneak'
 " Enhance buffer experience
 Plug 'junegunn/vim-slash'
+Plug 'junegunn/vim-easy-align'
 " Auto pair braces
 Plug 'jiangmiao/auto-pairs'
 " Show registers
@@ -116,68 +110,70 @@ Plug 'kassio/neoterm'
 Plug 'benmills/vimux'
 " Formatter
 Plug 'Chiel92/vim-autoformat'
-" Markdown
-Plug 'godlygeek/tabular'
-" Plug 'plasticboy/vim-markdown'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
 " Bullets
 Plug 'dkarter/bullets.vim'
 " Vimtex
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-" Colour Themes
+
+"" Colour Themes
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'vim-scripts/CSApprox'
+" Airline Theme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Nice icons
 Plug 'ryanoasis/vim-devicons'
 
-" Async completion
-if has('nvim')
- Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	" Enable deoplete on startup
-    let g:deoplete#enable_at_startup = 1
-else
- Plug 'Shougo/deoplete.nvim'
- Plug 'roxma/nvim-yarp'
- Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+"" Markdown
+Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
-"*****************************************************************************
-"" Custom bundles
-"*****************************************************************************
-
-" go
-"" Go Lang Bundle
+"" go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
 
-" html
-"" HTML Bundle
+"" html
+" html Syntax highlighting
+Plug 'othree/html5-syntax.vim'
+" html5 autocomplete
+Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-" javascript
-"" Javascript Bundle
-Plug 'jelera/vim-javascript-syntax'
+"" javascript
+" Jump between CommonJS modules
+Plug 'moll/vim-node'
+" Basic refactoring
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install'  }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
+Plug 'carlitux/deoplete-ternjs',
+Plug 'elzr/vim-json'
+Plug 'othree/jsdoc-syntax.vim'
+" Generate JSdoc
+Plug 'heavenshell/vim-jsdoc'
+" Syntax for js libraries
+Plug 'othree/javascript-libraries-syntax.vim'
+" Function parameter completion
+Plug 'othree/jspc.vim'
 
-" python
-"" Python Bundle
+"" python
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-" typescript
+"" typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 
-" Flutter/Dart
+"" Flutter/Dart
 Plug 'dart-lang/dart-vim-plugin'
 
 " Initialize plugin system

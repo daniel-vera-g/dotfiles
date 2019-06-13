@@ -1,6 +1,5 @@
-"*****************************************************************************
-"" Abbreviations & Custom keys
-"*****************************************************************************
+""" Abbreviations & Custom keys
+
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -30,15 +29,11 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"*****************************************************************************
-"" Commands
-"*****************************************************************************
+""" Commands
 " remove trailing whitespaces
 command! FixWhitespace :%s/\s\+$//e
 
-"*****************************************************************************
-"" Functions
-"*****************************************************************************
+""" Functions
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
     set wrap
@@ -47,9 +42,8 @@ if !exists('*s:setupWrapping')
   endfunction
 endif
 
-"*****************************************************************************
-"" Autocmd Rules
-"*****************************************************************************
+""" Autocmd Rules
+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -77,9 +71,7 @@ augroup END
 
 set autoread
 
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
+""" Mappings
 
 " leader + s to save
 noremap <Leader>s :update<CR>
@@ -151,11 +143,6 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "" Plugin related mappings
 "*****************************************************************************
 
-"" fzf.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-
 " The Silver Searcher
 if executable('ag')
   let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
@@ -177,7 +164,8 @@ nmap <leader>y :History:<CR>
 
 " FZF
 noremap <Leader>fz :FZF<CR>
-noremap <leader>bf :Buffers<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>h :History<CR>
 
 " NERDTree
 nnoremap <silent> <F2> :NERDTreeFind<CR>
@@ -199,10 +187,13 @@ nmap <leader>ue :UltiSnipsEdit<cr>
 
 " ale
 let g:ale_linters = {}
+" Shortcut to fix errors
+nmap <leader>d <Plug>(ale_fix)
 
 " Go
+
 " Use ctrlP to fuzzy search declaration dir with ,gt
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
+" au FileType go nmap <leader>gt :GoDeclsDir<cr>
 
 " Easier testing workflow with:  ,ga to switch to the test (, is my leader key) or
 " ,gav / ,gah to open in a vertical / horizontal split.<Paste>
@@ -214,7 +205,7 @@ au FileType go nmap <F10> :GoTest -short<cr>
 " F9 for code coverage
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 
-" Go to definition with F12
+" Go to definition with F12 -> DONE with coc LSP
 " au FileType go nmap <F12> <Plug>(go-def)
 
 " Tagbar
@@ -274,7 +265,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" Vimux
+"" Vimux
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand

@@ -1,7 +1,3 @@
-"*****************************************************************************
-"" basic Setup
-"*****************************************************************************"
-
 "" Map leader to ,
 let mapleader=','
 
@@ -19,9 +15,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=0
 set expandtab
-
-"" Enable hidden buffers
-set hidden
 
 "" Searching
 set hlsearch
@@ -56,9 +49,7 @@ highlight SpellBad guifg=#ff0000
 " Highlight matching brace
 set showmatch
 
-"*****************************************************************************
 "" Visual Settings
-"*****************************************************************************
 
 syntax on
 set ruler
@@ -67,7 +58,8 @@ set relativenumber
 highlight LineNr ctermfg=red
 
 let no_buffers_menu=1
-silent! colorscheme palenight
+silent! colorscheme gruvbox
+set background=dark
 
 "True colors
 if (has("nvim"))
@@ -81,8 +73,6 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-
-set background=dark
 
 set laststatus=2
 
@@ -107,10 +97,6 @@ set titlestring=%F
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-"*****************************************************************************
-"" Custom configs
-"*****************************************************************************
 
 " Golang
 " disable vim-go :GoDef short cut (gd)
@@ -139,19 +125,24 @@ let g:go_highlight_types = 1
 " Auto import dependencies
 let g:go_fmt_command = "goimports"
 
+" Ale
 " Error and warning signs.
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
-
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   'css': ['prettier'],
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 " Show types
 let g:go_auto_type_info = 1
-
 " Better json handline
 let g:go_addtags_transform = "snakecase"
-
 "Snippets engine
 let g:go_snippet_engine = "ultisnips"
-
 
 " html
 " for html files, 2 spaces
@@ -159,6 +150,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
+let g:javascript_plugin_flow = 1
 
 " vim-javascript
 augroup vimrc-javascript
@@ -169,14 +161,21 @@ augroup END
 " typescript
 let g:yats_host_keyword = 1
 
-" ---------------------------
-" coc.nvim default settings
-" ---------------------------
+"" Tern
+"enable keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'
+
+"JS libraries
+let g:used_javascript_libs = 'jquery, react, chai, handlebars, vue'
+
+"" coc.nvim default settings
 
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
-" set cmdheight=2
+" set cmdheight=2 -> Fix for big command bar
 
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
@@ -185,9 +184,7 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" ---------------------------
-" Markdown Config
-" ---------------------------
+"" Markdown Config
 " Sources:
 " https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/
 " https://www.swamphogg.com/2015/vim-setup/
@@ -210,24 +207,24 @@ set nofoldenable    " disable folding
 " Remove conceal feature for pandoc markdown
 let g:pandoc#syntax#conceal#use = 0
 
-" ---------------------------
-" Ultisnips
-" ---------------------------
+"" Ultisnips
 " vertically split ultisnips edit window
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
 
-" ---------------------------
-" CtrlP
-" ---------------------------
-let g:ctrlp_show_hidden = 1
+"" CtrlP -> ONLY USE FZF
+" let g:ctrlp_show_hidden = 1
 
-" ---------------------------
-" Bullets
-" ---------------------------
+"" fzf.vim
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+
+"" Bullets
 let g:bullets_enabled_file_types = [
 			\ 'markdown',
 			\ 'text',
@@ -235,44 +232,38 @@ let g:bullets_enabled_file_types = [
 			\ 'md'
 			\]
 
-" ---------------------------
-" Vimtex
-" ---------------------------
+"" Vimtex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='okular'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" ---------------------------
-" Nerdtree
-" ---------------------------
-
-" NERDTree configuration
+"" Nerdtree
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-
- " Open nerd tree when opening folder
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+" Show hidden files
+let NERDTreeShowHidden=1
+" Close Nerdtree when opening a file
+let NERDTreeQuitOnOpen = 1
+" Close Nerdtree if it's the only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Open nerd tree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" Show hidden files
-let NERDTreeShowHidden=1
-
-" ---------------------------
-" Nerdtree commenter
-" ---------------------------
+"" Nerdtree commenter
 "Add spaces after comment delimiters by default
  let g:NERDSpaceDelims = 1
 "Use compact syntax for prettified multi-line comments
  let g:NERDCompactSexyComs = 1
 
-" ---------------------------
-" Statusline + Airline
-" ---------------------------
+"" Statusline + Airline
 
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
