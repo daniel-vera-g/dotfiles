@@ -102,11 +102,8 @@ nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
 "" Buffer nav
-noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
-
 "" Close buffer
 noremap <leader>c :bd<CR>
 
@@ -163,7 +160,6 @@ nnoremap <silent> <leader>e :FZF -m<CR>
 nmap <leader>y :History:<CR>
 
 " FZF
-noremap <Leader>fz :FZF<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>h :History<CR>
 
@@ -172,7 +168,7 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Schortcut for NERDTree toggle
 map <C-n> :NERDTreeToggle<CR>
 " Fix Inconsistent buffer width when deleting a buffer
-nnoremap <leader>q :bp<cr>:bd #<cr>
+nnoremap <leader>cb :bp<cr>:bd #<cr>
 
 " Sideways
 nnoremap <a-h> :SidewaysLeft<cr>
