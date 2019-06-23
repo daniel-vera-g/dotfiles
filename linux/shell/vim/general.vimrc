@@ -1,3 +1,5 @@
+" Set shell
+set shell=/usr/bin/zsh
 "" Map leader to ,
 let mapleader=','
 
@@ -50,15 +52,13 @@ highlight SpellBad guifg=#ff0000
 set showmatch
 
 "" Visual Settings
-
-syntax on
 set ruler
 set number
 set relativenumber
 highlight LineNr ctermfg=red
 
 let no_buffers_menu=1
-silent! colorscheme gruvbox
+silent! colorscheme palenight
 set background=dark
 
 "True colors
@@ -146,7 +146,7 @@ let g:go_snippet_engine = "ultisnips"
 
 " html
 " for html files, 2 spaces
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
+" autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
@@ -233,8 +233,9 @@ let g:bullets_enabled_file_types = [
 			\]
 
 "" Vimtex
+
 let g:tex_flavor='latex'
-let g:vimtex_view_method='okular'
+let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
@@ -264,7 +265,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
  let g:NERDCompactSexyComs = 1
 
 "" Statusline + Airline
-
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
@@ -281,3 +281,10 @@ let g:airline_left_sep  = ''
 let g:airline_right_sep = ''
 let airline#extensions#ale#error_symbol = 'E:'
 let airline#extensions#ale#warning_symbol = 'W:'
+
+" Save folding on exit
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
