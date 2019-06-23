@@ -1,7 +1,8 @@
-"" Plugins & loading of custom configuration
-" TODO ctags in general tags
-" Plug 'majutsushi/tagbar'
+" Fix Vimtex starting error
+filetype plugin indent on
+syntax on
 
+"" Plugins & loading of custom configuration
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
 "- Avoid using standard Vim directory names like 'plugin'
@@ -26,16 +27,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 " To open files in github
 Plug 'tpope/vim-rhubarb'
-" Git commit browser
-Plug 'junegunn/gv.vim'
-" Git workflow tool
-Plug 'jreybert/vimagit'
-" Git branching
-Plug 'sodapopcan/vim-twiggy'
 
 "" Essential programming(Syntax check, Language server & Autocompletion)
 " Ale for syntastic(Syntax checking through LSP)
 Plug 'w0rp/ale'
+" Languages Server(LSP)
 Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
 " Async completion
 if has('nvim')
@@ -48,15 +44,6 @@ else
  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
-
-" Async tasks in vim
-let g:make = 'gmake'
-if exists('make')
-        let g:make = 'make'
-endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
-" Run asynchronous shell commands
-Plug 'skywind3000/asyncrun.vim'
 
 "" Other
 " Closing quotes
@@ -72,9 +59,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'Yggdroot/indentLine'
 " Language packs
 Plug 'sheerun/vim-polyglot'
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -84,16 +68,10 @@ Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/vim-auto-save'
 " Close brackets
 Plug 'tpope/vim-surround'
-" Extend text object
-Plug 'wellle/targets.vim'
-" Change position of words
-Plug 'AndrewRadev/sideways.vim'
 " Show whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Fix capitalized commands
 Plug 'takac/vim-commandcaps'
-" Faster code navigation
-Plug 'justinmk/vim-sneak'
 " Enhance buffer experience
 Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-easy-align'
@@ -115,7 +93,7 @@ Plug 'dkarter/bullets.vim'
 " Vimtex
 Plug 'lervag/vimtex'
 " Latex conceal improvements
-Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+" Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 "" Colour Themes
 Plug 'morhetz/gruvbox'
@@ -148,6 +126,10 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
+" Match tags
+Plug 'valloric/MatchTagAlways'
+" Close tags
+Plug 'alvan/vim-closetag'
 
 "" javascript
 " Jump between CommonJS modules

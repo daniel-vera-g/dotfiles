@@ -230,8 +230,10 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" TODO change becaueso of diffget conflict
+" nmap <silent> [c <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -276,3 +278,6 @@ autocmd! User GoyoEnter Limelight
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+" Open terminal
+nnoremap <leader>t :10Term<CR>
