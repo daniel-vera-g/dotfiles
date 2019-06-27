@@ -17,6 +17,8 @@ alias cat="bat"
 alias tmx0="~/sync/Apps/automate/schortcuts/tmux/tmux.sh"
 alias eals="v ~/dotfiles/linux/shell/.alias"
 alias gTasks="google-chrome calendar.google.com &"
+alias caffeine20="timeout 20m caffeine"
+alias caffeine40="timeout 40m caffeine"
 
 # -------------------------------------------------------------------
 # fasd
@@ -31,7 +33,7 @@ alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
 alias focusmsc='mpsyt play focus'
 alias technomsc='mpsyt play techno'
-alias backupShutdown='/home/dvg/sync/Apps/automate/backup/system/backup-schutdown.sh'
+alias backupShutdown='/home/dvg/sync/Apps/automation-scripts/backup/system/backup-schutdown.sh'
 alias backupEx='deja-dup --backup && exit'
 
 # -------------------------------------------------------------------
@@ -75,7 +77,7 @@ alias tarxz='tar -cJvf'
 # Notebook & Journaling
 # -------------------------------------------------------------------
 alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
-alias runningList='/home/dvg/sync/Apps/automate/schortcuts/gvim-running-list.sh'
+alias runningList='/home/dvg/sync/Apps/automation-scripts/schortcuts/gvim-running-list.sh'
 
 # -------------------------------------------------------------------
 # School
