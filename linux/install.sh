@@ -144,6 +144,9 @@ ln -sfv "$dir/system/terminator/config" ~/.config/terminator/
 mkdir -p ~/.config/zathura
 ln -sfv "$dir/system/zathura/zathurarc" ~/.config/zathura/
 
+mkdir -p ~/.local/bin
+ln -sfv "$dir/system/trans" ~/.local/bin/
+
 echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
 # Make directory vim snippets
 mkdir ~/.vim/plugged/ultisnips/UltiSnips/
