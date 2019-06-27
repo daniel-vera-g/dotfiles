@@ -12,7 +12,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf);
+plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose);
 
 # Fix to use `alias hub=git`
 fpath=(~/.zsh/completions $fpath) 
