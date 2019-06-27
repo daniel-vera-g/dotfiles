@@ -73,7 +73,6 @@ Plug 'ntpeters/vim-better-whitespace'
 " Fix capitalized commands
 Plug 'takac/vim-commandcaps'
 " Enhance buffer experience
-Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-easy-align'
 " Auto pair braces
 Plug 'jiangmiao/auto-pairs'
@@ -84,7 +83,6 @@ Plug 'bagrat/vim-buffet'
 " Terminal
 Plug 'vimlab/split-term.vim'
 " Alternative terminal
-Plug 'kassio/neoterm'
 Plug 'benmills/vimux'
 " Formatter
 Plug 'Chiel92/vim-autoformat'
