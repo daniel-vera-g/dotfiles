@@ -19,11 +19,20 @@ alias eals="v ~/dotfiles/linux/shell/.alias"
 alias gTasks="google-chrome calendar.google.com &"
 alias caffeine20="timeout 20m caffeine"
 alias caffeine40="timeout 40m caffeine"
+alias tdv="v /home/dvg/sync/notebook/projects/education/IT/software-development/unix-linx/todo-vim.md"
+
+# -------------------------------------------------------------------
+# golang
+# -------------------------------------------------------------------
+alias got="go test ./..."
+alias gotv="go test -v ./..."
 
 # -------------------------------------------------------------------
 # fasd
 # -------------------------------------------------------------------
+
 alias v='f -e vim' # quick opening files with vim
+
 # -------------------------------------------------------------------
 # Productivity
 # -------------------------------------------------------------------
@@ -119,12 +128,12 @@ alias gra='git remote add'
 #---
 
 alias gco='g commit'
-alias gca='gc -a'
+alias gca='gco -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
 # Fix last commit Msg
 alias gmamend='git commit --amend'
-alias gc!='gc --amend'
+alias gc!='gco --amend'
 alias gca!='gca --amend'
 
 #---
