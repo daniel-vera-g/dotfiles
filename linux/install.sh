@@ -136,6 +136,7 @@ ln -sfv "$dir/shell/.tmux.conf" ~
 ln -sfv "$dir/shell/.exports" ~
 ln -sfv "$dir/shell/.path" ~
 ln -sfv "$dir/shell/.zshrc" ~
+ln -sfv "$dir/shell/.ctags" ~
 
 echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
 mkdir -p ~/.config/terminator
@@ -146,6 +147,13 @@ ln -sfv "$dir/system/zathura/zathurarc" ~/.config/zathura/
 
 mkdir -p ~/.local/bin
 ln -sfv "$dir/system/trans" ~/.local/bin/
+
+echo "###################################### Vim config ######################################"
+# Make directory vim snippets
+mkdir ~/.vim/spell/
+for I in $(ls "$dir/shell/vim/spell/"); do cp $dir/shell/vim/spell/$I ~/.vim/spell; done
+mkdir ~/.vim/thesaurus/
+cp "$dir/shell/vim/thesaurus/moby_thesaurus.txt" ~/.vim/thesaurus/
 
 echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
 # Make directory vim snippets
