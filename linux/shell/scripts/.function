@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
-# Functions can take arguments, making them more powerful
+# Functions can take arguments, making them more powerfu
+
+# Convert file(s) into tar
+# and compress them with the xz compression algorithm
+tarxz() {
+    tar -cJvf ./$@.tar.xz $@
+}
 
 # Use nnn file manager with only the n key
 n()
@@ -16,18 +22,28 @@ n()
 
 # Open a new Terminator window + tmux session
 # Close the Window when tmux gets detached
-termI() {
+tI() {
     terminator -e "tmux attach -t $@" &
 }
 
 # Open an Application as job & not block cmdline
-termO() {
-   "$@" &
+O() {
+   "$@" &> /dev/null &
+}
+
+# Open pdf as job & not block cmdline
+O() {
+    "$@" &> /dev/null &
 }
 
 # Check for an existent alias
 chAl() {
     alias | rg "$@"
+}
+
+# Find app related files on system
+fApp() {
+    fd --hidden --no-ignore "$@" ./
 }
 
 # Create a new directory and enter it
