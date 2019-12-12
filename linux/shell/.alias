@@ -1,31 +1,71 @@
 # -------------------------------------------------------------------
-# Shortcuts
+# Global aliases
+# -------------------------------------------------------------------
+alias _="sudo"
+
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias -- -="cd -"                  # Go to previous dir with -
+
+alias tree="tree -A"
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+alias rs="rm -iv"
+alias rr="rm -rf"
+
+alias cp="cp -iv"
+alias mv="mv -iv"
+
+alias cat="bat"
+
+# Sourcing
+alias refresh="source ~/.zshrc"
+alias reload="source ~/.zshrc"
+
+# Open Applications
+alias open="xdg-open"
+alias na="nautilus &> /dev/null &"
+alias gln="gnome-terminal -x glances -2"
+
+# -------------------------------------------------------------------
+# Open directories/files...
 # -------------------------------------------------------------------
 
-alias _="sudo"
-alias zshrc='vim ~/.zshrc'
-alias v='vim'
-alias hyper="vim ~/.hyper.js"
-alias refresh="source ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias reload="source ~/.zshrc"
-alias na="nautilus"
-alias rr="rm -rf"
-alias open="xdg-open"
-alias gln="gnome-terminal -x glances -2"
-alias cat="bat"
-alias tmx0="~/sync/Apps/automate/schortcuts/tmux/tmux.sh"
+# Open with vim
+alias zshrc='v ~/.zshrc'
+alias vimrc="v ~/.vimrc"
 alias eals="v ~/dotfiles/linux/shell/.alias"
-alias gTasks="google-chrome calendar.google.com &"
-alias caffeine20="timeout 20m caffeine"
-alias caffeine40="timeout 40m caffeine"
-alias tdv="v /home/dvg/sync/notebook/projects/education/IT/software-development/unix-linx/todo-vim.md"
+
+# Caffeinate
+alias caff20="caffeinate sleep 20m &"
+alias caff40="caffeinate sleep 40m &"
+
+alias gTasks="brave-browser calendar.google.com &> /dev/null &"
+
+# Open docker applications
+alias dKspeedtest="sudo docker run --rm --net=host waja/speedtest --bytes"
+alias dKtor="dk start tor-browser"
+alias dKHolly="sudo docker run -it --rm mapitman/hollywood"
+
+# Backup
+alias backupShutdown='deja-dup --backup && schutdown'
+alias backupEx='deja-dup --backup &> /dev/null &'
+alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
+
+# Uni
+alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
+alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
 
 # -------------------------------------------------------------------
 # golang
 # -------------------------------------------------------------------
 alias got="go test ./..."
 alias gotv="go test -v ./..."
+alias goge="go get -d -u"
 
 # -------------------------------------------------------------------
 # fasd
@@ -34,22 +74,44 @@ alias gotv="go test -v ./..."
 alias v='f -e vim' # quick opening files with vim
 
 # -------------------------------------------------------------------
+# fd
+# -------------------------------------------------------------------
+
+alias fdhi='fd --hidden --no-ignore'
+
+# -------------------------------------------------------------------
+# Rg
+# -------------------------------------------------------------------
+
+TODO
+
+
+# -------------------------------------------------------------------
+# fzf
+# -------------------------------------------------------------------
+
+TODO
+
+# -------------------------------------------------------------------
 # Productivity
 # -------------------------------------------------------------------
 
+# Pomodoro timer
 alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
 alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
-alias focusmsc='mpsyt play focus'
-alias technomsc='mpsyt play techno'
-alias backupShutdown='/home/dvg/sync/Apps/automation-scripts/backup/system/backup-schutdown.sh'
-alias backupEx='deja-dup --backup && exit'
+alias pomos='pomd start'
+
+# Focus Music
+alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
 
 # -------------------------------------------------------------------
 # nvim
 # -------------------------------------------------------------------
+alias v='vim'
 alias vim='nvim'
 alias v='nvim'
+alias v.='nvim .'
 
 # -------------------------------------------------------------------
 # exa
@@ -73,25 +135,19 @@ alias dropx='cd ~/sync'
 alias dwnlds='cd ~/Downloads'
 alias lxorg='cd /home/dvg/sync/notebook/system-management'
 alias ntb='cd ~/sync/notebook/'
-alias edu='cd /home/dvg/sync/notebook/projects/education'
+alias uni='cd /home/dvg/workspace/edu/uni'
 alias dot='cd /home/dvg/dotfiles'
 
 # -------------------------------------------------------------------
 # Compressing & Encrypting
 # -------------------------------------------------------------------
-alias tarxz='tar -cJvf'
-
+alias trxz='tar -cJvf'
 
 # -------------------------------------------------------------------
 # Notebook & Journaling
 # -------------------------------------------------------------------
 alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
-alias runningList='/home/dvg/sync/Apps/automation-scripts/schortcuts/gvim-running-list.sh'
-
-# -------------------------------------------------------------------
-# School
-# -------------------------------------------------------------------
-alias usb="/media/dvg/62B6-0615/"
+alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 
 # -------------------------------------------------------------------
 # Git
@@ -222,20 +278,6 @@ alias psgrep="psgrep -i"
 alias x+="chmod +x"
 
 # -------------------------------------------------------------------
-# Global aliases
-# -------------------------------------------------------------------
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias -- -="cd -"                  # Go to previous dir with -
-
-alias tree="tree -A"
-alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
-
-# -------------------------------------------------------------------
 # npm
 # -------------------------------------------------------------------
 
@@ -245,6 +287,7 @@ alias nup="npm update"
 alias nri="rm -r node_modules && npm install"
 alias ncd="npm-check -su"
 alias npmListG='npm list -g --depth=0'
+alias npmListGE='npm ll -g --depth=0'
 
 # -------------------------------------------------------------------
 # Vagrant
@@ -280,15 +323,12 @@ alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
 alias tmuxNewSess="tmux new-session -s"
 alias tmuxNewSessN="tmux new-session -t"
+alias n2="tmux new-window nnn \; split-window -h nnn"
 
 alias tmuxAtt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
-
-# -------------------------------------------------------------------
-# Docker -> MIGRATED TO EXTERNAL FILE
-# -------------------------------------------------------------------
 
 # -------------------------------------------------------------------
 # xclip
@@ -314,3 +354,15 @@ alias vboxLr="vboxmanaege list runningvms"
 alias vboxGetRunId="vboxmanage list runningvms | sed -n -e '$!N' -e 's/\n//g' -e 's/.*{\([^{][^{]*\)}.*/\1/gp'"
 alias vboxO="vboxmanage startvm --type separate"
 alias vboxS="vboxmanage startvm  --type headless"
+
+
+# -------------------------------------------------------------------
+# VPN
+# ------------------------------------------------------------------
+
+alias prtnConnect="sudo protonvpn-cli -f"
+alias prtnReConnect="sudo protonvpn-cli -d && sleep 1m && sudo protonvpn-cli -f"
+alias prtnDisCon="sudo protonvpn-cli -d"
+alias prtnMenu="sudo protonvpn-cli -m"
+alias prtnStat="sudo protonvpn-cli --status"
+alias opnvpn="sudo openvpn"
