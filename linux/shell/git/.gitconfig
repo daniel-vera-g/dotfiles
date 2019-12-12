@@ -4,6 +4,8 @@
 	trustctime = false
 	editor = vim
 	filemode = false
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
 [color]
 	ui = true
 [credential]
@@ -34,7 +36,7 @@
 [oh-my-zsh]
 	hide-status = 1
 [commit]
-	gpgsign = true
+	gpgsign = false
 [tag]
 	forceSignAnnotated = true
 [gpg]
