@@ -1,20 +1,10 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Go Paths
-export GOPATH=$HOME/workspace/go
-export GOBIN=$HOME/workspace/go/bin
-export PATH="$PATH":"/usr/local/go/bin:$GOPATH/bin"
-
-# Flutter path
-export PATH="$PATH:/home/dvg/workspace/mobile/flutter/bin"
-export PATH="$PATH":"$HOME/workspace/mobile/flutter/.pub-cache/bin"
-
-# Dart
-export PATH="$PATH:/usr/lib/dart/bin"
+# ------ System -----
 
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+ 
+ # Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # GPG Agent
 # Needed to get git signing commits working
@@ -41,3 +31,24 @@ export MANPAGER='less -X';
 
 # Better FZF search experience
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+
+# ------ Development environments -----
+
+# pyenv
+export PATH="/home/dvg/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Go
+export GOPATH=$HOME/workspace/go
+export GOBIN=$HOME/workspace/go/bin
+export PATH="$PATH":"/usr/local/go/bin:$GOPATH/bin"
+
+# Flutter path
+export PATH="$PATH:/home/dvg/workspace/mobile/flutter/bin"
+export PATH="$PATH":"$HOME/workspace/mobile/flutter/.pub-cache/bin"
+
+# Dart
+export PATH="$PATH:/usr/lib/dart/bin"
+# export PATH="/home/dvg/.pub-cache/bin:$PATH"
+export PATH="$PATH:$HOME/.pub-cache/bin"
