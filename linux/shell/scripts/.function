@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
-# Functions can take arguments, making them more powerfu
+# Functions can take arguments, making them more powerful
+
+# Run caffeine command for specific time
+caffX() {
+    caffeinate  sleep $@m &
+}
 
 # Convert file(s) into tar
 # and compress them with the xz compression algorithm
