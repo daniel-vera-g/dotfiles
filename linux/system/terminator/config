@@ -7,6 +7,7 @@
   window_state = maximise
 [keybindings]
   close_window = <Ctrl><Shift>W
+  go_down = None
   go_up = <Shift>Up
   search = None
 [layouts]
@@ -30,6 +31,16 @@
     cursor_shape = underline
     font = FuraCode Nerd Font Medium 11
     foreground_color = "#ebdbb2"
+    scrollback_infinite = True
+    show_titlebar = False
+    use_system_font = False
+  [[light]]
+    background_color = "#fbf1c7"
+    copy_on_selection = True
+    cursor_color = "#aaaaaa"
+    cursor_shape = underline
+    font = FuraCode Nerd Font Medium 11
+    foreground_color = "#3c3836"
     scrollback_infinite = True
     show_titlebar = False
     use_system_font = False
