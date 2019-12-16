@@ -52,7 +52,7 @@ alias dKtor="dk start tor-browser"
 alias dKHolly="sudo docker run -it --rm mapitman/hollywood"
 
 # Backup
-alias backupShutdown='deja-dup --backup && schutdown'
+alias backupShutdown='deja-dup --backup && shutdown'
 alias backupEx='deja-dup --backup &> /dev/null &'
 alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
 
