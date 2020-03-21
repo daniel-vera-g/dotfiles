@@ -11,7 +11,7 @@ call plug#begin('~/.vim/plugged')
 
 "" ctags
 Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 "-----
 
