@@ -12,7 +12,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions);
+plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd);
 
 # Fix to use `alias hub=git`
 fpath=(~/.zsh/completions $fpath) 
@@ -52,7 +52,7 @@ autoload -Uz compinit
 stty -ixon
 
 # Command palette bookmarker
-[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+# [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 # Hub alias for git
 eval "$(hub alias -s)"
