@@ -10,6 +10,7 @@
   close_window = <Ctrl><Shift>W
   go_down = None
   go_up = <Shift>Up
+  help = None
   search = None
 [layouts]
   [[default]]
