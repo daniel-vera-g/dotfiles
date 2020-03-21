@@ -9,6 +9,11 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
+alias aptupd="sudo apt update"
+alias aptupg="sudo apt upgrade"
+alias aptls="apt list --upgradable"
+alias aptul="sudo apt update && apt list --upgradable"
+
 alias tree="tree -A"
 alias treed="tree -d"
 alias tree1="tree -d -L 1"
@@ -19,6 +24,7 @@ alias rr="rm -rf"
 
 alias cp="cp -iv"
 alias mv="mv -iv"
+alias tch="touch"
 
 alias cat="bat"
 
@@ -30,6 +36,14 @@ alias reload="source ~/.zshrc"
 alias open="xdg-open"
 alias na="nautilus &> /dev/null &"
 alias gln="gnome-terminal -x glances -2"
+alias fdev="firefox_dev &> /dev/null &"
+alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
+alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
+
+# Use with spotify
+alias sp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control playpause"
+alias spp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control previous"
+alias spn="/home/dvg/dotfiles/linux/shell/scripts/spotify_control next"
 
 # -------------------------------------------------------------------
 # Open directories/files...
@@ -59,6 +73,8 @@ alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
 # Uni
 alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
 alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
+alias mScr="okular '/home/dvg/workspace/edu/uni/semester-1/mathematik-1/course-files/Skriptum Mathematik 1.pdf' &> /dev/null &"
+alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informatik-1/course-files/Skript Theoretische Informatik.pdf' &> /dev/null &"
 
 # -------------------------------------------------------------------
 # golang
@@ -100,7 +116,7 @@ alias fdhi='fd --hidden --no-ignore'
 alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
 alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
-alias pomos='pomd start'
+alias poms='pomd start -t 27:00'
 
 # Focus Music
 alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
@@ -152,6 +168,9 @@ alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 # -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
+
+alias yoink="git checkout master && git fetch upstream master && git merge upstream/master"
+alias lzg="lazygit"
 
 alias g="git"
 alias grso="git remote show origin"
@@ -366,3 +385,12 @@ alias prtnDisCon="sudo protonvpn-cli -d"
 alias prtnMenu="sudo protonvpn-cli -m"
 alias prtnStat="sudo protonvpn-cli --status"
 alias opnvpn="sudo openvpn"
+
+# -------------------------------------------------------------------
+# GPG
+# ------------------------------------------------------------------
+
+alias gibson="gpg --encrypt --sign --armor"
+alias ungibson="gpg --decrypt"
+
+
