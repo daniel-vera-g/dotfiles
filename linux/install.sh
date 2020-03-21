@@ -100,7 +100,7 @@ echo "##########################################################################
 # Bunch of symlinks
 
 echo "###################################### SIMLINKS FOR LINTERS ######################################"
-ln -sfv "$dir/linter/.eslintrc" ~
+ln -sfv "$dir/linter/.eslintrc.json" ~
 ln -sfv "$dir/linter/.markdownlintrc" ~
 ln -sfv "$dir/linter/.prettierrc" ~
 ln -sfv "$dir/linter/.textlintrc" ~
