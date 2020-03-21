@@ -70,10 +70,12 @@ endif
 set laststatus=2
 set mousemodel=popup
 
+" TODO
 "" Spelling & Grammar
-set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/de.utf-8.add
-setlocal spell
-set spelllang=de,en_gb
+set nospell
+" set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/de.utf-8.add
+" setlocal spell
+" set spelllang=de,en_gb
 highlight SpellBad guifg=#ff0000
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " LanguageTool
@@ -145,10 +147,12 @@ let g:ale_linters = {
 \   'latex': ['lacheck', 'chktex', 'Proselint'],
 \}
 " let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 1
+" TODO
+" let g:ale_lint_on_text_changed = 0
+" TODO
+" let g:ale_lint_on_save = 1
 " Ale fix
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'css': ['prettier'],
@@ -300,6 +304,9 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
+"" Autosave
+let g:auto_save = 1  " enable AutoSave on Vim startup
+
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
@@ -321,4 +328,4 @@ let airline#extensions#ale#warning_symbol = 'W:'
   " autocmd!
   " autocmd BufWinLeave * mkview
   " autocmd BufWinEnter * silent! loadview
-" augroup END
+  " augroup END
