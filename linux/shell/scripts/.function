@@ -3,6 +3,13 @@
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
 
+source ~/dotfiles/linux/shell/scripts/quitcd.bash_zsh
+
+# ls on cd
+function lcd {
+    builtin cd "$@" && ls
+}
+
 # Run caffeine command for specific time
 caffX() {
     caffeinate  sleep $@m &
@@ -12,17 +19,6 @@ caffX() {
 # and compress them with the xz compression algorithm
 tarxz() {
     tar -cJvf ./$@.tar.xz $@
-}
-
-# Use nnn file manager with only the n key
-n()
-{
-        nnn "$@"
-
-        if [ -f $NNN_TMPFILE ]; then
-                . $NNN_TMPFILE
-                rm $NNN_TMPFILE
-        fi
 }
 
 # Open a new Terminator window + tmux session
@@ -42,7 +38,7 @@ O() {
 }
 
 # Check for an existent alias
-chAl() {
+chal() {
     alias | rg "$@"
 }
 
