@@ -100,7 +100,7 @@ echo "##########################################################################
 # Bunch of symlinks
 
 echo "###################################### SIMLINKS FOR LINTERS ######################################"
-ln -sfv "$dir/linter/.eslintrc" ~
+ln -sfv "$dir/linter/.eslintrc.json" ~
 ln -sfv "$dir/linter/.markdownlintrc" ~
 ln -sfv "$dir/linter/.prettierrc" ~
 ln -sfv "$dir/linter/.textlintrc" ~
@@ -123,6 +123,10 @@ ln -sfv "$dir/shell/scripts/.function" ~
 ln -sfv "$dir/shell/scripts/.docker_aliases" ~
 
 echo "###################################### SIMLINKS FOR VIM ######################################"
+mkdir -p ~/.vim/
+ln -sfv "$dir/shell/vim/general.vimrc" ~/.vim/
+ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
+ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
 ln -sfv "$dir/shell/vim/.vimrc" ~
 
 echo "###################################### SIMLINKS FOR SHELL FUNCTIONS ######################################"
@@ -131,16 +135,38 @@ ln -sfv "$dir/shell/.bashrc" ~
 ln -sfv "$dir/shell/.tmux.conf" ~
 ln -sfv "$dir/shell/.exports" ~
 ln -sfv "$dir/shell/.path" ~
-ln -sfv "$dir/shell/.z.sh" ~
 ln -sfv "$dir/shell/.zshrc" ~
+ln -sfv "$dir/shell/.ctags" ~
 
 echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
-ln -sfv "$dir/system/terminator/config" ~/.config/
+mkdir -p ~/.config/terminator
+ln -sfv "$dir/system/terminator/config" ~/.config/terminator/
+
+mkdir -p ~/.config/zathura
+ln -sfv "$dir/system/zathura/zathurarc" ~/.config/zathura/
+
+mkdir -p ~/.local/bin
+ln -sfv "$dir/system/trans" ~/.local/bin/
+
+echo "###################################### Vim config ######################################"
+# Make directory vim snippets
+mkdir ~/.vim/spell/
+for I in $(ls "$dir/shell/vim/spell/"); do cp $dir/shell/vim/spell/$I ~/.vim/spell; done
+mkdir ~/.vim/thesaurus/
+cp "$dir/shell/vim/thesaurus/moby_thesaurus.txt" ~/.vim/thesaurus/
+
+echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
+# Make directory vim snippets
+mkdir ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/c.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/pandoc.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/plaintex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/tex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+cp "$dir/shell/vim/UltiSnips/ch.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
 
 # Make directory for gpg config if not existent
 mkdir ~/.gpg/
 ln -sfv "$dir/system/gpg.conf" ~/.gpg/
-
 ln -sfv "$dir/system/.redshift.conf" ~/.config/
 
 # Create directory if not existent

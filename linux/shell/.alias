@@ -1,8 +1,133 @@
 # -------------------------------------------------------------------
+# Global aliases
+# -------------------------------------------------------------------
+alias _="sudo"
+
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias -- -="cd -"                  # Go to previous dir with -
+
+alias aptupd="sudo apt update"
+alias aptupg="sudo apt upgrade"
+alias aptls="apt list --upgradable"
+alias aptul="sudo apt update && apt list --upgradable"
+
+alias tree="tree -A"
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+alias rs="rm -iv"
+alias rr="rm -rf"
+
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias tch="touch"
+
+alias cat="bat"
+
+# Sourcing
+alias refresh="source ~/.zshrc"
+alias reload="source ~/.zshrc"
+
+# Open Applications
+alias open="xdg-open"
+alias na="nautilus &> /dev/null &"
+alias gln="gnome-terminal -x glances -2"
+alias fdev="firefox_dev &> /dev/null &"
+alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
+alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
+
+# Use with spotify
+alias sp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control playpause"
+alias spp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control previous"
+alias spn="/home/dvg/dotfiles/linux/shell/scripts/spotify_control next"
+
+# -------------------------------------------------------------------
+# Open directories/files...
+# -------------------------------------------------------------------
+
+# Open with vim
+alias zshrc='v ~/.zshrc'
+alias vimrc="v ~/.vimrc"
+alias eals="v ~/dotfiles/linux/shell/.alias"
+
+# Caffeinate
+alias caff20="caffeinate sleep 20m &"
+alias caff40="caffeinate sleep 40m &"
+
+alias gTasks="brave-browser calendar.google.com &> /dev/null &"
+
+# Open docker applications
+alias dKspeedtest="sudo docker run --rm --net=host waja/speedtest --bytes"
+alias dKtor="dk start tor-browser"
+alias dKHolly="sudo docker run -it --rm mapitman/hollywood"
+
+# Backup
+alias backupShutdown='deja-dup --backup && shutdown'
+alias backupEx='deja-dup --backup &> /dev/null &'
+alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
+
+# Uni
+alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
+alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
+alias mScr="okular '/home/dvg/workspace/edu/uni/semester-1/mathematik-1/course-files/Skriptum Mathematik 1.pdf' &> /dev/null &"
+alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informatik-1/course-files/Skript Theoretische Informatik.pdf' &> /dev/null &"
+
+# -------------------------------------------------------------------
+# golang
+# -------------------------------------------------------------------
+alias got="go test ./..."
+alias gotv="go test -v ./..."
+alias goge="go get -d -u"
+
+# -------------------------------------------------------------------
+# fasd
+# -------------------------------------------------------------------
+
+alias v='f -e vim' # quick opening files with vim
+
+# -------------------------------------------------------------------
+# fd
+# -------------------------------------------------------------------
+
+alias fdhi='fd --hidden --no-ignore'
+
+# -------------------------------------------------------------------
+# Rg
+# -------------------------------------------------------------------
+
+# TODO
+
+
+# -------------------------------------------------------------------
+# fzf
+# -------------------------------------------------------------------
+
+# TODO
+
+# -------------------------------------------------------------------
+# Productivity
+# -------------------------------------------------------------------
+
+# Pomodoro timer
+alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
+alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
+alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
+alias poms='pomd start -t 27:00'
+
+# Focus Music
+alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
+
+# -------------------------------------------------------------------
 # nvim
 # -------------------------------------------------------------------
+alias v='vim'
 alias vim='nvim'
 alias v='nvim'
+alias v.='nvim .'
 
 # -------------------------------------------------------------------
 # exa
@@ -22,29 +147,34 @@ alias lg="exa -lah --git"
 # -------------------------------------------------------------------
 # Directory
 # -------------------------------------------------------------------
-alias dropx='cd ~/Dropbox'
+alias dropx='cd ~/sync'
 alias dwnlds='cd ~/Downloads'
-alias lxorg='cd /home/dvg/Dropbox/notebook/linux-management' 
-alias ntb='cd ~/Dropbox/notebook/'
-alias edu='cd /home/dvg/Dropbox/notebook/projects/education'
+alias lxorg='cd /home/dvg/sync/notebook/system-management'
+alias ntb='cd ~/sync/notebook/'
+alias uni='cd /home/dvg/workspace/edu/uni'
 alias dot='cd /home/dvg/dotfiles'
+
+# -------------------------------------------------------------------
+# Compressing & Encrypting
+# -------------------------------------------------------------------
+alias trxz='tar -cJvf'
 
 # -------------------------------------------------------------------
 # Notebook & Journaling
 # -------------------------------------------------------------------
-alias did="vim + 'normal Go' + 'r!date' ~/Dropbox/did.txt"
-
-# -------------------------------------------------------------------
-# School
-# ------------------------------------------------------------------- 
-alias usb="/media/dvg/62B6-0615/"
+alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
+alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 
 # -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
 
+alias yoink="git checkout master && git fetch upstream master && git merge upstream/master"
+alias lzg="lazygit"
+
 alias g="git"
 alias grso="git remote show origin"
+
 #---
 # Git hacks
 #---
@@ -68,18 +198,17 @@ alias gaa='git add .'
 alias gap='git add -p'
 alias gra='git remote add'
 
-
 #---
 # commit
 #---
 
 alias gco='g commit'
-alias gca='gc -a'
+alias gca='gco -a'
 alias gm='git commit -m'
 alias gma='git commit -am'
 # Fix last commit Msg
 alias gmamend='git commit --amend'
-alias gc!='gc --amend'
+alias gc!='gco --amend'
 alias gca!='gca --amend'
 
 #---
@@ -98,14 +227,12 @@ alias grbi='grb --interactive'
 alias grbc='grb --continue'
 alias grba='grb --abort'
 
-
 alias gfr='git fetch -p && git rebase'
 alias gfe='g fetch'
 
 #---
 # log, status, diff, tag, clean & reset
 #---
-
 
 alias gl='git log'
 alias gf='git reflog'
@@ -127,7 +254,7 @@ alias greh='gre --hard'
 alias ggrh='greh origin/$(current_branch)'
 
 #---
-# branch 
+# branch
 #---
 
 alias gb='git branch'
@@ -136,7 +263,6 @@ alias gba='g branch -a'
 alias gbmv='git  branch -m'
 # Get info current branch
 alias gbinfo='git branch -vv'
-
 
 alias gc='git checkout'
 alias gcl='git checkout -'
@@ -162,23 +288,6 @@ function current_branch() {
 }
 
 # -------------------------------------------------------------------
-# Shortcuts
-# -------------------------------------------------------------------
-
-alias _="sudo"
-alias zshrc='vim ~/.zshrc'
-alias v='vim'
-alias hyper="vim ~/.hyper.js"
-alias refresh="source ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias reload="source ~/.zshrc"
-alias na="nautilus"
-alias rr="rm -rf"
-alias open="xdg-open"
-alias gln="gnome-terminal -x glances -2"
-alias cat="bat"
-
-# -------------------------------------------------------------------
 # Default options
 # -------------------------------------------------------------------
 
@@ -186,20 +295,6 @@ alias rsync="rsync -vh"
 alias json="json -c"
 alias psgrep="psgrep -i"
 alias x+="chmod +x"
-
-# -------------------------------------------------------------------
-# Global aliases
-# -------------------------------------------------------------------
-alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias -- -="cd -"                  # Go to previous dir with -
-
-alias tree="tree -A"
-alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
 
 # -------------------------------------------------------------------
 # npm
@@ -211,6 +306,7 @@ alias nup="npm update"
 alias nri="rm -r node_modules && npm install"
 alias ncd="npm-check -su"
 alias npmListG='npm list -g --depth=0'
+alias npmListGE='npm ll -g --depth=0'
 
 # -------------------------------------------------------------------
 # Vagrant
@@ -219,7 +315,7 @@ alias npmListG='npm list -g --depth=0'
 alias vg="vagrant"
 alias vgsl="vagrant snapshot list"
 alias vgss="vagrant snapshot save"
-alias vgsr=vagrant snapshot restore"
+alias vgsr="vagrant snapshot restore"
 alias vgs="vagrant global-status"
 alias vhl='vagrant hosts list'
 alias vst="vagrant status"
@@ -246,15 +342,12 @@ alias tmuxKillS="tmux kill-session -t"
 alias tmuxRenS="tmux rename-session -t"
 alias tmuxNewSess="tmux new-session -s"
 alias tmuxNewSessN="tmux new-session -t"
+alias n2="tmux new-window nnn \; split-window -h nnn"
 
-alias tmuxAtt="tmux attach -t"
+alias Tatt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
-
-# -------------------------------------------------------------------
-# Docker -> MIGRATED TO EXTERNAL FILE
-# -------------------------------------------------------------------
 
 # -------------------------------------------------------------------
 # xclip
@@ -275,8 +368,29 @@ alias pandocEc="pandoc --template eisvogel -N --toc"
 # ------------------------------------------------------------------
 
 alias vbox="vboxmanage"
-alias vboxLa="vboxmanage  list vms"
-alias vboxLr="vboxmanaege list  runningvms"
+alias vboxLa="vboxmanage list vms"
+alias vboxLr="vboxmanaege list runningvms"
 alias vboxGetRunId="vboxmanage list runningvms | sed -n -e '$!N' -e 's/\n//g' -e 's/.*{\([^{][^{]*\)}.*/\1/gp'"
 alias vboxO="vboxmanage startvm --type separate"
-alias vboxS="vboxmanage startvm  --type  headless"
+alias vboxS="vboxmanage startvm  --type headless"
+
+
+# -------------------------------------------------------------------
+# VPN
+# ------------------------------------------------------------------
+
+alias prtnConnect="sudo protonvpn-cli -f"
+alias prtnReConnect="sudo protonvpn-cli -d && sleep 1m && sudo protonvpn-cli -f"
+alias prtnDisCon="sudo protonvpn-cli -d"
+alias prtnMenu="sudo protonvpn-cli -m"
+alias prtnStat="sudo protonvpn-cli --status"
+alias opnvpn="sudo openvpn"
+
+# -------------------------------------------------------------------
+# GPG
+# ------------------------------------------------------------------
+
+alias gibson="gpg --encrypt --sign --armor"
+alias ungibson="gpg --decrypt"
+
+

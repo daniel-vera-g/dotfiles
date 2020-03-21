@@ -119,3 +119,24 @@ alias dklf='sudo docker logs -f'
 # https://raw.githubusercontent.com/tcnksm/docker-alias/master/zshrc
 # https://hackernoon.com/handy-docker-aliases-4bd85089a3b8
 # https://dev.to/argherna/bash-functions-and-aliases-for-the-beginning-docker-developer-d4
+
+############################################## Docker compose ##############################################
+
+alias c='sudo docker-compose'
+alias cb='sudo docker-compose build'
+alias cup='sudo docker-compose up'
+alias cr='sudo docker-compose run --service-ports --rm'
+alias crl='sudo docker-compose run --service-ports --rm local'
+alias crd='sudo docker-compose run --service-ports --rm develop'
+alias crt='sudo docker-compose run --rm test'
+alias crp='sudo docker-compose run --rm provision'
+alias crci='sudo docker-compose run --rm ci'
+alias crwt='sudo docker-compose run --rm watchtest'
+alias cps='sudo docker-compose ps'
+alias clogs='sudo docker-compose logs'
+alias cbr='sudo docker-compose up -d --no-deps --build '
+
+crm(){
+	docker-compose stop $1
+	docker-compose rm --force $1
+}

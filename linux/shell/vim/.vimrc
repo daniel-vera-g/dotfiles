@@ -1,160 +1,207 @@
-" ---------------------Editor custom Settings---------------------
+" Fix Vimtex starting error
+filetype plugin indent on
+syntax on
 
-"More natural vim spliting
-"Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
-
-" CTRL-Tab is next tab
-noremap <C-Tab> :<C-U>tabnext<CR>
-inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-cnoremap <C-Tab> <C-C>:tabnext<CR>
-" CTRL-SHIFT-Tab is previous tab
-noremap <C-S-Tab> :<C-U>tabprevious<CR>
-inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
-
-"Position of the split panes
-set splitbelow
-set splitright
-"Source: https://thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally#easier-split-navigations
-
-"Set better leader
-let mapleader = ","
-
-" + s to save
-noremap s :update
-
-"Searching settings
-set incsearch
-set hlsearch
-
-"Autocomplete
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-"Cursor
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-
-" optional reset cursor on start:
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
-
-"-------------Vim plug -------------
-
+"" Plugins & loading of custom configuration
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
 "- Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
 
-"----- General plugins ----
+"" ctags
+Plug 'majutsushi/tagbar'
+" Plug 'ludovicchabant/vim-gutentags'
 
-"Plug outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"-----
 
-"https://github.com/tpope/vim-surround
-Plug 'tpope/vim-surround'
+"" Nerdtree
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Nerdtree git plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-"https://github.com/vim-syntastic/syntastic
-Plug 'vim-syntastic/syntastic'
+"-----
 
-"Autocomplete
-Plug 'Valloric/YouCompleteMe'
+"" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
+Plug 'scrooloose/nerdcommenter'
 
-"Autocomplete on tab
-"https://news.ycombinator.com/item?id=13960147
-"https://medium.com/@sszreter/vim-tab-autocomplete-in-insert-mode-and-fuzzy-search-for-opening-files-484260f52618
-"https://vim.fandom.com/wiki/Autocomplete_with_TAB_when_typing_words
- function! InsertTabWrapper()
-      let col = col('.') - 1
-      if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-      else
-        return "\<c-p>"
-      endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"-----
 
-" Execute tmux commands in vim
-Plug 'benmills/vimux'
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-
-"----- git ----
-
-" Show changes in vim gutter(https://github.com/airblade/vim-gitgutter)
+"" Git
+" Show changes in vim gutter
 Plug 'airblade/vim-gitgutter'
-
 " Vim wrapper
-" https://github.com/tpope/vim-fugitive
-" http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/
-" https://blog.kitware.com/fugitive-a-git-plugin-for-vim/Additional 
 Plug 'tpope/vim-fugitive'
+" To open files in gitlab
+Plug 'shumphrey/fugitive-gitlab.vim'
+" To open files in github
+Plug 'tpope/vim-rhubarb'
 
-"----- markdown & latex----
+"-----
 
-"https://www.swamphogg.com/2015/vim-setup/
-"https://news.ycombinator.com/item?id=10271028
+"" Essential programming tools(Syntax check, Language server & Auto completion)
 
-"https://github.com/vim-pandoc/vim-pandoc
-Plug 'vim-pandoc/vim-pandoc'
+" Ale for syntastic(Syntax checking through LSP)
+Plug 'w0rp/ale'
+" Languages Server(LSP)
+Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
+" Async completion
+if has('nvim')
+ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	" Enable deoplete on startup
+    let g:deoplete#enable_at_startup = 1
+else
+ Plug 'Shougo/deoplete.nvim'
+ Plug 'roxma/nvim-yarp'
+ Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
-"https://github.com/vim-pandoc/vim-pandoc-syntax
-Plug 'vim-pandoc/vim-pandoc-syntax'
-set nofoldenable    " disable folding
+"-----
 
-"https://github.com/gabrielelana/vim-markdown
-"Plug 'gabrielelana/vim-markdown'
+"" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-"https://github.com/plasticboy/vim-markdown
-"Plug 'plasticboy/vim-markdown'
+"-----
 
-"https://github.com/dkarter/bullets.vim
-Plug 'dkarter/bullets.vim'
-
-" Bullets.vim
-let g:bullets_enabled_file_types = [
-    \ 'markdown',
-    \ 'text',
-    \ 'gitcommit',
-    \ 'md'
-    \]
-
-"----- Color Themes ----
-
-"Color Theme 1 
-"https://github.com/morhetz/gruvbox/wiki/Terminal-specific
+"" Colour Themes
 Plug 'morhetz/gruvbox'
-
-"Color Theme 2
-Plug 'altercation/vim-colors-solarized'
-
-"Color Theme 3
+Plug 'liuchengxu/space-vim-theme'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'vim-scripts/CSApprox'
+" Airline Theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Nice icons
+Plug 'ryanoasis/vim-devicons'
 
-"Color Theme 3
-Plug 'liuchengxu/space-vim-theme'
+"-----
 
-"Initialize plugin system
+"" Language specific plugins
+
+"" Markdown
+Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+
+"" go
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fvictorio/vim-extract-variable'
+"POLYGOT HERE TO FIX VIM-GO BUG
+Plug 'sheerun/vim-polyglot'
+
+"" html
+" html Syntax highlighting
+Plug 'othree/html5-syntax.vim'
+" html5 autocomplete
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
+" Match tags
+Plug 'valloric/MatchTagAlways'
+" Close tags
+Plug 'alvan/vim-closetag'
+
+"" javascript
+" Jump between CommonJS modules
+Plug 'moll/vim-node'
+" Basic refactoring
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install'  }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
+Plug 'carlitux/deoplete-ternjs',
+Plug 'elzr/vim-json'
+Plug 'othree/jsdoc-syntax.vim'
+" Generate JSdoc
+Plug 'heavenshell/vim-jsdoc'
+" Syntax for js libraries
+Plug 'othree/javascript-libraries-syntax.vim'
+" Function parameter completion
+Plug 'othree/jspc.vim'
+
+"" python
+Plug 'davidhalter/jedi-vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+"" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+
+"" Docker
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'kevinhui/vim-docker-tools'
+
+" YAML
+Plug 'stephpy/vim-yaml'
+
+" Env files
+Plug 'tpope/vim-dotenv'
+
+"" Flutter/Dart
+Plug 'dart-lang/dart-vim-plugin'
+
+"-----
+
+""Different other plugins
+"" Fuzzy search
+" Better navigation through project
+" Only use FZF
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
+Plug 'jremmen/vim-ripgrep'
+" Closing quotes
+Plug 'Raimondi/delimitMate'
+" Indent the lines better
+Plug 'Yggdroot/indentLine'
+"" Language packs
+"Fancy starter page
+Plug 'mhinz/vim-startify'
+" Autosave toggle with :AutoSaveToggle
+Plug 'vim-scripts/vim-auto-save'
+" Close brackets
+Plug 'tpope/vim-surround'
+" Show whitespace
+Plug 'ntpeters/vim-better-whitespace'
+" Fix capitalized commands
+Plug 'takac/vim-commandcaps'
+" Align stuff better
+Plug 'junegunn/vim-easy-align'
+" Auto pair braces
+Plug 'jiangmiao/auto-pairs'
+" Show registers
+Plug 'https://github.com/junegunn/vim-peekaboo'
+" Show buffers on the top
+" Plug 'bagrat/vim-buffet'
+" Terminal
+Plug 'vimlab/split-term.vim'
+" Alternative terminal
+Plug 'benmills/vimux'
+" Grammer check
+" Plug 'rhysd/vim-grammarous'
+Plug 'vim-scripts/LanguageTool'
+Plug 'reedes/vim-lexical'
+" Formatter
+Plug 'Chiel92/vim-autoformat'
+" Bullets
+Plug 'dkarter/bullets.vim'
+" Vimtex
+Plug 'lervag/vimtex'
+" TODO
+" Latex conceal improvements
+" Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+
+" Initialize plugin system
 call plug#end()
 
-"-------------Color Theme customization-------------
-
-"Setting dark mode
-set background=dark 
-
-" Colorsheme
-syntax enable
-colorscheme gruvbox
-
-set number
-highlight LineNr ctermfg=red
+" Source External configuration
+source ~/.vim/general.vimrc
+source ~/.vim/keys.vimrc
+source ~/.vim/styles.vimrc

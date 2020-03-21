@@ -3,21 +3,55 @@
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
 
-# Use nnn file manager with only the n key
-n()
-{
-        nnn "$@"
+source ~/dotfiles/linux/shell/scripts/quitcd.bash_zsh
 
-        if [ -f $NNN_TMPFILE ]; then
-                . $NNN_TMPFILE
-                rm $NNN_TMPFILE
-        fi
+# ls on cd
+function lcd {
+    builtin cd "$@" && ls
+}
+
+# Run caffeine command for specific time
+caffX() {
+    caffeinate  sleep $@m &
+}
+
+# Convert file(s) into tar
+# and compress them with the xz compression algorithm
+tarxz() {
+    tar -cJvf ./$@.tar.xz $@
+}
+
+# Open a new Terminator window + tmux session
+# Close the Window when tmux gets detached
+tI() {
+    terminator -e "tmux attach -t $@" &
+}
+
+# Open an Application as job & not block cmdline
+O() {
+   "$@" &> /dev/null &
+}
+
+# Open pdf as job & not block cmdline
+O() {
+    "$@" &> /dev/null &
+}
+
+# Check for an existent alias
+chal() {
+    alias | rg "$@"
+}
+
+# Find app related files on system
+fApp() {
+    fd --hidden --no-ignore "$@" ./
 }
 
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
 }
+
 # Open man page as PDF -> TODO
 # function manpdf() {
 #  man -t "${1}" | open -f -a /Applications/Preview.app/
