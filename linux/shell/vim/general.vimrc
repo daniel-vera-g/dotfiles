@@ -20,10 +20,19 @@ set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 
 " Tabs. May be overridden by autocmd rules
-set tabstop=4
-set shiftwidth=4
-set softtabstop=0
+" TODO
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=0
+" set expandtab
+" filetype plugin indent on
+" On pressing tab, insert 2 spaces
 set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
 
 " Searching
 set hlsearch
@@ -120,10 +129,11 @@ nnoremap N Nzzzv
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
 " Go specific tabs
-au FileType go set noexpandtab
-au FileType go set shiftwidth=4
-au FileType go set softtabstop=4
-au FileType go set tabstop=4
+" TODO tabs to spaces
+" au FileType go set noexpandtab
+" au FileType go set shiftwidth=4
+" au FileType go set softtabstop=4
+" au FileType go set tabstop=4
 " Colors
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
@@ -145,16 +155,22 @@ let g:ale_sign_warning = '⚠'
 " Ale lint
 let g:ale_linters = {
 \   'latex': ['lacheck', 'chktex', 'Proselint'],
+\   'javascript': ['standard']
 \}
 " let g:ale_linters_explicit = 1
 " TODO
 " let g:ale_lint_on_text_changed = 0
 " TODO
-" let g:ale_lint_on_save = 1
+let g:ale_lint_on_save = 1
 " Ale fix
 " let g:ale_fix_on_save = 1
+"
+" SHOULD come at ale fixers and removed for standard
+" TODO formatt with prettier and fix with standard
+" \   'javascript': ['prettier', 'eslint'],
+"
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['prettier', 'standard'],
 \   'css': ['prettier'],
 \   'latex': ['lacheck', 'chktex', 'Proselint'],
 \}
@@ -174,10 +190,11 @@ let g:go_snippet_engine = "ultisnips"
 let g:javascript_enable_domhtmlcss = 1
 let g:javascript_plugin_flow = 1
 " vim-javascript
-augroup vimrc-javascript
-  autocmd!
-  autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
-augroup END
+" TODO tabs to spaces
+" augroup vimrc-javascript
+  " autocmd!
+  " autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
+" augroup END
 
 "" typescript
 let g:yats_host_keyword = 1
