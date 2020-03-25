@@ -393,4 +393,10 @@ alias opnvpn="sudo openvpn"
 alias gibson="gpg --encrypt --sign --armor"
 alias ungibson="gpg --decrypt"
 
+# -------------------------------------------------------------------
+# Borg
+# ------------------------------------------------------------------
 
+alias borgInit="borg init --encryption=none ."
+alias borgCreate"borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
