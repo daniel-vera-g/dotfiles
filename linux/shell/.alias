@@ -121,6 +121,10 @@ alias poms='pomd start -t 27:00'
 # Focus Music
 alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
 
+# Open browser sessions
+alias oWorkSession="brave-browser https://calendar.google.com/ https://keep.google.com/ https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
+alias oNeoSession="brave-browser https://calendar.google.com/calendar/r https://calendar.google.com/calendar/b/3/r https://mail.google.com/mail/u/0/#inbox https://mail.google.com/mail/u/3/#inbox https://app.asana.com/0/inbox/1162441252365004 https://app.slack.com/client/T7NFQ1WMB/DU54P2XCP https://git.neohelden.com/ &> /dev/null &"
+
 # -------------------------------------------------------------------
 # nvim
 # -------------------------------------------------------------------
@@ -398,5 +402,6 @@ alias ungibson="gpg --decrypt"
 # ------------------------------------------------------------------
 
 alias borgInit="borg init --encryption=none ."
-alias borgCreate"borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+alias borgCreate="borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
 alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+
