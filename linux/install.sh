@@ -121,6 +121,10 @@ ln -sfv	"$dir/shell/nvim/init.vim" ~/.config/
 echo "###################################### SIMLINKS FOR SCRIPTS ######################################"
 ln -sfv "$dir/shell/scripts/.function" ~
 ln -sfv "$dir/shell/scripts/.docker_aliases" ~
+ln -sfv "$dir/shell/scripts/audio/spotify_control" ~/bin/
+ln -sfv "$dir/shell/scripts/backup/system/borg-backup.sh" ~/bin/
+ln -sfv "$dir/shell/scripts/shortcuts/notes.sh" ~/bin/
+
 
 echo "###################################### SIMLINKS FOR VIM ######################################"
 mkdir -p ~/.vim/
