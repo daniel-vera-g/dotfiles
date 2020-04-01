@@ -3,7 +3,7 @@
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
 
-source ~/dotfiles/linux/shell/scripts/quitcd.bash_zsh
+source ~/dotfiles/linux/shell/scripts/misc/quitcd.bash_zsh
 
 # ls on cd
 function lcd {
