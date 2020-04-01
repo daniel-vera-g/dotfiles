@@ -353,6 +353,9 @@ alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
 
+alias tmuxOrg='terminator -e "tmux attach -t organise"'
+alias tmuxEdu='terminator -e "tmux attach -t education"'
+
 # -------------------------------------------------------------------
 # xclip
 # ------------------------------------------------------------------
