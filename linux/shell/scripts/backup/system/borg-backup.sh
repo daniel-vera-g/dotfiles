@@ -65,8 +65,8 @@ do
   [[ -z "$location" ]] || [[ -z "$repo" ]] && echo "Wrong parameter $argval, please check your input" && continue
 
   # Only if system backup use full excludefile
-  exclude="./BASIC_EXCLUDEFILE"
-  if [ "$SYSTEM_BACKUP_LOCATION" == "$BORG_REPO" ]; then exclude="./EXCLUDEFILE"; fi
+  exclude="/home/dvg/dotfiles/linux/shell/scripts/backup/system/BASIC_EXCLUDEFILE"
+  if [ "$SYSTEM_BACKUP_LOCATION" == "$BORG_REPO" ]; then exclude="/home/dvg/dotfiles/linux/shell/scripts/backup/system/EXCLUDEFILE"; fi
 
   echo "Location to back up: $location"
   echo "Repo to back up: $repo"
