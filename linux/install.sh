@@ -124,6 +124,7 @@ ln -sfv "$dir/shell/scripts/.docker_aliases" ~
 ln -sfv "$dir/shell/scripts/audio/spotify_control" ~/bin/
 ln -sfv "$dir/shell/scripts/backup/system/borg-backup.sh" ~/bin/
 ln -sfv "$dir/shell/scripts/shortcuts/notes.sh" ~/bin/
+ln -sfv "$dir/shell/scripts/misc/emojis" ~/bin/
 
 
 echo "###################################### SIMLINKS FOR VIM ######################################"
