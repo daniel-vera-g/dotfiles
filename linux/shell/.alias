@@ -40,9 +40,9 @@ alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbo
 alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
 
 # Use with spotify
-alias sp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control playpause"
-alias spp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control previous"
-alias spn="/home/dvg/dotfiles/linux/shell/scripts/spotify_control next"
+alias sp="spotify_control playpause"
+alias spp="spotify_control previous"
+alias spn="spotify_control next"
 
 # -------------------------------------------------------------------
 # Open directories/files...
