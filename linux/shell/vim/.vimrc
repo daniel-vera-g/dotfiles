@@ -24,7 +24,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "-----
 
 "" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
-Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 
 "-----
 
