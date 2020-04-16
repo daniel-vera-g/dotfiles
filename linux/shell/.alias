@@ -50,6 +50,13 @@ alias sp="spotify_control playpause"
 alias spp="spotify_control previous"
 alias spn="spotify_control next"
 
+# Using bluetooth headphones you can either have crappy voice & audio(HSP) or good audio(A2P)
+# See: https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/508522
+# Till fixed, use this aliases to switch between both settings
+# TODO change to script to dynamically set device and output sink(See: https://gist.github.com/OndraZizka/2724d353f695dacd73a50883dfdf0fc6)
+alias switchA2pBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2)  a2dp_sink"
+alias switchHspBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2) headset_head_unit"
+
 # -------------------------------------------------------------------
 # Open directories/files...
 # -------------------------------------------------------------------
