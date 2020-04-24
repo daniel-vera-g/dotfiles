@@ -19,21 +19,6 @@ set fileformats=unix,dos,mac
 " Fix backspace indent
 set backspace=indent,eol,start
 
-" Tabs. May be overridden by autocmd rules
-" TODO
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=0
-" set expandtab
-" filetype plugin indent on
-" On pressing tab, insert 2 spaces
-" set expandtab
-" " show existing tab with 2 spaces width
-" set tabstop=2
-" set softtabstop=2
-" when indenting with '>', use 2 spaces width
-" set shiftwidth=2
-
 set tabstop=2                         " number of spaces used as tab for file
 set softtabstop=2                     " number of spaces used as tab for editing
 set shiftwidth=2                      " number of spaces used to autoindent
@@ -84,30 +69,6 @@ endif
 set laststatus=2
 set mousemodel=popup
 
-" TODO set right german & english grammar & co
-"" Spelling & Grammar
-" TODO set nospell
-" set nospell
-" set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/de.utf-8.add
-" setlocal spell
-" set spelllang=de,en_gb
-" highlight SpellBad guifg=#ff0000
-" inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" LanguageTool
-" let g:languagetool_jar = '~/LanguageTool-4.6/languagetool-commandline.jar'
-" Set vim-lexical file types
-" augroup lexical
-" autocmd!
-" autocmd FileType markdown,mkd call lexical#init()
-" autocmd FileType textile call lexical#init()
-" autocmd FileType latex call lexical#init()
-" autocmd FileType text call lexical#init({ 'spell': 0 })
-" augroup END
-" let g:lexical#spell = 1
-" let g:lexical#spelllang = ['en_gb', 'de']
-" let g:lexical#thesaurus = ['~/.vim/thesaurus/moby_thesaurus.txt',]
-" let g:lexical#spellfile = ['~/.vim/spell/en.utf-8.add','~/.vim/spell/de.utf-8.add',]
-
 " Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3
@@ -118,11 +79,6 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-" TODO needed?
-" Use modeline overrides(For preconfiguration at beginning or end of file)
-" set modeline
-" set modelines=10
-
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
@@ -131,104 +87,8 @@ nnoremap N Nzzzv
 "-----
 """ Plugin specific configs
 
-" TODO golang stuff if needed
-"" Golang
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-" let g:go_def_mapping_enabled = 0
-" Go specific tabs
-" TODO tabs to spaces
-" au FileType go set noexpandtab
-" au FileType go set shiftwidth=4
-" au FileType go set softtabstop=4
-" au FileType go set tabstop=4
-" Colors
-" let g:go_highlight_build_constraints = 1
-" let g:go_highlight_extra_types = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_methods = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_structs = 1
-" let g:go_highlight_types = 1
-" Highlight same variables
-" let g:go_auto_sameids = 0
-" Auto import dependencies
-" let g:go_fmt_command = "goimports"
-
-"" Ale TODO ale config & use actively
-" Error and warning signs.
-" let g:ale_sign_error = '⤫'
-" let g:ale_sign_warning = '⚠'
-" Ale lint
-" let g:ale_linters = {
-" \   'latex': ['lacheck', 'chktex', 'Proselint'],
-" \   'javascript': ['standard']
-" \}
-" let g:ale_linters_explicit = 1
-" TODO
-" let g:ale_lint_on_text_changed = 0
-" TODO
-" let g:ale_lint_on_save = 1
-" Ale fix
-" let g:ale_fix_on_save = 1
-"
-" SHOULD come at ale fixers and removed for standard
-" TODO formatt with prettier and fix with standard
-" \   'javascript': ['prettier', 'eslint'],
-" TODO
-" let g:ale_fixers = {
-" \   'javascript': ['prettier', 'standard'],
-" \   'css': ['prettier'],
-" \   'latex': ['lacheck', 'chktex', 'Proselint'],
-" \}
-
-" Show types
-" let g:go_auto_type_info = 1
-" Better json handline
-" let g:go_addtags_transform = "snakecase"
 "Snippets engine
 let g:go_snippet_engine = "ultisnips"
-
-"" html
-" for html files, 2 spaces
-" autocmd Filetype html setlocal ts=2 sw=2 expandtab
-
-"" javascript
-" let g:javascript_enable_domhtmlcss = 1
-" let g:javascript_plugin_flow = 1
-" vim-javascript
-" TODO tabs to spaces
-" augroup vimrc-javascript
-  " autocmd!
-  " autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
-" augroup END
-
-" TODO
-"" typescript
-" let g:yats_host_keyword = 1
-
-" TODO tern
-"" Tern
-"enable keyboard shortcuts
-" let g:tern_map_keys=1
-"show argument hints
-" let g:tern_show_argument_hints='on_hold'
-"JS libraries
-" let g:used_javascript_libs = 'jquery, react, chai, handlebars, vue'
-
-" TODO coc vim
-"" coc.nvim default settings
-" if hidden is not set, TextEdit might fail.
-" set hidden
-" Better display for messages
-" set cmdheight=2 -> Fix for big command bar
-" Smaller updatetime for CursorHold & CursorHoldI
-" set updatetime=300
-" don't give |ins-completion-menu| messages.
-" set shortmess+=c
-" always show signcolumns
-" set signcolumn=yes
 
 "" Markdown Config
 " Sources:
@@ -259,9 +119,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
-
-"" CtrlP -> ONLY USE FZF
-" let g:ctrlp_show_hidden = 1
 
 " fzf.vim
 set wildmode=list:longest,list:full
@@ -296,14 +153,6 @@ let g:vimtex_toc_config = {
       \ 'mode' : 2,
       \}
 
-" TODO deoplete
-" Deoplete
-" This is new style
-" call deoplete#custom#var('omni', 'input_patterns', {
-"       \ 'tex': g:vimtex#re#deoplete
-"       \})
-
-
 "" Nerdtree
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -321,13 +170,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Open nerd tree when opening folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
-" TODO no more needed
-"" Nerdtree commenter
-"Add spaces after comment delimiters by default
- " let g:NERDSpaceDelims = 1
-"Use compact syntax for prettified multi-line comments
- " let g:NERDCompactSexyComs = 1
 
 "" Statusline + Airline
 if exists("*fugitive#statusline")
@@ -350,14 +192,3 @@ let g:airline_skip_empty_sections = 1
 " Airline
 let g:airline_left_sep  = ''
 let g:airline_right_sep = ''
-" TODO ale
-" let airline#extensions#ale#error_symbol = 'E:'
-" let airline#extensions#ale#warning_symbol = 'W:'
-
-" TODO fix because of Error closing buffers
-" Save folding on exit
-" augroup remember_folds
-  " autocmd!
-  " autocmd BufWinLeave * mkview
-  " autocmd BufWinEnter * silent! loadview
-  " augroup END
