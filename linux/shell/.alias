@@ -1,3 +1,7 @@
+# TODO change to script see firefox bookmarks
+alias updateSource="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress uni-drive:uni /home/dvg/workspace/edu/hska/uni/  --backup-dir /home/dvg/workspace/edu/hska/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S")"
+alias updateDest="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/uni/ uni-drive:uni --backup-dir uni-drive:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S")"
+
 # -------------------------------------------------------------------
 # Global aliases
 # -------------------------------------------------------------------
