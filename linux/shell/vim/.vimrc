@@ -27,7 +27,7 @@ Plug 'tpope/vim-commentary'
 " Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Enable deoplete on startup
+	" Enable deoplete on startup
     let g:deoplete#enable_at_startup = 1
 else
  Plug 'Shougo/deoplete.nvim'
