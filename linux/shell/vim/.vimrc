@@ -24,6 +24,8 @@ Plug 'tpope/vim-commentary'
 
 "-----
 
+"" Languages Server(LSP)
+Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
 " Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
