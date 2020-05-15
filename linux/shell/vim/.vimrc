@@ -25,7 +25,8 @@ Plug 'tpope/vim-commentary'
 "-----
 
 "" Languages Server(LSP)
-Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
+" TODO fix deoplete/coc compatibility(See old vimrc config)
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -114,7 +115,7 @@ Plug 'dart-lang/dart-vim-plugin'
 " Better navigation through project
 " Only use FZF
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
 Plug 'jremmen/vim-ripgrep'
