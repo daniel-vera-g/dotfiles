@@ -157,4 +157,6 @@ call plug#end()
 source ~/.vim/config.vimrc
 source ~/.vim/plugin-config.vimrc
 source ~/.vim/keys.vimrc
+source ~/.vim/plugin-keys.vimrc
+source ~/.vim/keys.vimrc
 source ~/.vim/styles.vimrc

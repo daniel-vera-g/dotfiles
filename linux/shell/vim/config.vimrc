@@ -8,7 +8,18 @@ endif
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
-"
+
+" Turn on the Wild menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+  endif
+
 " Highlight matching pairs of brackets. Use the '%' character to jump between them.
 set matchpairs+=<:>
 
@@ -40,6 +51,14 @@ set expandtab                         " expand tabs into spaces(Convert TABs to 
 set smarttab                          " smart tabulation and backspace(Enable intelligent tabbing and spacing for indentation and alignment)
 set bs=indent,eol,start               " allow backspacing over everything
 
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
 " Searching
 set hlsearch
 set incsearch
@@ -47,6 +66,12 @@ set ignorecase
 set smartcase
 " Clear search highlight
 set hlsearch!
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+
+" For regular expressions turn magic on
+set magic
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -60,40 +85,31 @@ set splitright
 
 " Highlight matching brace
 set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
 
-"" Visual Settings
-set ruler
-set number
-set relativenumber
-highlight LineNr ctermfg=red
-let no_buffers_menu=1
-silent! colorscheme gruvbox
-set background=dark
-" True colors
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
-set laststatus=2
-set mousemodel=popup
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
-" Disable the blinking cursor.
-set gcr=a:blinkon0
-set scrolloff=3
-
-" Status line
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
-set title
-set titleold="Terminal"
-set titlestring=%F
+" Height of the command bar
+set cmdheight=1
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
