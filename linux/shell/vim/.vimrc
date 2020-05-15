@@ -154,6 +154,7 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 " Source External configuration
-source ~/.vim/general.vimrc
+source ~/.vim/config.vimrc
+source ~/.vim/plugin-config.vimrc
 source ~/.vim/keys.vimrc
 source ~/.vim/styles.vimrc
