@@ -4,6 +4,9 @@ else
     set shell=/bin/sh
 endif
 
+" Enable scrolling in vim using tmux
+set mouse=a
+
 " Set shell
 set shell=/usr/bin/zsh
 
@@ -19,11 +22,11 @@ set fileformats=unix,dos,mac
 " Fix backspace indent
 set backspace=indent,eol,start
 
-set tabstop=2                         " number of spaces used as tab for file
-set softtabstop=2                     " number of spaces used as tab for editing
-set shiftwidth=2                      " number of spaces used to autoindent
-set expandtab                         " expand tabs into spaces
-set smarttab                          " smart tabulation and backspace
+set tabstop=2                         " number of spaces used as tab for file(Number of visual spaces per TAB)
+set softtabstop=2                     " number of spaces used as tab for editing(Number of spaces in TAB when editing)
+set shiftwidth=2                      " number of spaces used to autoindent(Number of spaces indented when reindent operations (>> and <<) are used)
+set expandtab                         " expand tabs into spaces(Convert TABs to spaces)
+set smarttab                          " smart tabulation and backspace(Enable intelligent tabbing and spacing for indentation and alignment)
 set bs=indent,eol,start               " allow backspacing over everything
 
 " Searching
