@@ -1,13 +1,13 @@
 # TODO change to script see firefox bookmarks
-alias updateSource="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias updateDest="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias updateSourceDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias updateDestDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
+alias updateSource="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateDest="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateSourceDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateDestDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
 
-alias syncSource="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias syncDest="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias syncSourceDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
-alias syncDestDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis_0385738305.zip --exclude node_modules/ --exclude .git/"
+alias syncSource="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncDest="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncSourceDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncDestDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
 
 # -------------------------------------------------------------------
 # Global aliases
@@ -26,9 +26,11 @@ alias aptls="apt list --upgradable"
 alias aptul="sudo apt update && apt list --upgradable"
 
 alias tree="tree -A"
+alias tree1="tree -L 1"
+alias tree2="tree -L 2"
 alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
+alias tree1d="tree -d -L 1"
+alias tree2d="tree -d -L 2"
 
 alias rs="rm -iv"
 alias rr="rm -rf"
