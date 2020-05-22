@@ -124,7 +124,7 @@ highlight SpellBad guifg=#ff0000
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " LanguageTool
 let g:languagetool_jar = '~/LanguageTool-4.6/languagetool-commandline.jar'
-Set vim-lexical file types
+" Set vim-lexical file types
 augroup lexical
 autocmd!
 autocmd FileType markdown,mkd call lexical#init()

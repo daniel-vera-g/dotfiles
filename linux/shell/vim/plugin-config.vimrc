@@ -146,8 +146,8 @@ let g:ale_fix_on_save = 0
 "
 " \   'javascript': ['prettier', 'eslint'],
 let g:ale_linters = {
-" \   'latex': ['lacheck', 'chktex', 'Proselint'],
-" \   'javascript': ['standard']
+ \   'latex': ['lacheck', 'chktex', 'Proselint'],
+ \   'javascript': ['standard']
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'standard'],
