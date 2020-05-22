@@ -14,8 +14,11 @@ call plug#begin('~/.vim/plugged')
 " Ale for syntastic(Syntax checking through LSP)
 Plug 'w0rp/ale'
 " Languages Server(LSP)
-Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
-" Async completion
+" Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"" Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	" Enable deoplete on startup
