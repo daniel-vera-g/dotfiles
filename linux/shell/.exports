@@ -1,5 +1,8 @@
 # ------ System -----
 
+# Source globals for gitlab-cli(Not to be commitet)
+source ~/.gitlab-cli-globals
+
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
  

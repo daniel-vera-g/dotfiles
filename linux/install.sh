@@ -160,6 +160,11 @@ for I in $(ls "$dir/shell/vim/spell/"); do cp $dir/shell/vim/spell/$I ~/.vim/spe
 mkdir ~/.vim/thesaurus/
 cp "$dir/shell/vim/thesaurus/moby_thesaurus.txt" ~/.vim/thesaurus/
 
+echo "###################################### vscode config ######################################"
+mkdir -p ~/.config/Code/User
+ln -sfv "$dir/system/vscode/keybindings.json" ~/.config/Code/User
+ln -sfv "$dir/system/vscode/settings.json" ~/.config/Code/User
+
 echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
 # Make directory vim snippets
 mkdir ~/.vim/plugged/ultisnips/UltiSnips/
