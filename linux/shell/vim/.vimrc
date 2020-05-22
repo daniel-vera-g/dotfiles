@@ -2,31 +2,19 @@
 filetype plugin indent on
 syntax on
 
-"" Plugins & loading of custom configuration
+" Plugins & loading of custom configuration
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
 "- Avoid using standard Vim directory names like 'plugin'
 
 call plug#begin('~/.vim/plugged')
 
-"-----
-
-"" Nerdtree
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Nerdtree git plugin
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-"-----
-
-"" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
-Plug 'tpope/vim-commentary'
-
-"-----
-
-"" Languages Server(LSP)
-" TODO fix deoplete/coc compatibility(See old vimrc config)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" ---
+" Essential programming tools(Syntax check, Language server & Auto completion)
+" Ale for syntastic(Syntax checking through LSP)
+Plug 'w0rp/ale'
+" Languages Server(LSP)
+Plug 'neoclide/coc.nvim', {'do': 'npm install --frozen-lockfile'}
 " Async completion
 if has('nvim')
  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -38,10 +26,10 @@ else
  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
+" ---
 
-"-----
-
-"" Git
+" ---
+" Git
 " Show changes in vim gutter
 Plug 'airblade/vim-gitgutter'
 " Vim wrapper
@@ -50,13 +38,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 " To open files in github
 Plug 'tpope/vim-rhubarb'
+" ---
 
-"" Snippets
-" TODO use actively
+" ---
+" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+" ---
 
-"" Colour Themes
+" ---
+" Colour Themes
 Plug 'morhetz/gruvbox'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'drewtempelmeyer/palenight.vim'
@@ -66,22 +57,23 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Nice icons
 Plug 'ryanoasis/vim-devicons'
+" ----
 
-"-----
-
-"" Language specific plugins
-
-"" Markdown
+" ---
+" Language specific plugins
+" Markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 " Focus work session
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-
+" go
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fvictorio/vim-extract-variable'
 " Syntax & co for all languages
 Plug 'sheerun/vim-polyglot'
-
-"" html
+" --
+" html
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
@@ -89,74 +81,94 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'valloric/MatchTagAlways'
 " Close tags
 Plug 'alvan/vim-closetag'
-
+" --
+" json
 Plug 'elzr/vim-json'
 " Syntax for js libraries
 Plug 'othree/javascript-libraries-syntax.vim'
-
-"" Docker
+" python
+Plug 'davidhalter/jedi-vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+" Docker
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'kevinhui/vim-docker-tools'
-
 " YAML
 Plug 'stephpy/vim-yaml'
-
 " Env files
 Plug 'tpope/vim-dotenv'
-
-"" Flutter/Dart
-" TODO learn
+" Flutter/Dart
 Plug 'dart-lang/dart-vim-plugin'
+" Vimtex
+Plug 'lervag/vimtex'
+" Latex conceal improvements
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+" ---
+" Different other plugins
 
-"-----
-
-"" Different other plugins
-"" Fuzzy search
+"---
+" Fuzzy search
 " Better navigation through project
-" Only use FZF
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Align stuff better
+Plug 'junegunn/vim-easy-align'
+" Show registers
+Plug 'https://github.com/junegunn/vim-peekaboo'
+" Close brackets
+Plug 'tpope/vim-surround'
+" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
+Plug 'tpope/vim-commentary'
 " Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
 Plug 'jremmen/vim-ripgrep'
 " Automatic closing quotes
 Plug 'Raimondi/delimitMate'
+" highlighted yank
+Plug 'machakann/vim-highlightedyank'
+" select text, then press * or # to search for it
+Plug 'bronson/vim-visual-star-search'
 " Indent the lines better
 Plug 'Yggdroot/indentLine'
 " Fancy starter page
 Plug 'mhinz/vim-startify'
 " Autosave toggle with :AutoSaveToggle
 Plug 'vim-scripts/vim-auto-save'
-" Close brackets
-Plug 'tpope/vim-surround'
 " Show whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Fix capitalized commands
 Plug 'takac/vim-commandcaps'
-" Align stuff better
-Plug 'junegunn/vim-easy-align'
 " Auto pair braces
 Plug 'jiangmiao/auto-pairs'
-" Show registers
-Plug 'https://github.com/junegunn/vim-peekaboo'
 " Terminal
-" TODO learn
 Plug 'vimlab/split-term.vim'
 " Alternative terminal using tmux
 Plug 'benmills/vimux'
-
 " Bullets
 Plug 'dkarter/bullets.vim'
-" Vimtex
-Plug 'lervag/vimtex'
+" Grammer check
+Plug 'rhysd/vim-grammarous'
+Plug 'vim-scripts/LanguageTool'
+Plug 'reedes/vim-lexical'
+" ctags
+Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
+" Nerdtree
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Nerdtree git plugin
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Formatter
+Plug 'Chiel92/vim-autoformat'
+"---
 
 " Initialize plugin system
 call plug#end()
 
 " Source External configuration
-source ~/.vim/config.vimrc
 source ~/.vim/plugin-config.vimrc
-source ~/.vim/keys.vimrc
 source ~/.vim/plugin-keys.vimrc
 source ~/.vim/keys.vimrc
 source ~/.vim/styles.vimrc
+source ~/.vim/config.vimrc
