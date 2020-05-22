@@ -1,24 +1,37 @@
 " Colors, fonts and styles
 
+" ---
+" General
+set laststatus=2
+set mousemodel=popup
+" Height of the command bar
+set cmdheight=1
+" Set utf8 as standard encoding
+set encoding=utf8
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+" ---
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Numer settings
+" ---
+" Number settings
 set ruler
 set number
 set relativenumber
 highlight LineNr ctermfg=red
 let no_buffers_menu=1
+" ---
 
+" ---
 " Color scheme
 try
     silent! colorscheme gruvbox
   catch
 endtry
-
 set background=dark
 " True colors
 if (has("nvim"))
@@ -31,19 +44,17 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-set laststatus=2
-set mousemodel=popup
+" ---
 
-" Disable the blinking cursor.
-set gcr=a:blinkon0
-set scrolloff=3
-
+" ---
 " Status line
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set title
 set titleold="Terminal"
 set titlestring=%F
+" ---
 
+" ---
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
@@ -51,17 +62,19 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 endif
+" ---
 
-" Set utf8 as standard encoding
-set encoding=utf8
+" ---
+" Cursor
+" Disable the blinking cursor.
+set gcr=a:blinkon0
+set scrolloff=3
+" Show me where I am
+set cursorline
+" ---
 
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-"*****************************************************************************
+" ---
 "" Convenience variables
-"*****************************************************************************
-
 " vim-airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -97,4 +110,4 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
-
+" ---
