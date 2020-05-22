@@ -1,3 +1,14 @@
+# TODO change to script see firefox bookmarks
+alias updateSource="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateDest="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateSourceDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias updateDestDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+
+alias syncSource="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncDest="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncSourceDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+alias syncDestDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude Analysis93845739857/ --exclude Analysis93845739857.zip --exclude node_modules/ --exclude .git/"
+
 # -------------------------------------------------------------------
 # Global aliases
 # -------------------------------------------------------------------
@@ -9,27 +20,55 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
+alias aptupd="sudo apt update"
+alias aptupg="sudo apt upgrade"
+alias aptls="apt list --upgradable"
+alias aptul="sudo apt update && apt list --upgradable"
+
 alias tree="tree -A"
+alias tree1="tree -L 1"
+alias tree2="tree -L 2"
 alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
+alias tree1d="tree -d -L 1"
+alias tree2d="tree -d -L 2"
 
 alias rs="rm -iv"
 alias rr="rm -rf"
 
 alias cp="cp -iv"
 alias mv="mv -iv"
+alias tch="touch"
 
 alias cat="bat"
 
 # Sourcing
 alias refresh="source ~/.zshrc"
-alias reload="source ~/.zshrc"
 
 # Open Applications
 alias open="xdg-open"
 alias na="nautilus &> /dev/null &"
+alias na.="nautilus . &> /dev/null &"
 alias gln="gnome-terminal -x glances -2"
+alias fdev="firefox_dev &> /dev/null &"
+alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
+alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
+
+# Open settings
+alias networkSettings="gnome-control-center network &> /dev/null &"
+alias bluetoothSettings="gnome-control-center bluetooth &> /dev/null &"
+alias soundSettings="gnome-control-center sound &> /dev/null &"
+
+# Use with spotify
+alias sp="spotify_control playpause"
+alias spp="spotify_control previous"
+alias spn="spotify_control next"
+
+# Using bluetooth headphones you can either have crappy voice & audio(HSP) or good audio(A2P)
+# See: https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/508522
+# Till fixed, use this aliases to switch between both settings
+# TODO change to script to dynamically set device and output sink(See: https://gist.github.com/OndraZizka/2724d353f695dacd73a50883dfdf0fc6)
+alias switchA2pBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2)  a2dp_sink"
+alias switchHspBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2) headset_head_unit"
 
 # -------------------------------------------------------------------
 # Open directories/files...
@@ -52,13 +91,16 @@ alias dKtor="dk start tor-browser"
 alias dKHolly="sudo docker run -it --rm mapitman/hollywood"
 
 # Backup
-alias backupShutdown='deja-dup --backup && schutdown'
+alias backupShutdown='deja-dup --backup && shutdown'
 alias backupEx='deja-dup --backup &> /dev/null &'
 alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
+alias fullBackup="borg-backup.sh system downloads edu neohelden vm"
 
 # Uni
 alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
 alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
+alias mScr="okular '/home/dvg/workspace/edu/uni/semester-1/mathematik-1/course-files/Skriptum Mathematik 1.pdf' &> /dev/null &"
+alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informatik-1/course-files/Skript Theoretische Informatik.pdf' &> /dev/null &"
 
 # -------------------------------------------------------------------
 # golang
@@ -100,10 +142,15 @@ alias fdhi='fd --hidden --no-ignore'
 alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
 alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
-alias pomos='pomd start'
+alias poms='pomd start -t 27:00 -c 1'
 
 # Focus Music
 alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
+
+# Open browser sessions
+alias oWorkSession="brave-browser https://calendar.google.com/ https://keep.google.com/ https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
+alias oNeoSession="brave-browser https://calendar.google.com/calendar/b/3/r https://mail.google.com/mail/u/3/#inbox https://app.asana.com/0/inbox/1162441252365004 https://app.slack.com/client/T7NFQ1WMB/DU54P2XCP https://git.neohelden.com/ 'https://git.neohelden.com/dashboard/merge_requests?assignee_username=daniel' &> /dev/null &"
+alias oUniSession='firefox_dev "https://ilias.hs-karlsruhe.de/login.php" "https://webmail.hs-karlsruhe.de/" &> /dev/null &'
 
 # -------------------------------------------------------------------
 # nvim
@@ -152,6 +199,9 @@ alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 # -------------------------------------------------------------------
 # Git
 # -------------------------------------------------------------------
+
+alias yoink="git checkout master && git fetch upstream master && git merge upstream/master"
+alias lzg="lazygit"
 
 alias g="git"
 alias grso="git remote show origin"
@@ -330,6 +380,9 @@ alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
 
+alias tmuxOrg='terminator -e "tmux attach -t organise"'
+alias tmuxEdu='terminator -e "tmux attach -t education"'
+
 # -------------------------------------------------------------------
 # xclip
 # ------------------------------------------------------------------
@@ -366,3 +419,33 @@ alias prtnDisCon="sudo protonvpn-cli -d"
 alias prtnMenu="sudo protonvpn-cli -m"
 alias prtnStat="sudo protonvpn-cli --status"
 alias opnvpn="sudo openvpn"
+
+# -------------------------------------------------------------------
+# GPG
+# ------------------------------------------------------------------
+
+alias gibson="gpg --encrypt --sign --armor"
+alias ungibson="gpg --decrypt"
+
+# -------------------------------------------------------------------
+# Borg
+# ------------------------------------------------------------------
+
+alias borgInit="borg init --encryption=none ."
+alias borgCreate="borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+
+# -------------------------------------------------------------------
+# Misc
+# -------------------------------------------------------------------
+
+alias smileyLs="zathura /home/dvg/workspace/tools/cheat_sheets/emoji-lists/emoji-list.pdf"
+
+# -------------------------------------------------------------------
+# TMUX
+# -------------------------------------------------------------------
+
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"

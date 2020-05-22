@@ -1,5 +1,6 @@
 echo "####################################################################################"
-echo "************************ Installing git-open(npm) ************************"
+echo "************************ Installing exfat tools ************************"
 echo "####################################################################################"
 
-sudo git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+
+sudo apt-get install -y exfat-utils exfat-fuse

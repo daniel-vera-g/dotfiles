@@ -1,5 +1,5 @@
 echo "####################################################################################"
-echo "************************ Installing navi ************************"
+echo "************************ Installing xclip ************************"
 echo "####################################################################################"
 
-sudo git clone --depth 1 http://github.com/denisidoro/navi /opt/navi && cd /opt/navi && sudo make install
+sudo apt-get install -y xclip

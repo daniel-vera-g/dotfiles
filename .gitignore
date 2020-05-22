@@ -3,4 +3,4 @@ apps-install-logs.txt
 install-logs.txt
 .travis.yml
 .vscode/settings.json
-
+EXCLUDEFILE

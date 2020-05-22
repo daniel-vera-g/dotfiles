@@ -3,6 +3,32 @@
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
 
+source ~/dotfiles/linux/shell/scripts/misc/quitcd.bash_zsh
+
+# Source: https://gist.github.com/premek/6e70446cfc913d3c929d7cdbfe896fef
+# Usage: mv oldfilename
+# If you call mv without the second parameter it will prompt you to edit the filename on command line.
+# Original mv is called when it's called with more than one argument.
+# It's useful when you want to change just a few letters in a long name.
+#
+# Also see:
+# - imv from renameutils
+# - Ctrl-W Ctrl-Y Ctrl-Y (cut last word, paste, paste)
+function mv() {
+  if [ "$#" -ne 1 ] || [ ! -e "$1" ]; then
+    command mv "$@"
+    return
+  fi
+
+  read -ei "$1" newfilename
+  command mv -v -- "$1" "$newfilename"
+}
+
+# ls on cd
+function lcd {
+    builtin cd "$@" && ls
+}
+
 # Run caffeine command for specific time
 caffX() {
     caffeinate  sleep $@m &
@@ -12,17 +38,6 @@ caffX() {
 # and compress them with the xz compression algorithm
 tarxz() {
     tar -cJvf ./$@.tar.xz $@
-}
-
-# Use nnn file manager with only the n key
-n()
-{
-        nnn "$@"
-
-        if [ -f $NNN_TMPFILE ]; then
-                . $NNN_TMPFILE
-                rm $NNN_TMPFILE
-        fi
 }
 
 # Open a new Terminator window + tmux session
@@ -42,7 +57,7 @@ O() {
 }
 
 # Check for an existent alias
-chAl() {
+chal() {
     alias | rg "$@"
 }
 

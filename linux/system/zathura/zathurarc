@@ -1,6 +1,8 @@
 # settings
-set window-height 1024
-set window-width 768
+# set window-height 1024
+# set window-width 768
+set window-height 3000
+set window-width 3000
 set adjust-open width
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
@@ -32,7 +34,9 @@ map [index] q quit
 map w adjust_window width
 map z adjust_window bestfit
 map <Space> navigate next
+map <Right> navigate next
 map <S-Space> navigate previous
+map <Left> navigate previous
 map b toggle_statusbar
 
 # zathurarc-dark

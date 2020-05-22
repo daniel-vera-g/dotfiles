@@ -1,5 +1,5 @@
 echo "####################################################################################"
-echo "************************ Installing tree ************************"
+echo "************************ Installing git-open(npm) ************************"
 echo "####################################################################################"
 
-sudo apt-get install tree
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open

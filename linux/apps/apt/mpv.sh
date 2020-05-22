@@ -2,4 +2,4 @@ echo "##########################################################################
 echo "************************ Installing  mpv-video-player ************************"
 echo "####################################################################################"
 
-sudo add-apt-repository ppa:mc3man/mpv-tests && sudo apt-get install mpv
+sudo add-apt-repository ppa:mc3man/mpv-tests && sudo apt-get install -y mpv

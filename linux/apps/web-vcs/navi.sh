@@ -1,6 +1,5 @@
 echo "####################################################################################"
-echo "************************ Installing exfat tools ************************"
+echo "************************ Installing navi ************************"
 echo "####################################################################################"
 
-
-sudo apt-get install exfat-utils exfat-fuse
+git clone --depth 1 http://github.com/denisidoro/navi /opt/navi && cd /opt/navi && sudo make install
