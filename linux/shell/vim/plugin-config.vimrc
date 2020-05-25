@@ -157,11 +157,12 @@ let g:ale_fixers = {
 " ---
 
 " ---
+" TODO as collides with coc nvim
 " Deoplete
 " This is new style
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
+" call deoplete#custom#var('omni', 'input_patterns', {
+"       \ 'tex': g:vimtex#re#deoplete
+"       \})
 " ---
 
 " javascript
