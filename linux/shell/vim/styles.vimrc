@@ -67,7 +67,6 @@ endif
 " ---
 " Cursor
 " Disable the blinking cursor.
-set gcr=a:blinkon0
 set scrolloff=3
 " Show me where I am
 set cursorline
