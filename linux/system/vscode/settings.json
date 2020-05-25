@@ -59,7 +59,7 @@
   "vim.hlsearch": true,
   "vim.enableNeovim": true,
   "vim.useCtrlKeys": true,
-  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.neovimPath": "/snap/bin/nvim",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(96, 120, 128, 0.5)",
   "vim.highlightedyank.duration": 100,
