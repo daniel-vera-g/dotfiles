@@ -26,7 +26,7 @@ export NNN_USE_EDITOR=1
 export DOTFILES=$HOME/dotfiles
 
 # Make vim the default editor.
-export EDITOR='vim';
+export EDITOR='nvim';
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
