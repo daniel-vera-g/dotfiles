@@ -111,8 +111,8 @@ let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 " Buffer nav
-map <leader>w :bnext<cr>
-map <leader>q :bprevious<cr>
+noremap <leader>w :bnext<cr>
+noremap <leader>q :bprevious<cr>
 "" Close buffer
 noremap <leader>c :bd<CR>
 noremap <leader>cf :bd!<CR>
