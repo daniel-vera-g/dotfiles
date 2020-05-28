@@ -170,6 +170,6 @@ call plug#end()
 " Source External configuration
 source ~/.vim/plugin-config.vimrc
 source ~/.vim/plugin-keys.vimrc
-source ~/.vim/keys.vimrc
-source ~/.vim/styles.vimrc
 source ~/.vim/config.vimrc
+source ~/.vim/styles.vimrc
+source ~/.vim/keys.vimrc
