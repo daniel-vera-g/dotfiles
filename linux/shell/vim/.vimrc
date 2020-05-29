@@ -15,18 +15,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 " Languages Server(LSP)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" TODO only use coc as collides with deoplete(See older PRs where it still worked?)
-"" Async completion
-" if has('nvim')
-"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" 	" Enable deoplete on startup
-"     let g:deoplete#enable_at_startup = 1
-" else
-"  Plug 'Shougo/deoplete.nvim'
-"  Plug 'roxma/nvim-yarp'
-"  Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" let g:deoplete#enable_at_startup = 1
 " ---
 
 " ---
@@ -71,18 +59,10 @@ Plug 'junegunn/goyo.vim'
 " go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'fvictorio/vim-extract-variable'
-" Syntax & co for all languages
-Plug 'sheerun/vim-polyglot'
-" --
 " html
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
-" Match tags
-Plug 'valloric/MatchTagAlways'
-" Close tags
-Plug 'alvan/vim-closetag'
-" --
 " json
 Plug 'elzr/vim-json'
 " Syntax for js libraries
@@ -102,18 +82,25 @@ Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-dotenv'
 " Flutter/Dart
 Plug 'dart-lang/dart-vim-plugin'
-" Vimtex
+" Vimtex/latex
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-" ---
-" Different other plugins
+" Syntax & co for all languages
+Plug 'sheerun/vim-polyglot'
+" --
 
 "---
-" Fuzzy search
-" Better navigation through project
+" Different other plugins
+" Fuzzy search -> Better navigation through project
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Match tags
+Plug 'valloric/MatchTagAlways'
+" Close tags
+Plug 'alvan/vim-closetag'
+" Automatic closing quotes
+Plug 'Raimondi/delimitMate'
 " Align stuff better
 Plug 'junegunn/vim-easy-align'
 " Show registers
@@ -124,8 +111,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 " Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
 Plug 'jremmen/vim-ripgrep'
-" Automatic closing quotes
-Plug 'Raimondi/delimitMate'
 " highlighted yank
 Plug 'machakann/vim-highlightedyank'
 " select text, then press * or # to search for it
