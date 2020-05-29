@@ -20,6 +20,9 @@ nnoremap <silent> <leader>e :FZF -m<CR>
 nmap <leader>y :History:<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <Leader>h :History<CR>
+" Work with tags
+nnoremap <Leader>t :BTags<CR>
+nnoremap <Leader>T :Tags<CR>
 " ---
 
 " ---
@@ -131,6 +134,8 @@ au FileType go nmap <F12> <Plug>(go-def)
 nnoremap <leader>e :ALEDetail<cr>
 " Shortcut to fix errors
 nmap <leader>d <Plug>(ale_fix)
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
 " ---
 
 " ---
