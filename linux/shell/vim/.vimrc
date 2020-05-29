@@ -33,6 +33,7 @@ Plug 'tpope/vim-rhubarb'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plugin 'mlaursen/vim-react-snippets'
 " ---
 
 " ---
@@ -141,6 +142,8 @@ Plug 'reedes/vim-lexical'
 " ctags
 Plug 'majutsushi/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
+" Folding
+Plug 'tmhedberg/SimpylFold'
 " Nerdtree
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
