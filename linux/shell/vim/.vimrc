@@ -67,6 +67,7 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'elzr/vim-json'
 " Syntax for js libraries
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
 " python
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
