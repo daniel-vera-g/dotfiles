@@ -6,6 +6,13 @@ else
     set shell=/bin/sh
 endif
 
+" Autosave folds make
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
 " ---
 " Different settings
 " Automatically wrap text that extends beyond the screen length.
