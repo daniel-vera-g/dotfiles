@@ -33,9 +33,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " Commands
 " remove trailing whitespaces
 command! FixWhitespace :%s/\s\+$//e
-" Spell
-noremap <leader>snp :set nospell<CR>
-noremap <leader>sp :set spell<CR>
 "" Functions
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
@@ -43,6 +40,17 @@ if !exists('*s:setupWrapping')
     set wm=2
     set textwidth=79
   endfunction
+endif
+" Delete trailing white space on save, useful for some filetypes ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 " ---
 
@@ -76,21 +84,22 @@ set autoread
 " Mappings
 " leader + s to save
 noremap <Leader>s :w<CR>
+" Spell
+noremap <leader>snp :set nospell<CR>
+noremap <leader>sp :set spell<CR>
 " Quit on <leader>q
 nnoremap <leader>q :q<cr>
+" Buffer nav
+noremap <leader>w :bnext<cr>
+noremap <leader>q :bprevious<cr>
+"" Close buffer
+noremap <leader>c :bd<CR>
+noremap <leader>cf :bd!<CR>
+" Close all the buffers
+map <leader>ba :bufdo bd<cr>
 " Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
-" Git
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gaa :Gwrite<CR>:Gcommit<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-" noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
 " session management
 nnoremap <leader>so :OpenSession<Space>
 nnoremap <leader>ss :SaveSession<Space>
@@ -110,14 +119,14 @@ map <leader>t<leader> :tabnext
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
-" Buffer nav
-noremap <leader>w :bnext<cr>
-noremap <leader>q :bprevious<cr>
-"" Close buffer
-noremap <leader>c :bd<CR>
-noremap <leader>cf :bd!<CR>
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
+" CTRL-Tab is next tab
+noremap <C-Tab> :<C-U>tabnext<CR>
+inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
+cnoremap <C-Tab> <C-C>:tabnext<CR>
+" CTRL-SHIFT-Tab is previous tab
+noremap <C-S-Tab> :<C-U>tabprevious<CR>
+inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
+cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <F3> :set hlsearch!<CR>
@@ -127,14 +136,6 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
-" CTRL-Tab is next tab
-noremap <C-Tab> :<C-U>tabnext<CR>
-inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-cnoremap <C-Tab> <C-C>:tabnext<CR>
-" CTRL-SHIFT-Tab is previous tab
-noremap <C-S-Tab> :<C-U>tabprevious<CR>
-inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 " Opens an edit command with the path of the currently edited file filled in
@@ -142,8 +143,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "" Error checking and linting
-" TODO other mapping due to conflict NERDTree
-" map <C-n> :cnext<CR>
+map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 noremap <leader>lo :lopen<CR>
@@ -160,19 +160,4 @@ nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-" ---
-
-" ---
-" Functions
-" Delete trailing white space on save, useful for some filetypes ;)
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
 " ---

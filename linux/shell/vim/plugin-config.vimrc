@@ -1,37 +1,16 @@
 " Plugin specific configs
 
-"Snippets engine
-let g:go_snippet_engine = "ultisnips"
-
-" ---
-" Markdown Config
-" Sources:
-" https://jdhao.github.io/2019/01/15/markdown_edit_preview_nvim/
-" https://www.swamphogg.com/2015/vim-setup/
-" https://news.ycombinator.com/item?id=10271028
-" disable header folding
-let g:vim_markdown_folding_disabled = 1
-" do not use conceal feature, the implementation is not so good
-let g:vim_markdown_conceal = 0
-" disable math tex conceal feature
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-" support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
-set nofoldenable    " disable folding
-" Remove conceal feature for pandoc markdown
-let g:pandoc#syntax#conceal#use = 0
-" ---
 
 " ---
 " Ultisnips
 " vertically split ultisnips edit window
-let g:UltiSnipsEditSplit="vertical"
-" let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsExpandTrigger="<c-j>"
+" Alternative:
 " let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+"Snippets engine
+let g:go_snippet_engine = "ultisnips"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
@@ -46,6 +25,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 " ---
 
+" ---
 " Bullets
 let g:bullets_enabled_file_types = [
 			\ 'markdown',
@@ -53,6 +33,7 @@ let g:bullets_enabled_file_types = [
 			\ 'gitcommit',
 			\ 'md'
 			\]
+" ---
 
 " ---
 " Vimtex
@@ -96,9 +77,11 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 " ---
 
+" ---
 " Autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+" ---
 
 " ---
 " vim-airline
@@ -113,7 +96,6 @@ let g:airline_skip_empty_sections = 1
 " Airline
 let g:airline_left_sep  = ''
 let g:airline_right_sep = ''
-
 " Statusline + Airline
 if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
@@ -123,7 +105,7 @@ endif
 " ---
 " coc.nvim default settings
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -145,11 +127,10 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 " Ale fix
 let g:ale_fix_on_save = 0
-"
 " \   'javascript': ['prettier', 'eslint'],
 let g:ale_linters = {
  \   'latex': ['lacheck', 'chktex', 'Proselint'],
- \   'javascript': ['standard']
+ \   'javascript': ['standard', 'prettier']
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'standard'],
@@ -159,17 +140,10 @@ let g:ale_fixers = {
 " ---
 
 " ---
-" TODO as collides with coc nvim
-" Deoplete
-" This is new style
-" call deoplete#custom#var('omni', 'input_patterns', {
-"       \ 'tex': g:vimtex#re#deoplete
-"       \})
-" ---
-
 " javascript
 let g:javascript_enable_domhtmlcss = 1
 let g:javascript_plugin_flow = 1
+" ---
 
 " ---
 " Golang

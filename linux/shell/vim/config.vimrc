@@ -1,17 +1,11 @@
 " General configs
 
+" Set shell
 if exists('$SHELL')
     set shell =$SHELL
 else
     set shell=/bin/sh
 endif
-
-" Autosave folds make
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
 
 " ---
 " Different settings
@@ -26,8 +20,6 @@ if has("win16") || has("win32")
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
   endif
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
 " Swap files are annoying
 set noswapfile
 " Enable scrolling in vim using tmux
@@ -93,8 +85,7 @@ let g:session_command_aliases = 1
 " ---
 
 " ---
-" Position of the split panes
-set splitbelow
+" Position of the split panes set splitbelow
 set splitright
 " ---
 
@@ -103,6 +94,8 @@ set splitright
 set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
+" Highlight matching pairs of brackets. Use the '%' character to jump between them.
+set matchpairs+=<:>
 " ---
 
 " ---
@@ -111,36 +104,4 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-" ---
-
-" ---
-" Spell checking
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-" Spelling & Grammar
-set nospell
-setlocal spell
-set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/de.utf-8.add
-set spelllang=de,en_gb
-highlight SpellBad guifg=#ff0000
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-" LanguageTool
-let g:languagetool_jar = '~/LanguageTool-4.6/languagetool-commandline.jar'
-" Set vim-lexical file types
-augroup lexical
-autocmd!
-autocmd FileType markdown,mkd call lexical#init()
-autocmd FileType textile call lexical#init()
-autocmd FileType latex call lexical#init()
-autocmd FileType text call lexical#init({ 'spell': 0 })
-augroup END
-let g:lexical#spell = 1
-let g:lexical#spelllang = ['en_gb', 'de']
-let g:lexical#thesaurus = ['~/.vim/thesaurus/moby_thesaurus.txt',]
-let g:lexical#spellfile = ['~/.vim/spell/en.utf-8.add','~/.vim/spell/de.utf-8.add',]
 " ---
