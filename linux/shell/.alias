@@ -50,6 +50,7 @@ alias na="nautilus &> /dev/null &"
 alias na.="nautilus . &> /dev/null &"
 alias gln="gnome-terminal -x glances -2"
 alias fdev="firefox_dev &> /dev/null &"
+alias ffox="firefox &> /dev/null &"
 alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
 alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
 
