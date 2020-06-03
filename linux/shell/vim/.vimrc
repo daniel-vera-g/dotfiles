@@ -13,7 +13,8 @@ call plug#begin('~/.vim/plugged')
 " Essential programming tools(Syntax check, Language server & Auto completion)
 " Ale for syntastic(Syntax checking through LSP)
 Plug 'w0rp/ale'
-" Languages Server(LSP)
+" Languages Server(LSP & Autocompletion)
+" Alternative to deoplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ---
 
@@ -33,12 +34,13 @@ Plug 'tpope/vim-rhubarb'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plugin 'mlaursen/vim-react-snippets'
+Plug 'mlaursen/vim-react-snippets'
 " ---
 
 " ---
+" Some styles:
 " Colour Themes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-scripts/CSApprox'
@@ -51,45 +53,31 @@ Plug 'ryanoasis/vim-devicons'
 
 " ---
 " Language specific plugins
+" Syntax & co for all languages
+Plug 'sheerun/vim-polyglot'
 " Markdown
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" TODO
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 " Focus work session
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " go
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+" Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'fvictorio/vim-extract-variable'
-" html
-Plug 'othree/html5.vim'
+" css
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
-" json
-Plug 'elzr/vim-json'
 " Syntax for js libraries
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
-" python
-Plug 'davidhalter/jedi-vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-" typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 " Docker
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'kevinhui/vim-docker-tools'
-" YAML
-Plug 'stephpy/vim-yaml'
 " Env files
 Plug 'tpope/vim-dotenv'
-" Flutter/Dart
-Plug 'dart-lang/dart-vim-plugin'
 " Vimtex/latex
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-" Syntax & co for all languages
-Plug 'sheerun/vim-polyglot'
 " --
 
 "---
@@ -101,56 +89,44 @@ Plug 'junegunn/fzf.vim'
 Plug 'valloric/MatchTagAlways'
 " Close tags
 Plug 'alvan/vim-closetag'
-" Automatic closing quotes
-Plug 'Raimondi/delimitMate'
+" Auto pair braces
+Plug 'jiangmiao/auto-pairs'
 " Align stuff better
 Plug 'junegunn/vim-easy-align'
 " Show registers
 Plug 'https://github.com/junegunn/vim-peekaboo'
-" Close brackets
+" Change surrounding brackets, ... easily with movements
 Plug 'tpope/vim-surround'
-" Comment schortcuts(Alternative: https://github.com/tpope/vim-commentary)
+" Comments
 Plug 'tpope/vim-commentary'
-" Rg Search(Better than grep. https://github.com/vim-scripts/grep.vim)
+" Rg Search
 Plug 'jremmen/vim-ripgrep'
 " highlighted yank
 Plug 'machakann/vim-highlightedyank'
 " select text, then press * or # to search for it
 Plug 'bronson/vim-visual-star-search'
-" Indent the lines better
+" Display vertical lines to show indentation
 Plug 'Yggdroot/indentLine'
 " Fancy starter page
 Plug 'mhinz/vim-startify'
 " Autosave toggle with :AutoSaveToggle
-Plug 'vim-scripts/vim-auto-save'
+Plug '907th/vim-auto-save'
 " Show whitespace
 Plug 'ntpeters/vim-better-whitespace'
 " Fix capitalized commands
 Plug 'takac/vim-commandcaps'
-" Auto pair braces
-Plug 'jiangmiao/auto-pairs'
 " Terminal
 Plug 'vimlab/split-term.vim'
 " Alternative terminal using tmux
 Plug 'benmills/vimux'
 " Bullets
 Plug 'dkarter/bullets.vim'
-" Grammer check
-Plug 'rhysd/vim-grammarous'
-Plug 'vim-scripts/LanguageTool'
-Plug 'reedes/vim-lexical'
-" ctags
-Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-" Folding
-Plug 'tmhedberg/SimpylFold'
 " Nerdtree
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Nerdtree git plugin
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Formatter
-Plug 'Chiel92/vim-autoformat'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "---
 
 " Initialize plugin system
