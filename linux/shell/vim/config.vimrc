@@ -52,7 +52,6 @@ set smarttab                          " smart tabulation and backspace(Enable in
 set bs=indent,eol,start               " allow backspacing over everything
 
 set ai "Auto indent
-set si "Smart indent
 set wrap "Wrap lines
 " ---
 
