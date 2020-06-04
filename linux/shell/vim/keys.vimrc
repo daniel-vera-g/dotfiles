@@ -108,7 +108,7 @@ nnoremap <leader>sc :CloseSession<CR>
 " Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
+" TODO as conflicts with: go back till X nnoremap <silent> <S-t> :tabnew<CR>
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
