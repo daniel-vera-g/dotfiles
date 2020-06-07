@@ -244,7 +244,7 @@
   "vim.useSystemClipboard": true,
   "vim.easymotion": true,
   "vim.surround": true,
-  "vim.foldfix": true,
+  // "vim.foldfix": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.menuBarVisibility": "default",
