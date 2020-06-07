@@ -30,6 +30,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   // Editor configs
   "editor.acceptSuggestionOnEnter": "off",
+  "editor.mouseWheelZoom": true,
   "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
@@ -39,6 +40,7 @@
   "editor.lineNumbers": "relative",
   "editor.matchBrackets": false,
   "editor.minimap.enabled": true,
+  "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -50,6 +52,8 @@
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
   // Emmet
   "emmet.includeLanguages": {
     "html": "html",
@@ -65,6 +69,30 @@
   "files.autoSaveDelay": 1000,
   "files.eol": "\n",
   "files.trimFinalNewlines": true,
+  // Glob patterns for excluding folders and files
+  "files.exclude": {
+    "**/*.build": true,
+    "**/*.git": true,
+    "**/*.err": true,
+    "**/*.rec": true,
+    "**/*.log": true,
+    "**/*.evt": true,
+    "**/buildfre.*": true,
+    "**/buildchk.*": true,
+    "**/.DS_Store": true
+  },
+  // Glob patterns for excluding files and folders in searches
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    ".build/**": true,
+    "out*/**": true,
+    "i18n/**": true,
+    "extensions/**/out/**": true,
+    "*.min.js": true
+  },
+  // Enable linter for TypeScript files
+  "tslint.enable": true,
   // Git configs
   "git.autofetch": true,
   "git.enableSmartCommit": true,
@@ -155,7 +183,8 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": ",",
-  "vim.neovimPath": "/snap/bin/nvim",
+  // TODO
+  // "vim.neovimPath": "/snap/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -213,6 +242,9 @@
   "vim.sneak": true,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.foldfix": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.menuBarVisibility": "default",
@@ -231,5 +263,4 @@
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
   "workbench.statusBar.visible": true,
-  "editor.suggestSelection": "first"
 }
