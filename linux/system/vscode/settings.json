@@ -176,7 +176,7 @@
   ],
   // VcodeVim
   "vim.disableExtension": false,
-  "vim.enableNeovim": true,
+  "vim.enableNeovim": false,
   "vim.highlightedyank.color": "rgba(96, 120, 128, 0.5)",
   "vim.highlightedyank.duration": 100,
   "vim.highlightedyank.enable": true,
@@ -184,7 +184,7 @@
   "vim.incsearch": true,
   "vim.leader": ",",
   // TODO
-  // "vim.neovimPath": "/snap/bin/nvim",
+  "vim.neovimPath": "/snap/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
