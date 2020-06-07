@@ -1,29 +1,22 @@
 {
-  "emmet.includeLanguages": {
-    "html": "html",
-    "javascript": "javascriptreact"
+  // Default formatters
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.multiCursorModifier": "ctrlCmd",
-  "window.zoomLevel": 1,
-  "editor.minimap.enabled": true,
-  "editor.renderWhitespace": "none",
-  "workbench.startupEditor": "none",
-  "workbench.editor.enablePreview": false,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-  "explorer.sortOrder": "type",
-  "files.trimFinalNewlines": true,
-  "editor.acceptSuggestionOnEnter": "off",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "git.enableSmartCommit": true,
-  "workbench.activityBar.visible": false,
-  "git.autofetch": true,
-  "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ff0000"
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.renderIndentGuides": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "breadcrumbs.enabled": false,
+  // Language
   "cSpell.language": "en,de-DE",
   "cSpell.userWords": [
     "Blockchain",
@@ -31,108 +24,57 @@
     "gmail",
     "markdownlint"
   ],
-  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
-  "author-generator.email": "danielveragi@gmail.com",
-  "author-generator.author": "Daniel V.G.",
-  "javascript.validate.enable": true,
+  // c/c++
+  "clang.executable": "/usr/bin/clang-9",
+  "dart.previewFlutterUiGuides": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Editor configs
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.columnSelection": true,
+  "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "window.menuBarVisibility": "default",
-  "files.eol": "\n",
-  // "editor.insertSpaces": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.lineNumbers": "relative",
+  "editor.matchBrackets": "near",
+  "editor.minimap.enabled": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
   "editor.renderControlCharacters": false,
-  "javascript.implicitProjectConfig.checkJs": true,
-  "workbench.editor.labelFormat": "short",
-  "window.titleBarStyle": "custom",
-  "todo-tree.defaultHighlight": {
-    "foreground": "green",
-    "type": "none"
-  },
-  "todo-tree.customHighlight": {
-    "TODO": {},
-    "FIXME": {}
-  },
-  "vim.disableExtension": false,
-  "vim.useSystemClipboard": true,
-  "vim.sneak": true,
-  "vim.incsearch": true,
-  "vim.hlsearch": true,
-  "vim.enableNeovim": true,
-  "vim.useCtrlKeys": true,
-  "vim.neovimPath": "/snap/bin/nvim",
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "rgba(96, 120, 128, 0.5)",
-  "vim.highlightedyank.duration": 100,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "u"
-      ],
-      "commands": [
-        "undo"
-      ]
-    },
-    {
-      "before": [
-        "<C-r>"
-      ],
-      "commands": [
-        "redo"
-      ]
-    },
-    {
-      "before": [
-        "Z",
-        "Z"
-      ],
-      "commands": [
-        ":wq"
-      ]
-    },
-    {
-      "before": [
-        "Z",
-        "Q"
-      ],
-      "commands": [
-        ":q"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "m"
-      ],
-      "commands": [
-        "bookmarks.toggle"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "b"
-      ],
-      "commands": [
-        "bookmarks.list"
-      ]
-    }
-  ],
-  "breadcrumbs.enabled": false,
-  "todohighlight.keywords": [
-    "TODO"
-  ],
-  "prettier.useTabs": true,
-  "sync.gist": "b14127e9a8301bb9157807039ca55b09",
-  "python.jediEnabled": false,
-  "explorer.autoReveal": false,
+  "editor.renderIndentGuides": false,
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "[javascript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  "editor.tabSize": 2,
+  // Emmet
+  "emmet.includeLanguages": {
+    "html": "html",
+    "javascript": "javascriptreact"
   },
-  "workbench.statusBar.feedback.visible": false,
-  "workbench.iconTheme": "vscode-icons",
-  "dart.previewFlutterUiGuides": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  // Explorer
+  "explorer.autoReveal": false,
+  "explorer.sortOrder": "type",
+  // FIles
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.eol": "\n",
+  "files.trimFinalNewlines": true,
+  // Git configs
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  // Js config
+  "javascript.implicitProjectConfig.checkJs": true,
+  "javascript.validate.enable": true,
+  "keyboard.dispatch": "keyCode",
+  // Peacock
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
@@ -187,7 +129,13 @@
       "value": "#42b883"
     }
   ],
-  "editor.lineNumbers": "relative",
+  "prettier.useTabs": false,
+  "python.jediEnabled": false,
+  "sync.gist": "b14127e9a8301bb9157807039ca55b09",
+  // Terminal
+  "terminal.external.linuxExec": "zsh",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
   "todo-tree.highlights.customHighlight": {
     "TODO": {},
     "FIXME": {}
@@ -196,47 +144,93 @@
     "foreground": "green",
     "type": "none"
   },
-  "keyboard.dispatch": "keyCode",
-  "workbench.statusBar.visible": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "todo-tree.tree.showScanModeButton": false,
-  "editor.matchBrackets": false,
-  "vsicons.dontShowNewVersionMessage": true,
-  "licenseInjector.owner": "Daniel Vera Gilliard",
-  "emmet.triggerExpansionOnTab": true,
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": false,
-    "strings": false
-  },
-  "emmet.showSuggestionsAsSnippets": true,
-  "editor.snippetSuggestions": "top",
-  // The number of spaces a tab is equal to. This setting is overridden
-  // based on the file contents when `editor.detectIndentation` is true.
-  "editor.tabSize": 2,
-  // Insert spaces when pressing Tab. This setting is overriden
-  // based on the file contents when `editor.detectIndentation` is true.
-  "editor.insertSpaces": true,
-  // When opening a file, `editor.tabSize` and `editor.insertSpaces`
-  // will be detected based on the file contents. Set to false to keep
-  // the values you've explicitly set, above.
-  "editor.detectIndentation": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "clang.executable": "/usr/bin/clang-9",
+  "todohighlight.keywords": [
+    "TODO"
+  ],
+  // VcodeVim
+  "vim.disableExtension": false,
+  "vim.enableNeovim": true,
+  "vim.highlightedyank.color": "rgba(96, 120, 128, 0.5)",
+  "vim.highlightedyank.duration": 100,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
   "vim.leader": ",",
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "vim.neovimPath": "/snap/bin/nvim",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
+    },
+    {
+      "before": [
+        "Z",
+        "Z"
+      ],
+      "commands": [
+        ":wq"
+      ]
+    },
+    {
+      "before": [
+        "Z",
+        "Q"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "m"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "bookmarks.list"
+      ]
+    }
+  ],
+  "vim.sneak": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.menuBarVisibility": "default",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  // Workbench
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ff0000"
   },
-  "editor.columnSelection": true,
-  "terminal.integrated.fontSize": 16,
-  "terminal.external.linuxExec": "zsh",
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.statusBar.visible": true
 }
