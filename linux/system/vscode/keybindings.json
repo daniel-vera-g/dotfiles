@@ -72,4 +72,8 @@
     "key": "ctrl+-",
     "command": "-workbench.action.zoomOut"
   },
+  {
+    "key": "ctrl+r",
+    "command": "-editor.action.startFindReplaceAction"
+  },
 ]
