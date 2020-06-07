@@ -24,13 +24,12 @@
     "gmail",
     "markdownlint"
   ],
-  // c/c++
+  // c/c++, dart & vimdiff
   "clang.executable": "/usr/bin/clang-9",
   "dart.previewFlutterUiGuides": true,
   "diffEditor.ignoreTrimWhitespace": false,
   // Editor configs
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.columnSelection": true,
   "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
@@ -38,9 +37,8 @@
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.lineNumbers": "relative",
-  "editor.matchBrackets": "near",
+  "editor.matchBrackets": false,
   "editor.minimap.enabled": true,
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -232,5 +230,6 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "editor.suggestSelection": "first"
 }
