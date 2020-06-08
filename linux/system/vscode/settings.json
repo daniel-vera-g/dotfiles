@@ -263,4 +263,8 @@
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
   "workbench.statusBar.visible": true,
+  "code-runner.executorMap": {
+    "cpp": "g++ *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+  },
+  "code-runner.runInTerminal": true,
 }
