@@ -36,6 +36,10 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 # ------ Development environments -----
 
+# gradle
+export GRADLE_HOME=/opt/gradle/gradle-6.4.1
+export PATH=${GRADLE_HOME}/bin:${PATH}
+
 # pyenv
 export PATH="/home/dvg/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
