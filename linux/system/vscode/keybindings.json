@@ -105,4 +105,20 @@
     "command": "-selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.clear"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "ctrl+shift+t ctrl+shift+n",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  },
 ]
