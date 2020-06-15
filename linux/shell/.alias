@@ -57,7 +57,7 @@ alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &
 # Open settings
 alias networkSettings="gnome-control-center network &> /dev/null &"
 alias bluetoothSettings="gnome-control-center bluetooth &> /dev/null &"
-alias soundSettings="gnome-control-center sound &> /dev/null &"
+alias inputSettings="gnome-control-center sound input &> /dev/null &"
 
 # Use with spotify
 alias sp="spotify_control playpause"
