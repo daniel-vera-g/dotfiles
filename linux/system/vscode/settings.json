@@ -51,6 +51,7 @@
   "editor.renderWhitespace": "none",
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
+  "zenMode.hideLineNumbers": false,
   "editor.tabSize": 2,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
@@ -251,7 +252,7 @@
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   // Workbench
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000"
   },
