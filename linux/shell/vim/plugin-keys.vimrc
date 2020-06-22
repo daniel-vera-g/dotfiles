@@ -46,7 +46,8 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 " Schortcut for NERDTree toggle
 " TODO use alt + n?
 " map <leader>n :NERDTreeToggle<CR>
-map <A-m> :NERDTreeToggle<CR>
+" map <A-m> :NERDTreeToggle<CR>
+map <M-1> :NERDTreeToggle<CR>
 " Fix Inconsistent buffer width when deleting a buffer
 nnoremap <leader>cb :bp<cr>:bd #<cr>
 " ---
