@@ -341,6 +341,22 @@ alias npmListG='npm list -g --depth=0'
 alias npmListGE='npm ll -g --depth=0'
 
 # -------------------------------------------------------------------
+# yarn
+# -------------------------------------------------------------------
+
+alias yi="yarn install"
+alias ya="yarn add"
+alias yad="yarn add --dev"
+alias yga="yarn global add"
+alias yr="yarn run"
+alias yre="yarn run example"
+alias ys="yarn start"
+alias yis="yarn install && yarn start"
+alias yt="yarn test"
+alias yit="yarn install && yarn test"
+alias yu="yarn upgrade"
+
+# -------------------------------------------------------------------
 # Vagrant
 # -------------------------------------------------------------------
 
