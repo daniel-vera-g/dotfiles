@@ -24,6 +24,11 @@ function mv() {
   command mv -v -- "$1" "$newfilename"
 }
 
+# Install .deb Programm
+function Ideb() {
+  curl -LOs $@ && sudo dpkg -i $(basename $@)
+}
+
 # ls on cd
 function lcd {
     builtin cd "$@" && ls
