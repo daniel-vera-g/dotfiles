@@ -24,6 +24,11 @@ function mv() {
   command mv -v -- "$1" "$newfilename"
 }
 
+# Search for String in all the PDFs in the current folder
+function searchPDF() {
+  for f in ./*; do echo $f;  pdftotext $f - | rg "$@"; done
+}
+
 # Install .deb Programm
 function Ideb() {
   curl -LOs $@ && sudo dpkg -i $(basename $@)
