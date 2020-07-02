@@ -1,6 +1,5 @@
 " Plugin specific configs
 
-
 " ---
 " Ultisnips
 " vertically split ultisnips edit window
@@ -42,7 +41,9 @@ autocmd BufNewFile,BufRead *.tex IndentLinesDisable
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
+" TODO fix
+set conceallevel=0
+" set conceallevel=1
 let g:tex_conceal='abdmg'
 " Vimtex TOC settings
 let g:vimtex_toc_config = {
@@ -55,6 +56,12 @@ let g:vimtex_toc_config = {
       \ 'show_numbers' : 1,
       \ 'mode' : 2,
       \}
+" ---
+
+" ---
+" Markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 " ---
 
 " ---
@@ -127,7 +134,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 " Ale fix
 let g:ale_fix_on_save = 0
-" \   'javascript': ['prettier', 'eslint'],
+" \   'javascript': ['prettier', 'kkeslint'],
 let g:ale_linters = {
  \   'latex': ['lacheck', 'chktex', 'Proselint'],
  \   'javascript': ['standard', 'prettier']
