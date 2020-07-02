@@ -453,10 +453,11 @@ alias borgCreate="borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%
 alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
 
 # -------------------------------------------------------------------
-# Misc
+# Misc/APIs use/...
 # -------------------------------------------------------------------
 
 alias smileyLs="zathura /home/dvg/workspace/tools/cheat_sheets/emoji-lists/emoji-list.pdf"
+alias weather="curl wttr.in/Karlsruhe"
 
 # -------------------------------------------------------------------
 # TMUX
