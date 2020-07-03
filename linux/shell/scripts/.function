@@ -24,6 +24,11 @@ function mv() {
   command mv -v -- "$1" "$newfilename"
 }
 
+# Generate QR-code from string
+function genQR() {
+  curl qrenco.de/$@
+}
+
 # Search for String in all the PDFs in the current folder
 function searchPDF() {
   for f in ./*; do echo $f;  pdftotext $f - | rg "$@"; done
