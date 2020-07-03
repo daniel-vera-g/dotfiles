@@ -458,13 +458,15 @@ alias borgCreate="borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%
 alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
 
 # -------------------------------------------------------------------
-# Misc/APIs use/...
+# Misc/APIs/...
 # -------------------------------------------------------------------
 
 alias smileyLs="zathura /home/dvg/workspace/tools/cheat_sheets/emoji-lists/emoji-list.pdf"
 alias weather="curl wttr.in/Karlsruhe"
 alias cryptoPrice="curl rate.sx"
 alias btcPrice="curl rate.sx/btc"
+alias netSpeed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias news="curl de.getnews.tech"
 
 # -------------------------------------------------------------------
 # TMUX
