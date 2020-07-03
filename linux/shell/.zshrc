@@ -18,10 +18,6 @@ plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-com
 fpath=(~/.zsh/completions $fpath) 
 autoload -U compinit && compinit
 
-# Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-
 # User config
 source $ZSH/oh-my-zsh.sh
 
@@ -59,3 +55,8 @@ eval "$(hub alias -s)"
 eval $(thefuck --alias)
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
+
+# Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
