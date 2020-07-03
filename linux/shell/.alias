@@ -71,6 +71,11 @@ alias spn="spotify_control next"
 alias switchA2pBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2)  a2dp_sink"
 alias switchHspBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2) headset_head_unit"
 
+# Shutter consumes a lot of Memory(Probably storing screenshots in memory)
+# And probably has a memory leak by not releasing above memory before closing it
+# Therefore we need to kill it manually. We use SIGHUB(15) for it
+alias killShutter="kill -15 $(pgrep shutter)"
+
 # -------------------------------------------------------------------
 # Open directories/files...
 # -------------------------------------------------------------------
@@ -458,6 +463,8 @@ alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostnam
 
 alias smileyLs="zathura /home/dvg/workspace/tools/cheat_sheets/emoji-lists/emoji-list.pdf"
 alias weather="curl wttr.in/Karlsruhe"
+alias cryptoPrice="curl rate.sx"
+alias btcPrice="curl rate.sx/btc"
 
 # -------------------------------------------------------------------
 # TMUX
