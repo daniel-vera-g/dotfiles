@@ -15,7 +15,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
 " ---
 
-" HIGHLIGHTEDYANK PLUGIN
+" highlighted-yank plugin
 let g:highlightedyank_highlight_duration = 250
 
 " ---
@@ -175,3 +175,7 @@ let g:go_auto_type_info = 1
 " Better json handline
 let g:go_addtags_transform = "snakecase"
 " ---
+
+" ---
+"  Terminal configs
+set splitbelow
