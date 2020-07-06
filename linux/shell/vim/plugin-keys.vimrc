@@ -219,10 +219,11 @@ let g:tagbar_autofocus = 1
 " Goyo
 autocmd! User GoyoEnter Limelight
 "" Vimux
+" TODO as not working as expected
 " Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
+" map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
+" map <Leader>vl :VimuxRunLastCommand<CR>
 " Open terminal
 nnoremap <leader>tr :10Term<CR>
 " Build in terminal
