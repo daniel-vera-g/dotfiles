@@ -61,6 +61,8 @@ Plug 'sheerun/vim-polyglot'
 " Focus work session
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+" markdown preview
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'} 
 " go
 " Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'fvictorio/vim-extract-variable'

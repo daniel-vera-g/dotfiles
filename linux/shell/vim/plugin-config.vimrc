@@ -177,14 +177,17 @@ let g:go_addtags_transform = "snakecase"
 " ---
 
 " ---
-"  Terminal configs
+" Terminal configs
 set splitbelow
 " ---
 
 " ---
-"  Commentary
-
+" Commentary
 " Use right comments markdown(neovim related?: https://github.com/tpope/vim-commentary/issues/90)
 autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 " ---
 
+" ---
+" Markdown preview
+let g:instant_markdown_autostart = 0
+" ---
