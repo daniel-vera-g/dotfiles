@@ -39,7 +39,7 @@ map <S-Space> navigate previous
 map <Left> navigate previous
 map b toggle_statusbar
 
-# zathurarc-dark
+# zathurarc-dark default(Uncomment to have dark mode default)
 
 # set font "inconsolata 15"
 # set default-bg "#000000" #00
