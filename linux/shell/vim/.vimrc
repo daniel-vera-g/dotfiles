@@ -6,7 +6,6 @@ syntax on
 "Specify a directory for plugins
 "- For Neovim: ~/.local/share/nvim/plugged
 "- Avoid using standard Vim directory names like 'plugin'
-
 call plug#begin('~/.vim/plugged')
 
 " ---
@@ -20,14 +19,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " ---
 " Git
-" Show changes in vim gutter
-Plug 'airblade/vim-gitgutter'
 " Vim wrapper
 Plug 'tpope/vim-fugitive'
 " To open files in gitlab
 Plug 'shumphrey/fugitive-gitlab.vim'
 " To open files in github
 Plug 'tpope/vim-rhubarb'
+" Show changes in vim gutter
+Plug 'airblade/vim-gitgutter'
 " ---
 
 " ---
@@ -56,7 +55,7 @@ Plug 'ryanoasis/vim-devicons'
 " Syntax & co for all languages
 Plug 'sheerun/vim-polyglot'
 " Markdown
-" TODO
+" Optional markdown:
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 " Focus work session
@@ -113,7 +112,7 @@ Plug 'mhinz/vim-startify'
 Plug '907th/vim-auto-save'
 " Show whitespace
 Plug 'ntpeters/vim-better-whitespace'
-" Fix capitalized commands
+" Fix capitalized commands in normal mode
 Plug 'takac/vim-commandcaps'
 " Terminal
 Plug 'vimlab/split-term.vim'
