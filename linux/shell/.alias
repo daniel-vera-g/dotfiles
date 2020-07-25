@@ -76,6 +76,13 @@ alias switchHspBluetoothHeadphones="pactl set-card-profile $(pactl list short ca
 # Therefore we need to kill it manually. We use SIGHUB(15) for it
 alias killShutter="kill -15 $(pgrep shutter)"
 
+# qpdf - PDF utilities
+alias qpdfq="qpdf --empty --pages"
+
+# Installing helpers
+alias curlI='curl -LO'
+alias dpkgi='sudo dpkg -i'
+
 # -------------------------------------------------------------------
 # Open directories/files...
 # -------------------------------------------------------------------
@@ -323,6 +330,12 @@ function current_branch() {
   ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   echo ${ref#refs/heads/}
 }
+
+# Github cli
+alias ghi='gh issue'
+alias ghp='gh pr'
+alias ghr='gh repo'
+alias ghg='gh gist'
 
 # -------------------------------------------------------------------
 # Default options
