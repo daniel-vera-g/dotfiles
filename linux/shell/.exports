@@ -59,8 +59,13 @@ export PATH="$PATH":"/usr/local/go/bin:$GOPATH/bin"
 # Flutter path
 export PATH="$PATH:/home/dvg/workspace/mobile/flutter/bin"
 export PATH="$PATH":"$HOME/workspace/mobile/flutter/.pub-cache/bin"
+export CHROME_EXECUTABLE='brave-browser'
 
 # Dart
 export PATH="$PATH:/usr/lib/dart/bin"
 # export PATH="/home/dvg/.pub-cache/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+
+# nvm(nodejs)
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
