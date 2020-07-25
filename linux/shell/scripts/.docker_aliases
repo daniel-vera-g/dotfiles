@@ -4,6 +4,8 @@
 
 ############################################## Functions ##############################################
 
+alias lzd="sudo lazydocker"
+
 # Run a bash shell in the specified container.
 dexbash() {
   if [ $# -ne 1 ]; then
