@@ -4,7 +4,7 @@
 
 ############################################## Functions ##############################################
 
-alias lzd="sudo lazydocker"
+alias lzd="lazydocker"
 
 # Run a bash shell in the specified container.
 dexbash() {
@@ -55,22 +55,22 @@ alias dnames=dnames-fn
 ############################################## Commands ##############################################
 
 # Docker in general
-alias dk="sudo docker"
+alias dk="docker"
 
 # Docker run
-alias dkr="sudo docker run"
+alias dkr="docker run"
 
 # Create
-alias dkcr="sudo docker create"
+alias dkcr="docker create"
 
 # Execute
-alias dkex="sudo docker exec" 
+alias dkex="docker exec" 
 
 # Start
-alias dkst="sudo docker start"
+alias dkst="docker start"
 
 # Get Images
-alias dki="sudo docker images"
+alias dki="docker images"
 
 ############################### Clean up ############################### -> TODO: EXPORT TO CLEAN UP SCRIPT(Issue: #151)
 # List all exited containers
@@ -106,15 +106,15 @@ alias dkflush2='docker rmi $(docker images --filter "dangling=true" -q --no-trun
 ###########################################################################
 
 # Get process & stats
-alias dkpsa="sudo docker ps -a"
-alias dkps="sudo docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
-alias dkst='sudo docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
+alias dkpsa="docker ps -a"
+alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+alias dkst='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
 
 # Other
-alias dks='sudo docker service'
-alias dkrm='sudo docker rm'
-alias dkl='sudo docker logs'
-alias dklf='sudo docker logs -f'
+alias dks='docker service'
+alias dkrm='docker rm'
+alias dkl='docker logs'
+alias dklf='docker logs -f'
 
 # SOURCES:
 # https://gist.github.com/jgrodziski/9ed4a17709baad10dbcd4530b60dfcbb
@@ -124,19 +124,19 @@ alias dklf='sudo docker logs -f'
 
 ############################################## Docker compose ##############################################
 
-alias c='sudo docker-compose'
-alias cb='sudo docker-compose build'
-alias cup='sudo docker-compose up'
-alias cr='sudo docker-compose run --service-ports --rm'
-alias crl='sudo docker-compose run --service-ports --rm local'
-alias crd='sudo docker-compose run --service-ports --rm develop'
-alias crt='sudo docker-compose run --rm test'
-alias crp='sudo docker-compose run --rm provision'
-alias crci='sudo docker-compose run --rm ci'
-alias crwt='sudo docker-compose run --rm watchtest'
-alias cps='sudo docker-compose ps'
-alias clogs='sudo docker-compose logs'
-alias cbr='sudo docker-compose up -d --no-deps --build '
+alias c='docker-compose'
+alias cb='docker-compose build'
+alias cup='docker-compose up'
+alias cr='docker-compose run --service-ports --rm'
+alias crl='docker-compose run --service-ports --rm local'
+alias crd='docker-compose run --service-ports --rm develop'
+alias crt='docker-compose run --rm test'
+alias crp='docker-compose run --rm provision'
+alias crci='docker-compose run --rm ci'
+alias crwt='docker-compose run --rm watchtest'
+alias cps='docker-compose ps'
+alias clogs='docker-compose logs'
+alias cbr='docker-compose up -d --no-deps --build '
 
 crm(){
 	docker-compose stop $1
