@@ -220,10 +220,13 @@ let g:tagbar_autofocus = 1
 autocmd! User GoyoEnter Limelight
 "" Vimux
 " TODO as not working as expected
+" Fix to make it work again with easy and not print in current pane
 " Prompt for a command to run
 " map <Leader>vp :VimuxPromptCommand<CR>
+" map <Leader>tp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
 " map <Leader>vl :VimuxRunLastCommand<CR>
+" map <Leader>tl :VimuxRunLastCommand<CR>
 " Open terminal
 nnoremap <leader>tr :10Term<CR>
 " Build in terminal
