@@ -92,6 +92,11 @@
     "extensions/**/out/**": true,
     "*.min.js": true
   },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    //Add in your other glob patterns
+  },
   // Enable linter for TypeScript files
   "tslint.enable": true,
   // Git configs
@@ -256,7 +261,7 @@
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000"
   },
-  "workbench.colorTheme": "Cobalt2",
+  "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.labelFormat": "short",
@@ -268,4 +273,14 @@
     "cpp": "g++ *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt"
   },
   "code-runner.runInTerminal": true,
+  "editor.columnSelection": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
