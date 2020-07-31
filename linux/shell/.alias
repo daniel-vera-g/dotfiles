@@ -402,6 +402,11 @@ alias vhst="vagrant hostmanager"
 # tmux
 # -------------------------------------------------------------------
 
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
 # Sessions
 
 alias tmuxKillS="tmux kill-session -t"
@@ -410,7 +415,6 @@ alias tmuxNewSess="tmux new-session -s"
 alias tmuxNewSessN="tmux new-session -t"
 alias n2="tmux new-window nnn \; split-window -h nnn"
 
-alias Tatt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
@@ -480,12 +484,3 @@ alias cryptoPrice="curl rate.sx"
 alias btcPrice="curl rate.sx/btc"
 alias netSpeed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias news="curl de.getnews.tech"
-
-# -------------------------------------------------------------------
-# TMUX
-# -------------------------------------------------------------------
-
-alias t="tmux"
-alias ta="t a -t"
-alias tls="t ls"
-alias tn="t new -t"
