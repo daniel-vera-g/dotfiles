@@ -24,7 +24,7 @@ alias tree2d="tree -d -L 2"
 alias rs="rm -iv"
 alias rr="rm -rf"
 
-alias cp="cp -iv"
+alias cp="cp -ivr"
 alias mv="mv -iv"
 alias tch="touch"
 
