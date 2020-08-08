@@ -62,7 +62,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " markdown preview
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'} 
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " go
 " Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'fvictorio/vim-extract-variable'
@@ -79,6 +79,8 @@ Plug 'tpope/vim-dotenv'
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+" Load as it get's not properly loaded by polyglot
+Plug 'dart-lang/dart-vim-plugin'
 " --
 
 "---
