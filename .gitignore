@@ -3,3 +3,4 @@ apps-install-logs.txt
 install-logs.txt
 .vscode/*
 EXCLUDEFILE
+.local-aliases
