@@ -58,10 +58,12 @@
   // Emmet
   "emmet.includeLanguages": {
     "html": "html",
-    "javascript": "javascriptreact"
+    // "javascript": "javascriptreact"
   },
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
+  // TODO useful or not?
+  "emmet.showExpandedAbbreviation": "never",
   // Explorer
   "explorer.autoReveal": false,
   "explorer.sortOrder": "type",
@@ -259,9 +261,9 @@
   // Workbench
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ff0000"
+    "editorCursor.foreground": "#ff0000",
+    "editorLineNumber.foreground": "#ffff",
   },
-  "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.labelFormat": "short",
@@ -283,4 +285,8 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "gitlens.advanced.telemetry.enabled": false,
+  "docker-explorer.enableTelemetry": false,
+  "dart.previewLsp": true,
+  "workbench.colorTheme": "Monokai",
 }

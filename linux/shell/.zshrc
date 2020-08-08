@@ -1,4 +1,5 @@
 # Source exports first to get other stuff working
+source $HOME/.path
 source $HOME/.exports
 
 # FZF config
@@ -14,8 +15,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
 plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd);
 
-# Fix to use `alias hub=git`
-fpath=(~/.zsh/completions $fpath) 
+fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
 # User config
@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.alias
 source $HOME/.function
 source $HOME/.docker_aliases
-source $HOME/.path
+source $HOME/.local-aliases
 
 # Colors in terminal
 TERM=xterm-256color
@@ -44,18 +44,14 @@ autoload -Uz compinit
 # Fuzzy file finder
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+# so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
-# Command palette bookmarker
-# [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-
+# TODO rm for gh
 # Hub alias for git
-eval "$(hub alias -s)"
-eval $(thefuck --alias)
+# eval "$(hub alias -s)"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
+eval $(thefuck --alias)
 
 # Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
 bindkey '^[[A' up-line-or-search

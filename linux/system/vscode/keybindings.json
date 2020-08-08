@@ -121,4 +121,18 @@
     "key": "ctrl+shift+`",
     "command": "-workbench.action.terminal.new"
   },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+9",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "!editorFocus"
+  }
 ]
