@@ -1,14 +1,3 @@
-# TODO change to script see firefox bookmarks
-alias updateSource="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias updateDest="rclone copy --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias updateSourceDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias updateDestDry="rclone copy --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-
-alias syncSource="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias syncDest="rclone sync --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias syncSourceDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress onedrive-uni:hska /home/dvg/workspace/edu/hska/  --backup-dir /home/dvg/workspace/edu/rclone-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-alias syncDestDry="rclone sync --dry-run --update --verbose --transfers 30 --checkers 8 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --progress /home/dvg/workspace/edu/hska/ onedrive-uni:hska --backup-dir onedrive-uni:rclone-uni-backup --suffix .$(date +"%Y-%m-%d-%H-%M-%S") --exclude node_modules/ --exclude .git/"
-
 # -------------------------------------------------------------------
 # Global aliases
 # -------------------------------------------------------------------
@@ -51,8 +40,6 @@ alias na.="nautilus . &> /dev/null &"
 alias gln="gnome-terminal -x glances -2"
 alias fdev="firefox_dev &> /dev/null &"
 alias ffox="firefox &> /dev/null &"
-alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
-alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
 
 # Open settings
 alias networkSettings="gnome-control-center network &> /dev/null &"
@@ -106,14 +93,6 @@ alias dKHolly="docker run -it --rm mapitman/hollywood"
 # Backup
 alias backupShutdown='deja-dup --backup && shutdown'
 alias backupEx='deja-dup --backup &> /dev/null &'
-alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
-alias fullBackup="borg-backup.sh system downloads edu neohelden vm"
-
-# Uni
-alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
-alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
-alias mScr="okular '/home/dvg/workspace/edu/uni/semester-1/mathematik-1/course-files/Skriptum Mathematik 1.pdf' &> /dev/null &"
-alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informatik-1/course-files/Skript Theoretische Informatik.pdf' &> /dev/null &"
 
 # -------------------------------------------------------------------
 # golang
@@ -162,8 +141,6 @@ alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radi
 
 # Open browser sessions
 alias oWorkSession="brave-browser https://calendar.google.com/ https://keep.google.com/ https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
-alias oNeoSession="brave-browser https://calendar.google.com/calendar/b/3/r https://mail.google.com/mail/u/3/#inbox https://app.asana.com/0/inbox/1162441252365004 https://app.slack.com/client/T7NFQ1WMB/DU54P2XCP https://git.neohelden.com/ 'https://git.neohelden.com/dashboard/merge_requests?assignee_username=daniel' &> /dev/null &"
-alias oUniSession='firefox_dev "https://ilias.hs-karlsruhe.de/login.php" "https://webmail.hs-karlsruhe.de/" &> /dev/null &'
 
 # -------------------------------------------------------------------
 # nvim
@@ -187,17 +164,6 @@ alias l="exa -lah"
 alias lt="exa -Talh --git"
 alias lg="exa -lah --git"
 
-
-# -------------------------------------------------------------------
-# Directory
-# -------------------------------------------------------------------
-alias dropx='cd ~/sync'
-alias dwnlds='cd ~/Downloads'
-alias lxorg='cd /home/dvg/sync/notebook/system-management'
-alias ntb='cd ~/sync/notebook/'
-alias uni='cd /home/dvg/workspace/edu/uni'
-alias dot='cd /home/dvg/dotfiles'
-
 # -------------------------------------------------------------------
 # Compressing & Encrypting
 # -------------------------------------------------------------------
@@ -207,7 +173,6 @@ alias trxz='tar -cJvf'
 # Notebook & Journaling
 # -------------------------------------------------------------------
 alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
-alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 
 # -------------------------------------------------------------------
 # Git
@@ -342,7 +307,6 @@ alias ghg='gh gist'
 # -------------------------------------------------------------------
 
 alias rsync="rsync -vh"
-alias json="json -c"
 alias psgrep="psgrep -i"
 alias x+="chmod +x"
 
@@ -362,7 +326,6 @@ alias npmListGE='npm ll -g --depth=0'
 # yarn
 # -------------------------------------------------------------------
 
-alias yi="yarn install"
 alias ya="yarn add"
 alias yad="yarn add --dev"
 alias yga="yarn global add"
@@ -478,7 +441,6 @@ alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostnam
 # Misc/APIs/...
 # -------------------------------------------------------------------
 
-alias smileyLs="zathura /home/dvg/workspace/tools/cheat_sheets/emoji-lists/emoji-list.pdf"
 alias weather="curl wttr.in/Karlsruhe"
 alias cryptoPrice="curl rate.sx"
 alias btcPrice="curl rate.sx/btc"
