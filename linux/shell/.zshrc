@@ -13,9 +13,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd flutter);
+plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-autosuggestions fd flutter);
 
-fpath=(~/.zsh/completions $fpath)
+# No more needed ?
+# fpath=(~/.zsh/completions $fpath)
+# Better for perfomance, than using in plugins.
+# See: https://github.com/zsh-users/zsh-completions/issues/603
+fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
 # User config
