@@ -13,19 +13,23 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd);
+plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd flutter);
 
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
 # User config
 source $ZSH/oh-my-zsh.sh
+# Automatically update
+DISABLE_UPDATE_PROMPT=true
 
 # Source stuff from external files
 source $HOME/.alias
 source $HOME/.function
 source $HOME/.docker_aliases
 source $HOME/.local-aliases
+# TODO: https://github.com/flutter/flutter/issues/31293
+# source $HOME/.flutter_completions
 
 # Colors in terminal
 TERM=xterm-256color
