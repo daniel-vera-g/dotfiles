@@ -15,14 +15,14 @@ alias aptls="apt list --upgradable"
 alias aptul="sudo apt update && apt list --upgradable"
 
 alias tree="tree -A"
-alias tree1="tree -L 1"
-alias tree2="tree -L 2"
+alias tree1="tree -a -L 1"
+alias tree2="tree -a -L 2"
 alias treed="tree -d"
 alias tree1d="tree -d -L 1"
 alias tree2d="tree -d -L 2"
 
 alias rs="rm -iv"
-alias rr="rm -rf"
+alias rr="rm -Ivr"
 
 alias cp="cp -ivr"
 alias mv="mv -iv"
@@ -83,7 +83,7 @@ alias eals="v ~/dotfiles/linux/shell/.alias"
 alias caff20="caffeinate sleep 20m &"
 alias caff40="caffeinate sleep 40m &"
 
-alias gTasks="brave-browser calendar.google.com &> /dev/null &"
+alias gTasks="brave-browser calendar.google.com https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
 
 # Open docker applications
 alias dKspeedtest="docker run --rm --net=host waja/speedtest --bytes"
