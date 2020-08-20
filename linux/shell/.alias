@@ -70,6 +70,11 @@ alias qpdfq="qpdf --empty --pages"
 alias curlI='curl -LO'
 alias dpkgi='sudo dpkg -i'
 
+# human-readable sizes
+alias df='df -h'
+# show sizes in MB
+alias free='free -m'
+
 # -------------------------------------------------------------------
 # Open directories/files...
 # -------------------------------------------------------------------
@@ -154,15 +159,12 @@ alias v.='nvim .'
 # exa
 # -------------------------------------------------------------------
 # Cutomizing of the Colors for LS & autocomplete
-# alias ls="ls --color=auto"
-alias ls="exa"
-# l as la because more readable
-# alias l="exa -a"
-alias ll="exa -lh"
-alias l="exa -lah"
-#alias la="exa -lah"
-alias lt="exa -Talh --git"
-alias lg="exa -lah --git"
+alias ls="exa --color=always --group-directories-first"
+alias l="exa -lah --color=always --group-directories-first"
+alias ll="exa -lh --color=always --group-directories-first"
+alias lt="exa -Talh --git --color=always --group-directories-first"
+alias lg="exa -lah --git --color=always --group-directories-first"
+alias l.='exa -a | egrep "^\."'
 
 # -------------------------------------------------------------------
 # Compressing & Encrypting
@@ -336,6 +338,13 @@ alias yis="yarn install && yarn start"
 alias yt="yarn test"
 alias yit="yarn install && yarn test"
 alias yu="yarn upgrade"
+
+# -------------------------------------------------------------------
+# flutter
+# -------------------------------------------------------------------
+
+alias flrc="flr -d chrome"
+alias flre="flr -d emulator-5554"
 
 # -------------------------------------------------------------------
 # Vagrant
