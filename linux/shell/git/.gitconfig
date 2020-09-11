@@ -1,43 +1,71 @@
 [push]
-	default = matching
+  default = matching
 [core]
-	trustctime = false
-	editor = nvim
-	filemode = false
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
+  trustctime = false
+  editor = nvim
+  filemode = false
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+  pager = delta
 [color]
-	ui = true
+  ui = true
 [credential]
-	helper = store
+  helper = store
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
+  keeptemporaries = false
+  keepbackups = false
+  prompt = false
+  trustexitcode = false
 [alias]
-	last = log -1 --stat
-	cp = cherry-pick
-	co = checkout
-	cl = clone
-	ci = commit
-	st = status -sb
-	br = branch
-	unstage = reset HEAD --
-	dc = diff --cached
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+  last = log -1 --stat
+  cp = cherry-pick
+  co = checkout
+  cl = clone
+  ci = commit
+  st = status -sb
+  br = branch
+  unstage = reset HEAD --
+  dc = diff --cached
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 [user]
-	email = danielveragi@gmail.com
-	name = danielVg
-	username = daniel-vera-g
-	signingkey = CEBBD7D13F1E01E3
+  email = danielveragi@gmail.com
+  name = danielVg
+  username = daniel-vera-g
+  signingkey = CEBBD7D13F1E01E3
 [oh-my-zsh]
-	hide-status = 1
+  hide-status = 1
 [commit]
-	gpgsign = false
+  gpgsign = false
 [tag]
-	forceSignAnnotated = true
+  forceSignAnnotated = true
 [gpg]
-	program = gpg
+  program = gpg
+[delta]
+  plus-color = "#012800"
+  minus-color = "#340001"
+  syntax-theme = Dracula
+  line-numbers = true
+  side-by-side = true
+  features = unobtrusive-line-numbers decorations
+  whitespace-error-style = 22 reverse
+[interactive]
+  diffFilter = delta --color-only
+
+[delta "unobtrusive-line-numbers"]
+  line-numbers = true
+  line-numbers-minus-style = "#444444"
+  line-numbers-zero-style = "#444444"
+  line-numbers-plus-style = "#444444"
+  line-numbers-left-format = "{nm:>4}┊"
+  line-numbers-right-format = "{np:>4}│"
+  line-numbers-left-style = blue
+  line-numbers-right-style = blue
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = yellow box
+[diff]
+  colorMoved = default
