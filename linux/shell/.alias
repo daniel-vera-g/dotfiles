@@ -14,7 +14,7 @@ alias aptupg="sudo apt upgrade"
 alias aptls="apt list --upgradable"
 alias aptul="sudo apt update && apt list --upgradable"
 
-alias tree="tree -A"
+alias treeA="tree -A"
 alias tree1="tree -a -L 1"
 alias tree2="tree -a -L 2"
 alias treed="tree -d"
@@ -51,13 +51,6 @@ alias sp="spotify_control playpause"
 alias spp="spotify_control previous"
 alias spn="spotify_control next"
 
-# Using bluetooth headphones you can either have crappy voice & audio(HSP) or good audio(A2P)
-# See: https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/508522
-# Till fixed, use this aliases to switch between both settings
-# TODO change to script to dynamically set device and output sink(See: https://gist.github.com/OndraZizka/2724d353f695dacd73a50883dfdf0fc6)
-alias switchA2pBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2)  a2dp_sink"
-alias switchHspBluetoothHeadphones="pactl set-card-profile $(pactl list short cards | rg "38_18_4C_7C_99_1E" | cut -c 1-2) headset_head_unit"
-
 # Shutter consumes a lot of Memory(Probably storing screenshots in memory)
 # And probably has a memory leak by not releasing above memory before closing it
 # Therefore we need to kill it manually. We use SIGHUB(15) for it
@@ -74,6 +67,9 @@ alias dpkgi='sudo dpkg -i'
 alias df='df -h'
 # show sizes in MB
 alias free='free -m'
+# Get local IP-adress
+alias getLocalIp="hostname -I | awk '{print }' | copy"
+
 
 # -------------------------------------------------------------------
 # Open directories/files...
@@ -346,6 +342,8 @@ alias yu="yarn upgrade"
 
 alias flrc="flr -d chrome"
 alias flre="flr -d emulator-5554"
+alias flp="fl pub"
+alias flpg="fl pub get"
 
 # -------------------------------------------------------------------
 # python
