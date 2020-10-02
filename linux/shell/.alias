@@ -68,7 +68,7 @@ alias df='df -h'
 # show sizes in MB
 alias free='free -m'
 # Get local IP-adress
-alias getLocalIp="hostname -I | awk '{print }' | copy"
+alias getLocalIp="hostname -I | awk '{print $1}' | copy"
 
 
 # -------------------------------------------------------------------
@@ -341,6 +341,7 @@ alias yu="yarn upgrade"
 # -------------------------------------------------------------------
 
 alias flrc="flr -d chrome"
+alias flrl="flr -d linux"
 alias flre="flr -d emulator-5554"
 alias flp="fl pub"
 alias flpg="fl pub get"
