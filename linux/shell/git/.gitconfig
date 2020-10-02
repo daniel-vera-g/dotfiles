@@ -28,7 +28,9 @@
   br = branch
   unstage = reset HEAD --
   dc = diff --cached
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+  # Example
+  # git zip [branch_name
+  zip = archive --format=tar.gz -o ../repo.tar.gz
 [user]
   email = danielveragi@gmail.com
   name = danielVg
