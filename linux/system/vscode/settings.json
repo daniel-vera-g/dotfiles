@@ -58,12 +58,12 @@
   // Emmet
   "emmet.includeLanguages": {
     "html": "html",
-    // "javascript": "javascriptreact"
+    "javascript": "javascriptreact"
   },
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   // TODO useful or not?
-  "emmet.showExpandedAbbreviation": "never",
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   // Explorer
   "explorer.autoReveal": false,
   "explorer.sortOrder": "type",
@@ -285,8 +285,15 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "editor.tabCompletion": "on",
   "gitlens.advanced.telemetry.enabled": false,
   "docker-explorer.enableTelemetry": false,
   "dart.previewLsp": true,
+  "editor.multiCursorModifier": "ctrlCmd",
   "workbench.colorTheme": "Monokai",
+  "liveServer.settings.host": "127.200.50.1",
+  "dart.lineLength": 200,
+  "dart.debugExternalLibraries": true,
+  "dart.debugSdkLibraries": false,
+  "debug.onTaskErrors": "debugAnyway",
 }
