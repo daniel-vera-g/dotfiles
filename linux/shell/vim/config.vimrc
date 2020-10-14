@@ -104,3 +104,10 @@ set novisualbell
 set t_vb=
 set tm=500
 " ---
+
+" TODO save folds
+" augroup AutoSaveFolds
+"   autocmd!
+"   autocmd BufWinLeave * mkview
+"   autocmd BufWinEnter * silent loadview
+" augroup END
