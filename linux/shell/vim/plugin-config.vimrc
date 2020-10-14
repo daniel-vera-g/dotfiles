@@ -112,7 +112,7 @@ endif
 " ---
 " coc.nvim default settings
 " coc extensions
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json']
+TODO let g:coc_global_extensions = []
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -144,43 +144,6 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'latex': ['lacheck', 'chktex', 'Proselint'],
 \}
-" ---
-
-" ---
-" javascript
-let g:javascript_enable_domhtmlcss = 1
-let g:javascript_plugin_flow = 1
-" ---
-
-" ---
-"  Dart configs
-let dart_html_in_string=v:true
-let g:dart_style_guide = 2
-let g:dart_format_on_save = 1
-" ---
-
-" ---
-" Golang
-" disable vim-go :GoDef short cut (gd)
-" this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
-" Colors
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_types = 1
-" Highlight same variables
-let g:go_auto_sameids = 0
-" Auto import dependencies
-let g:go_fmt_command = "goimports"
-" Show types
-let g:go_auto_type_info = 1
-" Better json handline
-let g:go_addtags_transform = "snakecase"
 " ---
 
 " ---
