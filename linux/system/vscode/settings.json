@@ -168,7 +168,7 @@
   "sync.gist": "b14127e9a8301bb9157807039ca55b09",
   // Terminal
   "terminal.external.linuxExec": "zsh",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
   "todo-tree.highlights.customHighlight": {
     "TODO": {},
