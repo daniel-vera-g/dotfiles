@@ -130,10 +130,9 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" TODO
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" nmap <silent> <C-d> <Plug>(coc-range-select)
-" xmap <silent> <C-d> <Plug>(coc-range-select)
+nmap <silent> <C-d> <Plug>(coc-range-select)
+xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -151,11 +150,11 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+if (index(['vim','help'], &filetype) >= 0)
+execute 'h '.expand('<cword>')
+else
+call CocAction('doHover')
+endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
@@ -164,39 +163,20 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+\ pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " ---
 
-" ---
-"" Go
-" Use ctrlP to fuzzy search declaration dir with ,gt
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
-
-" Easier testing workflow with:  ,ga to switch to the test (, is my leader key) or
-" ,gav / ,gah to open in a vertical / horizontal split.<Paste>
-au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
-au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
-au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
-" " Run tests with F10
-au FileType go nmap <F10> :GoTest -short<cr>
-" F9 for code coverage
-au FileType go nmap <F9> :GoCoverageToggle -short<cr>
-
-" Go to definition with F12 -> DONE with coc LSP
-au FileType go nmap <F12> <Plug>(go-def)
-" ---
 
 " ---
 " Ale
