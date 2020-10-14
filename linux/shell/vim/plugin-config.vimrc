@@ -112,7 +112,7 @@ endif
 " ---
 " coc.nvim default settings
 " coc extensions
-TODO let g:coc_global_extensions = []
+let g:coc_global_extensions = []
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
