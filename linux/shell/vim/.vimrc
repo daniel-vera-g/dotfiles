@@ -63,14 +63,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " markdown preview
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-" go
-" Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'fvictorio/vim-extract-variable'
-" css
-Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
-" Syntax for js libraries
-Plug 'othree/javascript-libraries-syntax.vim'
 " Docker
 Plug 'kevinhui/vim-docker-tools'
 " Env files
@@ -79,8 +71,6 @@ Plug 'tpope/vim-dotenv'
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
-" Load as it get's not properly loaded by polyglot
-Plug 'dart-lang/dart-vim-plugin'
 " --
 
 "---
