@@ -13,7 +13,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-autosuggestions fd flutter);
+plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-autosuggestions fd flutter conda-zsh-completion);
 
 # No more needed ?
 # fpath=(~/.zsh/completions $fpath)
@@ -58,6 +58,8 @@ stty -ixon
 # TODO rm for gh
 # Hub alias for git
 # eval "$(hub alias -s)"
+# Load gh cli tool completions
+# eval "$(gh completion -s zsh)"
 
 eval $(thefuck --alias)
 
@@ -79,4 +81,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
