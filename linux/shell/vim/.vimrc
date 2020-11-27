@@ -62,7 +62,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 " markdown preview
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Docker
 Plug 'kevinhui/vim-docker-tools'
 " Env files
