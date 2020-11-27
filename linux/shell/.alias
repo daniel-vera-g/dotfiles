@@ -9,6 +9,12 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
+# Better cp and mv with a nice progress bar
+# alias cp="cp -ivr"
+# alias mv="mv -iv"
+alias cp='/usr/local/bin/cpg -givr'
+alias mv='/usr/local/bin/mvg -giv'
+
 alias aptupd="sudo apt update"
 alias aptupg="sudo apt upgrade"
 alias aptls="apt list --upgradable"
@@ -22,10 +28,8 @@ alias tree1d="tree -d -L 1"
 alias tree2d="tree -d -L 2"
 
 alias rs="rm -iv"
-alias rr="rm -Ivr"
+alias rri="rm -Ivr"
 
-alias cp="cp -ivr"
-alias mv="mv -iv"
 alias tch="touch"
 
 alias cat="bat"
@@ -69,6 +73,9 @@ alias df='df -h'
 alias free='free -m'
 # Get local IP-adress
 alias getLocalIp="hostname -I | awk '{print $1}' | copy"
+
+alias b='buku --suggest' # Buku bookmark manager
+alias bs='firefox $(buku -p -f 10 | fzf)' # Fuzzy search bookmarks
 
 
 # -------------------------------------------------------------------
@@ -461,3 +468,10 @@ alias cryptoPrice="curl rate.sx"
 alias btcPrice="curl rate.sx/btc"
 alias netSpeed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias news="curl de.getnews.tech"
+
+
+# -------------------------------------------------------------------
+# nnn
+# -------------------------------------------------------------------
+
+alias nnl='nnn -deH'
