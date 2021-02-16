@@ -31,6 +31,7 @@
   # Example
   # git zip [branch_name
   zip = archive --format=tar.gz -o ../repo.tar.gz
+  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 [user]
   email = danielveragi@gmail.com
   name = danielVg
