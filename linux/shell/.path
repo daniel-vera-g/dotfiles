@@ -41,6 +41,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # Android dev
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export ADB=/home/dvg/Android/Sdk/platform-tools
+# TODO this does not work with scrcpy
+# export ADB=/home/dvg/Android/Sdk/platform-tools
+export ADB=/home/dvg/Android/Sdk/platform-tools/adb
 # Add to path to f.ex use adb
-export PATH=$PATH/home/dvg/Android/Sdk/platform-tools
+# export PATH="$PATH:/home/dvg/Android/Sdk/platform-tools/adb"
