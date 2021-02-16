@@ -7,7 +7,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "numso.prettier-standard-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -15,7 +15,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   // Language
   "cSpell.language": "en,de-DE",
   "cSpell.userWords": [
@@ -262,7 +262,7 @@
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000",
-    "editorLineNumber.foreground": "#ffff",
+    // "editorLineNumber.foreground": "#ffff",
   },
   "workbench.editor.enablePreview": false,
   "workbench.editor.highlightModifiedTabs": true,
@@ -292,8 +292,11 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "workbench.colorTheme": "Monokai",
   "liveServer.settings.host": "127.200.50.1",
-  "dart.lineLength": 200,
   "dart.debugExternalLibraries": true,
   "dart.debugSdkLibraries": false,
   "debug.onTaskErrors": "debugAnyway",
+  "python.languageServer": "Microsoft",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
