@@ -418,7 +418,8 @@ alias cppt="pwd | copy"
 # pandoc
 # ------------------------------------------------------------------
 
-alias pandocE="pandoc --template eisvogel -N"
+alias pandocE='pandoc --template eisvogel -V disable-header-and-footer=true -V geometry="top=2cm,bottom=2cm"'
+alias pandocEn="pandoc --template eisvogel -N"
 alias pandocEc="pandoc --template eisvogel -N --toc"
 
 # -------------------------------------------------------------------
