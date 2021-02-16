@@ -71,6 +71,8 @@ Plug 'tpope/vim-dotenv'
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+" Github actions
+Plug 'yasuhiroki/github-actions-yaml.vim'
 " --
 
 "---
