@@ -72,3 +72,5 @@
   hunk-header-decoration-style = yellow box
 [diff]
   colorMoved = default
+[http]
+	postbuffer = 2097152000 # Cause: https://stackoverflow.com/questions/54967927/error-rpc-failed-curl-55-the-requested-url-returned-error-401-when-pushing-to
