@@ -1,5 +1,29 @@
 {
+  // Misc
+  "docker-explorer.enableTelemetry": false,
+  "liveServer.settings.host": "127.200.50.1",
+  "debug.onTaskErrors": "debugAnyway",
+  "python.languageServer": "Microsoft",
+  "prettier.useTabs": false,
+  "python.jediEnabled": false,
+  "sync.gist": "b14127e9a8301bb9157807039ca55b09",
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
   // Default formatters
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -29,6 +53,9 @@
   "dart.previewFlutterUiGuides": true,
   "diffEditor.ignoreTrimWhitespace": false,
   // Editor configs
+  "editor.tabCompletion": "on",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.columnSelection": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.mouseWheelZoom": true,
   "editor.detectIndentation": false,
@@ -38,7 +65,6 @@
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.lineNumbers": "relative",
-  "editor.matchBrackets": false,
   "editor.minimap.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": {
@@ -62,12 +88,10 @@
   },
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
-  // TODO useful or not?
-  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   // Explorer
   "explorer.autoReveal": false,
   "explorer.sortOrder": "type",
-  // FIles
+  // Files
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "files.eol": "\n",
@@ -97,15 +121,14 @@
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/node_modules/**": true,
-    //Add in your other glob patterns
   },
   // Enable linter for TypeScript files
   "tslint.enable": true,
   // Git configs
   "git.autofetch": true,
+  "gitlens.advanced.telemetry.enabled": false,
   "git.enableSmartCommit": true,
   // Js config
-  "javascript.implicitProjectConfig.checkJs": true,
   "javascript.validate.enable": true,
   "keyboard.dispatch": "keyCode",
   // Peacock
@@ -163,13 +186,11 @@
       "value": "#42b883"
     }
   ],
-  "prettier.useTabs": false,
-  "python.jediEnabled": false,
-  "sync.gist": "b14127e9a8301bb9157807039ca55b09",
   // Terminal
   "terminal.external.linuxExec": "zsh",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
+  // TODO Tree
   "todo-tree.highlights.customHighlight": {
     "TODO": {},
     "FIXME": {}
@@ -191,8 +212,6 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": ",",
-  // TODO
-  "vim.neovimPath": "/snap/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -252,14 +271,10 @@
   "vim.useSystemClipboard": true,
   "vim.easymotion": true,
   "vim.surround": true,
-  // "vim.foldfix": true,
-  "vsicons.dontShowNewVersionMessage": true,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.menuBarVisibility": "default",
-  "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  // "vim.foldfix": true, -> Dirty fix for not opening folds...not working as expected...
   // Workbench
   "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000",
     // "editorLineNumber.foreground": "#ffff",
@@ -271,32 +286,32 @@
   "workbench.startupEditor": "none",
   "workbench.statusBar.feedback.visible": false,
   "workbench.statusBar.visible": true,
+  // Code runner
   "code-runner.executorMap": {
     "cpp": "g++ *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt"
   },
   "code-runner.runInTerminal": true,
-  "editor.columnSelection": false,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.tabCompletion": "on",
-  "gitlens.advanced.telemetry.enabled": false,
-  "docker-explorer.enableTelemetry": false,
+  // Dart
   "dart.previewLsp": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "workbench.colorTheme": "Monokai",
-  "liveServer.settings.host": "127.200.50.1",
   "dart.debugExternalLibraries": true,
   "dart.debugSdkLibraries": false,
-  "debug.onTaskErrors": "debugAnyway",
-  "python.languageServer": "Microsoft",
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
   },
+  // TO-REVIEW?
+  // "editor.matchBrackets": false,
+  // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  // "javascript.implicitProjectConfig.checkJs": true,
+  /*   // TODO using neovim
+  "vim.neovimPath": "/snap/bin/nvim", */
+  // "window.menuBarVisibility": "default",
 }

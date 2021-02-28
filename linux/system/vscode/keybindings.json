@@ -1,110 +1,17 @@
 [
+  // Own Customisations
+  // Commenting
   {
-    "key": "ctrl+shift+q",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "ctrl+alt+v",
-    "command": "toggleVim"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.closePanel"
-  },
-  {
-    "key": "ctrl+shift+7",
+    "key": "ctrl+7",
     "command": "editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+numpad_divide",
-    "command": "-editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+alt+7",
+    "key": "ctrl+shift+7",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
   },
-  {
-    "key": "ctrl+alt+numpad_divide",
-    "command": "-editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "git.commit"
-  },
-  {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpenNavigateNext",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "alt+=",
-    "command": "workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+numpad_add",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+shift+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "alt+-",
-    "command": "workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+numpad_subtract",
-    "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-editor.action.startFindReplaceAction"
-  },
-  {
-    "key": "ctrl+shift+,",
-    "command": "extension.toggleSemicolon"
-  },
-  {
-    "key": "ctrl+alt+n",
-    "command": "-intelli-refactor.inline",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "-selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "-selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
+  // Terminal
   {
     "key": "ctrl+l",
     "command": "workbench.action.terminal.clear"
@@ -120,6 +27,19 @@
   {
     "key": "ctrl+shift+`",
     "command": "-workbench.action.terminal.new"
+  },
+  // ---
+  {
+    "key": "ctrl+shift+q",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.view.explorer"
   },
   {
     "key": "ctrl+q",
@@ -170,9 +90,88 @@
     "key": "ctrl+alt+o",
     "command": "workbench.view.extension.todo-tree-container"
   },
+  // Git
+  {
+    "key": "ctrl+k",
+    "command": "git.commit"
+  },
+  // Extensions keybindings
+  // Vim related
+  {
+    "key": "ctrl+alt+v",
+    "command": "toggleVim"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "shift+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "-selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  // ---
+  {
+    "key": "ctrl+shift+,",
+    "command": "extension.toggleSemicolon"
+  },
   {
     "key": "ctrl+h",
     "command": "-extension.vim_ctrl+h",
     "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-  }
+  },
+  // Do I need this?
+  /*   {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  }, */
+  /*   {
+    "key": "alt+=",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+numpad_add",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "alt+-",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+numpad_subtract",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.zoomOut" 
+    }, */
+  /*   {
+    "key": "ctrl+alt+n",
+    "command": "-intelli-refactor.inline",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  }, */
 ]
