@@ -44,7 +44,7 @@
 [tag]
   forceSignAnnotated = true
 [gpg]
-  program = gpg
+	program = gpg2
 [delta]
   plus-color = "#012800"
   minus-color = "#340001"
