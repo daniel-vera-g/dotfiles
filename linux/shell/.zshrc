@@ -13,7 +13,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-autosuggestions fd flutter conda-zsh-completion);
+plugins=(git git-open node npm safe-paste fzf docker docker-compose zsh-autosuggestions fd flutter conda-zsh-completion);
 
 # No more needed ?
 # fpath=(~/.zsh/completions $fpath)
@@ -39,6 +39,7 @@ source $HOME/.local-aliases
 TERM=xterm-256color
 
 # Syntax Highlighting
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # General color settings
@@ -51,6 +52,8 @@ autoload -Uz compinit
 
 # Fuzzy file finder
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh --cmd j)"
 
 # so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
