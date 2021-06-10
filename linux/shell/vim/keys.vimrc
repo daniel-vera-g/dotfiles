@@ -1,12 +1,12 @@
 " Abbreviations & Custom keys
 
+" ---
 " Don't enter accidentally Ex mode
 map q: <Nop>
 nnoremap Q <nop>
+" ---
 
 " ---
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -60,6 +60,9 @@ endif
 
 " ---
 " Autocmd Rules
+" You can specify commands to be executed automatically when reading or writing
+" a file, when entering or leaving a buffer or window, and when exiting Vim.
+
 " The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -96,7 +99,7 @@ nnoremap <leader>q :q<cr>
 " Buffer nav
 noremap <leader>w :bnext<cr>
 noremap <leader>q :bprevious<cr>
-"" Close buffer
+" Close buffer
 noremap <leader>c :bd<CR>
 noremap <leader>cf :bd!<CR>
 " Close all the buffers
@@ -104,33 +107,6 @@ map <leader>ba :bufdo bd<cr>
 " Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
-" session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
-" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-" TODO as conflicts with: go back till X nnoremap <silent> <S-t> :tabnew<CR>
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-" CTRL-Tab is next tab
-noremap <C-Tab> :<C-U>tabnext<CR>
-inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-cnoremap <C-Tab> <C-C>:tabnext<CR>
-" CTRL-SHIFT-Tab is previous tab
-noremap <C-S-Tab> :<C-U>tabprevious<CR>
-inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 nnoremap <F3> :set hlsearch!<CR>

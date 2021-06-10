@@ -12,6 +12,7 @@ endif
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 " Turn on the Wild menu
+" That's the thing, that autocompletes in the tab bar :D
 set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -58,17 +59,16 @@ set wrap "Wrap lines
 " ---
 " Linebreak on 500 characters
 set lbr
-set tw=500
+set tw=120
 " ---
 
 " ---
 " Searching
-set hlsearch
-set incsearch
+set hlsearch " When there is a previous search pattern, highlight all its matches.
+set incsearch " While typing a search command, show where the pattern, as it was typed
 set ignorecase
-set smartcase
-" Clear search highlight
-set hlsearch!
+set smartcase " Override the 'ignorecase' option if the search pattern contains upper case characters
+set hlsearch! " Clear search highlight
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap n nzzzv
@@ -104,10 +104,3 @@ set novisualbell
 set t_vb=
 set tm=500
 " ---
-
-" TODO save folds
-" augroup AutoSaveFolds
-"   autocmd!
-"   autocmd BufWinLeave * mkview
-"   autocmd BufWinEnter * silent loadview
-" augroup END
