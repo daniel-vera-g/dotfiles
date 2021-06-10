@@ -2,10 +2,6 @@
 
 " ---
 " Ultisnips
-" vertically split ultisnips edit window
-" Alternative:
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsExpandTrigger="<tab>"
 "Snippets engine
 let g:go_snippet_engine = "ultisnips"
 let g:UltiSnipsEditSplit="vertical"
@@ -24,7 +20,6 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
 " ---
 
-" ---
 " Bullets
 let g:bullets_enabled_file_types = [
 			\ 'markdown',
@@ -32,7 +27,6 @@ let g:bullets_enabled_file_types = [
 			\ 'gitcommit',
 			\ 'md'
 			\]
-" ---
 
 " ---
 " Vimtex
@@ -41,9 +35,7 @@ autocmd BufNewFile,BufRead *.tex IndentLinesDisable
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-" TODO fix
 set conceallevel=0
-" set conceallevel=1
 let g:tex_conceal='abdmg'
 " Vimtex TOC settings
 let g:vimtex_toc_config = {
@@ -86,7 +78,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " ---
 " Autosave
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save = 0  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " ---
 
@@ -110,7 +102,8 @@ endif
 " ---
 
 " ---
-" coc.nvim default settings
+" coc.nvim
+
 " coc extensions
 let g:coc_global_extensions = []
 " if hidden is not set, TextEdit might fail.
@@ -134,7 +127,6 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_save = 1
 " Ale fix
 let g:ale_fix_on_save = 0
-" \   'javascript': ['prettier', 'kkeslint'],
 let g:ale_linters = {
  \   'latex': ['lacheck', 'chktex', 'Proselint'],
  \   'javascript': ['standard', 'prettier']

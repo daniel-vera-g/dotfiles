@@ -2,18 +2,13 @@
 
 " ---
 "  Searching with FZF
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-" ripgrep
 if executable('rg')
   let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
   set grepprg=rg\ --vimgrep
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" TODO get them working properly
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
@@ -43,10 +38,6 @@ noremap <Leader>gr :Gremove<CR>
 " ---
 " NERDTree
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-" Schortcut for NERDTree toggle
-" TODO use alt + n?
-" map <leader>n :NERDTreeToggle<CR>
-" map <A-m> :NERDTreeToggle<CR>
 map <M-1> :NERDTreeToggle<CR>
 " Fix Inconsistent buffer width when deleting a buffer
 nnoremap <leader>cb :bp<cr>:bd #<cr>
@@ -106,15 +97,6 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>f  <Plug>(coc-format-selected)
 vmap <leader>f  <Plug>(coc-format-selected)
 
-" TODO? Format with ale or coc?
-" augroup mygroup
-"   autocmd!
-"   " Setup formatexpr specified filetype(s).
-"   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-"   " Update signature help on jump placeholder
-"   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-" augroup end
-
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -129,11 +111,6 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
-
-" TODO conflicts with scrolling
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" nmap <silent> <C-d> <Plug>(coc-range-select)
-" xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -175,9 +152,9 @@ return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
+" TODO change as it conflicts with TMUX
 inoremap <silent><expr> <c-space> coc#refresh()
 " ---
-
 
 " ---
 " Ale
@@ -190,8 +167,9 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 " ---
 
 " ---
-" Other Plugin related ones
-"" snippets
+" Misc:
+
+" Snippets
 " Open UltiSnips edit function
 nmap <leader>ue :UltiSnipsEdit<cr>
 " Tagbar
