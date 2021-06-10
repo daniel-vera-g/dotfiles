@@ -2,18 +2,14 @@
 
 # Call script with: ./borg-backup.sh [ARGS] 2>&1 | tee ~/Downloads/borg-backup.log
 
+
 # Backup and repo locations add more dynamically
-# TODO improve naming
 export SYSTEM_BACKUP_LOCATION="/media/dvg/system-backups/borg-system-backup/"
 export SYSTEM="/home/dvg/"
-export ANDROID_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/android/"
-export ANDROID="/home/dvg/Android/"
 export DOWNLOAD_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/downloads/"
 export DOWNLOAD="/home/dvg/Downloads/"
 export EDU_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/edu/"
 export EDU="/home/dvg/workspace/edu"
-export NEOHELDEN_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/neohelden/"
-export NEOHELDEN="/home/dvg/workspace/neohelden/"
 export VM_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/VM/VM-backup-borg/"
 export VM="/home/dvg/VirtualBox VMs/"
 
@@ -23,15 +19,11 @@ if [ $# -eq 0 ]; then
   exit 1
 fi
 
-# TODO better naming in functions
-
 getBackupPath() {
   case "$1" in
     "system") echo $SYSTEM_BACKUP_LOCATION;;
-    "android") echo $ANDROID_BACKUP_LOCATION;;
     "downloads") echo $DOWNLOAD_BACKUP_LOCATION;;
     "edu") echo $EDU_BACKUP_LOCATION;;
-    "neohelden") echo $NEOHELDEN_BACKUP_LOCATION;;
     "vm") echo $VM_BACKUP_LOCATION;;
     *) echo "";;
   esac
@@ -40,10 +32,8 @@ getBackupPath() {
 getLocationToBackUp() {
   case "$1" in
     "system") echo $SYSTEM;;
-    "android") echo $ANDROID;;
     "downloads") echo $DOWNLOAD;;
     "edu") echo $EDU;;
-    "neohelden") echo $NEOHELDEN;;
     "vm") echo $VM;;
     *) echo "";;
   esac
@@ -77,7 +67,7 @@ do
   trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
   info "Starting backup"
-  
+
   # Backup the most important directories into an archive named after
   # the machine this script is currently running on:
   borg create                         \
@@ -93,16 +83,16 @@ do
     --exclude-from "$exclude"    \
     ::"{hostname}-$argval-backup-{now}"            \
     "$location"
-  
+
     backup_exit=$?
-  
+
   info "Pruning repository: $BORG_REPO"
-  
+
   # Use the `prune` subcommand to maintain 7 daily, 4 weekly and 6 monthly
   # archives of THIS machine. The '{hostname}-' prefix is very important to
   # limit prune's operation to this machine's archives and not apply to
   # other machines' archives also:
-  
+
   borg prune                          \
     --list                          \
     --prefix '{hostname}-'          \
@@ -110,12 +100,12 @@ do
     --keep-daily    7               \
     --keep-weekly   4               \
     --keep-monthly  6               \
-  
+
     prune_exit=$?
-  
+
   # use highest exit code as global exit code
   global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
-  
+
   if [ ${global_exit} -eq 0 ]; then
     info "Backup and Prune for $location finished successfully"
   elif [ ${global_exit} -eq 1 ]; then
@@ -123,7 +113,7 @@ do
   else
     info "Backup and/or Prune for $location finished with errors"
   fi
-  
+
   # exit ${global_exit}
 
 done

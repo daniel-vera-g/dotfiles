@@ -16,9 +16,11 @@ alias cp='/usr/local/bin/cpg -givr'
 alias mv='/usr/local/bin/mvg -giv'
 
 alias aptupd="sudo apt update"
-alias aptupg="sudo apt upgrade"
+# Doing full-uprade instead of play upgrade to also remove dependencies
+# "will install or remove packages as necessary to complete the upgrade"
+alias aptupg="sudo apt full-upgrade"
 alias aptls="apt list --upgradable"
-alias aptul="sudo apt update && apt list --upgradable"
+alias aptul="sudo apt update && sudo apt list --upgradable"
 
 alias treeA="tree -A"
 alias tree1="tree -a -L 1"
@@ -108,12 +110,6 @@ alias backupEx='deja-dup --backup &> /dev/null &'
 alias got="go test ./..."
 alias gotv="go test -v ./..."
 alias goge="go get -d -u"
-
-# -------------------------------------------------------------------
-# fasd
-# -------------------------------------------------------------------
-
-alias v='f -e vim' # quick opening files with vim
 
 # -------------------------------------------------------------------
 # fd
@@ -476,3 +472,11 @@ alias news="curl de.getnews.tech"
 # -------------------------------------------------------------------
 
 alias nnl='nnn -deH'
+alias nnp='nnn -deP s'
+
+# -------------------------------------------------------------------
+# trans: cli translator
+# -------------------------------------------------------------------
+
+alias ten='trans en:de'
+alias tde='trans de:en'

@@ -12,9 +12,9 @@
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   // Default formatters
-  "[markdown]": {
+  /*   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }, */
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -22,7 +22,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -34,7 +34,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -44,9 +44,15 @@
   "cSpell.language": "en,de-DE",
   "cSpell.userWords": [
     "Blockchain",
+    "Eisvogel",
+    "Hashfunktion",
+    "Tidote",
     "danielveragi",
     "gmail",
-    "markdownlint"
+    "hashen",
+    "markdownlint",
+    "strategizing",
+    "zothero"
   ],
   // c/c++, dart & vimdiff
   "clang.executable": "/usr/bin/clang-9",
@@ -54,7 +60,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   // Editor configs
   "editor.tabCompletion": "on",
-  "editor.multiCursorModifier": "ctrlCmd",
   "editor.columnSelection": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.mouseWheelZoom": true,
@@ -69,8 +74,8 @@
   "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": {
     "other": true,
-    "comments": false,
-    "strings": false
+    "comments": true,
+    "strings": true
   },
   "editor.renderControlCharacters": false,
   "editor.renderIndentGuides": false,
@@ -274,7 +279,6 @@
   // "vim.foldfix": true, -> Dirty fix for not opening folds...not working as expected...
   // Workbench
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Monokai",
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000",
     // "editorLineNumber.foreground": "#ffff",
@@ -307,6 +311,15 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
+  "git.confirmSync": false,
+  "workbench.sideBar.location": "right",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "timeline.excludeSources": [],
+  "workbench.colorTheme": "Monokai",
   // TO-REVIEW?
   // "editor.matchBrackets": false,
   // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",

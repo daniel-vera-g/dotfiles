@@ -1,6 +1,7 @@
 {
   // Misc
   "docker-explorer.enableTelemetry": false,
+  "rewrap.autoWrap.enabled": true,
   "liveServer.settings.host": "127.200.50.1",
   "debug.onTaskErrors": "debugAnyway",
   "python.languageServer": "Microsoft",
@@ -10,7 +11,6 @@
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
   // Default formatters
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -44,9 +44,16 @@
   "cSpell.language": "en,de-DE",
   "cSpell.userWords": [
     "Blockchain",
+    "Gilliard",
+    "Microservice",
+    "NIAM",
     "danielveragi",
     "gmail",
-    "markdownlint"
+    "grpc",
+    "markdownlint",
+    "microservices",
+    "nestjs",
+    "pandoc"
   ],
   // c/c++, dart & vimdiff
   "clang.executable": "/usr/bin/clang-9",
@@ -274,7 +281,7 @@
   // "vim.foldfix": true, -> Dirty fix for not opening folds...not working as expected...
   // Workbench
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Monokai",
+  "workbench.colorTheme": "Dracula Soft",
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000",
     // "editorLineNumber.foreground": "#ffff",
@@ -298,15 +305,32 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    // "editor.rulers": [
+    //   80
+    // ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
   },
+  "editor.matchBrackets": false,
+  "workbench.sideBar.location": "right",
+  "javascript.format.semicolons": "remove",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   // TO-REVIEW?
   // "editor.matchBrackets": false,
   // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",

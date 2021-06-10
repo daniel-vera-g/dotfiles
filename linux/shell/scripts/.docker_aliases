@@ -6,6 +6,8 @@
 
 alias lzd="lazydocker"
 
+
+
 # Run a bash shell in the specified container.
 dexbash() {
   if [ $# -ne 1 ]; then
@@ -77,7 +79,7 @@ alias dki="docker images"
 alias dkle="docker ps -aq -f status=exited"
 
 # Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
+dkstop() { docker stop $(docker ps -a -q); }
 
 # Remove stopped containers
 alias dkrm="docker ps -aq --no-trunc -f status=exited | xargs docker rm"
@@ -141,4 +143,17 @@ alias cbr='docker-compose up -d --no-deps --build '
 crm(){
 	docker-compose stop $1
 	docker-compose rm --force $1
+}
+
+### CUSTOM FUNCTIONS
+
+# Run ubuntu 18:04 docker container for testing
+# Accepts one name argument for the container
+rUbuCont() {
+  name="test-container"
+    if [[ -n $1 ]]
+    then
+      test=$1
+    fi
+    dk run --rm -it --name $name  ubuntu:18.04
 }

@@ -36,7 +36,7 @@ function searchPDF() {
 
 # Install .deb Programm
 function Ideb() {
-  curl -LOs $@ && sudo dpkg -i $(basename $@)
+  curl -LOs $@ && sudo dpkg -i $(basename $@) && rm $(basename $@) && echo "Programm installed and .deb file cleaned up!"
 }
 
 # ls on cd
@@ -161,3 +161,9 @@ function unzipAll() {
     fi
   done
 }
+
+# Search for directory, select directory and output it
+function fcdz() {
+	echo $(fd -t d| fzf || $PWD)
+}
+

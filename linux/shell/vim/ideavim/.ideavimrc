@@ -7,6 +7,7 @@ set scrolloff=3 " 3 lines above/below cursor when scrolling
 set surround
 set commentary
 set highlightedyank
+set NERDTree
 
 " Copy to system clipboard as well
 set clipboard+=unnamed
@@ -23,7 +24,7 @@ let mapleader = ","
 " let maplocalleader = ","
 
 " Terminal
-nmap <leader>T :action ActivateTerminalToolWindow<cr>                          
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
 
 " External GVim
 nmap <leader>v :action Tool_External Tools_gvim<cr>
@@ -45,5 +46,5 @@ nmap ,R :action RunAnything<cr>
 nmap ,b :action Debug<cr>
 nmap ,c :action RunClass<cr>
 nmap ,d :action DebugClass<cr>
-nmap ,t :action RerunTests<cr>                                         
+nmap ,t :action RerunTests<cr>
 nmap ,T :action RerunFailedTests<cr>
