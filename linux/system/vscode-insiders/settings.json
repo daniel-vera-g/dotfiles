@@ -1,0 +1,330 @@
+{
+  // Misc
+  "docker-explorer.enableTelemetry": false,
+  "liveServer.settings.host": "127.200.50.1",
+  "debug.onTaskErrors": "debugAnyway",
+  "python.languageServer": "Microsoft",
+  "prettier.useTabs": false,
+  "python.jediEnabled": false,
+  "sync.gist": "b14127e9a8301bb9157807039ca55b09",
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+  // Default formatters
+  /*   "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }, */
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "breadcrumbs.enabled": true,
+  // Language
+  "cSpell.language": "en,de-DE",
+  "cSpell.userWords": [
+    "Blockchain",
+    "Eisvogel",
+    "Hashfunktion",
+    "Tidote",
+    "danielveragi",
+    "gmail",
+    "hashen",
+    "markdownlint",
+    "strategizing",
+    "zothero"
+  ],
+  // c/c++, dart & vimdiff
+  "clang.executable": "/usr/bin/clang-9",
+  "dart.previewFlutterUiGuides": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Editor configs
+  "editor.tabCompletion": "on",
+  "editor.columnSelection": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.mouseWheelZoom": true,
+  "editor.detectIndentation": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.renderControlCharacters": false,
+  "editor.renderIndentGuides": false,
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "zenMode.hideLineNumbers": false,
+  "editor.tabSize": 2,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  // Emmet
+  "emmet.includeLanguages": {
+    "html": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  // Explorer
+  "explorer.autoReveal": false,
+  "explorer.sortOrder": "type",
+  // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.eol": "\n",
+  "files.trimFinalNewlines": true,
+  // Glob patterns for excluding folders and files
+  "files.exclude": {
+    "**/*.build": true,
+    "**/*.git": true,
+    "**/*.err": true,
+    "**/*.rec": true,
+    "**/*.log": true,
+    "**/*.evt": true,
+    "**/buildfre.*": true,
+    "**/buildchk.*": true,
+    "**/.DS_Store": true
+  },
+  // Glob patterns for excluding files and folders in searches
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    ".build/**": true,
+    "out*/**": true,
+    "i18n/**": true,
+    "extensions/**/out/**": true,
+    "*.min.js": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+  },
+  // Enable linter for TypeScript files
+  "tslint.enable": true,
+  // Git configs
+  "git.autofetch": true,
+  "gitlens.advanced.telemetry.enabled": false,
+  "git.enableSmartCommit": true,
+  // Js config
+  "javascript.validate.enable": true,
+  "keyboard.dispatch": "keyCode",
+  // Peacock
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  // Terminal
+  "terminal.external.linuxExec": "zsh",
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe",
+  // TODO Tree
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {},
+    "FIXME": {}
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "green",
+    "type": "none"
+  },
+  "todo-tree.tree.showScanModeButton": false,
+  "todohighlight.keywords": [
+    "TODO"
+  ],
+  // VcodeVim
+  "vim.disableExtension": false,
+  "vim.enableNeovim": false,
+  "vim.highlightedyank.color": "rgba(96, 120, 128, 0.5)",
+  "vim.highlightedyank.duration": 100,
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": ",",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
+    },
+    {
+      "before": [
+        "Z",
+        "Z"
+      ],
+      "commands": [
+        ":wq"
+      ]
+    },
+    {
+      "before": [
+        "Z",
+        "Q"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "m"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "bookmarks.list"
+      ]
+    }
+  ],
+  "vim.sneak": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.surround": true,
+  // "vim.foldfix": true, -> Dirty fix for not opening folds...not working as expected...
+  // Workbench
+  "workbench.activityBar.visible": true,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ff0000",
+    // "editorLineNumber.foreground": "#ffff",
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.statusBar.visible": true,
+  // Code runner
+  "code-runner.executorMap": {
+    "cpp": "g++ *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+  },
+  "code-runner.runInTerminal": true,
+  // Dart
+  "dart.previewLsp": true,
+  "dart.debugExternalLibraries": true,
+  "dart.debugSdkLibraries": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "git.confirmSync": false,
+  "workbench.sideBar.location": "right",
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "timeline.excludeSources": [],
+  "workbench.colorTheme": "Monokai",
+  // TO-REVIEW?
+  // "editor.matchBrackets": false,
+  // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  // "javascript.implicitProjectConfig.checkJs": true,
+  /*   // TODO using neovim
+  "vim.neovimPath": "/snap/bin/nvim", */
+  // "window.menuBarVisibility": "default",
+}

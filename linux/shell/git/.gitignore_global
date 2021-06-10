@@ -1,2 +1,4 @@
 tags
 node_modules
+# NOTE: Used in the textidote project
+.idea/*

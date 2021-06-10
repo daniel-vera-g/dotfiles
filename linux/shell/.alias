@@ -9,41 +9,76 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -="cd -"                  # Go to previous dir with -
 
-alias aptupd="sudo apt update"
-alias aptupg="sudo apt upgrade"
-alias aptls="apt list --upgradable"
-alias aptul="sudo apt update && apt list --upgradable"
+# Better cp and mv with a nice progress bar
+# alias cp="cp -ivr"
+# alias mv="mv -iv"
+alias cp='/usr/local/bin/cpg -givr'
+alias mv='/usr/local/bin/mvg -giv'
 
-alias tree="tree -A"
+alias aptupd="sudo apt update"
+# Doing full-uprade instead of play upgrade to also remove dependencies
+# "will install or remove packages as necessary to complete the upgrade"
+alias aptupg="sudo apt full-upgrade"
+alias aptls="apt list --upgradable"
+alias aptul="sudo apt update && sudo apt list --upgradable"
+
+alias treeA="tree -A"
+alias tree1="tree -a -L 1"
+alias tree2="tree -a -L 2"
 alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
+alias tree1d="tree -d -L 1"
+alias tree2d="tree -d -L 2"
 
 alias rs="rm -iv"
-alias rr="rm -rf"
+alias rri="rm -Ivr"
 
-alias cp="cp -iv"
-alias mv="mv -iv"
 alias tch="touch"
 
 alias cat="bat"
 
 # Sourcing
 alias refresh="source ~/.zshrc"
-alias reload="source ~/.zshrc"
 
 # Open Applications
 alias open="xdg-open"
 alias na="nautilus &> /dev/null &"
+alias na.="nautilus . &> /dev/null &"
 alias gln="gnome-terminal -x glances -2"
 alias fdev="firefox_dev &> /dev/null &"
-alias lMs="firefox_dev "https://de.wikipedia.org/wiki/Liste_mathematischer_Symbole" &> /dev/null &"
-alias galph="firefox_dev "https://de.wikipedia.org/wiki/Griechisches_Alphabet" &> /dev/null &"
+alias ffox="firefox &> /dev/null &"
+
+# Open settings
+alias networkSettings="gnome-control-center network &> /dev/null &"
+alias bluetoothSettings="gnome-control-center bluetooth &> /dev/null &"
+alias inputSettings="gnome-control-center sound input &> /dev/null &"
 
 # Use with spotify
-alias sp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control playpause"
-alias spp="/home/dvg/dotfiles/linux/shell/scripts/spotify_control previous"
-alias spn="/home/dvg/dotfiles/linux/shell/scripts/spotify_control next"
+alias sp="spotify_control playpause"
+alias spp="spotify_control previous"
+alias spn="spotify_control next"
+
+# Shutter consumes a lot of Memory(Probably storing screenshots in memory)
+# And probably has a memory leak by not releasing above memory before closing it
+# Therefore we need to kill it manually. We use SIGHUB(15) for it
+alias killShutter="kill -15 $(pgrep shutter)"
+
+# qpdf - PDF utilities
+alias qpdfq="qpdf --empty --pages"
+
+# Installing helpers
+alias curlI='curl -LO'
+alias dpkgi='sudo dpkg -i'
+
+# human-readable sizes
+alias df='df -h'
+# show sizes in MB
+alias free='free -m'
+# Get local IP-adress
+alias getLocalIp="hostname -I | awk '{print $1}' | copy"
+
+alias b='buku --suggest' # Buku bookmark manager
+alias bs='firefox $(buku -p -f 10 | fzf)' # Fuzzy search bookmarks
+
 
 # -------------------------------------------------------------------
 # Open directories/files...
@@ -58,23 +93,16 @@ alias eals="v ~/dotfiles/linux/shell/.alias"
 alias caff20="caffeinate sleep 20m &"
 alias caff40="caffeinate sleep 40m &"
 
-alias gTasks="brave-browser calendar.google.com &> /dev/null &"
+alias gTasks="brave-browser calendar.google.com https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
 
 # Open docker applications
-alias dKspeedtest="sudo docker run --rm --net=host waja/speedtest --bytes"
+alias dKspeedtest="docker run --rm --net=host waja/speedtest --bytes"
 alias dKtor="dk start tor-browser"
-alias dKHolly="sudo docker run -it --rm mapitman/hollywood"
+alias dKHolly="docker run -it --rm mapitman/hollywood"
 
 # Backup
 alias backupShutdown='deja-dup --backup && shutdown'
 alias backupEx='deja-dup --backup &> /dev/null &'
-alias uniBack='$HOME/dotfiles/linux/shell/scripts/backup/uni/backup-uni-docs.sh'
-
-# Uni
-alias unitest="pdflatex -halt-on-error -interaction=nonstopmode master.tex"
-alias gTexTempl='cp /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/main.tex /home/dvg/workspace/tools/latex-markdown/latex-markdown-template/latex/assignments/assignment-1.2/structure.tex . && mkdir img/ && touch sources.bib'
-alias mScr="okular '/home/dvg/workspace/edu/uni/semester-1/mathematik-1/course-files/Skriptum Mathematik 1.pdf' &> /dev/null &"
-alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informatik-1/course-files/Skript Theoretische Informatik.pdf' &> /dev/null &"
 
 # -------------------------------------------------------------------
 # golang
@@ -82,12 +110,6 @@ alias tScr="okular '/home/dvg/workspace/edu/uni/semester-1/theoretische-informat
 alias got="go test ./..."
 alias gotv="go test -v ./..."
 alias goge="go get -d -u"
-
-# -------------------------------------------------------------------
-# fasd
-# -------------------------------------------------------------------
-
-alias v='f -e vim' # quick opening files with vim
 
 # -------------------------------------------------------------------
 # fd
@@ -116,10 +138,13 @@ alias fdhi='fd --hidden --no-ignore'
 alias pomodorostrt='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"'
 alias pomodorobrk='sleep 300 && zenity --warning --text="Back to work"'
 alias pomodoro='sleep 1500 && zenity --warning --text="Your pomodoro session just ended. Have a well deserved 5 minutes break"; sleep 300 && zenity --warning --text="Back to work"'
-alias poms='pomd start -t 27:00'
+alias poms='pomd start -t 27:00 -c 1'
 
 # Focus Music
 alias freeCodeRad="mpv 'https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3' --volume=40"
+
+# Open browser sessions
+alias oWorkSession="brave-browser https://calendar.google.com/ https://keep.google.com/ https://mail.google.com/mail/u/0/#inbox &> /dev/null &"
 
 # -------------------------------------------------------------------
 # nvim
@@ -133,26 +158,12 @@ alias v.='nvim .'
 # exa
 # -------------------------------------------------------------------
 # Cutomizing of the Colors for LS & autocomplete
-# alias ls="ls --color=auto"
-alias ls="exa"
-# l as la because more readable
-# alias l="exa -a"
-alias ll="exa -lh"
-alias l="exa -lah"
-#alias la="exa -lah"
-alias lt="exa -Talh --git"
-alias lg="exa -lah --git"
-
-
-# -------------------------------------------------------------------
-# Directory
-# -------------------------------------------------------------------
-alias dropx='cd ~/sync'
-alias dwnlds='cd ~/Downloads'
-alias lxorg='cd /home/dvg/sync/notebook/system-management'
-alias ntb='cd ~/sync/notebook/'
-alias uni='cd /home/dvg/workspace/edu/uni'
-alias dot='cd /home/dvg/dotfiles'
+alias ls="exa --color=always --group-directories-first"
+alias l="exa -lah --color=always --group-directories-first"
+alias ll="exa -lh --color=always --group-directories-first"
+alias lt="exa -Talh --git --color=always --group-directories-first"
+alias lg="exa -lah --git --color=always --group-directories-first"
+alias l.='exa -a | egrep "^\."'
 
 # -------------------------------------------------------------------
 # Compressing & Encrypting
@@ -162,8 +173,8 @@ alias trxz='tar -cJvf'
 # -------------------------------------------------------------------
 # Notebook & Journaling
 # -------------------------------------------------------------------
+
 alias did="vim + 'normal Go' + 'r!date' ~/sync/did.txt"
-alias runningList='v /home/dvg/sync/notebook/system/lists/running-list.txt'
 
 # -------------------------------------------------------------------
 # Git
@@ -287,12 +298,17 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+# Github cli
+alias ghi='gh issue'
+alias ghp='gh pr'
+alias ghr='gh repo'
+alias ghg='gh gist'
+
 # -------------------------------------------------------------------
 # Default options
 # -------------------------------------------------------------------
 
 alias rsync="rsync -vh"
-alias json="json -c"
 alias psgrep="psgrep -i"
 alias x+="chmod +x"
 
@@ -307,6 +323,37 @@ alias nri="rm -r node_modules && npm install"
 alias ncd="npm-check -su"
 alias npmListG='npm list -g --depth=0'
 alias npmListGE='npm ll -g --depth=0'
+
+# -------------------------------------------------------------------
+# yarn
+# -------------------------------------------------------------------
+
+alias ya="yarn add"
+alias yad="yarn add --dev"
+alias yga="yarn global add"
+alias yr="yarn run"
+alias yre="yarn run example"
+alias ys="yarn start"
+alias yis="yarn install && yarn start"
+alias yt="yarn test"
+alias yit="yarn install && yarn test"
+alias yu="yarn upgrade"
+
+# -------------------------------------------------------------------
+# flutter
+# -------------------------------------------------------------------
+
+alias flrc="flr -d chrome"
+alias flrl="flr -d linux"
+alias flre="flr -d emulator-5554"
+alias flp="fl pub"
+alias flpg="fl pub get"
+
+# -------------------------------------------------------------------
+# python
+# -------------------------------------------------------------------
+
+alias simpleWebServer="python3  -m http.server 8080 --bind 127.0.0.1"
 
 # -------------------------------------------------------------------
 # Vagrant
@@ -336,6 +383,11 @@ alias vhst="vagrant hostmanager"
 # tmux
 # -------------------------------------------------------------------
 
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
 # Sessions
 
 alias tmuxKillS="tmux kill-session -t"
@@ -344,10 +396,12 @@ alias tmuxNewSess="tmux new-session -s"
 alias tmuxNewSessN="tmux new-session -t"
 alias n2="tmux new-window nnn \; split-window -h nnn"
 
-alias Tatt="tmux attach -t"
 alias tmuxDet="tmux detach"
 
 alias tmuxL="tmux ls"
+
+alias tmuxOrg='terminator -e "tmux attach -t organise"'
+alias tmuxEdu='terminator -e "tmux attach -t education"'
 
 # -------------------------------------------------------------------
 # xclip
@@ -360,7 +414,8 @@ alias cppt="pwd | copy"
 # pandoc
 # ------------------------------------------------------------------
 
-alias pandocE="pandoc --template eisvogel -N"
+alias pandocE='pandoc --template eisvogel -V disable-header-and-footer=true -V geometry="top=2cm,bottom=2cm"'
+alias pandocEn="pandoc --template eisvogel -N"
 alias pandocEc="pandoc --template eisvogel -N --toc"
 
 # -------------------------------------------------------------------
@@ -393,4 +448,35 @@ alias opnvpn="sudo openvpn"
 alias gibson="gpg --encrypt --sign --armor"
 alias ungibson="gpg --decrypt"
 
+# -------------------------------------------------------------------
+# Borg
+# ------------------------------------------------------------------
 
+alias borgInit="borg init --encryption=none ."
+alias borgCreate="borg create --stats --progress ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+alias borgCreateComp="borg create --stats --progress -C auto,zlib,6 ./::{hostname}-{user}-{now:%Y-%m-%dT%H:%M:%S}"
+
+# -------------------------------------------------------------------
+# Misc/APIs/...
+# -------------------------------------------------------------------
+
+alias weather="curl wttr.in/Karlsruhe"
+alias cryptoPrice="curl rate.sx"
+alias btcPrice="curl rate.sx/btc"
+alias netSpeed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias news="curl de.getnews.tech"
+
+
+# -------------------------------------------------------------------
+# nnn
+# -------------------------------------------------------------------
+
+alias nnl='nnn -deH'
+alias nnp='nnn -deP s'
+
+# -------------------------------------------------------------------
+# trans: cli translator
+# -------------------------------------------------------------------
+
+alias ten='trans en:de'
+alias tde='trans de:en'

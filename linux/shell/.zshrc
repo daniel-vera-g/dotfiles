@@ -1,4 +1,5 @@
 # Source exports first to get other stuff working
+source $HOME/.path
 source $HOME/.exports
 
 # FZF config
@@ -12,29 +13,33 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # Custom Plugins to load
 # plugins=(git node npm vi-mode safe-paste); -> Problem with history search in vi-mode
-plugins=(git git-open node npm safe-paste fasd fzf docker docker-compose zsh-completions zsh-autosuggestions fd);
+plugins=(git git-open node npm safe-paste fzf docker docker-compose zsh-autosuggestions fd flutter conda-zsh-completion);
 
-# Fix to use `alias hub=git`
-fpath=(~/.zsh/completions $fpath) 
+# No more needed ?
+# fpath=(~/.zsh/completions $fpath)
+# Better for perfomance, than using in plugins.
+# See: https://github.com/zsh-users/zsh-completions/issues/603
+fpath=($ZSH/custom/plugins/zsh-completions/src $fpath)
 autoload -U compinit && compinit
-
-# Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
 
 # User config
 source $ZSH/oh-my-zsh.sh
+# Automatically update
+DISABLE_UPDATE_PROMPT=true
 
 # Source stuff from external files
 source $HOME/.alias
 source $HOME/.function
 source $HOME/.docker_aliases
-source $HOME/.path
+source $HOME/.local-aliases
+# TODO: https://github.com/flutter/flutter/issues/31293
+# source $HOME/.flutter_completions
 
 # Colors in terminal
 TERM=xterm-256color
 
 # Syntax Highlighting
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # General color settings
@@ -48,14 +53,34 @@ autoload -Uz compinit
 # Fuzzy file finder
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
+eval "$(zoxide init zsh --cmd j)"
+
+# so as not to be disturbed by Ctrl-S ctrl-Q in terminals:
 stty -ixon
 
-# Command palette bookmarker
-# [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-
+# TODO rm for gh
 # Hub alias for git
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
+# Load gh cli tool completions
+# eval "$(gh completion -s zsh)"
+
 eval $(thefuck --alias)
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# Make search up and down work, so partially type and hit up/down to find relevant stuff -> FIX vi-mode break
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/dvg/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/dvg/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/dvg/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/dvg/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
