@@ -68,8 +68,8 @@
   "editor.fontLigatures": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.insertSpaces": true,
-  "editor.lineNumbers": "relative",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
   "editor.minimap.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": {
@@ -83,7 +83,7 @@
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "zenMode.hideLineNumbers": false,
-  "editor.tabSize": 2,
+  "editor.tabSize": 8,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   // Emmet
@@ -314,12 +314,14 @@
   "git.confirmSync": false,
   "workbench.sideBar.location": "right",
   "[markdown]": {
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "editor.quickSuggestions": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "timeline.excludeSources": [],
-  "workbench.colorTheme": "Monokai",
+"workbench.colorTheme": "Monokai",
+"editor.cursorStyle": "line",
+"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   // TO-REVIEW?
   // "editor.matchBrackets": false,
   // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
