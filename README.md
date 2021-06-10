@@ -10,8 +10,7 @@
  | |__| | |__| | | |  | |     _| |_| |____| |____ ____) |          | | (_| | (_| |\ V / (_| |
  |_____/ \____/  |_|  |_|    |_____|______|______|_____/            \ \__,_|\__,_| \_/ \__, |
                                                                      \____/             __/ |
-                                                                                       |___/ 
-```
+                                                                                       |___/ ```
 
 - [dotfiles](#dotfiles)
 	- [Synopsis](#synopsis)
@@ -31,7 +30,7 @@
 
 ## Motivation
 
-Having to setup everything new when changing switching systems is annoying. This repository has the aim of automating all the boring work of installing applications and creating configuration files on new system.
+Having to setup everything new when switching systems is annoying. This repository has the aim of automating all the boring work of installing applications and creating configuration files on new system.
 
 ### Prerequisites
 
@@ -59,8 +58,8 @@ Just plain bash and python for testing :).
 
 ## TODO
 
-1. See the [issue](https://github.com/daniel-vera-g/dotfiles/issues) tracker.
-2. Create dotfiles for OSX(Not planned).
+1. See the [issue](https://github.com/daniel-vera-g/dotfiles/issues) tracker
+2. Create dotfiles for OSX(Not planned)
 
 ## Contributing
 
@@ -71,11 +70,14 @@ Just plain bash and python for testing :).
 
 * [daniel-vera-g](https://github.com/daniel-vera-g)
 
+## Development
+
+- The latest "stable" version is published as release
+- The current `master` branch is considered unstabled
+
 ## License
 
 MIT License
-
-<!-- Copyright (c) [2019] [TODO add name] -->
 
 Copyright (c) 2019
 
