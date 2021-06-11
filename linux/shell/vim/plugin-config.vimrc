@@ -86,7 +86,6 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#ignore_bufadd_pat =
   \ 'gundo|undotree|vimfiler|tagbar|nerd_tree|startify|!'
@@ -105,7 +104,7 @@ endif
 " coc.nvim
 
 " coc extensions
-let g:coc_global_extensions = []
+let g:coc_global_extensions = ['coc-tsserver', ]
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -116,26 +115,6 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
-" ---
-
-" ---
-" Ale
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 1
-" Ale fix
-let g:ale_fix_on_save = 0
-let g:ale_linters = {
- \   'latex': ['lacheck', 'chktex', 'Proselint'],
- \   'javascript': ['standard', 'prettier']
-\}
-let g:ale_fixers = {
-\   'javascript': ['prettier', 'standard'],
-\   'css': ['prettier'],
-\   'latex': ['lacheck', 'chktex', 'Proselint'],
-\}
 " ---
 
 " ---

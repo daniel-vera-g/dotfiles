@@ -5,9 +5,7 @@ call plug#begin('~/.vim/plugged')
 " ---
 " DevTools:
 
-" Linting
-Plug 'w0rp/ale'
-" Languages Server(LSP & Autocompletion)
+" Linting & Languages Server(LSP & Autocompletion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ---
 

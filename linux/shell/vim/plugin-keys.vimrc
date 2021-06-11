@@ -152,16 +152,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " ---
 
 " ---
-" Ale
-" Show errors on <leader>e
-nnoremap <leader>e :ALEDetail<cr>
-" Shortcut to fix errors
-nmap <leader>d <Plug>(ale_fix)
-nmap <silent> [c <Plug>(ale_previous_wrap)
-nmap <silent> ]c <Plug>(ale_next_wrap)
-" ---
-
-" ---
 " Misc:
 
 " Snippets
