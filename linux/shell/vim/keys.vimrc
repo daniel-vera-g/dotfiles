@@ -102,8 +102,6 @@ noremap <leader>q :bprevious<cr>
 " Close buffer
 noremap <leader>c :bd<CR>
 noremap <leader>cf :bd!<CR>
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
 " Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>

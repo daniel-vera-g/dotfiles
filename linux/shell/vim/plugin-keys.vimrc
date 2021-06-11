@@ -10,14 +10,9 @@ endif
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 " TODO get them working properly
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 nnoremap <C-p> :Files<CR>
-nnoremap <Leader>h :History<CR>
-" Fuzzy search tags
-nnoremap <Leader>t :BTags<CR>
-nnoremap <Leader>T :Tags<CR>
 " ---
 
 " ---
@@ -178,14 +173,10 @@ let g:tagbar_autofocus = 1
 " Goyo
 autocmd! User GoyoEnter Limelight
 "" Vimux
-" TODO as not working as expected
-" Fix to make it work again with easy and not print in current pane
 " Prompt for a command to run
-" map <Leader>vp :VimuxPromptCommand<CR>
-" map <Leader>tp :VimuxPromptCommand<CR>
+map <Leader>tp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-" map <Leader>vl :VimuxRunLastCommand<CR>
-" map <Leader>tl :VimuxRunLastCommand<CR>
+map <Leader>tl :VimuxRunLastCommand<CR>
 " Open terminal
 nnoremap <leader>tr :10Term<CR>
 " Build in terminal
