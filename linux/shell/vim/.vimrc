@@ -45,6 +45,8 @@ Plug 'ryanoasis/vim-devicons'
 " Language specific plugins:
 
 " Syntax & co for all languages
+"  Polygplot when using custom language packs
+let g:polyglot_disabled = ['typescript']
 Plug 'sheerun/vim-polyglot'
 
 " markdown preview

@@ -104,7 +104,7 @@ endif
 " coc.nvim
 
 " coc extensions
-let g:coc_global_extensions = ['coc-tsserver', ]
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -113,8 +113,14 @@ set hidden
 set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 " ---
 
 " ---
@@ -126,6 +132,11 @@ set splitbelow
 " Commentary
 " Use right comments markdown(neovim related?: https://github.com/tpope/vim-commentary/issues/90)
 autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
+" ---
+
+" ---
+" Set js syntax for ts as it works better
+au BufReadPost *.ts set syntax=javascript
 " ---
 
 " ---
