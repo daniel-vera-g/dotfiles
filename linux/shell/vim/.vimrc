@@ -64,6 +64,21 @@ Plug 'lervag/vimtex'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 " --
 
+" WIP to get Foam alternative working.
+" See:
+" https://github.com/vimwiki/vimwiki/issues/892
+" https://github.com/ericboehs/dotfiles/blob/b47547f757fc31ed5f4241874982541ba7d6cf0a/.vim/minpac.vim
+" https://github.com/vimwiki/vimwiki
+" Plug 'vimwiki/vimwiki', {'branch': 'dev'}
+" let g:vimwiki_list = [
+"       \{
+"       \ 'index': 'inbox/inbox',
+"       \ 'syntax': 'markdown',
+"       \ 'ext': '.md' },
+"       \]
+" let g:vimwiki_global_ext = 0
+" autocmd VimEnter * let g:vimwiki_syntaxlocal_vars['markdown']['Link1'] = g:vimwiki_syntaxlocal_vars['default']['Link1']
+
 "---
 " Misc:
 
