@@ -62,6 +62,9 @@ Plug 'yasuhiroki/github-actions-yaml.vim'
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " --
 
 "---
@@ -115,8 +118,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 " Source External configuration
-source ~/.vim/plugin-config.vimrc
-source ~/.vim/plugin-keys.vimrc
 source ~/.vim/config.vimrc
 source ~/.vim/styles.vimrc
 source ~/.vim/keys.vimrc
+source ~/.vim/plugin-config.vimrc
+source ~/.vim/plugin-keys.vimrc

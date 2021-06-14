@@ -8,7 +8,7 @@ if executable('rg')
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <Leader>b :Buffers<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
 nnoremap <C-p> :Files<CR>
@@ -179,6 +179,8 @@ nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 " Goyo
 autocmd! User GoyoEnter Limelight
+" TODO review commands below as they do not seem to work
+" :Buffers with ,b f.ex also not getting loaded???
 "" Vimux
 " Prompt for a command to run
 map <Leader>tp :VimuxPromptCommand<CR>
