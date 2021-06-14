@@ -2,7 +2,7 @@
 
 " ---
 " Ultisnips
-"Snippets engine
+" Snippets engine
 let g:go_snippet_engine = "ultisnips"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -78,7 +78,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " ---
 " Autosave
-let g:auto_save = 0  " enable AutoSave on Vim startup
+let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " ---
 
@@ -86,7 +86,6 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#ignore_bufadd_pat =
   \ 'gundo|undotree|vimfiler|tagbar|nerd_tree|startify|!'
@@ -105,7 +104,7 @@ endif
 " coc.nvim
 
 " coc extensions
-let g:coc_global_extensions = []
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank', 'coc-go']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -114,28 +113,17 @@ set hidden
 set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
-" ---
 
-" ---
-" Ale
-let g:ale_sign_error = '⤫'
-let g:ale_sign_warning = '⚠'
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_save = 1
-" Ale fix
-let g:ale_fix_on_save = 0
-let g:ale_linters = {
- \   'latex': ['lacheck', 'chktex', 'Proselint'],
- \   'javascript': ['standard', 'prettier']
-\}
-let g:ale_fixers = {
-\   'javascript': ['prettier', 'standard'],
-\   'css': ['prettier'],
-\   'latex': ['lacheck', 'chktex', 'Proselint'],
-\}
+" TODO this does not work. Probably due to relative numbers or so.
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+" if has("nvim-0.5.0") || has("patch-8.1.1564")
+"   " Recently vim can merge signcolumn and number column into one
+  " set signcolumn=number
+" else
+  " set signcolumn=yes
+" endif
+set signcolumn=yes
 " ---
 
 " ---
@@ -150,6 +138,22 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 " ---
 
 " ---
+" Set js syntax for ts as it works better
+au BufReadPost *.ts set syntax=javascript
+" ---
+
+" ---
 " Markdown preview
 let g:instant_markdown_autostart = 0
+" ---
+
+" ---
+"  Golang config
+" go-vim plugin specific commands
+" Also run `goimports` on your current file on every save
+" Might be be slow on large codebases, if so, just comment it out
+let g:go_fmt_command = "goimports"
+
+" Status line types/signatures.
+let g:go_auto_type_info = 1
 " ---

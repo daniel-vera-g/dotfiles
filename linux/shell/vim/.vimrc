@@ -5,9 +5,7 @@ call plug#begin('~/.vim/plugged')
 " ---
 " DevTools:
 
-" Linting
-Plug 'w0rp/ale'
-" Languages Server(LSP & Autocompletion)
+" Linting & Languages Server(LSP & Autocompletion)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ---
 
@@ -47,6 +45,8 @@ Plug 'ryanoasis/vim-devicons'
 " Language specific plugins:
 
 " Syntax & co for all languages
+"  Polygplot when using custom language packs
+let g:polyglot_disabled = ['typescript']
 Plug 'sheerun/vim-polyglot'
 
 " markdown preview
@@ -62,6 +62,9 @@ Plug 'yasuhiroki/github-actions-yaml.vim'
 Plug 'lervag/vimtex'
 " Latex conceal improvements
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " --
 
 "---
@@ -115,8 +118,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 " Source External configuration
-source ~/.vim/plugin-config.vimrc
-source ~/.vim/plugin-keys.vimrc
 source ~/.vim/config.vimrc
 source ~/.vim/styles.vimrc
 source ~/.vim/keys.vimrc
+source ~/.vim/plugin-config.vimrc
+source ~/.vim/plugin-keys.vimrc
