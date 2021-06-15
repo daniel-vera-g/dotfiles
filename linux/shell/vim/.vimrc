@@ -42,7 +42,7 @@ Plug 'ryanoasis/vim-devicons'
 " ----
 
 " ---
-" Language specific plugins:
+" Programming language specific plugins:
 
 " Syntax & co for all languages
 "  Polygplot when using custom language packs
@@ -65,6 +65,12 @@ Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Javascript
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 " --
 
 "---
