@@ -4,3 +4,4 @@ install-logs.txt
 .vscode/*
 EXCLUDEFILE
 .local-aliases
+todo.md
