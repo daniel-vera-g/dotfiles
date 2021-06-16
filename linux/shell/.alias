@@ -130,7 +130,7 @@ alias fdhi='fd --hidden --no-ignore'
 
 # Search location using fd, select with fzf and navigate to it with zoxide
 # Uses fcdz script located in: ~/.function
-alias cdfzf='j $(fcdz)'
+alias jfzf='j $(fcdz)'
 
 # -------------------------------------------------------------------
 # Productivity
@@ -482,3 +482,8 @@ alias nnp='nnn -deP s'
 
 alias ten='trans en:de'
 alias tde='trans de:en'
+
+# -------------------------------------------------------------------
+# Development
+# -------------------------------------------------------------------
+
