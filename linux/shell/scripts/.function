@@ -31,7 +31,7 @@ function genQR() {
 
 # Search for String in all the PDFs in the current folder
 function searchPDF() {
-  for f in ./*; do echo $f;  pdftotext $f - | rg "$@"; done
+  for f in ./*; do echo $f;  pdftotext $f - | rg -i "$@"; done
 }
 
 # Install .deb Programm
