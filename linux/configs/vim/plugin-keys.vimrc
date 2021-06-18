@@ -20,7 +20,7 @@ nnoremap <C-p> :Files<CR>
 nnoremap <Leader>o :.Gbrowse<CR>
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gaa :Gwrite<CR>:Gcommit<CR>
-noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gc :Git commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Git<CR>
