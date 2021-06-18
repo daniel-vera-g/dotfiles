@@ -91,7 +91,7 @@ Plug 'tpope/vim-surround'
 " Align stuff better
 Plug 'junegunn/vim-easy-align'
 " Show registers
-Plug 'https://github.com/junegunn/vim-peekaboo'
+Plug 'junegunn/vim-peekaboo'
 " Comments
 Plug 'tpope/vim-commentary'
 " Rg Search
@@ -114,6 +114,9 @@ Plug 'takac/vim-commandcaps'
 Plug 'vimlab/split-term.vim'
 " Alternative terminal using tmux
 Plug 'benmills/vimux'
+" For focused work
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
