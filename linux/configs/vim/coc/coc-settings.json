@@ -1,4 +1,5 @@
 {
+  /* Language server configs */
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -15,17 +16,22 @@
       "args": ["--stdio"]
     }
   },
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascrpt", "javascriptreact", "typescript", "typescriptreact"],
-  "prettier.disableSuccessMessage": true,
-  "tsserver.formatOnType": true,
+  /* General coc config */
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "markdown"
   ],
+  /* Prettier */
+  "prettier.disableSuccessMessage": true,
+  /* Eslint */ 
+  "eslint.autoFixOnSave": true,
+  /* Snippets */
   "snippets.userSnippetsDirectory": "~/.vim/plugged/ultisnips/UltiSnips",
-  "snippets.autoTrigger": false
+  "snippets.autoTrigger": false,
+  /* Typescript */
+  "tsserver.formatOnType": true
 }

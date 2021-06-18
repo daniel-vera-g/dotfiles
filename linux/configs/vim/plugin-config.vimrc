@@ -9,6 +9,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips/UltiSnips"
+let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit="~/.vim/plugged/ultisnips/UltiSnips"
+
 " ---
 
 " highlighted-yank plugin
@@ -86,7 +88,8 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#ignore_bufadd_pat =
   \ 'gundo|undotree|vimfiler|tagbar|nerd_tree|startify|!'
 let g:airline#extensions#tagbar#enabled = 1
@@ -156,4 +159,10 @@ let g:go_fmt_command = "goimports"
 
 " Status line types/signatures.
 let g:go_auto_type_info = 1
+" ---
+
+" ---
+"  Focused work
+let g:goyo_linenr=1
+let g:goyo_height='95%'
 " ---
