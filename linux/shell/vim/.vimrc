@@ -45,12 +45,18 @@ Plug 'ryanoasis/vim-devicons'
 " Programming language specific plugins:
 
 " Syntax & co for all languages
+
+" Alignement of code(Before markdown plugin in polyglot)
+Plug 'godlygeek/tabular'
+
 "  Polygplot when using custom language packs
 let g:polyglot_disabled = ['typescript']
 Plug 'sheerun/vim-polyglot'
 
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+" Handle renumbering of lists f.ex in markdown
+Plug 'clarke/vim-renumber#',  { 'for': 'markdown' }
 " Docker
 Plug 'kevinhui/vim-docker-tools'
 " Env files

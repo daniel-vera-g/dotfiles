@@ -80,7 +80,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " ---
 " Autosave
-let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save = 0  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " ---
 
@@ -107,7 +107,7 @@ endif
 " coc.nvim
 
 " coc extensions
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank', 'coc-go']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank', 'coc-go', 'coc-markdownlint']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -122,9 +122,9 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 " if has("nvim-0.5.0") || has("patch-8.1.1564")
 "   " Recently vim can merge signcolumn and number column into one
-  " set signcolumn=number
+" set signcolumn=number
 " else
-  " set signcolumn=yes
+" set signcolumn=yes
 " endif
 set signcolumn=yes
 " ---

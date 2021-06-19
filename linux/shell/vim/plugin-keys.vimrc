@@ -20,7 +20,7 @@ nnoremap <C-p> :Files<CR>
 nnoremap <Leader>o :.Gbrowse<CR>
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gaa :Gwrite<CR>:Gcommit<CR>
-noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gc :Git commit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Git<CR>
@@ -177,6 +177,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+" Autosave
+nmap <leader>as :AutoSaveToggle<CR>
 " Goyo
 autocmd! User GoyoEnter Limelight
 " TODO review commands below as they do not seem to work
