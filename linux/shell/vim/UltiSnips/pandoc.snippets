@@ -37,7 +37,7 @@ snippet bi "Bolt and italic text"
 endsnippet
 
 snippet st "Strikethrough text"
-~~1~~
+~~$1~~
 endsnippet
 
 snippet lns "Simple link"
@@ -76,4 +76,20 @@ endsnippet
 
 snippet td "TODO"
 - [ ] $1
+endsnippet
+
+snippet tdc "TODO comment"
+<!-- TODO $1 -->$2
+endsnippet
+
+snippet sl "Simple link"
+<$1>$2
+endsnippet
+
+snippet ifn "Insert foot note"
+^[$1]$2
+endsnippet
+
+snippet ifc "Insert foot note content"
+[$1]: $2
 endsnippet
