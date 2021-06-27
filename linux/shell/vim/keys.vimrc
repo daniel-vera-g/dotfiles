@@ -121,9 +121,8 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "" Error checking and linting
-map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+map <leader>cn :cnext<CR>
+map <leader>cp :cprevious<CR>
 noremap <leader>lo :lopen<CR>
 noremap <leader>lc :lclose<CR>
 " Smart way to move between windows

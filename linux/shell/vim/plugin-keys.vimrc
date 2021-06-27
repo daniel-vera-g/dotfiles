@@ -2,16 +2,15 @@
 
 " ---
 "  Searching with FZF
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-endif
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+" TODO what does this do?
+" cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
 nnoremap <Leader>b :Buffers<CR>
-"Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
+nmap <leader>rg :Rg<CR>
 nnoremap <C-p> :Files<CR>
+
 " ---
 
 " ---
@@ -31,8 +30,10 @@ noremap <Leader>gr :Gremove<CR>
 
 " ---
 " NERDTree
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-map <M-1> :NERDTreeToggle<CR>
+" nnoremap <silent> <F2> :NERDTreeFind<CR>
+nnoremap <leader>ft :NERDTreeFind<CR>
+" map <M-1> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Fix Inconsistent buffer width when deleting a buffer
 nnoremap <leader>cb :bp<cr>:bd #<cr>
 " ---
@@ -180,7 +181,6 @@ let g:tagbar_autofocus = 1
 " Autosave
 nmap <leader>as :AutoSaveToggle<CR>
 " Goyo
-autocmd! User GoyoEnter Limelight
 " TODO review commands below as they do not seem to work
 " :Buffers with ,b f.ex also not getting loaded???
 "" Vimux
@@ -194,6 +194,7 @@ nnoremap <leader>tr :10Term<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>it :terminal<CR>
 " vimtex and latex conf
-inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
-nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
+" TODO latex & co conf
+" inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+" nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 " ---
