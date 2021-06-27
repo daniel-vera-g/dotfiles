@@ -14,6 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Vim wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " Show changes in vim gutter
 Plug 'airblade/vim-gitgutter'
 " ---
