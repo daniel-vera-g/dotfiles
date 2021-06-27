@@ -1,28 +1,32 @@
 # dotfiles
 
-```
+<!-- markdownlint-disable MD013 -->
 
+<!-- markdownlint-disable MD037 -->
 
-  _____   ____ _______ ______ _____ _      ______  _____                        _            
- |  __ \ / __ \__   __|  ____|_   _| |    |  ____|/ ____|             ____     | |           
- | |  | | |  | | | |  | |__    | | | |    | |__  | (___    ______    / __ \  __| |_   ____ _ 
+```_____ ____ _______ ______ _____ _      ______  _____                        _
+ |  __ \ / __ \__   __|  ____|_   _| |    |  ____|/ ____|             ____     | |
+ | |  | | |  | | | |  | |__    | | | |    | |__  | (___    ______    / __ \  __| |_   ____ _
  | |  | | |  | | | |  |  __|   | | | |    |  __|  \___ \  |______|  / / _` |/ _` \ \ / / _` |
  | |__| | |__| | | |  | |     _| |_| |____| |____ ____) |          | | (_| | (_| |\ V / (_| |
  |_____/ \____/  |_|  |_|    |_____|______|______|_____/            \ \__,_|\__,_| \_/ \__, |
                                                                      \____/             __/ |
-                                                                                       |___/ ```
+                                                                                       |___/
+```
+
+<!-- markdownlint-enable MD037 -->
 
 - [dotfiles](#dotfiles)
-	- [Synopsis](#synopsis)
-	- [Motivation](#motivation)
-		- [Prerequisites](#prerequisites)
-	- [Getting Started and installing](#getting-started-and-installing)
-	- [Running the tests](#running-the-tests)
-	- [Built With](#built-with)
-	- [TODO](#todo)
-	- [Contributing](#contributing)
-	- [Authors](#authors)
-	- [License](#license)
+  - [Synopsis](#synopsis)
+  - [Motivation](#motivation)
+    - [Prerequisites](#prerequisites)
+  - [Getting Started and installing](#getting-started-and-installing)
+  - [Running the tests](#running-the-tests)
+  - [Built With](#built-with)
+  - [TODO](#todo)
+  - [Contributing](#contributing)
+  - [Authors](#authors)
+  - [License](#license)
 
 ## Synopsis
 
@@ -68,7 +72,7 @@ Just plain bash and python for testing :).
 
 ## Authors
 
-* [daniel-vera-g](https://github.com/daniel-vera-g)
+- [daniel-vera-g](https://github.com/daniel-vera-g)
 
 ## Development
 
