@@ -6,10 +6,30 @@
 " TODO what does this do?
 " cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-nnoremap <Leader>b :Buffers<CR>
+" nnoremap <Leader>b :Buffers<CR>
+nmap ; :Buffers<CR>
 nmap <leader>y :History:<CR>
 nmap <leader>rg :Rg<CR>
 nnoremap <C-p> :Files<CR>
+
+" Delete Buffers with :BD
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+  \ }))
+nmap <leader>d :BD<CR>
 
 " ---
 
@@ -64,7 +84,7 @@ endif
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
