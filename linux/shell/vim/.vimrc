@@ -56,7 +56,7 @@ Plug 'sheerun/vim-polyglot'
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Handle renumbering of lists f.ex in markdown
-Plug 'clarke/vim-renumber#',  { 'for': 'markdown' }
+Plug 'clarke/vim-renumber',  { 'for': 'markdown' }
 " Docker
 Plug 'kevinhui/vim-docker-tools'
 " Env files
@@ -100,8 +100,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
 " Comments
 Plug 'tpope/vim-commentary'
-" Rg Search
-Plug 'jremmen/vim-ripgrep'
 " highlighted yank
 Plug 'machakann/vim-highlightedyank'
 " select text, then press * or # to search for it
@@ -124,7 +122,7 @@ Plug 'benmills/vimux'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "---
