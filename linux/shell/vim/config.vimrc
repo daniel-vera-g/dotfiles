@@ -6,6 +6,9 @@ if exists('$SHELL')
 else
     set shell=/bin/sh
 endif
+" We're powerful enough. Load the syntax highlighting right away
+autocmd BufEnter *.{js,jsx,ts,tsx,md} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx,md} :syntax sync clear
 
 " ---
 " Different settings
