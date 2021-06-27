@@ -62,6 +62,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 " Nerdtree
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeWinPos = "right"
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
@@ -165,4 +166,6 @@ let g:go_auto_type_info = 1
 "  Focused work
 let g:goyo_linenr=1
 let g:goyo_height='95%'
+let g:goyo_width='120px'
+autocmd! User GoyoEnter Limelight!
 " ---
