@@ -3,7 +3,7 @@ name: Install dotfiles
 on: [ push, pull_request, workflow_dispatch ] 
 
 jobs:
-  lint:
+  install:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
