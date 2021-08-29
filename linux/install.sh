@@ -36,13 +36,13 @@ mkdir -p $olddir
 echo "...done"
 
 echo "Changing to the $dir directory"
-cd $dir
+cd $dir || exit
 echo "...done"
 
 echo "Move any existing dotfiles in homedir to dotfiles_old directory"
 for file in $files; do
     echo "Moving $file from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    mv ~/."$file" ~/dotfiles_old/
 done
 
 ######################################
@@ -94,9 +94,9 @@ mkdir -p ~/.config/Code/User
 ln -sfv "$dir/configs/vscode/keybindings.json" ~/.config/Code/User
 ln -sfv "$dir/configs/vscode/settings.json" ~/.config/Code/User
 
-mkdir -p "~/.config/~/.config/Code\ -\ Insiders/User"
-ln -sfv "$dir/configs/vscode-insiders/keybindings.json" "~/.config/~/.config/Code\ -\ Insiders/User"
-ln -sfv "$dir/configs/vscode-insiders/settings.json" "~/.config/~/.config/Code\ -\ Insiders/User"
+mkdir -p "$HOME/.config/~/.config/Code\ -\ Insiders/User"
+ln -sfv "$dir/configs/vscode-insiders/keybindings.json" "$HOME/.config/~/.config/Code\ -\ Insiders/User"
+ln -sfv "$dir/configs/vscode-insiders/settings.json" "$HOME/.config/~/.config/Code\ -\ Insiders/User"
 
 mkdir -p ~/.config/kitty
 ln -sfv "$dir/configs/kitty/kitty.conf" ~/.config/kitty
@@ -111,8 +111,8 @@ ln -sfv "$dir/configs/mpv/mpv.conf" ~/.config/mpv
 mkdir -p ~/.config/ncspot/
 ln -sfv "$dir/configs/ncspot/config.toml" ~/.config/ncspot
 
-mkdir --p "~/.config/gtk-3.0/"
-ln -sfv "$dir/configs/system/gtk.css" "~/.config/gtk-3.0/"
+mkdir --p "$HOME/.config/gtk-3.0/"
+ln -sfv "$dir/configs/system/gtk.css" "$HOME/.config/gtk-3.0/"
 
 ln -sfv "$dir/configs/redshift/.redshift.conf" ~/.config/
 
