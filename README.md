@@ -1,5 +1,8 @@
 # dotfiles
 
+[![Install dotfiles](https://github.com/daniel-vera-g/dotfiles/actions/workflows/install.yml/badge.svg)](https://github.com/daniel-vera-g/dotfiles/actions/workflows/install.yml)
+[![Linter](https://github.com/daniel-vera-g/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/daniel-vera-g/dotfiles/actions/workflows/lint.yml)
+
 ```
 
 

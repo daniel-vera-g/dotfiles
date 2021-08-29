@@ -3,7 +3,7 @@
 # Commands that are too complex for an alias (and perhaps too small for a stand-alone script) can be defined in a function.
 # Functions can take arguments, making them more powerful
 
-source $DOTFILES/linux/scripts/misc/quitcd.bash_zsh
+source "$DOTFILES"/linux/scripts/misc/quitcd.bash_zsh
 
 # Source: https://gist.github.com/premek/6e70446cfc913d3c929d7cdbfe896fef
 # Usage: mv oldfilename
@@ -20,7 +20,7 @@ function mv() {
     return
   fi
 
-  read -ei "$1" newfilename
+  read -r -ei "$1" newfilename
   command mv -v -- "$1" "$newfilename"
 }
 
