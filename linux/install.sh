@@ -6,12 +6,10 @@
 
 ############################
 
-######################################
-
 # Setup
 
 echo "####################################################################################"
-echo "************************ STARTING WITH SETUP ************************"
+echo "************************ STARTING WITH SETUP ***************************************"
 echo "####################################################################################"
 
 ######################################
@@ -24,13 +22,11 @@ echo "The new dotfiles repository is: $dir"
 olddir=~/dotfiles_old             # old dotfiles backup directory
 echo "The backup directory is: $olddir"
 
-files="bashrc vimrc vim zshrc oh-my-zsh"    # list of files/folders to symlink in homedir
+files="bashrc zshrc tmux.conf oh-my-zsh"    # list of files/folders to symlink in homedir
 echo "The files and folders that are going to be backed up are: $files"
 
 # Update dotfiles itself first
-
 echo "Updating repository"
-# if is-executable git -a -d "~/dotfiles/.git"; then git --work-tree="~/dotfiles" --git-dir="~/dotfiles/.git" pull origin master; fi
 git fetch -p && git rebase origin master
 
 # create dotfiles_old in homedir
@@ -50,136 +46,87 @@ done
 
 ######################################
 
-# Installing Applications
-
 echo "####################################################################################"
-echo "************************ STARTING WITH ALL THE INSTALLING ************************"
-echo "####################################################################################"
-
-######################################
-
-# Create download folder
-mkdir ~/Downloads/
-
-echo "###################################### DOING SOME CLEANUP FIRST ######################################"
-chmod +x $dir/apps/cleanup/cleanup.sh && $dir/apps/cleanup/cleanup.sh
-
-echo "###################################### INSTALLING ESSENTIAL APPLICATIONS ######################################"
-for e in $dir/apps/essentials/*.sh
-do
-  echo "Installing essential app: $e"
-  chmod +x $e && $e
-done
-
-echo "###################################### INSTALLING GENERAL APPLICATIONS ######################################"
-for f in $dir/apps/* $dir/apps/npm-packages/*;
-do
-  echo "Processing $f file..."
-  chmod +x $f && $f
-done
-
-echo "###################################### FINALLY DOING SOME INSTALLATION TESTS ######################################"
-cd ~/dotfiles/tests/apps/helper/
-chmod +x ./check-app-status.py && python ./check-app-status.py
-
-echo "####################################################################################"
-echo "************************ INSTALLATION APPS DONE ************************"
-echo "####################################################################################"
-
-######################################
-
-# Creating Symlinks for the dotfiles
-
-echo "####################################################################################"
-echo "************************ SIMLINKS FOR THE DOTFILES ************************"
+echo "************************ SYMLINKING DOTFILES ***************************************"
 echo "####################################################################################"
 
 
 ######################################
 
-# Bunch of symlinks
+echo "###################################### SYMLINKS IN ~ ######################################"
 
-echo "###################################### SIMLINKS FOR LINTERS ######################################"
-ln -sfv "$dir/linter/.eslintrc.json" ~
-ln -sfv "$dir/linter/.markdownlintrc" ~
-ln -sfv "$dir/linter/.prettierrc" ~
-ln -sfv "$dir/linter/.textlintrc" ~
+ln -sfv "$dir/configs/git/.gitconfig" ~
+ln -sfv "$dir/configs/git/.gitignore_global" ~
 
-echo "###################################### SIMLINKS FOR GIT ######################################"
-ln -sfv "$dir/shell/git/.gitconfig" ~
-ln -sfv "$dir/shell/git/.gitignore_global" ~
+ln -sfv "$dir/configs/devtools/linter/.eslintrc.json" ~
+ln -sfv "$dir/configs/devtools/linter/.markdownlintrc" ~
+ln -sfv "$dir/configs/devtools/linter/.prettierrc" ~
+ln -sfv "$dir/configs/devtools/linter/.textlintrc" ~
 
-echo "###################################### SIMLINKS FOR GLANCES ######################################"
+ln -sfv "$dir/scripts/.function" ~
+ln -sfv "$dir/scripts/.docker_aliases" ~
 
-# Create config if not existent
-mkdir ~/.config/
-ln -sfv "$dir/shell/glances/glances.conf" ~/.config/
+ln -sfv "$dir/configs/system/.alias" ~
+ln -sfv "$dir/configs/system/.bashrc" ~
+ln -sfv "$dir/configs/system/.tmux.conf" ~
+ln -sfv "$dir/configs/system/.exports" ~
+ln -sfv "$dir/configs/system/.path" ~
+ln -sfv "$dir/configs/system/.zshrc" ~
+ln -sfv "$dir/configs/system/.ctags" ~
 
-echo "###################################### SIMLINKS FOR NVIM ######################################"
-ln -sfv	"$dir/shell/nvim/init.vim" ~/.config/
-
-echo "###################################### SIMLINKS FOR SCRIPTS ######################################"
-ln -sfv "$dir/shell/scripts/.function" ~
-ln -sfv "$dir/shell/scripts/.docker_aliases" ~
-ln -sfv "$dir/shell/scripts/audio/spotify_control" ~/bin/
-ln -sfv "$dir/shell/scripts/backup/system/borg-backup.sh" ~/bin/
-ln -sfv "$dir/shell/scripts/shortcuts/notes.sh" ~/bin/
-ln -sfv "$dir/shell/scripts/misc/emojis" ~/bin/
+echo "###################################### SYMLINKS IN ~/.config ######################################"
 
 
-echo "###################################### SIMLINKS FOR VIM ######################################"
-mkdir -p ~/.vim/
-ln -sfv "$dir/shell/vim/general.vimrc" ~/.vim/
-ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
-ln -sfv "$dir/shell/vim/styles.vimrc" ~/.vim/
-ln -sfv "$dir/shell/vim/.vimrc" ~
+mkdir -p ~/.config/glances
+ln -sfv "$dir/configs/glances/glances.conf" ~/.config/
 
-echo "###################################### SIMLINKS FOR SHELL FUNCTIONS ######################################"
-ln -sfv "$dir/shell/.alias" ~
-ln -sfv "$dir/shell/.bashrc" ~
-ln -sfv "$dir/shell/.tmux.conf" ~
-ln -sfv "$dir/shell/.exports" ~
-ln -sfv "$dir/shell/.path" ~
-ln -sfv "$dir/shell/.zshrc" ~
-ln -sfv "$dir/shell/.ctags" ~
+mkdir -p ~/.config/nvim/
+ln -sfv	"$dir/configs/nvim/init.vim" ~/.config/nvim
 
-echo "###################################### SIMLINKS FOR SYSTEM APPLICATIONS ######################################"
 mkdir -p ~/.config/terminator
-ln -sfv "$dir/system/terminator/config" ~/.config/terminator/
+ln -sfv "$dir/configs/terminator/config" ~/.config/terminator/
 
 mkdir -p ~/.config/zathura
-ln -sfv "$dir/system/zathura/zathurarc" ~/.config/zathura/
+ln -sfv "$dir/configs/zathura/zathurarc" ~/.config/zathura/
 
-mkdir -p ~/.local/bin
-ln -sfv "$dir/system/trans" ~/.local/bin/
-
-echo "###################################### Vim config ######################################"
-# Make directory vim snippets
-mkdir ~/.vim/spell/
-for I in $(ls "$dir/shell/vim/spell/"); do cp $dir/shell/vim/spell/$I ~/.vim/spell; done
-mkdir ~/.vim/thesaurus/
-cp "$dir/shell/vim/thesaurus/moby_thesaurus.txt" ~/.vim/thesaurus/
-
-echo "###################################### vscode config ######################################"
 mkdir -p ~/.config/Code/User
-ln -sfv "$dir/system/vscode/keybindings.json" ~/.config/Code/User
-ln -sfv "$dir/system/vscode/settings.json" ~/.config/Code/User
+ln -sfv "$dir/configs/vscode/keybindings.json" ~/.config/Code/User
+ln -sfv "$dir/configs/vscode/settings.json" ~/.config/Code/User
 
-echo "###################################### SIMLINKS FOR ULTISNIPS ######################################"
-# Make directory vim snippets
-mkdir ~/.vim/plugged/ultisnips/UltiSnips/
-cp "$dir/shell/vim/UltiSnips/c.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
-cp "$dir/shell/vim/UltiSnips/pandoc.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
-cp "$dir/shell/vim/UltiSnips/plaintex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
-cp "$dir/shell/vim/UltiSnips/tex.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
-cp "$dir/shell/vim/UltiSnips/ch.snippets" ~/.vim/plugged/ultisnips/UltiSnips/
+mkdir -p "~/.config/~/.config/Code\ -\ Insiders/User"
+ln -sfv "$dir/configs/vscode-insiders/keybindings.json" "~/.config/~/.config/Code\ -\ Insiders/User"
+ln -sfv "$dir/configs/vscode-insiders/settings.json" "~/.config/~/.config/Code\ -\ Insiders/User"
 
-# Make directory for gpg config if not existent
+mkdir -p ~/.config/kitty
+ln -sfv "$dir/configs/kitty/kitty.conf" ~/.config/kitty
+ln -sfv "$dir/configs/kitty/session.conf" ~/.config/kitty
+
+mkdir -p ~/.config/lazygit/
+ln -sfv "$dir/configs/lazygit/config.yml" ~/.config/lazygit
+
+mkdir -p ~/.config/mpv/
+ln -sfv "$dir/configs/mpv/mpv.conf" ~/.config/mpv
+
+mkdir -p ~/.config/ncspot/
+ln -sfv "$dir/configs/ncspot/config.toml" ~/.config/ncspot
+
+mkdir --p "~/.config/gtk-3.0/"
+ln -sfv "$dir/configs/system/gtk.css" "~/.config/gtk-3.0/"
+
+ln -sfv "$dir/configs/redshift/.redshift.conf" ~/.config/
+
+echo "###################################### EXECUTABLE SYMLINKS IN ~/bin/ ######################################"
+ln -sfv "$dir/scripts/audio/spotify_control" ~/bin/
+ln -sfv "$dir/scripts/backup/system/borg-backup.sh" ~/bin/
+ln -sfv "$dir/scripts/shortcuts/notes.sh" ~/bin/
+ln -sfv "$dir/scripts/misc/emojis" ~/bin/
+ln -sfv "$dir/scripts/misc/trans" ~/bin/
+
+echo "###################################### EXECUTABLE SYMLINKS IN OTHER LOCATIONS ######################################"
+
 mkdir ~/.gpg/
-ln -sfv "$dir/system/gpg.conf" ~/.gpg/
-ln -sfv "$dir/system/.redshift.conf" ~/.config/
+ln -sfv "$dir/configs/gpg/gpg.conf" ~/.gpg/
 
-# Create directory if not existent
 mkdir -p ~/.local/share/indicators/application/
 ln -sfv "$dir/system/ordering-override.keyfile" ~/.local/share/indicators/application/ordering-override.keyfile
 

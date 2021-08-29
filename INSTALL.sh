@@ -1,6 +1,5 @@
  #!/bin/sh
 
-# MASTER INSTALLATION FILE
 export DEBIAN_FRONTEND=noninteractive
 
 # Run install script and save logs in install file
