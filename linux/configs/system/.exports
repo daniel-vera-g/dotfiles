@@ -14,7 +14,7 @@ export GPG_TTY=$(tty)
 # nnn file manager
 # source $HOME/quitcd.zsh
 export NNN_TMPFILE="/tmp/nnn"
-export NNN_NOTE='/home/dvg/Desktop/running-list.txt'
+export NNN_NOTE='~/Desktop/running-list.txt'
 export NNN_SHOW_HIDDEN=1
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='f:finder;o:fzopen;x:_chmod +x $nnn;g:_git log;n:-_nvim /home/dvg/sync/notebook/system/lists/task-tracking/running-list.txt;p:-_less -iR $nnn*;b:bulknew;u:launch;s:preview-tui;j:autojump'
