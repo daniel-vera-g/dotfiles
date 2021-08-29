@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ############################
 
 # .install.sh
@@ -116,6 +117,9 @@ ln -sfv "$dir/configs/system/gtk.css" "~/.config/gtk-3.0/"
 ln -sfv "$dir/configs/redshift/.redshift.conf" ~/.config/
 
 echo "###################################### EXECUTABLE SYMLINKS IN ~/bin/ ######################################"
+
+mkdir -p ~/bin/
+
 ln -sfv "$dir/scripts/audio/spotify_control" ~/bin/
 ln -sfv "$dir/scripts/backup/system/borg-backup.sh" ~/bin/
 ln -sfv "$dir/scripts/shortcuts/notes.sh" ~/bin/
