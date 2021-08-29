@@ -5,13 +5,13 @@
 
 # Backup and repo locations add more dynamically
 export SYSTEM_BACKUP_LOCATION="/media/dvg/system-backups/borg-system-backup/"
-export SYSTEM="/home/dvg/"
+export SYSTEM="~"
 export DOWNLOAD_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/downloads/"
-export DOWNLOAD="/home/dvg/Downloads/"
+export DOWNLOAD="~/Downloads/"
 export EDU_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/edu/"
-export EDU="/home/dvg/workspace/edu"
+export EDU="~/workspace/edu"
 export VM_BACKUP_LOCATION="/media/dvg/other-backups/borg-backups/VM/VM-backup-borg/"
-export VM="/home/dvg/VirtualBox VMs/"
+export VM="~/VirtualBox VMs/"
 
 # Check for empty arguments list
 if [ $# -eq 0 ]; then
@@ -55,8 +55,8 @@ do
   [[ -z "$location" ]] || [[ -z "$repo" ]] && echo "Wrong parameter $argval, please check your input" && continue
 
   # Only if system backup use full excludefile
-  exclude="/home/dvg/dotfiles/linux/shell/scripts/backup/system/BASIC_EXCLUDEFILE"
-  if [ "$SYSTEM_BACKUP_LOCATION" == "$BORG_REPO" ]; then exclude="/home/dvg/dotfiles/linux/shell/scripts/backup/system/EXCLUDEFILE"; fi
+  exclude="$DOTFILES/linux/scripts/backup/system/BASIC_EXCLUDEFILE"
+  if [ "$SYSTEM_BACKUP_LOCATION" == "$BORG_REPO" ]; then exclude="$DOTFILES/linux/scripts/backup/system/EXCLUDEFILE"; fi
 
   echo "Location to back up: $location"
   echo "Repo to back up: $repo"
