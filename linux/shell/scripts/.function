@@ -123,9 +123,9 @@ function gz() {
 # given location
 function v() {
 	if [ $# -eq 0 ]; then
-		vim .;
+		lvim;
 	else
-		vim "$@";
+		lvim "$@";
 	fi;
 }
 
@@ -167,3 +167,12 @@ function fcdz() {
 	echo $(fd -t d| fzf || $PWD)
 }
 
+# Install or update nvim nightly
+function fetchNvim() {
+  pushd ~/.local/bin > /dev/null && \
+    # Remove to update
+    if [ -e ./nvim ]; then rm ./nvim ; fi && \
+      curl -Ls https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -o nvim && \
+      chmod u+x ./nvim && \
+      popd > /dev/null && echo 'nvim nightly successfully installed/updated!'
+}
