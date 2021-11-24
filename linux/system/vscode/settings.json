@@ -42,19 +42,7 @@
   "breadcrumbs.enabled": true,
   // Language
   "cSpell.language": "en,de-DE",
-  "cSpell.userWords": [
-    "Blockchain",
-    "Gilliard",
-    "Microservice",
-    "NIAM",
-    "danielveragi",
-    "gmail",
-    "grpc",
-    "markdownlint",
-    "microservices",
-    "nestjs",
-    "pandoc"
-  ],
+  "cSpell.userWords": [],
   // c/c++, dart & vimdiff
   "clang.executable": "/usr/bin/clang-9",
   "dart.previewFlutterUiGuides": true,
@@ -65,14 +53,11 @@
   "editor.columnSelection": false,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.mouseWheelZoom": true,
-  "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.insertSpaces": true,
+	"editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
-  "editor.minimap.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.quickSuggestions": {
     "other": true,
@@ -219,6 +204,17 @@
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": ",",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -271,7 +267,33 @@
       "commands": [
         "bookmarks.list"
       ]
-    }
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    //     TODO
+    //     {
+    //       "before": [
+    //         "C-k",
+    //       ],
+    //       "commands": [
+    //         "workbench.action.focusSecondEditorGroup"
+    //       ]
+    //     },
+    //     {
+    //       "before": [
+    //         "C-J",
+    //       ],
+    //       "commands": [
+    //         "workbench.action.focusFirstEditorGroup"
+    //       ]
+    //     }
   ],
   "vim.sneak": true,
   "vim.useCtrlKeys": true,
@@ -281,7 +303,7 @@
   // "vim.foldfix": true, -> Dirty fix for not opening folds...not working as expected...
   // Workbench
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Dracula",
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ff0000",
     // "editorLineNumber.foreground": "#ffff",
@@ -316,7 +338,6 @@
     "editor.defaultFormatter": "Dart-Code.dart-code"
   },
   "editor.matchBrackets": false,
-  "workbench.sideBar.location": "right",
   "javascript.format.semicolons": "remove",
   "prettier.semi": false,
   "prettier.singleQuote": true,
@@ -331,6 +352,19 @@
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.cursorStyle": "line",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "redhat.telemetry.enabled": false,
+"workbench.sideBar.location": "right",
+"github.copilot.enable": {
+  "*": true,
+  "yaml": true,
+  "plaintext": false,
+  "markdown": true
+},
   // TO-REVIEW?
   // "editor.matchBrackets": false,
   // "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",

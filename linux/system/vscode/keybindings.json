@@ -1,177 +1,150 @@
 [
-  // Own Customisations
-  // Commenting
-  {
-    "key": "ctrl+7",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+7",
-    "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  // Terminal
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.clear"
-  },
-  {
-    "key": "alt+k",
-    "command": "workbench.action.terminal.kill"
-  },
-  {
-    "key": "ctrl+shift+t ctrl+shift+n",
-    "command": "workbench.action.terminal.new"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new"
-  },
-  // ---
-  {
-    "key": "ctrl+shift+q",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.closePanel"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quit"
-  },
-  {
-    "key": "ctrl+q",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+9",
-    "command": "-workbench.action.toggleSidebarVisibility",
-    "when": "!editorFocus"
-  },
-  {
-    "key": "alt+9",
-    "command": "-workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "shift+alt+d",
-    "command": "-extension.downloadSettings"
-  },
-  {
-    "key": "shift+alt+d",
-    "command": "workbench.debug.action.toggleRepl",
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.view.explorer"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
-    "when": "inFilesPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "key": "ctrl+k e",
-    "command": "-workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "key": "ctrl+alt+o",
-    "command": "workbench.view.extension.todo-tree-container"
-  },
-  // Git
-  {
-    "key": "ctrl+k",
-    "command": "git.commit"
-  },
-  // Extensions keybindings
-  // Vim related
-  {
-    "key": "ctrl+alt+v",
-    "command": "toggleVim"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-editor.action.startFindReplaceAction"
-  },
-  {
-    "key": "shift+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "-selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "-selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  // ---
-  {
-    "key": "ctrl+shift+,",
-    "command": "extension.toggleSemicolon"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "-extension.vim_ctrl+h",
-    "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-  },
-  // Do I need this?
-  /*   {
-    "key": "ctrl+e",
-    "command": "-workbench.action.quickOpenNavigateNext",
-    "when": "inQuickOpen"
-  }, */
-  /*   {
-    "key": "alt+=",
-    "command": "workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+numpad_add",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+shift+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "-workbench.action.zoomIn"
-  },
-  {
-    "key": "alt+-",
-    "command": "workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+numpad_subtract",
-    "command": "-workbench.action.zoomOut"
-  },
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.zoomOut" 
-    }, */
-  /*   {
-    "key": "ctrl+alt+n",
-    "command": "-intelli-refactor.inline",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  }, */
+	// Own Customisations
+	// Commenting
+	{
+		"key": "ctrl+7",
+		"command": "editor.action.commentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+7",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	// Terminal
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.terminal.clear"
+	},
+	{
+		"key": "alt+k",
+		"command": "workbench.action.terminal.kill"
+	},
+	{
+		"key": "ctrl+shift+t ctrl+shift+n",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+shift+`",
+		"command": "-workbench.action.terminal.new"
+	},
+	// ---
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.closePanel"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.view.explorer"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "-workbench.action.quit"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.toggleSidebarVisibility",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.openEditorAtIndex9"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-extension.downloadSettings"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "workbench.debug.action.toggleRepl",
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "workbench.files.action.focusOpenEditorsView",
+		"when": "workbench.explorer.openEditorsView.active"
+	},
+	{
+		"key": "ctrl+k e",
+		"command": "-workbench.files.action.focusOpenEditorsView",
+		"when": "workbench.explorer.openEditorsView.active"
+	},
+	{
+		"key": "ctrl+alt+o",
+		"command": "workbench.view.extension.todo-tree-container"
+	},
+	// Git
+	{
+		"key": "ctrl+shift+k",
+		"command": "git.commit"
+	},
+	// Extensions keybindings
+	// Vim related
+	{
+		"key": "ctrl+alt+v",
+		"command": "toggleVim"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "shift+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+up",
+		"command": "-selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "shift+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+down",
+		"command": "-selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	// ---
+	{
+		"key": "ctrl+shift+,",
+		"command": "extension.toggleSemicolon"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-extension.vim_ctrl+h",
+		"when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+	},
+	{
+		"key": "shift+alt+g shift+alt+d",
+		"command": "go.debug.cursor"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+shift+n",
+		"command": "-workbench.action.quickOpen"
+	}
 ]

@@ -7,12 +7,13 @@
 " cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " nnoremap <Leader>b :Buffers<CR>
-nmap ; :Buffers<CR>
+nmap - :Buffers<CR>
 nmap <leader>y :History:<CR>
 nmap <leader>rg :Rg<CR>
+nmap <leader>m :Marks<CR>
 nnoremap <C-p> :Files<CR>
 
-" Delete Buffers with :BD
+" Delete Buffers with :BDF
 function! s:list_buffers()
   redir => list
   silent ls
@@ -24,12 +25,12 @@ function! s:delete_buffers(lines)
   execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
 endfunction
 
-command! BD call fzf#run(fzf#wrap({
+command! BDF call fzf#run(fzf#wrap({
   \ 'source': s:list_buffers(),
   \ 'sink*': { lines -> s:delete_buffers(lines) },
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
   \ }))
-nmap <leader>d :BD<CR>
+nmap <leader>d :BDF<CR>
 
 " ---
 
@@ -40,12 +41,14 @@ nnoremap <Leader>o :.Gbrowse<CR>
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gaa :Gwrite<CR>:Gcommit<CR>
 noremap <Leader>gc :Git commit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
+noremap <Leader>gsh :G push<CR>
+noremap <Leader>gll :G pull<CR>
 noremap <Leader>gs :Git<CR>
 noremap <Leader>gb :Gblame<CR>
 " noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+" Lazygit
+nnoremap <silent> <leader>gg :LazyGit<CR>
 " ---
 
 " ---
@@ -213,8 +216,4 @@ nnoremap <leader>tr :10Term<CR>
 " Build in terminal
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>it :terminal<CR>
-" vimtex and latex conf
-" TODO latex & co conf
-" inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
-" nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 " ---

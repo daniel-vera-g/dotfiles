@@ -1,4 +1,5 @@
 shuffle = true
+audio_cache_size=4096
 
 [theme]
 background = "black"

@@ -60,7 +60,7 @@ set wrap "Wrap lines
 " ---
 
 " ---
-" Linebreak on 500 characters
+" Linebreak on 120 characters
 set lbr
 set tw=120
 " ---

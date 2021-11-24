@@ -25,13 +25,15 @@
     "typescriptreact",
     "markdown"
   ],
-  /* Prettier */
-  "prettier.disableSuccessMessage": true,
   /* Eslint */ 
   "eslint.autoFixOnSave": true,
   /* Snippets */
   "snippets.userSnippetsDirectory": "~/.vim/plugged/ultisnips/UltiSnips",
   "snippets.autoTrigger": false,
   /* Typescript */
-  "tsserver.formatOnType": true
+  "tsserver.formatOnType": true,
+  /* Markdown */ 
+  "markdownlint.config": "~/.markdownlintrc",
+  /* Prettier */
+  "prettier.disableSuccessMessage": true
 }

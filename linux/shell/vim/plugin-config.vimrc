@@ -19,7 +19,8 @@ let g:highlightedyank_highlight_duration = 250
 " ---
 " fzf.vim
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+" let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
+let $FZF_DEFAULT_COMMAND =  "fd --hidden -E .git"
 " ---
 
 " Bullets
@@ -29,28 +30,6 @@ let g:bullets_enabled_file_types = [
 			\ 'gitcommit',
 			\ 'md'
 			\]
-
-" ---
-" Vimtex
-" Fix conceal conflict with identline plugin(https://tex.stackexchange.com/questions/252218/strange-vim-latex-behaviour)
-autocmd BufNewFile,BufRead *.tex IndentLinesDisable
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=0
-let g:tex_conceal='abdmg'
-" Vimtex TOC settings
-let g:vimtex_toc_config = {
-      \ 'name' : 'TOC',
-      \ 'layers' : ['content', 'todo', 'include'],
-      \ 'resize' : 1,
-      \ 'split_width' : 50,
-      \ 'todo_sorted' : 0,
-      \ 'show_help' : 1,
-      \ 'show_numbers' : 1,
-      \ 'mode' : 2,
-      \}
-" ---
 
 " ---
 " Markdown
@@ -108,7 +87,7 @@ endif
 " coc.nvim
 
 " coc extensions
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank', 'coc-go', 'coc-markdownlint']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-snippets', 'coc-json', 'coc-yank', 'coc-go', 'coc-markdownlint', 'coc-vimtex']
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -143,7 +122,7 @@ autocmd FileType markdown setlocal commentstring=<!--\ %s\ -->
 
 " ---
 " Set js syntax for ts as it works better
-au BufReadPost *.ts set syntax=javascript
+" au BufReadPost *.ts set syntax=javascript
 " ---
 
 " ---
@@ -169,3 +148,8 @@ let g:goyo_height='95%'
 let g:goyo_width='120px'
 autocmd! User GoyoEnter Limelight!
 " ---
+
+" ---
+"  Misc
+let g:asyncrun_open = 6
+"  ---

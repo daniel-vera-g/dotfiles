@@ -1,151 +1,173 @@
 [
-  // Own Customisations
-  // Commenting
-  {
-    "key": "ctrl+7",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+7",
-    "command": "editor.action.blockComment",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  // Terminal
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.terminal.clear"
-  },
-  {
-    "key": "alt+k",
-    "command": "workbench.action.terminal.kill"
-  },
-  {
-    "key": "ctrl+shift+t ctrl+shift+n",
-    "command": "workbench.action.terminal.new"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new"
-  },
-  // ---
-  {
-    "key": "ctrl+shift+q",
-    "command": "workbench.action.toggleMaximizedPanel"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.closePanel"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quit"
-  },
-  {
-    "key": "ctrl+q",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+9",
-    "command": "-workbench.action.toggleSidebarVisibility",
-    "when": "!editorFocus"
-  },
-  {
-    "key": "alt+9",
-    "command": "-workbench.action.openEditorAtIndex9"
-  },
-  {
-    "key": "shift+alt+d",
-    "command": "-extension.downloadSettings"
-  },
-  {
-    "key": "shift+alt+d",
-    "command": "workbench.debug.action.toggleRepl",
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.view.explorer"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
-    "when": "inFilesPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "key": "ctrl+k e",
-    "command": "-workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "key": "ctrl+alt+o",
-    "command": "workbench.view.extension.todo-tree-container"
-  },
-  // Git
-  {
-    "key": "ctrl+k",
-    "command": "git.commit"
-  },
-  // Extensions keybindings
-  // Vim related
-  {
-    "key": "ctrl+alt+v",
-    "command": "toggleVim"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "-editor.action.startFindReplaceAction"
-  },
-  {
-    "key": "shift+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "-selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+down",
-    "command": "-selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  // ---
-  {
-    "key": "ctrl+shift+,",
-    "command": "extension.toggleSemicolon"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "-extension.vim_ctrl+h",
-    "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-  },
-  {
-    "key": "alt+o",
-    "command": "editor.action.openLink"
-  },
-  // Do I need this?
-  /*   {
+	// Own Customisations
+	// Commenting
+	{
+		"key": "ctrl+7",
+		"command": "editor.action.commentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+7",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	// Terminal
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.terminal.clear"
+	},
+	{
+		"key": "alt+k",
+		"command": "workbench.action.terminal.kill"
+	},
+	{
+		"key": "ctrl+shift+t ctrl+shift+n",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+shift+`",
+		"command": "-workbench.action.terminal.new"
+	},
+	// ---
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.closePanel"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "-workbench.action.quit"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "editor.action.showHover",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.toggleSidebarVisibility",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.openEditorAtIndex9"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-extension.downloadSettings"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "workbench.debug.action.toggleRepl",
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "workbench.files.action.focusOpenEditorsView",
+		"when": "workbench.explorer.openEditorsView.active"
+	},
+	{
+		"key": "ctrl+k e",
+		"command": "-workbench.files.action.focusOpenEditorsView",
+		"when": "workbench.explorer.openEditorsView.active"
+	},
+	{
+		"key": "ctrl+alt+o",
+		"command": "workbench.view.extension.todo-tree-container"
+	},
+	// Git
+	{
+		"key": "ctrl+k",
+		"command": "git.commit"
+	},
+	// Extensions keybindings
+	// Vim related
+	{
+		"key": "ctrl+alt+v",
+		"command": "toggleVim"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "shift+k",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+up",
+		"command": "-selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "shift+j",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+down",
+		"command": "-selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	// ---
+	{
+		"key": "ctrl+shift+,",
+		"command": "extension.toggleSemicolon"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-extension.vim_ctrl+h",
+		"when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+	},
+	{
+		"key": "alt+o",
+		"command": "editor.action.openLink"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-markdownExtended.toggleBold",
+		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-editor.action.goToDeclaration",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "-workbench.action.files.newUntitledFile"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "-workbench.action.showAllSymbols"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
+	// Do I need this?
+	/*   {
     "key": "ctrl+e",
     "command": "-workbench.action.quickOpenNavigateNext",
     "when": "inQuickOpen"
   }, */
-  /*   {
+	/*   {
     "key": "alt+=",
     "command": "workbench.action.zoomIn"
   },
@@ -173,7 +195,7 @@
     "key": "ctrl+-",
     "command": "-workbench.action.zoomOut" 
     }, */
-  /*   {
+	/*   {
     "key": "ctrl+alt+n",
     "command": "-intelli-refactor.inline",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"

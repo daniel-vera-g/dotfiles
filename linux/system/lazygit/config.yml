@@ -1,5 +1,11 @@
 reporting: "off"
 startuppopupversion: 1
+customCommands:
+  - key: "C"
+    command: "git cz"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
 # gui:
 #   theme:
 #     selectedLineBgColor:
