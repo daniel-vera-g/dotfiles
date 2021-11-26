@@ -152,6 +152,8 @@ alias oWorkSession="brave-browser https://calendar.google.com/ https://keep.goog
 # nvim
 # -------------------------------------------------------------------
 alias vim='nvim'
+# alias updateLunar='fetchNvim && ggpull && lvim +LvimCacheReset +PackerUpdate'
+alias updateLunar='lvim +LvimUpdate +PackerSync'
 
 # -------------------------------------------------------------------
 # exa
@@ -187,6 +189,7 @@ alias grso="git remote show origin"
 
 #---
 # Git hacks
+# See also: ~/.oh-my-zsh/plugins/git/README.md
 #---
 
 # Reset file
@@ -203,10 +206,6 @@ alias grem='git remote -v'
 #---
 
 alias gam='git add  . && git commit -m'
-alias ga='git add'
-alias gaa='git add .'
-alias gap='git add -p'
-alias gra='git remote add'
 
 #---
 # commit
@@ -249,11 +248,7 @@ alias gf='git reflog'
 alias wow='git log --all --graph --decorate --oneline --simplify-by-decoration'
 alias gcontr='git shortlog -sn'
 
-alias gd='g diff'
-alias gl='git diff --shortstat "@{0 day ago}'
-
 alias gs='git status'
-alias gd='git diff'
 
 alias gta='git tag -a -m'
 alias grr='git remote rm'
@@ -479,3 +474,4 @@ alias nnp='nnn -deP s'
 
 alias ten='trans en:de'
 alias tde='trans de:en'
+alias goodNight='cd ~/Downloads && syncRemote && sudo apt update && sudo apt upgrade && borg-backup.sh system 2>&1 | tee ~/Downloads/backup-log.txt'

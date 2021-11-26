@@ -13,7 +13,11 @@
   go_right = None
   go_up = <Shift>Up
   help = None
+  next_tab = <Primary>Tab
+  prev_tab = <Primary><Shift>Tab
   search = None
+  zoom_in = <Primary>plus
+  zoom_out = <Primary>minus
 [layouts]
   [[default]]
     [[[child1]]]

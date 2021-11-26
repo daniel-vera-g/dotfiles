@@ -7,6 +7,11 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   pager = delta
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
 [color]
   ui = true
 [credential]
@@ -44,7 +49,7 @@
 [tag]
   forceSignAnnotated = true
 [gpg]
-	program = gpg2
+  program = gpg2
 [delta]
   plus-color = "#012800"
   minus-color = "#340001"
@@ -55,7 +60,6 @@
   whitespace-error-style = 22 reverse
 [interactive]
   diffFilter = delta --color-only
-
 [delta "unobtrusive-line-numbers"]
   line-numbers = true
   line-numbers-minus-style = "#444444"
@@ -73,4 +77,4 @@
 [diff]
   colorMoved = default
 [http]
-	postbuffer = 2097152000 # Cause: https://stackoverflow.com/questions/54967927/error-rpc-failed-curl-55-the-requested-url-returned-error-401-when-pushing-to
+  postbuffer = 2097152000 # Cause: https://stackoverflow.com/questions/54967927/error-rpc-failed-curl-55-the-requested-url-returned-error-401-when-pushing-to

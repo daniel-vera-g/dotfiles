@@ -1,139 +1,168 @@
-" Plugins & loading of custom configuration
-"Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+" From vim sensible
+" Credits:  https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 
-" ---
-" DevTools:
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
-" Linting & Languages Server(LSP & Autocompletion)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" ---
+" Use :help 'option' to see the documentation for the given option.
 
-" ---
-" Git:
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
 
-" Vim wrapper
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-" Show changes in vim gutter
-Plug 'airblade/vim-gitgutter'
-" ---
+set nrformats-=octal
 
-" ---
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" ---
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
 
-" ---
-" Styles:
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
 
-" Colour Themes
-Plug 'gruvbox-community/gruvbox'
-Plug 'liuchengxu/space-vim-theme'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'vim-scripts/CSApprox'
+set laststatus=2
+set ruler
+set wildmenu
 
-" Airline Theme(Status bar)
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
 
-" Nice icons
-Plug 'ryanoasis/vim-devicons'
-" ----
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
 
-" ---
-" Programming language specific plugins:
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 
-" Syntax & co for all languages
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
-" Alignement of code(Before markdown plugin in polyglot)
-Plug 'godlygeek/tabular'
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
 
-"  Polygplot when using custom language packs
-let g:polyglot_disabled = ['typescript']
-Plug 'sheerun/vim-polyglot'
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+  set shell=/usr/bin/env\ bash
+endif
 
-" markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Handle renumbering of lists f.ex in markdown
-Plug 'clarke/vim-renumber',  { 'for': 'markdown' }
-" Docker
-Plug 'kevinhui/vim-docker-tools'
-" Env files
-Plug 'tpope/vim-dotenv'
-" Github actions
-Plug 'yasuhiroki/github-actions-yaml.vim'
+set autoread
 
-" Vimtex/latex
-Plug 'lervag/vimtex'
-" Latex conceal improvements
-Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+set viewoptions-=options
 
-" Golang
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^Eterm'
+  set t_Co=16
+endif
 
-" Javascript
-Plug 'heavenshell/vim-jsdoc', {
-  \ 'for': ['javascript', 'javascript.jsx','typescript'],
-  \ 'do': 'make install'
-\}
-" --
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
-"---
-" Misc:
+if empty(mapcheck('<C-U>', 'i'))
+  inoremap <C-U> <C-G>u<C-U>
+endif
+if empty(mapcheck('<C-W>', 'i'))
+  inoremap <C-W> <C-G>u<C-W>
+endif
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" Match tags
-Plug 'valloric/MatchTagAlways'
-" Bullets
-Plug 'dkarter/bullets.vim'
-" Close tags
-Plug 'alvan/vim-closetag'
-" Auto pair braces
-Plug 'jiangmiao/auto-pairs'
-" Change surrounding brackets, ... easily with movements
-Plug 'tpope/vim-surround'
-" Align stuff better
-Plug 'junegunn/vim-easy-align'
-" Show registers
-Plug 'junegunn/vim-peekaboo'
-" Comments
-Plug 'tpope/vim-commentary'
-" highlighted yank
-Plug 'machakann/vim-highlightedyank'
-" select text, then press * or # to search for it
-Plug 'bronson/vim-visual-star-search'
-" Display vertical lines to show indentation
-Plug 'Yggdroot/indentLine'
-" Fancy starter page
-Plug 'mhinz/vim-startify'
-" Autosave toggle with :AutoSaveToggle
-Plug '907th/vim-auto-save'
-" Show whitespace
-Plug 'ntpeters/vim-better-whitespace'
-" Fix capitalized commands in normal mode
-Plug 'takac/vim-commandcaps'
-" Terminal
-Plug 'vimlab/split-term.vim'
-" Alternative terminal using tmux
-Plug 'benmills/vimux'
-" For focused work
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" vim:set ft=vim et sw=2:
 
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"---
+" Credits: https://gist.githubusercontent.com/simonista/8703722/raw/d08f2b4dc10452b97d3ca15386e9eed457a53c61/.vimrc
 
-" Initialize plugin system
-call plug#end()
+" Don't try to be vi compatible
+set nocompatible
 
-" Source External configuration
-source ~/.vim/config.vimrc
-source ~/.vim/styles.vimrc
-source ~/.vim/keys.vimrc
-source ~/.vim/plugin-config.vimrc
-source ~/.vim/plugin-keys.vimrc
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+let mapleader = ","
+
+" Security
+set modelines=0
+
+" Show line numbers
+set number
+set relativenumber
+
+" Show file stats
+set ruler
+
+" Blink cursor on error instead of beeping (grr)
+set visualbell
+
+" Whitespace
+set wrap
+set textwidth=79
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+" Cursor motion
+set matchpairs+=<:> " use % to jump between pairs
+runtime! macros/matchit.vim
+
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+
+" Allow hidden buffers
+set hidden
+
+" Rendering
+set ttyfast
+
+" Status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader>h :let @/=''<cr> " clear search
+
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+
+" Color scheme (terminal)
+set t_Co=256
+set background=dark
+
+" Yank to system clipboard
+set clipboard=unnamed
+

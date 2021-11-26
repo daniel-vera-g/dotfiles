@@ -91,6 +91,7 @@ set autoread
 " Mappings
 " leader + s to save
 noremap <Leader>s :w<CR>
+noremap <Leader>sa :wa<CR>
 " Spell
 noremap <leader>snp :set nospell<CR>
 noremap <leader>sp :set spell<CR>
@@ -100,7 +101,7 @@ nnoremap <leader>q :q<cr>
 noremap <leader>w :bnext<cr>
 noremap <leader>q :bprevious<cr>
 " Close buffer
-noremap <leader>c :bd<CR>
+noremap <leader>c :BD<CR>
 noremap <leader>cf :bd!<CR>
 " Split
 noremap <Leader>h :<C-u>split<CR>
